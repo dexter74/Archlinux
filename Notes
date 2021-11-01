@@ -137,7 +137,7 @@ pacstrap -i /mnt --noconfirm phosh
 pacstrap -i /mnt --noconfirm plasma-desktop
 pacstrap -i /mnt --noconfirm sugar sugar-fructose
 pacstrap -i /mnt --noconfirm ukui
-pacstrap -i /mnt --noconfirm Xfce
+pacstrap -i /mnt --noconfirm xfce4
 # Equinox (ede)
 
 ################################################################################################################
@@ -291,7 +291,7 @@ pacman -S --noconfirm phosh
 pacman -S --noconfirm plasma-desktop
 pacman -S --noconfirm sugar sugar-fructose
 pacman -S --noconfirm ukui
-pacman -S --noconfirm Xfce
+pacman -S --noconfirm xfce4
 
 
 ################################################################################################################
