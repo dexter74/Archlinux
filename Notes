@@ -4,14 +4,6 @@
 ls /usr/share/xsessions/
 ls /usr/share/sddm/themes/
 
-TOP       : cutefish, 
-Normal    : cinnamon, 
-BOFF      : gnome, lxde, XXX 
-NULL      : openbox
-Incomplet : budgie, deepin
-Marche Pas: enlightenment, pantheon
-
-
 element-desktop
 lxde-gtk3
 LXQt
@@ -22,9 +14,21 @@ plasma-desktop
 sugar sugar-fructose
 ukui
 Xfce
-# kde1-kdebase-git
-# liri
-# lumina
+
+#liri
+#lumina
+#paperde
+#phosh
+#kde1-kdebase-git
+
+
+
+TOP       : cutefish, 
+Normal    : cinnamon, 
+BOFF      : gnome, lxde, XXX 
+NULL      : openbox
+Incomplet : budgie, deepin
+Marche Pas: enlightenment, pantheon
 
 
 echo "[Autologin]
@@ -270,6 +274,7 @@ reboot
 # Interface Interface #
 #######################
 
+
 pacman -S --noconfirm cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cinnamon-translations cjs muffin nemo
 pacman -S --noconfirm budgie-desktop budgie-desktop-view budgie-screensaver # budgie-extra 
 pacman -S --noconfirm deepin deepin-desktop-base deepin-extra 
@@ -277,22 +282,15 @@ pacman -S --noconfirm cutefish
 pacman -S --noconfirm element-desktop
 pacman -S --noconfirm enlightenment
 pacman -S --noconfirm gnome gnome-remote-desktop
-pacman -S --noconfirm kde1-kdebase-git
-# liri
-# lumina
-
 pacman -S --noconfirm lxde     ; # GTK 2
 pacman -S --noconfirm lxde-gtk3; # GTK 3
-pacman -S --noconfirm LXQt
+pacman -S --noconfirm lxqt
 pacman -S --noconfirm mate-desktop
 pacman -S --noconfirm pantheon
-pacman -S --noconfirm paperdeA
-pacman -S --noconfirm phosh
 pacman -S --noconfirm plasma-desktop
 pacman -S --noconfirm sugar sugar-fructose
 pacman -S --noconfirm ukui
 pacman -S --noconfirm xfce4
-
 
 ################################################################################################################
 # Gestionnaire de Fenêtre #
