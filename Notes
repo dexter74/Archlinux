@@ -1,47 +1,4 @@
 ################################################################################################################
-# Configuration du gestionnaire de fenêtre #
-############################################
-ls /usr/share/xsessions/
-ls /usr/share/sddm/themes/
-
-element-desktop
-lxde-gtk3
-LXQt
-mate-desktop
-paperdeA
-phosh
-plasma-desktop
-sugar sugar-fructose
-ukui
-Xfce
-
-#liri
-#lumina
-#paperde
-#phosh
-#kde1-kdebase-git
-
-
-
-TOP       : cutefish, 
-Normal    : cinnamon, 
-BOFF      : gnome, lxde, XXX 
-NULL      : openbox
-Incomplet : budgie, deepin
-Marche Pas: enlightenment, pantheon
-
-
-echo "[Autologin]
-User=root
-Session=cutefish-xsession.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-
-################################################################################################################
 # SWAP A voir : > https://linuxhint.com/arch_linux_minimal_install/ 
 DISK=/dev/sda
 SIZE_BOOT=+512M
@@ -87,9 +44,6 @@ pacman -Syy
 pacstrap -i /mnt --noconfirm base
 pacstrap -i /mnt --noconfirm efibootmgr
 pacstrap -i /mnt --noconfirm grub
-
-
-
 pacstrap -i /mnt --noconfirm linux-lts 
 pacstrap -i /mnt --noconfirm linux-lts-headers
 pacstrap -i /mnt --noconfirm linux-firmware
@@ -302,4 +256,46 @@ pacman -S --noconfirm xfce4
 ################################################################################################################
 # Gestionnaire de Fenêtre #
 ###########################
-pacman -S --noconfirm sddm ; systemctl enable --now sddm
+pacman -S --noconfirm sddm 
+; systemctl enable --now sddm
+################################################################################################################
+# Configuration du gestionnaire de fenêtre #
+############################################
+ls /usr/share/xsessions/
+ls /usr/share/sddm/themes/
+
+element-desktop
+lxde-gtk3
+LXQt
+mate-desktop
+paperdeA
+phosh
+plasma-desktop
+sugar sugar-fructose
+ukui
+Xfce
+
+#liri
+#lumina
+#paperde
+#phosh
+#kde1-kdebase-git
+
+
+
+TOP       : cutefish, 
+Normal    : cinnamon, 
+BOFF      : gnome, lxde, XXX 
+NULL      : openbox
+Incomplet : budgie, deepin
+Marche Pas: enlightenment, pantheon
+
+
+echo "[Autologin]
+User=root
+Session=cutefish-xsession.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
