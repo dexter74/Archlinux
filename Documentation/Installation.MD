@@ -281,8 +281,7 @@ grub-mkconfig -o /boot/grub/grub.cfg ;
 **Boot via SystemD**
 ```
 # Récupérer la Valeur UUID de la racine du système
-blkid | grep ext4
-/dev/sda3: UUID="95e7bb3e-cbc8-434c-8496-5d9ea42aef45" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="c991bc13-be89-ca47-9b71-87afed0ad07f"
+UUID_SYSTEM=$(blkid | grep "SYSTEM: UUID=" | cut -d '"' -f 2)
 
 # Installation EFI
 bootctl install
@@ -294,7 +293,7 @@ linux /vmlinuz-linux
 
 # ls /boot/*img
 initrd /initramfs-linux.img
-options root=UUID=95e7bb3e-cbc8-434c-8496-5d9ea42aef45 rw" > /boot/loader/entries/arch.conf
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf
 ```
 **bootctl list**
 ```
