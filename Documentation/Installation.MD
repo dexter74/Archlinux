@@ -63,16 +63,12 @@ mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
 ### **Etape 3: Montage des Partitions**
 ```
 umount "/mnt" "/mnt/home" "/mnt/boot"
-df -h | grep /mnt
-```
-```
-umount /mnt/home
-umount /mnt/boot
-umount /mnt
-swapoff "/dev/$LVM_NAMEVG/SWAP"
 clear
+swapoff "/dev/$LVM_NAMEVG/SWAP"
 df -h | grep "/mnt"
 swapon -s 
+```
+```
 swapon /dev/$LVM_NAMEVG/SWAP && swapon -s
 mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot
 mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home
