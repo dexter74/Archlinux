@@ -1,4 +1,159 @@
 ################################################################################################################
+# Configuration du gestionnaire de fenêtre #
+############################################
+ls /usr/share/xsessions/
+ls /usr/share/sddm/themes/
+
+TOP :
+cutefish
+
+Normal:
+cinnamon 
+
+Incomplet:
+budgie
+deepin 
+
+
+element-desktop
+enlightenment
+gnome
+lxde
+lxde-gtk3
+LXQt
+mate-desktop
+pantheon
+paperdeA
+phosh
+plasma-desktop
+sugar sugar-fructose
+ukui
+Xfce
+
+
+# kde1-kdebase-git
+# liri
+# lumina
+
+
+
+
+
+echo "[Autologin]
+User=root
+Session=budgie-desktop.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=cutefish-xsession.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=gnome.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=openbox.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=cinnamon.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=cinnamon2d.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=enlightenment.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=gnome-xorg.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=openbox-kde.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+
+echo "[Autologin]
+User=root
+Session=gnome-classic.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+echo "[Autologin]
+User=root
+Session=LXDE.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+echo "[Autologin]
+User=root
+Session=pantheon.desktop
+[General]
+Numlock=on
+[Theme]
+Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
+
+
+
+
+
+
+
+
+################################################################################################################
 DISK=/dev/sda
 SIZE_BOOT=+512M
 SIZE_SWAP=+4G
@@ -72,10 +227,6 @@ pacstrap -i /mnt --noconfirm sudo
 pacstrap -i /mnt --noconfirm unzip
 pacstrap -i /mnt --noconfirm zip
 clear ; df -h | grep -i "system" ; du -sh /mnt/var/cache/pacman/pkg
-
-
-
-
 
 ################################################################################################################
 # https://wiki.archlinux.org/title/desktop_environment
@@ -235,15 +386,9 @@ reboot
 # Interface Interface #
 #######################
 
-# Retenu:
 pacman -S --noconfirm cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cinnamon-translations cjs muffin nemo
-
-
-# Exclus: 
-REM pacman -S --noconfirm budgie-desktop budgie-desktop-view budgie-screensaver # budgie-extra 
-REM pacman -S --noconfirm deepin deepin-desktop-base deepin-extra 
-
-
+pacman -S --noconfirm budgie-desktop budgie-desktop-view budgie-screensaver # budgie-extra 
+pacman -S --noconfirm deepin deepin-desktop-base deepin-extra 
 pacman -S --noconfirm cutefish
 pacman -S --noconfirm element-desktop
 pacman -S --noconfirm enlightenment
@@ -269,118 +414,3 @@ pacman -S --noconfirm Xfce
 # Gestionnaire de Fenêtre #
 ###########################
 pacman -S --noconfirm sddm ; systemctl enable --now sddm
-
-
-################################################################################################################
-# Configuration du gestionnaire de fenêtre #
-############################################
-ls /usr/share/xsessions/
-ls /usr/share/sddm/themes/
-
-echo "[Autologin]
-User=root
-Session=budgie-desktop.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=cutefish-xsession.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=gnome.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=openbox.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=cinnamon.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=cinnamon2d.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=enlightenment.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=gnome-xorg.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=openbox-kde.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-
-echo "[Autologin]
-User=root
-Session=gnome-classic.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=LXDE.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=pantheon.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
