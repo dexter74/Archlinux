@@ -52,6 +52,8 @@ lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
 lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 lvdisplay
 ```
+
+
 **Démontage**
 ```
 umount "/mnt" "/mnt/home" "/mnt/boot"
@@ -60,6 +62,15 @@ swapoff "/dev/$LVM_NAMEVG/SWAP"
 df -h | grep "/mnt"
 swapon -s 
 ```
+
+```
+lvremove /dev/$LVM_NAMEVG/SWAP
+lvremove /dev/$LVM_NAMEVG/SYSTEM
+lvremove /dev/$LVM_NAMEVG/HOME
+vgremove VG0
+pvremove /dev/${disk}2
+```
+
 
 
 **Formatage :**
