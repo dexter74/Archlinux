@@ -9,7 +9,7 @@ Normal    : cinnamon,
 BOFF      : gnome, 
 NULL      : openbox
 Incomplet : budgie, deepin
-Marche Pas: enlightenment
+Marche Pas: enlightenment, pantheon
 
 
 
@@ -18,7 +18,7 @@ lxde
 lxde-gtk3
 LXQt
 mate-desktop
-pantheon
+
 paperdeA
 phosh
 plasma-desktop
