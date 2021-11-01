@@ -4,20 +4,16 @@
 ls /usr/share/xsessions/
 ls /usr/share/sddm/themes/
 
-TOP :
-cutefish
+TOP       : cutefish, 
+Normal    : cinnamon, 
+BOFF      : gnome, 
+NULL      : openbox
+Incomplet : budgie, deepin
+Marche Pas: enlightenment
 
-Normal:
-cinnamon 
-
-Incomplet:
-budgie
-deepin 
 
 
 element-desktop
-enlightenment
-gnome
 lxde
 lxde-gtk3
 LXQt
@@ -35,19 +31,6 @@ Xfce
 # liri
 # lumina
 
-
-
-
-
-echo "[Autologin]
-User=root
-Session=budgie-desktop.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
 echo "[Autologin]
 User=root
 Session=cutefish-xsession.desktop
@@ -56,71 +39,6 @@ Numlock=on
 [Theme]
 Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
 
-
-echo "[Autologin]
-User=root
-Session=gnome.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=openbox.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=cinnamon.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=cinnamon2d.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=enlightenment.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=gnome-xorg.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-echo "[Autologin]
-User=root
-Session=openbox-kde.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
-
-
 echo "[Autologin]
 User=root
 Session=gnome-classic.desktop
@@ -128,7 +46,6 @@ Session=gnome-classic.desktop
 Numlock=on
 [Theme]
 Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-
 
 echo "[Autologin]
 User=root
