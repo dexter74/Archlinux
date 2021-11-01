@@ -6,7 +6,7 @@ ls /usr/share/sddm/themes/
 
 TOP       : cutefish, 
 Normal    : cinnamon, 
-BOFF      : gnome, 
+BOFF      : gnome, lxde, XXX 
 NULL      : openbox
 Incomplet : budgie, deepin
 Marche Pas: enlightenment, pantheon
@@ -14,7 +14,7 @@ Marche Pas: enlightenment, pantheon
 
 
 element-desktop
-lxde
+
 lxde-gtk3
 LXQt
 mate-desktop
