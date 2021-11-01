@@ -215,7 +215,7 @@ hwclock --systohc ;
 ```
 useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
 ```
-**
+
 **Changement des mots de passe :**
 ```
 (echo "admin"; echo "admin") | passwd marc ;
