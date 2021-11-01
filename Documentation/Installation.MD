@@ -87,14 +87,14 @@ Pour installer les paquets sur le system (/mnt), il suffit de taper la commande 
 > Les paquets "Noyaux et Modules", "Bootloader" sont indispensables.
 
 #### Noyaux et Modules
-| [Base](https://archlinux.org/packages/core/any/base/)| [Linux](https://archlinux.org/packages/core/x86_64/linux/) | [linux-firmware](https://archlinux.org/packages/core/any/linux-firmware/) | [Linux-headers](https://archlinux.org/packages/core/x86_64/linux-headers) |
+| [base](https://archlinux.org/packages/core/any/base/)| [linux](https://archlinux.org/packages/core/x86_64/linux/) | [linux-firmware](https://archlinux.org/packages/core/any/linux-firmware/) | [linux-headers](https://archlinux.org/packages/core/x86_64/linux-headers) |
 | -----------------------------------------------------| ---------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 
 [linux-lts](#) | [linux-lts-headers](#)
 
 
 #### BootLoader 
-| [grub](https://archlinux.org/packages/core/x86_64/grub/) | [EFIBootMGR](https://archlinux.org/packages/core/x86_64/efibootmgr/) | 
+| [grub](https://archlinux.org/packages/core/x86_64/grub/) | [efibootmgr](https://archlinux.org/packages/core/x86_64/efibootmgr/) | 
 | -------------------------------------------------------- | -------------------------------------------------------------------- |
 
 #### Support Partition
@@ -148,7 +148,7 @@ Pour installer les paquets sur le system (/mnt), il suffit de taper la commande 
 
 [p7zip]()
 
-[pamac-aur]() Store Applicatif
+[pamac-aur]()
 
 [pacman-contrib]()
 
