@@ -82,12 +82,17 @@ swapon -s
 
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 pacman -Syy
+
+# Minimal :
 pacstrap -i /mnt --noconfirm base
+pacstrap -i /mnt --noconfirm efibootmgr
+pacstrap -i /mnt --noconfirm grub
+
+
+
 pacstrap -i /mnt --noconfirm linux-lts 
 pacstrap -i /mnt --noconfirm linux-lts-headers
 pacstrap -i /mnt --noconfirm linux-firmware
-pacstrap -i /mnt --noconfirm grub
-pacstrap -i /mnt --noconfirm efibootmgr
 pacstrap -i /mnt --noconfirm xorg-server 
 pacstrap -i /mnt --noconfirm xorg-xinit
 pacstrap -i /mnt --noconfirm xf86-video-vesa
