@@ -42,6 +42,7 @@ Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
 
 
 ################################################################################################################
+# SWAP A voir : > https://linuxhint.com/arch_linux_minimal_install/ 
 DISK=/dev/sda
 SIZE_BOOT=+512M
 SIZE_SWAP=+4G
