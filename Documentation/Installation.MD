@@ -164,7 +164,9 @@ Pour installer les paquets sur le system (/mnt), il suffit de taper la commande 
 
 [pacman-contrib]()
 
-[ntp reflector]()
+[ntp]()
+
+[reflector]()
 
 [samba]()
 
