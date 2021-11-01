@@ -52,7 +52,7 @@ lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
 lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 lvdisplay
 ```
-**Démontage **
+**Démontage**
 ```
 umount "/mnt" "/mnt/home" "/mnt/boot"
 clear
@@ -61,7 +61,7 @@ df -h | grep "/mnt"
 swapon -s 
 ```
 
-```
+
 **Formatage :**
 ```
 mkfs.fat -F32 ${DISK}1
