@@ -106,7 +106,8 @@ pacstrap -i /mnt --noconfirm base-devel
 pacstrap -i /mnt --noconfirm binutils
 pacstrap -i /mnt --noconfirm cronie
 pacstrap -i /mnt --noconfirm fakeroot
-pacstrap -i /mnt --noconfirm git gnome-keyring
+pacstrap -i /mnt --noconfirm git
+pacstrap -i /mnt --noconfirm gnome-keyring
 pacstrap -i /mnt --noconfirm lha
 pacstrap -i /mnt --noconfirm lsb-release
 pacstrap -i /mnt --noconfirm mtools
