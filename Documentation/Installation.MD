@@ -110,8 +110,11 @@ Pour installer les paquets sur le system (/mnt), il suffit de taper la commande 
 | -------------------------------------------------------- | -------------------------------------------------------------------- |
 
 #### Support Partition
-| [ntfs-3g](https://archlinux.org/packages/extra/x86_64/ntfs-3g/) | [exfat-utils](https://archlinux.org/packages/community/x86_64/exfat-utils/) | [dosfstools](https://archlinux.org/packages/core/x86_64/dosfstools/) |
+| [ntfs-3g](https://archlinux.org/packages/extra/x86_64/ntfs-3g/) | [exfat-utils](https://archlinux.org/packages/community/x86_64/exfat-utils/) | [dosfstools](https://archlinux.org/packages/core/x86_64/dosfstools/) | 
 | --------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+
+
+[lvm2]
 
 #### Réseaux
 | [dhcpcd](https://archlinux.org/packages/core/x86_64/dhcpcd/) | [dhclient](https://archlinux.org/packages/extra/x86_64/dhclient/) | 
