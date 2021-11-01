@@ -52,6 +52,16 @@ lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
 lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 lvdisplay
 ```
+**Démontage **
+```
+umount "/mnt" "/mnt/home" "/mnt/boot"
+clear
+swapoff "/dev/$LVM_NAMEVG/SWAP"
+df -h | grep "/mnt"
+swapon -s 
+```
+
+```
 **Formatage :**
 ```
 mkfs.fat -F32 ${DISK}1
@@ -61,13 +71,6 @@ mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------
 ### **Etape 3: Montage des Partitions**
-```
-umount "/mnt" "/mnt/home" "/mnt/boot"
-clear
-swapoff "/dev/$LVM_NAMEVG/SWAP"
-df -h | grep "/mnt"
-swapon -s 
-```
 ```
 swapon /dev/$LVM_NAMEVG/SWAP && swapon -s
 mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot
