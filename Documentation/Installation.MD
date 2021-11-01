@@ -31,10 +31,11 @@ Une partition Boot pour le démarrage et une partition LVM (Swap, Racine et Home
 
 **Création des Partitions de base**
 ```
-cfdisk $DISK
-(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT"; echo "t"; echo "1" ; echo "w") | fdisk $DISK
-(echo "n"; echo "2"; echo ""; echo ""          ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK
+# cfdisk $DISK
+(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT"; echo "t"; echo "1" ; echo "w") | fdisk $DISK ;
+(echo "n"; echo "2"; echo ""; echo ""          ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK ;
 ```
+
 **LVM (Volume Physique)**
 ```
 pvcreate ${DISK}2
@@ -42,9 +43,11 @@ pvdisplay
 ```
 **LVM (Volume Groupe)**
 ```
+
 vgcreate $LVM_NAMEVG ${DISK}2
 vgdisplay
 ```
+
 **LVM (Volume Logique)**
 ```
 lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG
@@ -53,15 +56,15 @@ lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 lvdisplay
 ```
 
-
 **Démontage**
 ```
 umount "/mnt" "/mnt/home" "/mnt/boot"
 clear
 swapoff "/dev/$LVM_NAMEVG/SWAP"
 df -h | grep "/mnt"
-swapon -s 
+swapon -s
 ```
+
 **Suppression LVM**
 ```
 lvremove /dev/$LVM_NAMEVG/SWAP
