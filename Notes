@@ -10,23 +10,32 @@ LVM_NAMEVG=VG0
 umount -R /mnt /mnt/*
 swapoff ${DISK}2
 wipefs -a ${DISK}
+cfdisk
+
+
+echo "yes" | lvremove /dev/$LVM_NAMEVG/SWAP
+echo "yes" | lvremove /dev/$LVM_NAMEVG/SYSTEM
+echo "yes" | lvremove /dev/$LVM_NAMEVG/HOME
+echo "yes" | vgremove $LVM_NAMEVG
+echo "yes" | pvremove ${DISK}2
+
 
 (echo "g"; echo "w") | fdisk ${DISK} ;
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK
+(echo "p") | fdisk $DISK
 
-cfdisk 
 
 pvcreate ${DISK}2
 vgcreate $LVM_NAMEVG ${DISK}2
-lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG
-lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
-lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
+echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG
+echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
+echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 
-mkfs.fat -F32 ${DISK}1
-mkswap        /dev/$LVM_NAMEVG/SWAP
-mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM
-mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
+echo "yes" | mkfs.fat -F32 ${DISK}1
+echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP
+echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM
+echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
 
 swapon /dev/$LVM_NAMEVG/SWAP && swapon -s
 mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot
@@ -75,7 +84,9 @@ pacstrap -i /mnt --noconfirm samba
 pacstrap -i /mnt --noconfirm sudo
 pacstrap -i /mnt --noconfirm unzip
 pacstrap -i /mnt --noconfirm zip
-clear ; df -h | grep -i "system" ; du -sh /mnt/var/cache/pacman/pkg
+################################################################################################################
+
+
 
 ################################################################################################################
 # https://wiki.archlinux.org/title/desktop_environment
@@ -104,6 +115,9 @@ pacstrap -i /mnt --noconfirm sugar sugar-fructose
 pacstrap -i /mnt --noconfirm ukui
 pacstrap -i /mnt --noconfirm xfce4
 # Equinox (ede)
+################################################################################################################
+
+
 
 ################################################################################################################
 genfstab -U /mnt >> /mnt/etc/fstab ;
