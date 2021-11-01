@@ -120,14 +120,9 @@ Pour installer les paquets sur le system (/mnt), il suffit de taper la commande 
 | [networkmanager](https://archlinux.org/packages/extra/x86_64/networkmanager/) | [iw](https://archlinux.org/packages/core/x86_64/iw/) | [wireless_tools]() |
 | ----------------------------------------------------------------------------- | ---------------------------------------------------- | ------------------ |
 
-
-
-
 #### Serveur X
 | [xorg-server]() | [xorg-xinit]() | [xorg-server-utils]() | [ xf86-video-vesa]() |
 | --------------- | -------------- | --------------------- | -------------------- |
-
-
 
 #### Son
 | [alsa-utils](https://archlinux.org/packages/extra/x86_64/alsa-utils) | [pulseaudio](https://archlinux.org/packages/extra/x86_64/pulseaudio/) |
@@ -245,6 +240,8 @@ echo 'LC_MEASUREMENT="fr_FR.UTF-8"'    >> /etc/locale.conf ;
 echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /etc/locale.conf ;
 echo 'LC_ALL='                         >> /etc/locale.conf ;
 echo 'LANGUAGE="fr_FR:en_US"'          >> /etc/locale.conf ;
+locale-gen ;
+
 ```
 **localectl**
 ```
