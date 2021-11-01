@@ -62,16 +62,14 @@ swapoff "/dev/$LVM_NAMEVG/SWAP"
 df -h | grep "/mnt"
 swapon -s 
 ```
-
+**Suppression LVM**
 ```
 lvremove /dev/$LVM_NAMEVG/SWAP
 lvremove /dev/$LVM_NAMEVG/SYSTEM
 lvremove /dev/$LVM_NAMEVG/HOME
 vgremove VG0
-pvremove /dev/${disk}2
+pvremove ${DISK}2
 ```
-
-
 
 **Formatage :**
 ```
