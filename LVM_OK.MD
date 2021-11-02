@@ -225,7 +225,7 @@ useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
 loadkeys fr-pc ;
 export LANG=fr_FR.UTF-8 ;
 
-echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf ; # Pas De guillemets pour cette Valeur
+echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf ;
 echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /etc/locale.conf ;
 echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /etc/locale.conf ;
 echo 'LC_TIME="fr_FR.UTF-8"'           >> /etc/locale.conf ;
