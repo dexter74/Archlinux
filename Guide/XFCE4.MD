@@ -7,7 +7,6 @@ pacman -S --noconfirm xfce4 ;
 pacman -S xfce4-goodies ;
 ```
 
-
 **Création de l'icône PC**
 ```
 thunar /
@@ -18,10 +17,12 @@ thunar /
 xfce4-appearance-settings
 ```
 
-**PulseAudio** (icone Bureau)
+**Mixeur Audio** (icone Bureau)
 ```
+pacman -S pulseaudio 
 pavucontrol
 ```
+
 
 **Paquet**
 ```
