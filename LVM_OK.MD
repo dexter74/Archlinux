@@ -52,6 +52,7 @@ clear ;
 (echo "g"; echo "w") | fdisk ${DISK} ;
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK
+partprobe ${DISK}2
 (echo "p") | fdisk $DISK | grep $DISK ;
 ```
 
