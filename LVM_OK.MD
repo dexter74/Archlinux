@@ -43,9 +43,7 @@ echo "yes" | pvremove ${DISK}2
 
 **Vérification LVM**
 ```
-lvdisplay
-vgdisplay
-pvdisplay
+clear ; lvdisplay ; vgdisplay ; pvdisplay
 ```
 
 **Création des partitions**
