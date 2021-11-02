@@ -1,3 +1,4 @@
+--------------------------------------------------------------------------------
 **Disque**
 ```
 Partitions!
@@ -8,6 +9,7 @@ Partitions!
      |-> HOME
  ```
 
+--------------------------------------------------------------------------------
 **Déclarations des valeurs**
 ```
 DISK=/dev/sda
@@ -18,6 +20,7 @@ SIZE_HOME=+7.2G
 LVM_NAMEVG=VG0
 ```
 
+--------------------------------------------------------------------------------
 **Démontage des partitions** (Si besoin)
 ```
 umount -R /mnt /mnt/* ;
@@ -50,6 +53,7 @@ clear ; lvdisplay ; vgdisplay ; pvdisplay ;
 dd if=/dev/zero of=${DISK}  bs=512  count=1 ;
 ```
 
+--------------------------------------------------------------------------------
 **Création des partitions**
 ```
 clear ;
@@ -74,7 +78,7 @@ Correctif:
 partprobe ${DISK}2 ;
 ```
 
-
+--------------------------------------------------------------------------------
 **Création du Volume Physique**
 ```
 clear ; 
@@ -93,9 +97,9 @@ echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
 echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 ```
 
+--------------------------------------------------------------------------------
 **Vérification LVM**
 ```
-
 clear ;
 echo "###########################################"
 echo "# Volume Physique" ;
@@ -110,10 +114,9 @@ echo "" ;
 echo "Path des Volumes Logiques"
 lvdisplay | grep "LV Path" ;
 echo "###########################################"
-
 ```
 
-
+--------------------------------------------------------------------------------
 **Formatage des partitions**
 ```
 clear ;
@@ -123,7 +126,7 @@ echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
 ```
 
-
+--------------------------------------------------------------------------------
 **Montage des partitions**
 
 SWAP:
@@ -150,52 +153,73 @@ df -h | grep "/mnt" ;
 swapon -s ;
 ```
 
-
-
-
+--------------------------------------------------------------------------------
 **Installation de paquet**
+
+Noyaux et Modules
 ```
-# Noyaux et Modules
 pacstrap -i /mnt --noconfirm base linux linux-firmware linux-headers ;
+```
 
-# EFI et Grub
+EFI et Grub
+```
 pacstrap -i /mnt --noconfirm grub efibootmgr ;
+```
 
-# Prise en chargedes types de partitions
+Prise en chargedes types de partitions
+```
 pacstrap -i /mnt --noconfirm ntfs-3g exfat-utils dosfstools lvm2 ;
+```
 
-# Utilitaires Réseau
+Utilitaires Réseau
+```
 pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw wireless_tools ;
+```
 
-# X11
+X11
+```
 pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
+```
 
-# Utilitaires
+Utilitaires
+```
 pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib ntp reflector samba smbclient sudo unzip zip ;
 ```
+
 **FSTAB**
 ```
 genfstab -U /mnt >> /mnt/etc/fstab ;
 ```
+
+
+
+--------------------------------------------------------------------------------
 **Chroot**
 ```
 arch-chroot /mnt ;
 ```
+
+--------------------------------------------------------------------------------
 **TImezone et Synchronisation***
 ```
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime ;
 timedatectl set-ntp true ;
 hwclock --systohc ;
 ```
+
+--------------------------------------------------------------------------------
 **AJout d'un USER**
 ```
 useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
 ```
+
 **Changements des mot de passe :**
 ```
 (echo "admin"; echo "admin") | passwd marc ;
 (echo "root" ; echo "root")  | passwd root ;
 ```
+
+--------------------------------------------------------------------------------
 **Clavier en FR**
 ```
 loadkeys fr-pc ;
@@ -220,6 +244,8 @@ echo 'KEYMAP=fr'                        > /etc/vconsole.conf ;
 echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen
 locale-gen ;
 ```
+
+--------------------------------------------------------------------------------
 **Hostname et Host**
 ```
 echo "archlinux" > /etc/hostname
@@ -232,11 +258,15 @@ echo "#IPV4
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters" > /etc/hosts ;
 ```
+
+--------------------------------------------------------------------------------
 **Activation des services**
 ```
 systemctl enable NetworkManager ;
 systemctl enable sshd ;
 ```
+
+--------------------------------------------------------------------------------
 **Modification de fichiers**
 ```
 sed -i -e "s/\#\[multilib\]/[multilib\]/g" /etc/pacman.conf ;
@@ -245,12 +275,14 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.conf ;
 ```
 
-
+--------------------------------------------------------------------------------
 **Marc**
 ```
 su - marc ;
 ```
 
+--------------------------------------------------------------------------------
+**Firmware**
 ```
 rm -r -f *
 git clone https://aur.archlinux.org/aic94xx-firmware.git ; # aic94xx
@@ -264,12 +296,16 @@ cd upd72020x-fw     ; makepkg -si ; cd .. ;
 exit
 ```
 
+--------------------------------------------------------------------------------
 **Prise en charge de SystemD et LVM2**
 ```
 sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems keyboard fsck)/g" /etc/mkinitcpio.conf ;
 mkinitcpio -p linux ;
 ```
 
+
+
+--------------------------------------------------------------------------------
 **Bootloader**
 ```
 # Récupérer la Valeur UUID de la racine du système
@@ -288,12 +324,12 @@ initrd /initramfs-linux.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf
 ```
 
-
+--------------------------------------------------------------------------------
 **Quitter le Chroot**
 ```
 exit
 ```
-
+--------------------------------------------------------------------------------
 **Redémarrer le PC**
 ```
 reboot
