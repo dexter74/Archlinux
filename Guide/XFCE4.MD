@@ -86,9 +86,10 @@ nm-applet.service
 ```
 
 
-**Icons**
+**Icons & thèmes**
 ```
-/usr/share/icons
+/usr/share/themes/
+/usr/share/icons/
 
 ```
 
