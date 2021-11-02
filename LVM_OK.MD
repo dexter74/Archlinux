@@ -48,22 +48,24 @@ clear ; lvdisplay ; vgdisplay ; pvdisplay
 
 **Création des partitions**
 ```
+clear ;
 (echo "g"; echo "w") | fdisk ${DISK} ;
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK
-(echo "p") | fdisk $DISK | grep $DISK 
+(echo "p") | fdisk $DISK | grep $DISK ;
 ```
 
 **Création du Volume Physique**
 ```
-pvcreate ${DISK}2
+clear ; pvcreate ${DISK}2
 ```
 **Création du Volume Groupe**
 ```
-vgcreate $LVM_NAMEVG ${DISK}2
+clear ; vgcreate $LVM_NAMEVG ${DISK}2
 ```
 **Création des Volumes Logiques**
 ```
+clear ;
 echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG
 echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
 echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
@@ -71,6 +73,7 @@ echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 
 **Formatage des partitions**
 ```
+clear ;
 echo "yes" | mkfs.fat -F32 ${DISK}1
 echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM
@@ -80,6 +83,7 @@ echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
 
 **Montage des partitions**
 ```
+clear ; 
 swapon /dev/$LVM_NAMEVG/SWAP && swapon -s :
 
 mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot :
