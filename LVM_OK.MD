@@ -322,6 +322,8 @@ linux /vmlinuz-linux
 # ls /boot/*img
 initrd /initramfs-linux.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf
+clear ;
+bootctl list
 ```
 
 --------------------------------------------------------------------------------
