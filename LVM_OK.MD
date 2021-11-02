@@ -103,6 +103,9 @@ sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.
 **Marc**
 ```
 su - marc ;
+```
+
+```
 rm -r -f *
 git clone https://aur.archlinux.org/aic94xx-firmware.git ; # aic94xx
 git clone https://aur.archlinux.org/wd719x-firmware.git  ; # wd719x
@@ -110,6 +113,8 @@ git clone https://aur.archlinux.org/upd72020x-fw.git     ; # xhci_pci
 cd aic94xx-firmware ; makepkg -si ;cd .. ;
 cd wd719x-firmware  ; makepkg -si ; cd .. ;
 cd upd72020x-fw     ; makepkg -si ; cd .. ;
+```
+```
 exit
 ```
 
