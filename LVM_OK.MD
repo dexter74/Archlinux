@@ -16,14 +16,35 @@ SIZE_SWAP=+4G
 SIZE_SYST=+20G
 SIZE_HOME=+7.2G
 LVM_NAMEVG=VG0
+```
 
+```
 (echo "g"; echo "w") | fdisk ${DISK} ;
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK
 (echo "p") | fdisk $DISK
-
 ```
 
+
+```
+pvcreate ${DISK}2
+```
+
+```
+vgcreate $LVM_NAMEVG ${DISK}2
+```
+```
+echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG
+echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
+echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
+```
+
+```
+echo "yes" | mkfs.fat -F32 ${DISK}1
+echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP
+echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM
+echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
+```
 
 **Installation de paquet**
 ```
