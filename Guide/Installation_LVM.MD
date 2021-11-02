@@ -304,6 +304,12 @@ cd aic94xx-firmware ; makepkg -si ;cd .. ;
 cd wd719x-firmware  ; makepkg -si ; cd .. ;
 cd upd72020x-fw     ; makepkg -si ; cd .. ;
 ```
+
+**NANO par défaut**
+```
+echo "export EDITOR=nano" ~/.bashrc
+```
+
 ```
 exit
 ```
