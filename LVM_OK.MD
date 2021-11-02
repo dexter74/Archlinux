@@ -8,14 +8,7 @@ Partitions!
      |-> HOME
  ```
 
-**ERREUR**
-```
--bash: warning: setlocale: LC_CTYPE: cannot change locale (fr_FR.UTF-8): No such file or directory
--bash: warning: setlocale: LC_NUMERIC: cannot change locale (fr_FR.UTF-8): No such file or directory
--bash: warning: setlocale: LC_TIME: cannot change locale (fr_FR.UTF-8): No such file or directory
--bash: warning: setlocale: LC_COLLATE: cannot change locale (fr_FR.UTF-8): No such file or directory
--bash: warning: setlocale: LC_MESSAGES: cannot change locale (fr_FR.UTF-8): No such file or directory
- ```
+
 
 
 **Installation de paquet**
@@ -76,8 +69,7 @@ echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /etc/locale.conf ;
 echo 'LC_ALL='                         >> /etc/locale.conf ;
 echo 'LANGUAGE="fr_FR:en_US"'          >> /etc/locale.conf ;
 echo 'KEYMAP=fr'                        > /etc/vconsole.conf ;
-
-
+echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen
 locale-gen ;
 ```
 
