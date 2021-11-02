@@ -1,3 +1,9 @@
+# Installation du gestionnaire de fenêtre SDDM
+``` 
+pacman -S --noconfirm  sddm ;
+systemctl enable --now sddm ;
+``` 
+
 # Installation de XFCE
 
 **Installation de XFCE4** (Base)
