@@ -13,15 +13,22 @@ Partitions!
 
 **Installation de paquet**
 ```
+# Noyaux et Modules
 pacstrap -i /mnt --noconfirm base linux linux-firmware linux-headers ;
+
+# EFI et Grub
 pacstrap -i /mnt --noconfirm grub efibootmgr ;
 
+# Prise en chargedes types de partitions
 pacstrap -i /mnt --noconfirm ntfs-3g exfat-utils dosfstools lvm2 ;
 
+# Utilitaires Réseau
 pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw wireless_tools ;
 
+# X11
 pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
 
+# Utilitaires
 pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib ntp reflector samba smbclient sudo unzip zip ;
 ```
 **FSTAB**
