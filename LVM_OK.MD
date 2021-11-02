@@ -25,6 +25,12 @@ swapoff ${DISK}2
 wipefs -a ${DISK}
 ```
 
+**Vérification du montage**
+```
+clear ; 
+df -h | grep "/mnt" ;
+swapon -s ;
+```
 
 **Création des partitions**
 ```
@@ -69,12 +75,6 @@ mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home :
 mount /dev/$LVM_NAMEVG/SYSTEM /mnt :
 ```
 
-**Vérification **
-```
-clear ; 
-df -h | grep "/mnt" ;
-swapon -s ;
-```
 
 
 
