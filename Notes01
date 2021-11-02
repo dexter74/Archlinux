@@ -12,13 +12,11 @@ swapoff ${DISK}2
 wipefs -a ${DISK}
 cfdisk
 
-
 echo "yes" | lvremove /dev/$LVM_NAMEVG/SWAP
 echo "yes" | lvremove /dev/$LVM_NAMEVG/SYSTEM
 echo "yes" | lvremove /dev/$LVM_NAMEVG/HOME
 echo "yes" | vgremove $LVM_NAMEVG
 echo "yes" | pvremove ${DISK}2
-
 
 (echo "g"; echo "w") | fdisk ${DISK} ;
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
