@@ -5,10 +5,15 @@ Partition 1: LVM
  |-> SWAP
  |-> SYSTEM
  |-> HOME
- 
- /dev/sda2: UUID="KWFRfn-BgxX-yYQz-SV3U-n8Qa-Lj4Q-kyYaaU" TYPE="LVM2_member" PARTUUID="e5a15d9b-2a9f-1343-ba31-2dd9df86aa62"
-/dev/sda1: UUID="6550-C66C" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="162918ae-3817-8040-a4a5-29d2e2dc0461"
+ ```
 
+**ERREUR**
+ ```-bash: warning: setlocale: LC_CTYPE: cannot change locale (fr_FR.UTF-8): No such file or directory
+-bash: warning: setlocale: LC_NUMERIC: cannot change locale (fr_FR.UTF-8): No such file or directory
+-bash: warning: setlocale: LC_TIME: cannot change locale (fr_FR.UTF-8): No such file or directory
+-bash: warning: setlocale: LC_COLLATE: cannot change locale (fr_FR.UTF-8): No such file or directory
+-bash: warning: setlocale: LC_MESSAGES: cannot change locale (fr_FR.UTF-8): No such file or directory
+ ```
 
 
 **Installatuin de paquet**
