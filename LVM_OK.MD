@@ -1,6 +1,7 @@
 **Disque**
 ```
 Partition 0: EFI
+
 Partition 1: LVM
  |-> SWAP
  |-> SYSTEM
