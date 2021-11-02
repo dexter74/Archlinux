@@ -8,7 +8,7 @@ Partitions!
      |-> HOME
  ```
 
-**Création des partitions EFI et LVM**
+**Déclarations des valeurs**
 ```
 DISK=/dev/sda
 SIZE_BOOT=+512M
@@ -18,6 +18,15 @@ SIZE_HOME=+7.2G
 LVM_NAMEVG=VG0
 ```
 
+**Démontage des partitions** (Si besoin)
+```
+umount -R /mnt /mnt/*
+swapoff ${DISK}2
+wipefs -a ${DISK}
+```
+
+
+**Création des partitions**
 ```
 (echo "g"; echo "w") | fdisk ${DISK} ;
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
@@ -25,26 +34,50 @@ LVM_NAMEVG=VG0
 (echo "p") | fdisk $DISK
 ```
 
-
+**Création du Volume Physique**
 ```
 pvcreate ${DISK}2
 ```
-
+**Création du Volume Groupe**
 ```
 vgcreate $LVM_NAMEVG ${DISK}2
 ```
+**Création des Volumes Logiques**
 ```
 echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG
 echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
 echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 ```
 
+**Formatage des partitions**
 ```
 echo "yes" | mkfs.fat -F32 ${DISK}1
 echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
 ```
+
+
+**Montage des partitions**
+```
+swapon /dev/$LVM_NAMEVG/SWAP && swapon -s :
+
+mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot :
+
+mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home :
+
+mount /dev/$LVM_NAMEVG/SYSTEM /mnt :
+```
+
+**Vérification **
+```
+clear ; 
+df -h | grep "/mnt" ;
+swapon -s ;
+```
+
+
+
 
 **Installation de paquet**
 ```
