@@ -353,6 +353,8 @@ reboot
 ```
 (echo ''; echo 'o') | pacman -S sddm ;
 systemctl enable --now sddm ;
+
+systemctl enable --now avahi-daemon.service ;
 ```
 
 --------------------------------------------------------------------------------
@@ -400,7 +402,6 @@ Numlock=on
 [Theme]
 Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 ```
-
 
 
 
