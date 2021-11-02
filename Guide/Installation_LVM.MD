@@ -270,6 +270,8 @@ ff02::2 ip6-allrouters" > /etc/hosts ;
 ```
 systemctl enable NetworkManager ;
 systemctl enable sshd ;
+systemctl enable ntpd ;
+
 ```
 
 --------------------------------------------------------------------------------
