@@ -18,5 +18,7 @@ thunar /
 xfce4-appearance-settings
 ```
 
-**PulseAudio (icone Bureau)
+**PulseAudio** (icone Bureau)
+```
 pavucontrol
+```
