@@ -4,12 +4,31 @@ pacman -S --noconfirm  sddm ;
 systemctl enable --now sddm ;
 ``` 
 
+
+
 # Installation de XFCE
 
 **Installation de XFCE4** (Base)
 ```
 pacman -S --noconfirm xfce4 ;
 ```
+
+**Auto-Login sur XFCE**
+```
+echo "[Autologin]
+User=marc
+Session=xfce.desktop
+
+[General]
+Numlock=on
+#EnableHiDPI=false
+
+[Theme]
+Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
+```
+
+
+
 
 **Mixeur Audio**
 ```
