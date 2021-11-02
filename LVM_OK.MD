@@ -113,7 +113,7 @@ cd upd72020x-fw     ; makepkg -si ; cd .. ;
 exit
 ```
 
-**Prise en charge de SystemD et LVM2
+**Prise en charge de SystemD et LVM2**
 ```
 sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems keyboard fsck)/g" /etc/mkinitcpio.conf ;
 mkinitcpio -p linux ;
