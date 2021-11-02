@@ -8,7 +8,21 @@ Partitions!
      |-> HOME
  ```
 
+**Création des partitions EFI et LVM**
+```
+DISK=/dev/sda
+SIZE_BOOT=+512M
+SIZE_SWAP=+4G
+SIZE_SYST=+20G
+SIZE_HOME=+7.2G
+LVM_NAMEVG=VG0
 
+(echo "g"; echo "w") | fdisk ${DISK} ;
+(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
+(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK
+(echo "p") | fdisk $DISK
+
+```
 
 
 **Installation de paquet**
