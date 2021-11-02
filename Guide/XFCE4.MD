@@ -8,6 +8,7 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 **Installation de XFCE4** (Base)
 ```
 pacman -S --noconfirm xfce4 ;
+pacman -S --noconfirm xfce4-goodies ;
 ```
 
 **Auto-Login sur XFCE**
@@ -22,91 +23,63 @@ Numlock=on
 [Theme]
 Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 ```
-
-**Mixeur Audio**
+---------------------------------------------------------------------------------------------
+**Icons**
+Dossier des icones:
 ```
-pacman -S --noconfirm pulseaudio  ; # Volume son
-pacman -S --noconfirm pavucontrol ; # Mixeur de volume GUI Barre des tâches
+/usr/share/icons/
 ```
-
-**Extra**
 ```
-pacman -S xfce4-goodies ;
+https://github.com/yeyushengfan258/Win10Sur-icon-theme
 ```
-
+---------------------------------------------------------------------------------------------
+**Themes**
+Dossier des thèmes:
+```
+/usr/share/themes/
+```
+---------------------------------------------------------------------------------------------
 **Création de l'icône PC**
 ```
 thunar /
 ```
-
-**Modifier apparence**
-```
-xfce4-appearance-settings
-```
+---------------------------------------------------------------------------------------------
+**Logon**
 
 
-**Paquet**
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+**EN DEV**
 ```
+pacman -S --noconfirm pulseaudio  ; # Volume son
+pacman -S --noconfirm pavucontrol ; # Mixeur de volume GUI Barre des tâches
 pacman -S blueman network-manager-applet
-```
+pacman -s xfce4-dev-tools ;
 
-
-### Services:
 /usr/lib/systemd/system/nm-applet.service
-```
 [Unit]
 Description=nm-applet
-
 [Service]
 ExecStart=nm-applet
-
 [Install]
 WantedBy=default.target
-```
-
-**Wi-Fi**
-```
 /usr/lib/systemd/system/blueman-applet.service
-
 [Unit]
 Description=blueman-applet
-
 [Service]
 ExecStart=blueman-applet
-
 [Install]
 WantedBy=default.target
-```
-
-**Sous Interface**
-```
 systemctl --user daemon-reload
 systemctl --user enable --now blueman-applet.service 
 nm-applet.service
-```
-
-
-**Icons & thèmes**
-```
-/usr/share/themes/
-/usr/share/icons/
-
-```
-
-```
-https://github.com/yeyushengfan258/Win10Sur-icon-theme
-```
-
-
-
-
-
-**DockLite-Plugin**
-```
 https://github.com/nsz32/docklike-plugin
 ```
-```
-pacman -s xfce4-dev-tools ;
-```
-
-
