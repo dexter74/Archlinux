@@ -56,9 +56,7 @@ clear ;
 ```
 
 **Création du Volume Physique**
-```
-clear ; pvcreate ${DISK}2
-```
+```clear ; pvcreate ${DISK}2```
 **Création du Volume Groupe**
 ```
 clear ; vgcreate $LVM_NAMEVG ${DISK}2
