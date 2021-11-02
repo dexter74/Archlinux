@@ -125,15 +125,23 @@ echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
 
 
 **Montage des partitions**
+
+SWAP:
 ```
 clear ; 
 swapon /dev/$LVM_NAMEVG/SWAP && swapon -s :
-
-mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot :
-
-mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home :
-
+```
+EFI:
+```
+mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot ;
+```
+SYSTEM:
+```
 mount /dev/$LVM_NAMEVG/SYSTEM /mnt :
+```
+Home:
+```
+mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home ;
 ```
 
 
