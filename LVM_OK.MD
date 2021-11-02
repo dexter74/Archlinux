@@ -8,7 +8,8 @@ Partition 1: LVM
  ```
 
 **ERREUR**
- ```-bash: warning: setlocale: LC_CTYPE: cannot change locale (fr_FR.UTF-8): No such file or directory
+```
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (fr_FR.UTF-8): No such file or directory
 -bash: warning: setlocale: LC_NUMERIC: cannot change locale (fr_FR.UTF-8): No such file or directory
 -bash: warning: setlocale: LC_TIME: cannot change locale (fr_FR.UTF-8): No such file or directory
 -bash: warning: setlocale: LC_COLLATE: cannot change locale (fr_FR.UTF-8): No such file or directory
