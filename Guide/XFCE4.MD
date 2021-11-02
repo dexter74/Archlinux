@@ -22,3 +22,34 @@ xfce4-appearance-settings
 ```
 pavucontrol
 ```
+
+**Paquet**
+```
+pacman -S blueman network-manager-applet
+```
+
+
+### Services:
+/usr/lib/systemd/system/nm-applet.service
+```
+[Unit]
+Description=nm-applet
+
+[Service]
+ExecStart=nm-applet
+
+[Install]
+WantedBy=default.target
+```
+
+/usr/lib/systemd/system/blueman-applet.service
+```
+[Unit]
+Description=blueman-applet
+
+[Service]
+ExecStart=blueman-applet
+
+[Install]
+WantedBy=default.target
+```
