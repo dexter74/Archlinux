@@ -49,6 +49,7 @@ clear ; lvdisplay ; vgdisplay ; pvdisplay
 **Création des partitions**
 ```
 clear ;
+dd if=/dev/zero of=${DISK}  bs=512  count=1
 (echo "g"; echo "w") | fdisk ${DISK} ;
 (echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
 (echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK
