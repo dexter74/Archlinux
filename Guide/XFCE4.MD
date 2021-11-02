@@ -9,6 +9,7 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
 pacman -S --noconfirm xfce4 ;
 pacman -S --noconfirm xfce4-goodies ;
+pacman -s --noconfirm xfce4-dev-tools ;
 ```
 
 **Auto-Login sur XFCE**
@@ -62,7 +63,6 @@ thunar /
 pacman -S --noconfirm pulseaudio  ; # Volume son
 pacman -S --noconfirm pavucontrol ; # Mixeur de volume GUI Barre des tâches
 pacman -S blueman network-manager-applet
-pacman -s xfce4-dev-tools ;
 
 /usr/lib/systemd/system/nm-applet.service
 [Unit]
