@@ -13,12 +13,12 @@ Partitions!
 
 **Installation de paquet**
 ```
-pacstrap -i /mnt base linux linux-firmware linux-headers
-pacstrap -i /mnt grub efibootmgr
-pacstrap -i /mnt ntfs-3g exfat-utils dosfstools lvm2
-pacstrap -i /mnt dhcpcd dhclient networkmanager iw wireless_tools
-pacstrap -i /mnt xorg-server xorg-xinit xf86-video-vesa
-pacstrap -i /mnt bash-completion base-devel binutils cronie fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib ntp reflector samba smbclient sudo unzip zip
+pacstrap -i --noconfirm /mnt base linux linux-firmware linux-headers
+pacstrap -i --noconfirm /mnt grub efibootmgr
+pacstrap -i --noconfirm /mnt ntfs-3g exfat-utils dosfstools lvm2
+pacstrap -i --noconfirm /mnt dhcpcd dhclient networkmanager iw wireless_tools
+pacstrap -i --noconfirm /mnt xorg-server xorg-xinit xf86-video-vesa
+pacstrap -i --noconfirm /mnt bash-completion base-devel binutils cronie fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib ntp reflector samba smbclient sudo unzip zip
 ```
 
 **FSTAB**
