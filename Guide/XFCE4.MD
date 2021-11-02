@@ -29,7 +29,6 @@ pacman -S --noconfirm pulseaudio  ; # Volume son
 pacman -S --noconfirm pavucontrol ; # Mixeur de volume GUI Barre des tâches
 ```
 
-
 **Extra**
 ```
 pacman -S xfce4-goodies ;
@@ -87,10 +86,24 @@ nm-applet.service
 ```
 
 
+**Icons**
+```
+/usr/share/icons
+
+```
+
+```
+https://github.com/yeyushengfan258/Win10Sur-icon-theme
+```
+
+
+
+
 
 **DockLite-Plugin**
+```
 https://github.com/nsz32/docklike-plugin
-
+```
 ```
 pacman -s xfce4-dev-tools ;
 ```
