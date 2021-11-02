@@ -75,6 +75,27 @@ echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
 echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
 ```
 
+**Vérification LVM**
+```
+
+clear ;
+echo "###########################################"
+echo "# Volume Physique" ;
+pvdisplay | grep "VG Name" ;
+echo "" ;
+echo "# Volume Groupe" ;
+vgdisplay | grep "VG Name" ;
+echo "" ;
+echo "Volume Logique"
+lvdisplay | grep "LV Name" ;
+echo "" ;
+echo "Path des Volumes Logiques"
+lvdisplay | grep "LV Path" ;
+echo "###########################################"
+
+```
+
+
 **Formatage des partitions**
 ```
 clear ;
