@@ -137,7 +137,7 @@ mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot ;
 ```
 SYSTEM:
 ```
-mount /dev/$LVM_NAMEVG/SYSTEM /mnt :
+mount /dev/$LVM_NAMEVG/SYSTEM /mnt ;
 ```
 Home:
 ```
