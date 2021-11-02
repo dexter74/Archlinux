@@ -32,6 +32,22 @@ df -h | grep "/mnt" ;
 swapon -s ;
 ```
 
+**Suppression du LVM**
+```
+echo "yes" | lvremove /dev/$LVM_NAMEVG/SWAP
+echo "yes" | lvremove /dev/$LVM_NAMEVG/SYSTEM
+echo "yes" | lvremove /dev/$LVM_NAMEVG/HOME
+echo "yes" | vgremove $LVM_NAMEVG
+echo "yes" | pvremove ${DISK}2
+```
+
+**Vérification LVM**
+```
+lvdisplay
+vgdisplay
+pvdisplay
+```
+
 **Création des partitions**
 ```
 (echo "g"; echo "w") | fdisk ${DISK} ;
