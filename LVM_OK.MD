@@ -17,7 +17,7 @@ Partition 1: LVM
  ```
 
 
-**Installatuin de paquet**
+**Installation de paquet**
 ```
 pacstrap -i /mnt base linux linux-firmware linux-headers
 pacstrap -i /mnt grub efibootmgr
