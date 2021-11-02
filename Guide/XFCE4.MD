@@ -65,6 +65,11 @@ nm-applet.service
 
 
 
-
-
+**DockLite-Plugin**
 https://github.com/nsz32/docklike-plugin
+
+```
+pacman -s xfce4-dev-tools ;
+```
+
+
