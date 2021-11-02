@@ -59,9 +59,12 @@ WantedBy=default.target
 **Sous Interface**
 ```
 systemctl --user daemon-reload
+systemctl --user enable --now blueman-applet.service 
+nm-applet.service
 ```
 
 
-systemctl --user enable --now blueman-applet.service 
-nm-applet.service
 
+
+
+https://github.com/nsz32/docklike-plugin
