@@ -1,7 +1,18 @@
+# Installation de XFCE
+
 **Installation de XFCE4** (Base)
 ```
 pacman -S --noconfirm xfce4 ;
 ```
+
+**Mixeur Audio**
+```
+pacman -S --noconfirm pulseaudio  ; # Volume son
+pacman -S --noconfirm pavucontrol ; # Mixeur de volume GUI Barre des tâches
+```
+
+
+
 **Extra**
 ```
 pacman -S xfce4-goodies ;
@@ -17,11 +28,6 @@ thunar /
 xfce4-appearance-settings
 ```
 
-**Mixeur Audio** (icone Bureau)
-```
-pacman -S pulseaudio 
-pavucontrol
-```
 
 
 **Paquet**
