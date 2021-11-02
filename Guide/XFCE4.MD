@@ -1,10 +1,7 @@
 # Installation du gestionnaire de fenêtre SDDM
 ``` 
-pacman -S --noconfirm  sddm ;
-systemctl enable --now sddm ;
+pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ``` 
-
-
 
 # Installation de XFCE
 
@@ -21,21 +18,16 @@ Session=xfce.desktop
 
 [General]
 Numlock=on
-#EnableHiDPI=false
 
 [Theme]
 Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 ```
-
-
-
 
 **Mixeur Audio**
 ```
 pacman -S --noconfirm pulseaudio  ; # Volume son
 pacman -S --noconfirm pavucontrol ; # Mixeur de volume GUI Barre des tâches
 ```
-
 
 
 **Extra**
@@ -52,7 +44,6 @@ thunar /
 ```
 xfce4-appearance-settings
 ```
-
 
 
 **Paquet**
