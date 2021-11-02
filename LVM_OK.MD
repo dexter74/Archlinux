@@ -20,9 +20,9 @@ LVM_NAMEVG=VG0
 
 **Démontage des partitions** (Si besoin)
 ```
-umount -R /mnt /mnt/*
-swapoff ${DISK}2
-wipefs -a ${DISK}
+umount -R /mnt /mnt/* ;
+swapoff ${DISK}2 ;
+wipefs -a ${DISK} ;
 ```
 
 **Vérification du montage**
@@ -34,26 +34,29 @@ swapon -s ;
 
 **Suppression du LVM**
 ```
-echo "yes" | lvremove /dev/$LVM_NAMEVG/SWAP
-echo "yes" | lvremove /dev/$LVM_NAMEVG/SYSTEM
-echo "yes" | lvremove /dev/$LVM_NAMEVG/HOME
-echo "yes" | vgremove $LVM_NAMEVG
-echo "yes" | pvremove ${DISK}2
+echo "yes" | lvremove /dev/$LVM_NAMEVG/SWAP ;
+echo "yes" | lvremove /dev/$LVM_NAMEVG/SYSTEM ;
+echo "yes" | lvremove /dev/$LVM_NAMEVG/HOME ;
+echo "yes" | vgremove $LVM_NAMEVG ;
+echo "yes" | pvremove ${DISK}2 ;
 ```
 
 **Vérification LVM**
 ```
-clear ; lvdisplay ; vgdisplay ; pvdisplay
+clear ; lvdisplay ; vgdisplay ; pvdisplay ;
+```
+**Wype le Disque-dur**
+```
+dd if=/dev/zero of=${DISK}  bs=512  count=1 ;
 ```
 
 **Création des partitions**
 ```
 clear ;
-dd if=/dev/zero of=${DISK}  bs=512  count=1
 (echo "g"; echo "w") | fdisk ${DISK} ;
-(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK
-(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK
-partprobe ${DISK}2
+(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK ;
+(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK ;
+partprobe ${DISK}2 ;
 (echo "p") | fdisk $DISK | grep $DISK ;
 ```
 
