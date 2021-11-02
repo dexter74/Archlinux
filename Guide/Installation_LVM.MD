@@ -277,7 +277,7 @@ systemctl enable ntpd ;
 --------------------------------------------------------------------------------
 **Modification de fichiers**
 ```
-sed -i -e "s/\#\[multilib\]/[multilib\]/g" /etc/pacman.conf ;
+sed -i -e "s/\#\[multilib\]/[multilib\]/g" /etc/pacman.conf       
 sed -i -e "s/\# \%wheel ALL\=(ALL) ALL/\%wheel ALL\=(ALL) ALL/g" /etc/sudoers; 
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config ;
 sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.conf ;
