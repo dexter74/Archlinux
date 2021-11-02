@@ -42,8 +42,10 @@ ExecStart=nm-applet
 WantedBy=default.target
 ```
 
-/usr/lib/systemd/system/blueman-applet.service
+**Wi-Fi**
 ```
+/usr/lib/systemd/system/blueman-applet.service
+
 [Unit]
 Description=blueman-applet
 
@@ -53,3 +55,13 @@ ExecStart=blueman-applet
 [Install]
 WantedBy=default.target
 ```
+
+**Sous Interface**
+```
+systemctl --user daemon-reload
+```
+
+
+systemctl --user enable --now blueman-applet.service 
+nm-applet.service
+
