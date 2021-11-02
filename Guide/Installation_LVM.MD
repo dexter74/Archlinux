@@ -1,3 +1,7 @@
+#### Information sur le Guide
+Installation sur une disque-dur avec 2 partitions.
+Le guide est fonctionnel .
+
 --------------------------------------------------------------------------------
 **Disque**
 ```
