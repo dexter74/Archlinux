@@ -143,7 +143,12 @@ Home:
 ```
 mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home ;
 ```
-
+**Vérification du montage**
+```
+clear ; 
+df -h | grep "/mnt" ;
+swapon -s ;
+```
 
 
 
