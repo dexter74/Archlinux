@@ -13,31 +13,31 @@ Partitions!
 
 **Installation de paquet**
 ```
-pacstrap -i --noconfirm /mnt base linux linux-firmware linux-headers
-pacstrap -i --noconfirm /mnt grub efibootmgr
-pacstrap -i --noconfirm /mnt ntfs-3g exfat-utils dosfstools lvm2
-pacstrap -i --noconfirm /mnt dhcpcd dhclient networkmanager iw wireless_tools
-pacstrap -i --noconfirm /mnt xorg-server xorg-xinit xf86-video-vesa
-pacstrap -i --noconfirm /mnt bash-completion base-devel binutils cronie fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib ntp reflector samba smbclient sudo unzip zip
-```
+pacstrap -i /mnt --noconfirm base linux linux-firmware linux-headers ;
+pacstrap -i /mnt --noconfirm grub efibootmgr ;
 
+pacstrap -i /mnt --noconfirm ntfs-3g exfat-utils dosfstools lvm2 ;
+
+pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw wireless_tools ;
+
+pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
+
+pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib ntp reflector samba smbclient sudo unzip zip ;
+```
 **FSTAB**
 ```
 genfstab -U /mnt >> /mnt/etc/fstab ;
 ```
-
 **Chroot**
 ```
 arch-chroot /mnt ;
 ```
-
 **TImezone et Synchronisation***
 ```
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime ;
 timedatectl set-ntp true ;
 hwclock --systohc ;
 ```
-
 **AJout d'un USER**
 ```
 useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
@@ -47,7 +47,6 @@ useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
 (echo "admin"; echo "admin") | passwd marc ;
 (echo "root" ; echo "root")  | passwd root ;
 ```
-
 **Clavier en FR**
 ```
 loadkeys fr-pc ;
@@ -72,7 +71,6 @@ echo 'KEYMAP=fr'                        > /etc/vconsole.conf ;
 echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen
 locale-gen ;
 ```
-
 **Hostname et Host**
 ```
 echo "archlinux" > /etc/hostname
@@ -85,13 +83,12 @@ echo "#IPV4
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters" > /etc/hosts ;
 ```
-
 **Activation des services**
 ```
 systemctl enable NetworkManager ;
 systemctl enable sshd ;
 ```
-
+**Modification de fichiers**
 ```
 sed -i -e "s/\#\[multilib\]/[multilib\]/g" /etc/pacman.conf ;
 sed -i -e "s/\# \%wheel ALL\=(ALL) ALL/\%wheel ALL\=(ALL) ALL/g" /etc/sudoers; 
