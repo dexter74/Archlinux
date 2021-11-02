@@ -2,6 +2,8 @@
 Installation sur une disque-dur avec 2 partitions.
 Le guide est fonctionnel .
 
+# BUg sur les dépôt apparemment
+
 --------------------------------------------------------------------------------
 **Disque**
 ```
