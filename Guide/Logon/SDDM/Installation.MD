@@ -10,7 +10,7 @@ systemctl enable --now sddm ;
 
 **Etat du service**
 ```
-systemctl status now sddm ;
+systemctl status sddm ;
 ```
 
 **Configuration de SSDM**
