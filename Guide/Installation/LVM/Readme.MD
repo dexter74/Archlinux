@@ -207,10 +207,14 @@ arch-chroot /mnt ;
 **TImezone et Synchronisation***
 ```
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime ;
-
 sed -i -e "s/\#NTP\=/\NTP\=fr.pool.ntp.org/g" /etc/systemd/timesyncd.conf ;
 timedatectl set-ntp true ;
 hwclock --systohc ;
+```
+
+**Plannificateur de tâche**
+```
+echo "@reboot     root    timedatectl set-ntp true ;" > /etc/crontab ;
 ```
 
 --------------------------------------------------------------------------------
@@ -275,8 +279,8 @@ ff02::2 ip6-allrouters" > /etc/hosts ;
 ```
 systemctl enable NetworkManager ;
 systemctl enable sshd ;
+systemctl enable cronie ;
 systemctl enable ntpd ;
-
 ```
 
 --------------------------------------------------------------------------------
