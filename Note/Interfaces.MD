@@ -10,6 +10,12 @@ https://archlinux.org/packages/?sort=&q=-desktop&maintainer=&flagged=
 pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
 
+**Redémarrage du service**
+```
+systemctl restart sddm ;
+```
+
+
 
 **Interface Interface**
 ```pacman -S --noconfirm budgie-desktop budgie-extra budgie-desktop-view budgie-screensaver
