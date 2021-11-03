@@ -5,11 +5,13 @@
 pacman -S --noconfirm xfce4           ; # Groupe de paquet
 pacman -S --noconfirm xfce4-goodies   ; # extra
 pacman -S --noconfirm xfce4-dev-tools ; # Outils
-
+pacman -S --noconfirm gvfs            ; # Thunar > Parcourir réseau
 pacman -S --noconfirm pacman -S xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-appfinder xfce-utils xfconf
 pacman -S gstreamer0.10-base-plugins
 pacman -S dbus
 ```
+
+
 
 ---------------------------------------------------------------------------------------------
 **EN DEV**
@@ -18,6 +20,10 @@ pacman -S --noconfirm pulseaudio              ; # Volume son
 pacman -S --noconfirm pavucontrol             ; # Mixeur de volume GUI Barre des tâches
 pacman -S --noconfirm blueman                 ; # Bluetooth
 pacman -S --noconfirm network-manager-applet  ;
+
+
+sudo pacman -S --needed gvfs-{afc,goa,google,gphoto2,mtp,nfs,smb} 
+sudo pacman -S --needed xfce4 xfce4-goodies gvfs vlc quodlibet python-pyinotify lightdm-gtk-greeter xarchiver claws-mail galculator evince ffmpegthumbnailer xscreensaver  system-config-printer
 ```
 
 
