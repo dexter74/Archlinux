@@ -29,7 +29,6 @@ LVM_NAMEVG=VG0
 ```
 umount -R /mnt /mnt/* ;
 swapoff ${DISK}2 ;
-wipefs -a ${DISK} ;
 ```
 
 **Vérification du montage**
@@ -332,7 +331,6 @@ makepkg -si ;
 ```
 echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc 
 ```
-
 ```
 exit
 ```
@@ -380,12 +378,22 @@ options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf
 clear ;
 bootctl list
 ```
-
 --------------------------------------------------------------------------------
 **Quitter le Chroot**
 ```
 exit
 ```
+
+
+
+
+--------------------------------------------------------------------------------
+**Démontage des partitions** (Si besoin)
+```
+umount -R /mnt /mnt/* ;
+swapoff ${DISK}2 ;
+```
+
 --------------------------------------------------------------------------------
 **Redémarrer le PC**
 ```
@@ -397,6 +405,10 @@ reboot
 systemctl --failed --fail --all   ;
 systemctl status * | grep -i fail ;
 ```
+
+
+
+
 --------------------------------------------------------------------------------
 **Gestionnaire de fenêtre**
 ```
