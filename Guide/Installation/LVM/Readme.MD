@@ -212,15 +212,13 @@ timedatectl set-ntp true ;
 hwclock --systohc ;
 ```
 
-**Plannificateur de tâche**
+**[Plannificateur de tâche](https://www.linuxtricks.fr/wiki/cron-et-crontab-le-planificateur-de-taches)**
 ```
 EDITOR=nano crontab -e
 ```
 
 ```
-@reboot     root    timedatectl set-ntp true
-@reboot     root    /usr/sbin/ntpd -n
-@reboot     root    systemctl restart ntp
+
 ```
 
 
