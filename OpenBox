@@ -47,8 +47,12 @@ git clone https://github.com/addy-dclxvi/openbox-theme-collections ~/.themes ;
 git clone https://github.com/addy-dclxvi/conky-theme-collections.git ~/.config/conky ; # ls ~/.config/conky/
 git clone https://github.com/addy-dclxvi/tint2-theme-collections.git ~/.config/tint2 ; # ls ~/.config/tint2/
 
+# Lancer tint2 
+# > Thème > importer >  ~/.config/tint2/blocks/blocks.tint2rc) 
+# Editer thèmes > Bouton 1,2,3,4 > Icônes > Remplacer "/home/addy" en ~
+
 ########################################################################################################
 #Autostart
 echo 'feh --bg-tile "Wallpaper/bg.jpg &'                    >  ~/.config/openbox/autostart ;
-# echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &' >>  ~/.config/openbox/autostart ;
-
+echo 'tint2 &'                                             >>  ~/.config/openbox/autostart ;
+echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &' >>  ~/.config/openbox/autostart ;
