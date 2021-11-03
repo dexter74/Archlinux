@@ -16,7 +16,6 @@ pacman -S --noconfirm blueman                 ; # Bluetooth
 pacman -S --noconfirm network-manager-applet  ;
 ```
 
-
 **nm-applet**
 ```
 echo "[Unit]
