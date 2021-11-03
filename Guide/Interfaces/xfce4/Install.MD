@@ -2,9 +2,11 @@
 
 **Installation de XFCE4** (Base)
 ```
-pacman -S --noconfirm xfce4 ;
-pacman -S --noconfirm xfce4-goodies ;
-pacman -S --noconfirm xfce4-dev-tools ;
+pacman -S --noconfirm xfce4           ; # Groupe de paquet
+pacman -S --noconfirm xfce4-goodies   ; # extra
+pacman -S --noconfirm xfce4-dev-tools ; # Outils
+
+pacman -S --noconfirm pacman -S xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-appfinder xfce-utils xfconf
 ```
 
 ---------------------------------------------------------------------------------------------
