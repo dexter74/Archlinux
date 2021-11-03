@@ -9,16 +9,17 @@
 # Installation de X11 :
 pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm ;
 
-# Gestionnaire de connexion:
+
+# Gestionnaire de connexion :
 pacman -Syu --noconfirm slim ;
 systemctl enable slim ;
 
-# Installation de OpenBox:
+
+# Installation de OpenBox :
 pacman -S --noconfirm openbox ;
 
-# Fichier configuration:
-mkdir -p /.config/openbox
-cp -a /etc/xdg/openbox/. ~/.config/openbox
-ls ~/.config/openbox
 
+# Fichier configuration:
+su - marc ;
+mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
 
