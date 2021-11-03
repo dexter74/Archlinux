@@ -12,6 +12,12 @@ pacman -S --noconfirm xfce4-goodies ;
 pacman -s --noconfirm xfce4-dev-tools ;
 ```
 
+
+Pling-store :
+```
+./pling-store 
+```
+
 **Auto-Login sur XFCE**
 ```
 echo "[Autologin]
