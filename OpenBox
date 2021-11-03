@@ -27,4 +27,4 @@ echo "exec openbox-session" > ~/.xinitrc ;
 localectl set-x11-keymap fr ;
 ########################################################################################################
 pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
-feh --big-tile "Wallpaper/bg.jpg
+feh --bg-tile "Wallpaper/bg.jpg
