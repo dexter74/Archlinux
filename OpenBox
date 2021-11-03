@@ -38,8 +38,13 @@ localectl set-x11-keymap fr ;
 firefox https://wallpaperstock.net ;
 echo 'feh --bg-tile "Wallpaper/bg.jpg &' >  ~/.config/openbox/autostart ;
 
-# Themes (Changer le thème en Numix-Clone)
+# Themes
 git clone https://github.com/addy-dclxvi/openbox-theme-collections ~/.themes ;
+git clone https://github.com/addy-dclxvi/conky-theme-collections.git ~/.config/conky ; # ls ~/.config/conky/
+ 
+#Changer le thème :
+# Numix-Clone
+# conky -X 0,0 -C ".config/conky/informant/inf-cyan.conkyrc"
 
 
 
