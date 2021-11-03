@@ -333,7 +333,7 @@ mkinitcpio -p linux ;
 ```
 pacman -S --noconfirm pam pambase ;
 systemctl enable systemd-homed.service ;
-systemctl status dbus-org.freedesktop.home1.service ;
+systemctl enable systemd-resolved.service ;
 ```
 
 --------------------------------------------------------------------------------
@@ -372,7 +372,6 @@ reboot
 ```
 pacman -S --noconfirm sddm ;
 systemctl enable --now sddm ;
-
 systemctl enable --now avahi-daemon.service ;
 ```
 
