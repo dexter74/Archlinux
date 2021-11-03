@@ -5,21 +5,25 @@
 # Guide : https://www.youtube.com/watch?v=v0yk6BCY1Tg
 #       : http://sdz.tdct.org/sdz/comprendre-et-configurer-x-org.html
 
-
-# Installation de X11 :
+############################################################################
+# Installation des paquets: X11, OpenBox et Slim
 pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm ;
-
-
-# Gestionnaire de connexion :
-pacman -Syu --noconfirm slim ;
-systemctl enable slim ;
-
-
-# Installation de OpenBox :
 pacman -S --noconfirm openbox ;
+pacman -S --noconfirm slim slim-themes ; systemctl enable slim ;
+############################################################################
 
+
+# Thèmes: (/usr/share/slim/themes)
+nano /etc/slim.conf
+current_theme archlinux
 
 # Fichier configuration:
 su - marc ;
 mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
 echo "exec openbox-session" > ~/.xinitrc ;
+
+#Langue du clavier en FR:
+localectl set-x11-keymap fr ;
+
+
+
