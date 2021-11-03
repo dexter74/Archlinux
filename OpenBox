@@ -15,6 +15,7 @@ pacman -S --noconfirm openbox obconf plasma-workspace ;
 pacman -S --noconfirm slim slim-themes ;
 pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
 pacman -S --noconfirm conky lsb-release ;
+pacman -S --noconfirm tint2 ;
 ########################################################################################################
 # Thèmes
 nano /etc/slim.conf ; # /usr/share/slim/themes
@@ -36,7 +37,12 @@ localectl set-x11-keymap fr ;
 
 # Background
 firefox https://wallpaperstock.net ;
-echo 'feh --bg-tile "Wallpaper/bg.jpg &' >  ~/.config/openbox/autostart ;
+
+#Autostart
+echo 'feh --bg-tile "Wallpaper/bg.jpg &'                    >  ~/.config/openbox/autostart ;
+# echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &' >>  ~/.config/openbox/autostart ;
+
+
 
 # Themes
 git clone https://github.com/addy-dclxvi/openbox-theme-collections ~/.themes ;
@@ -44,7 +50,6 @@ git clone https://github.com/addy-dclxvi/conky-theme-collections.git ~/.config/c
  
 #Changer le thème :
 # Numix-Clone
-# conky -X 0,0 -C ".config/conky/informant/inf-cyan.conkyrc"
 
 
 
