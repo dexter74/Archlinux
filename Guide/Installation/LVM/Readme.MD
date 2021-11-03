@@ -395,8 +395,8 @@ reboot
 --------------------------------------------------------------------------------
 **Vérification du bon fonctionnement**
 ```
-systemctl  --failed --fail --all
-systemctl status * | grep -i fail
+systemctl --failed --fail --all   ;
+systemctl status * | grep -i fail ;
 ```
 --------------------------------------------------------------------------------
 **Gestionnaire de fenêtre**
