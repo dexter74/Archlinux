@@ -53,6 +53,6 @@ git clone https://github.com/addy-dclxvi/tint2-theme-collections.git ~/.config/t
 
 ########################################################################################################
 #Autostart
-echo 'feh --bg-tile "Wallpaper/bg.jpg &'                    >  ~/.config/openbox/autostart ;
+echo 'feh --bg-tile "Wallpaper/bg.jpg &'"                   >  ~/.config/openbox/autostart ;
 echo 'tint2 &'                                             >>  ~/.config/openbox/autostart ;
 echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &' >>  ~/.config/openbox/autostart ;
