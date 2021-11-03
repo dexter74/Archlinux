@@ -328,7 +328,6 @@ pacman -S --noconfirm base-devel ;
 cd /tmp && git clone https://aur.archlinux.org/yay.git ;
 cd yay ;
 makepkg -si ;
-
 ```
 
 **NANO par défaut**
@@ -453,3 +452,4 @@ Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 ```
 lvm2-activation.service > https://man7.org/linux/man-pages/man8/lvm2-activation-generator.8.html
 ```
+
