@@ -21,3 +21,10 @@ yay    -S --noconfirm ocs-url ; # Outils pour télécharger thèmes
 wget -c https://github.com/B00merang-Project/macOS-Dark/archive/6.1-dark.zip -O /tmp/6.1-dark.zip ; unzip /tmp/6.1-dark.zip -d /usr/share/themes ;
 wget -c https://github.com/B00merang-Project/macOS/archive/6.1.zip           -O /tmp/6.1.zip      ; unzip /tmp/6.1.zip      -d /usr/share/themes ;
 ```
+
+
+**[Microsort](https://www.opendesktop.org/p/1013482/)**
+```
+wget -c https://github.com/B00merang-Project/Windows-10/archive/3.2.zip           -O /tmp/3.2.zip       ; unzip /tmp/3.2.zip      -d /usr/share/themes ;
+wget -c https://github.com/B00merang-Project/Windows-10-Dark/archive/3.2-dark.zip -O /tmp/3.2-dark.zip  ; unzip /tmp/3.2-dark.zip -d /usr/share/themes ;
+```
