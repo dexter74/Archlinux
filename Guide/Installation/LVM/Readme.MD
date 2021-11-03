@@ -296,6 +296,11 @@ sed -i -e "s/\# \%wheel ALL\=(ALL) ALL/\%wheel ALL\=(ALL) ALL/g" /etc/sudoers ;
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config ;
 sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.conf ;
 ```
+--------------------------------------------------------------------------------
+**Mise à jour des paquets**
+```
+pacman -Sy ;
+```
 
 --------------------------------------------------------------------------------
 **Marc**
@@ -306,13 +311,14 @@ su - marc ;
 --------------------------------------------------------------------------------
 **Firmware**
 ```
-rm -r -f *
+cd /tmp
 git clone https://aur.archlinux.org/aic94xx-firmware.git ; # aic94xx
 git clone https://aur.archlinux.org/wd719x-firmware.git  ; # wd719x
 git clone https://aur.archlinux.org/upd72020x-fw.git     ; # xhci_pci
 cd aic94xx-firmware ; makepkg -si ;cd .. ;
 cd wd719x-firmware  ; makepkg -si ; cd .. ;
 cd upd72020x-fw     ; makepkg -si ; cd .. ;
+
 ```
 
 --------------------------------------------------------------------------------
@@ -322,6 +328,7 @@ pacman -S --noconfirm base-devel ;
 cd /tmp && git clone https://aur.archlinux.org/yay.git ;
 cd yay ;
 makepkg -si ;
+
 ```
 
 **NANO par défaut**
