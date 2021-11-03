@@ -10,11 +10,6 @@ https://archlinux.org/packages/?sort=&q=-desktop&maintainer=&flagged=
 pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
 
-**Redémarrage du service**
-```
-systemctl restart sddm ;
-```
-
 ```
 echo "[Autologin]
 User=marc
@@ -27,6 +22,10 @@ Numlock=on
 Current=breeze" > /etc/sddm.conf
 ```
 
+**Redémarrage du service**
+```
+systemctl restart sddm ;
+```
 
 
 **Interface Interface**
