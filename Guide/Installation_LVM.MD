@@ -305,6 +305,15 @@ cd wd719x-firmware  ; makepkg -si ; cd .. ;
 cd upd72020x-fw     ; makepkg -si ; cd .. ;
 ```
 
+--------------------------------------------------------------------------------
+**YAourt**
+```
+sudo pacman -S --needed git base-devel
+cd /tmp && git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+
 **NANO par défaut**
 ```
 echo "export EDITOR=nano" ~/.bashrc
@@ -357,7 +366,7 @@ reboot
 --------------------------------------------------------------------------------
 **Gestionnaire de fenêtre**
 ```
-(echo ''; echo 'o') | pacman -S sddm ;
+pacman -S --noconfirm sddm ;
 systemctl enable --now sddm ;
 
 systemctl enable --now avahi-daemon.service ;
