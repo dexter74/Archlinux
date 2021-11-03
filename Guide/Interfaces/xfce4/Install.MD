@@ -7,6 +7,8 @@ pacman -S --noconfirm xfce4-goodies   ; # extra
 pacman -S --noconfirm xfce4-dev-tools ; # Outils
 
 pacman -S --noconfirm pacman -S xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-appfinder xfce-utils xfconf
+pacman -S gstreamer0.10-base-plugins
+pacman -S dbus
 ```
 
 ---------------------------------------------------------------------------------------------
@@ -37,8 +39,6 @@ systemctl daemon-reload
 systemctl --user enable --now pulseaudio.service
 systemctl --user status --now pulseaudio.service
 ```
-
-
 
 
 **nm-applet**
