@@ -5,17 +5,20 @@
 #       : http://sdz.tdct.org/sdz/comprendre-et-configurer-x-org.html
 #
 # Liste dépendance optionnel  : pacman -Si openbox 
+# 
 ########################################################################################################
 
 
 ########################################################################################################
-# Installation des paquets: X11, OpenBox et Slim
+# Installation des paquets (yay requis)
 pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm ;
 pacman -S --noconfirm openbox obconf plasma-workspace ;
 pacman -S --noconfirm slim slim-themes ;
 pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
 pacman -S --noconfirm conky lsb-release ;
 pacman -S --noconfirm tint2 ;
+########################################################################################################
+yay -S --noconfirm obmenu-generator geany perl-gtk2-unique ; # gtk2-perl est dans perl-gtk2-unique
 ########################################################################################################
 # Thèmes
 nano /etc/slim.conf ; # /usr/share/slim/themes
@@ -50,6 +53,9 @@ git clone https://github.com/addy-dclxvi/tint2-theme-collections.git ~/.config/t
 # Lancer tint2 
 # > Thème > importer >  ~/.config/tint2/blocks/blocks.tint2rc) 
 # Editer thèmes > Bouton 1,2,3,4 > Icônes > Remplacer "/home/addy" en ~
+
+
+obmenu-generator -p -i
 
 ########################################################################################################
 #Autostart
