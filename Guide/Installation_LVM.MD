@@ -329,11 +329,21 @@ sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsc
 mkinitcpio -p linux ;
 ```
 --------------------------------------------------------------------------------
-**systemd-homed**
+**Dbus** 
 ```
-pacman -S --noconfirm pam pambase ;
+systemctl status dbus.service
+Created symlink /etc/systemd/system/dbus-org.freedesktop.home1.service → /usr/lib/systemd/system/systemd-homed.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/systemd-homed.service → /usr/lib/systemd/system/systemd-homed.service.
+Created symlink /etc/systemd/system/systemd-homed.service.wants/systemd-homed-activate.service → /usr/lib/systemd/system/systemd-homed-activate.service.
+Created symlink /etc/systemd/system/sockets.target.wants/systemd-userdbd.socket → /usr/lib/systemd/system/systemd-userdbd.socket.
+Created symlink /etc/systemd/system/dbus-org.freedesktop.resolve1.service → /usr/lib/systemd/system/systemd-resolved.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.service → /usr/lib/systemd/system/systemd-resolved.service.
+```
+```
+systemctl status dbus.service ;
 systemctl enable systemd-homed.service ;
 systemctl enable systemd-resolved.service ;
+# pacman -S --noconfirm pam pambase ;
 ```
 
 --------------------------------------------------------------------------------
