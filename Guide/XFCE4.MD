@@ -66,9 +66,10 @@ thunar /
 ---------------------------------------------------------------------------------------------
 **EN DEV**
 ```
-pacman -S --noconfirm pulseaudio  ; # Volume son
-pacman -S --noconfirm pavucontrol ; # Mixeur de volume GUI Barre des tâches
-pacman -S blueman network-manager-applet
+pacman -S --noconfirm pulseaudio              ; # Volume son
+pacman -S --noconfirm pavucontrol             ; # Mixeur de volume GUI Barre des tâches
+pacman -S --noconfirm blueman                 ; # Bluetooth
+pacman -S --noconfirm network-manager-applet  ;
 
 /usr/lib/systemd/system/nm-applet.service
 [Unit]
@@ -77,6 +78,7 @@ Description=nm-applet
 ExecStart=nm-applet
 [Install]
 WantedBy=default.target
+
 /usr/lib/systemd/system/blueman-applet.service
 [Unit]
 Description=blueman-applet
@@ -84,8 +86,8 @@ Description=blueman-applet
 ExecStart=blueman-applet
 [Install]
 WantedBy=default.target
+
 systemctl --user daemon-reload
-systemctl --user enable --now blueman-applet.service 
-nm-applet.service
+systemctl --user enable --now blueman-applet.service nm-applet.service
 https://github.com/nsz32/docklike-plugin
 ```
