@@ -4,10 +4,8 @@
 ```
 pacman -S --noconfirm xfce4 ;
 pacman -S --noconfirm xfce4-goodies ;
-pacman -s --noconfirm xfce4-dev-tools ;
+pacman -S --noconfirm xfce4-dev-tools ;
 ```
-
-
 
 ---------------------------------------------------------------------------------------------
 **EN DEV**
