@@ -393,11 +393,16 @@ exit
 reboot
 ```
 --------------------------------------------------------------------------------
+**Vérification du bon fonctionnement**
+```
+systemctl  --failed --fail --all
+systemctl status * | grep -i fail
+```
+--------------------------------------------------------------------------------
 **Gestionnaire de fenêtre**
 ```
-pacman -S --noconfirm sddm ;
-systemctl enable --now sddm ;
-systemctl enable --now avahi-daemon.service ;
+#systemctl enable --now avahi-daemon.service ;
+pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
 
 --------------------------------------------------------------------------------
