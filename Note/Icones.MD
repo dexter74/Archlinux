@@ -18,7 +18,7 @@ wget -c https://github.com/B00merang-Project/macOS/archive/6.1.zip           -O 
 ```
 
 
-**[Microsort](https://www.opendesktop.org/p/1013482/)**
+**[Microsoft](https://www.opendesktop.org/p/1013482/)**
 ```
 wget -c https://github.com/B00merang-Artwork/Windows-10/archive/refs/tags/1.0.zip -O /tmp/1.0.zip ; unzip /tmp/1.0.zip -d /usr/share/icons ;
 ```
