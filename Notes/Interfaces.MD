@@ -35,6 +35,11 @@ pacman -S --noconfirm xfce4
 # Equinox (ede)
 ```
 
+#liri
+#lumina
+#paperde
+#phosh
+#kde1-kdebase-git
 
 
 **Configuration du gestionnaire de fenêtre**
@@ -53,30 +58,4 @@ sugar sugar-fructose
 ukui
 Xfce
 
-#liri
-#lumina
-#paperde
-#phosh
-#kde1-kdebase-git
 ```
-
-```
-TOP       : cutefish, 
-Normal    : cinnamon, 
-BOFF      : gnome, lxde, XXX 
-NULL      : openbox
-Incomplet : budgie, deepin
-Marche Pas: enlightenment, pantheon
-```
-
-
-```
-echo "[Autologin]
-User=root
-Session=cutefish-xsession.desktop
-[General]
-Numlock=on
-[Theme]
-Current=elarun " > /etc/sddm.conf ; systemctl restart sddm
-```
-
