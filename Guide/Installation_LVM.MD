@@ -306,12 +306,12 @@ cd upd72020x-fw     ; makepkg -si ; cd .. ;
 ```
 
 --------------------------------------------------------------------------------
-**YAourt**
+**Yaourt**
 ```
-sudo pacman -S --needed git base-devel
-cd /tmp && git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+pacman -S --noconfirm  base-devel ;
+cd /tmp && git clone https://aur.archlinux.org/yay.git ;
+cd yay ;
+makepkg -si ;
 ```
 
 **NANO par défaut**
@@ -376,20 +376,20 @@ systemctl enable --now avahi-daemon.service ;
 **Installation d'une Interface Graphique**
 ```
 pacman -S --noconfirm cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver 	cinnamon-session cinnamon-settings-daemon cinnamon-translations cjs muffin nemo ;
-pacman -S --noconfirm Cutefish ;
+pacman -S --noconfirm cutefish ;
 pacman -S --noconfirm deepin deepin-desktop-base deepin-extra ;
 pacman -S --noconfirm element-desktop ;
-pacman -S --noconfirm Enlightenment ;
+pacman -S --noconfirm enlightenment ;
 pacman -S --noconfirm gnome gnome-remote-desktop ;
 pacman -S --noconfirm kde1-kdebase-git ;
 pacman -S --noconfirm liri-shell-git ;
 pacman -S --noconfirm lumina-desktop ;
 pacman -S --noconfirm lxde     ; # GTK 2
 pacman -S --noconfirm lxde-gtk3; # GTK 3
-pacman -S --noconfirm LXQt ;
+pacman -S --noconfirm lxqt ;
 pacman -S --noconfirm mate-desktop ;
 pacman -S --noconfirm pantheon ;
-pacman -S --noconfirm paperdeA ;
+pacman -S --noconfirm paperdea ;
 pacman -S --noconfirm phosh ;
 pacman -S --noconfirm plasma-desktop ;
 pacman -S --noconfirm sugar sugar-fructose ;
