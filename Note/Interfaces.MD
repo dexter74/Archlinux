@@ -11,6 +11,11 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
 
 ```
+pacman -S --noconfirm xfce4
+```
+
+
+```
 echo "[Autologin]
 User=marc
 Session=xfce.desktop
@@ -49,7 +54,6 @@ pacman -S --noconfirm phosh
 pacman -S --noconfirm plasma-desktop
 pacman -S --noconfirm sugar sugar-fructose
 pacman -S --noconfirm ukui
-pacman -S --noconfirm xfce4
 # Equinox (ede)
 ```
 
