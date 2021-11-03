@@ -1,5 +1,7 @@
 **Installation de Docklite**
 
+![screenshot](https://i.imgur.com/b4qDHCB.jpg)
+
 **Changer User**
 ```
 su - marc ;
