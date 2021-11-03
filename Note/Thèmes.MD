@@ -19,5 +19,5 @@ yay -S --noconfirm ocs-url ; # Outils pour télécharger thèmes
 **MacOS**
 ```
 wget -c https://github.com/B00merang-Project/macOS-Dark/archive/6.1-dark.zip -O /tmp/6.1-dark.zip ; unzip /tmp/6.1-dark.zip -d /usr/share/themes ;
-
+wget -c https://github.com/B00merang-Project/macOS/archive/6.1.zip           -O /tmp/6.1.zip      ; unzip /tmp/6.1.zip      -d /usr/share/themes ;
 ```
