@@ -19,9 +19,6 @@ pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
 nano /etc/slim.conf ; # /usr/share/slim/themes
 current_defaut archlinux
 
-git clone https://github.com/addy-dclxvi/openbox-theme-collections 
-
-
 #Actviation du service:
 systemctl enable slim ;
 ########################################################################################################
@@ -29,11 +26,16 @@ systemctl enable slim ;
 
 ########################################################################################################
 su - marc ;
+
 mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
 echo "exec openbox-session" > ~/.xinitrc ;
+
+# Config:
 localectl set-x11-keymap fr ;
-firefox https://wallpaperstock.net
 
-nano ~/.config/openbox/autostart
-feh --bg-tile "Wallpaper/bg.jpg &
+# Background
+firefox https://wallpaperstock.net ;
+echo 'feh --bg-tile "Wallpaper/bg.jpg &' >  ~/.config/openbox/autostart ;
 
+# Themes
+git clone https://github.com/addy-dclxvi/openbox-theme-collections ~/.themes ;
