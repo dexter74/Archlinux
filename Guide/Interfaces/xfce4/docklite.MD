@@ -17,3 +17,8 @@ sudo make install
 ```
 sudo pacman -S --noconfirm xfce4-dev-tools ;
 ```
+
+**Relancer le gestionnaire de fenêtre**
+```
+systemctl restart sddm ;
+```
