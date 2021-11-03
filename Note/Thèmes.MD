@@ -7,6 +7,6 @@ pacman -S --noconfirm librsvg ;
 ```
 
 **Dossier Thèmes :**
-````
+```
 /usr/share/themes
 ```
