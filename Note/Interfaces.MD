@@ -95,3 +95,10 @@ X11
 Wayland
 Mir
 ```
+
+
+**Documentation**
+```
+https://debian-handbook.info/browse/fr-FR/stable/sect.customizing-graphical-interface.html
+```
+
