@@ -16,7 +16,8 @@ yay -S --noconfirm ocs-url ; # Outils pour télécharger thèmes
 /usr/share/themes
 ```
 
-**Utilisation de ocs-urls**
+**MacOS**
 ```
-pacman -U <lien>
+wget -c https://github.com/B00merang-Project/macOS-Dark/archive/6.1-dark.zip -O /tmp/6.1-dark.zip ; unzip /tmp/6.1-dark.zip -d /usr/share/themes ;
+
 ```
