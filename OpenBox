@@ -22,4 +22,4 @@ pacman -S --noconfirm openbox ;
 # Fichier configuration:
 su - marc ;
 mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
-
+echo "exec openbox-session" > ~/.xinitrc ;
