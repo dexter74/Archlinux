@@ -258,10 +258,7 @@ echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen
 locale-gen ;
 ```
 
-**X11 en FR**
-```
-localectl set-x11-keymap fr
-```
+
 
 --------------------------------------------------------------------------------
 **Hostname et Host**
@@ -459,6 +456,11 @@ Numlock=on
 
 [Theme]
 Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
+```
+
+**X11 en FR**
+```
+localectl set-x11-keymap fr
 ```
 
 
