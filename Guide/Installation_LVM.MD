@@ -308,7 +308,7 @@ cd upd72020x-fw     ; makepkg -si ; cd .. ;
 --------------------------------------------------------------------------------
 **Yaourt**
 ```
-pacman -S --noconfirm  base-devel ;
+pacman -S --noconfirm base-devel ;
 cd /tmp && git clone https://aur.archlinux.org/yay.git ;
 cd yay ;
 makepkg -si ;
