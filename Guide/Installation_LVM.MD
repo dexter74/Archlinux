@@ -330,7 +330,14 @@ sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsc
 mkinitcpio -p linux ;
 ```
 
+**systemd-homed**
+```
+pacman -S --noconfirm pam pambase ;
+systemctl enable systemd-homed.service
 
+systemctl status dbus-org.freedesktop.home1.service
+
+```
 
 --------------------------------------------------------------------------------
 **Bootloader**
