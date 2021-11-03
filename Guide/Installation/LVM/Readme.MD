@@ -160,9 +160,8 @@ clear ; df -h | grep "/mnt" ; swapon -s ;
 
 Noyaux et Modules
 ```
-pacstrap -i /mnt --noconfirm base linux linux-firmware linux-headers ;
+pacstrap -i /mnt --noconfirm base linux ;
 ```
-
 EFI 
 ```
 pacstrap -i /mnt --noconfirm efibootmgr ;
@@ -173,7 +172,17 @@ Grub
 pacstrap -i /mnt --noconfirm grub ;
 ```
 
-Prise en chargedes types de partitions
+Firmware
+```
+pacstrap -i /mnt --noconfirm linux-firmware ;
+```
+
+Optionnel
+```
+pacstrap -i /mnt --noconfirm linux-headers ;
+```
+
+Prise en charge des types de partitions
 ```
 pacstrap -i /mnt --noconfirm ntfs-3g exfat-utils dosfstools lvm2 ;
 ```
