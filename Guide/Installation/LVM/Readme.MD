@@ -214,7 +214,7 @@ hwclock --systohc ;
 
 **Plannificateur de tâche**
 ```
-echo "@reboot     root    timedatectl set-ntp true ;" > /etc/crontab ;
+echo "@reboot     root    timedatectl set-ntp true" > /etc/crontab ;
 ```
 
 --------------------------------------------------------------------------------
