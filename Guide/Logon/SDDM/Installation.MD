@@ -8,6 +8,11 @@ pacman -S --noconfirm sddm  ;
 systemctl enable --now sddm ;
 ```
 
+**Relance du service**
+```
+systemctl restart sddm ;
+```
+
 **Etat du service**
 ```
 systemctl status sddm ;
