@@ -22,4 +22,5 @@ wget -c https://github.com/B00merang-Project/macOS/archive/6.1.zip           -O 
 ```
 wget -c https://github.com/B00merang-Artwork/Windows-10/archive/refs/tags/1.0.zip -O /tmp/1.0.zip ; unzip /tmp/1.0.zip -d /usr/share/icons ;
 Cache Icône: gtk-update-icon-cache /usr/share/icons/Windows-10-1.0/
+gtk-update-icon-cache /usr/share/icons/Windows-10-1.0/
 ```
