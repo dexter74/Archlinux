@@ -1,8 +1,3 @@
-# Installation du gestionnaire de fenêtre SDDM
-``` 
-pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
-``` 
-
 # Installation de XFCE
 
 **Installation de XFCE4** (Base)
@@ -11,55 +6,6 @@ pacman -S --noconfirm xfce4 ;
 pacman -S --noconfirm xfce4-goodies ;
 pacman -s --noconfirm xfce4-dev-tools ;
 ```
-
-
-Pling-store :
-```
-./pling-store 
-```
-
-**Auto-Login sur XFCE**
-```
-echo "[Autologin]
-User=marc
-Session=xfce.desktop
-
-[General]
-Numlock=on
-
-[Theme]
-Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
-```
----------------------------------------------------------------------------------------------
-**Icons**
-Dossier des icones:
-```
-/usr/share/icons/
-```
-```
-https://github.com/yeyushengfan258/Win10Sur-icon-theme
-```
----------------------------------------------------------------------------------------------
-**Themes**
-Dossier des thèmes:
-```
-/usr/share/themes/
-```
----------------------------------------------------------------------------------------------
-**Création de l'icône PC**
-```
-thunar /
-```
----------------------------------------------------------------------------------------------
-**Logon**
-
-
-
-
-
-
-
-
 
 
 
