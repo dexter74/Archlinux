@@ -1,15 +1,77 @@
+**Menu personnalisés**
+```
+9Menu
+ADesk Menu
+
+```
+
+
+**Docks**
+```
+Cairo-dock
+Dash to dock
+Docky
+Latte Dock
+Now Dock
+Plank
+SimDock
+Tint2
+Wbar
+dockbarx
+Kooldock
+KXdocker
+kiba-dock
+```
+
 **Gestionnaire de fichier**
 ```
+dolphin
+Konqueror
+Nautilus
+Nemo
+thunar
+caja
 ```
 
 
-**Environnement**
+**Environnements en Développement**
 ```
+Budgie
+Cinnamon
+Deepin Desktop Environnement
+Enlightenment
+Gnome Shell
+i3
+KDE Plasma
+LXQt
+Mate
+Pantheon
+Session Gnome Flashback
+Sugar
+Sway
+Trinity
+UKUI
+Xfce
 ```
+
+**Environnements Abandonnée**
+```
+FluxBox
+LXDE
+Openbox
+Unity
+```
+
 
 **Gestionnaire de sessions**
 ```
-
+LightGDM
+FDM
+GDM  (Supporte Wayland)
+SDDM (Supporte Wayland)
+KDM
+MDM
+LXDM
 ```
 
 **Gestionnaire de fenêtres**
