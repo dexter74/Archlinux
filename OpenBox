@@ -38,20 +38,17 @@ localectl set-x11-keymap fr ;
 # Background
 firefox https://wallpaperstock.net ;
 
-#Autostart
-echo 'feh --bg-tile "Wallpaper/bg.jpg &'                    >  ~/.config/openbox/autostart ;
-# echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &' >>  ~/.config/openbox/autostart ;
-
+# Suppression du dossier:
+rm -rf ~/.config/tint2 ;
 
 
 # Themes
 git clone https://github.com/addy-dclxvi/openbox-theme-collections ~/.themes ;
 git clone https://github.com/addy-dclxvi/conky-theme-collections.git ~/.config/conky ; # ls ~/.config/conky/
- 
-#Changer le thème :
-# Numix-Clone
-
-
+git clone https://github.com/addy-dclxvi/tint2-theme-collections.git ~/.config/tint2 ; # ls ~/.config/tint2/
 
 ########################################################################################################
+#Autostart
+echo 'feh --bg-tile "Wallpaper/bg.jpg &'                    >  ~/.config/openbox/autostart ;
+# echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &' >>  ~/.config/openbox/autostart ;
 
