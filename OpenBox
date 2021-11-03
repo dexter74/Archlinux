@@ -1,31 +1,30 @@
-##########################################################
-# Script pour l'interface OpenBox                        # 
-##########################################################
-
+########################################################################################################
+# Script pour l'interface OpenBox                                                                      # 
+#
 # Guide : https://www.youtube.com/watch?v=v0yk6BCY1Tg
 #       : http://sdz.tdct.org/sdz/comprendre-et-configurer-x-org.html
+#
+# Liste dépendance optionnel  : pacman -Si openbox 
+########################################################################################################
 
-############################################################################
+
+########################################################################################################
 # Installation des paquets: X11, OpenBox et Slim
 pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm ;
-pacman -S --noconfirm openbox ;
-pacman -S --noconfirm slim slim-themes ; systemctl enable slim ;
-############################################################################
+pacman -S --noconfirm openbox obconf plasma-workspace ;
+pacman -S --noconfirm slim slim-themes ;
+########################################################################################################
+# Thèmes
+nano /etc/slim.conf ; # /usr/share/slim/themes
 
-
-# Thèmes: (/usr/share/slim/themes)
-nano /etc/slim.conf ; systemctl restart slim ;
-# current_theme archlinux
-
-
-
-# Fichier configuration:
+#Actviation du service:
+systemctl enable slim ;
+########################################################################################################
 su - marc ;
 mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
 echo "exec openbox-session" > ~/.xinitrc ;
-
 #Langue du clavier en FR:
 localectl set-x11-keymap fr ;
-
-
-
+########################################################################################################
+pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
+feh --big-tile "Wallpaper/bg.jpg
