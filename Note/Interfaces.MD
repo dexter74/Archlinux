@@ -19,13 +19,16 @@ lightgdm
 
 **Interface Utilisateur**
 ```
-openBox
-Fluxbox
 blackbox
+Fluxbox
+gnome
+mate
+openBox
+
 ```
 
 
-**Gestionnaire de fenêtres**
+**Gestionnaire de fichier**
 ```
 thunar
 dolphin
