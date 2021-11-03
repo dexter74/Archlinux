@@ -55,3 +55,9 @@ systemctl --user status nm-applet.service ;
 systemctl --user status blueman-applet.service ;
 ```
 https://github.com/nsz32/docklike-plugin
+
+
+Menu Whisker > Commande 
+```
+Paquets: mugshot et menulibre
+```
