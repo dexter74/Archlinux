@@ -1,0 +1,24 @@
+##########################################################
+# Script pour l'interface OpenBox                        # 
+##########################################################
+
+# Guide : https://www.youtube.com/watch?v=v0yk6BCY1Tg
+#       : http://sdz.tdct.org/sdz/comprendre-et-configurer-x-org.html
+
+
+# Installation de X11 :
+pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm ;
+
+# Gestionnaire de connexion:
+pacman -Syu --noconfirm slim ;
+systemctl enable slim ;
+
+# Installation de OpenBox:
+pacman -S --noconfirm openbox ;
+
+# Fichier configuration:
+mkdir -p /.config/openbox
+cp -a /etc/xdg/openbox/. ~/.config/openbox
+ls ~/.config/openbox
+
+
