@@ -16,6 +16,29 @@ pacman -S --noconfirm blueman                 ; # Bluetooth
 pacman -S --noconfirm network-manager-applet  ;
 ```
 
+
+**[PulseAudio](https://rudd-o.com/linux-and-free-software/how-to-make-pulseaudio-run-once-at-boot-for-all-your-users)**
+```
+echo "
+[Unit]
+Description=PulseAudio system server
+
+[Service]
+Type=notify
+Exec=pulseaudio --daemonize=no --system --realtime --log-target=journal
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target " > /etc/systemd/system/pulseaudio.service ; 
+systemctl daemon-reload 
+
+systemctl --user enable --now pulseaudio.service
+systemctl --user status --now pulseaudio.service
+```
+
+
+
+
 **nm-applet**
 ```
 echo "[Unit]
