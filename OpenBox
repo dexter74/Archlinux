@@ -13,18 +13,27 @@
 pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm ;
 pacman -S --noconfirm openbox obconf plasma-workspace ;
 pacman -S --noconfirm slim slim-themes ;
+pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
 ########################################################################################################
 # Thèmes
 nano /etc/slim.conf ; # /usr/share/slim/themes
+current_defaut archlinux
+
+git clone https://github.com/addy-dclxvi/openbox-theme-collections 
+
 
 #Actviation du service:
 systemctl enable slim ;
 ########################################################################################################
+
+
+########################################################################################################
 su - marc ;
 mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
 echo "exec openbox-session" > ~/.xinitrc ;
-#Langue du clavier en FR:
 localectl set-x11-keymap fr ;
-########################################################################################################
-pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
-feh --bg-tile "Wallpaper/bg.jpg
+firefox https://wallpaperstock.net
+
+nano ~/.config/openbox/autostart
+feh --bg-tile "Wallpaper/bg.jpg &
+
