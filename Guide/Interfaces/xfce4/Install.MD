@@ -38,8 +38,13 @@ ExecStart=blueman-applet
 WantedBy=default.target" > /usr/lib/systemd/system/blueman-applet.service
 ```
 
+**Rafraîchir Daemon**
 ```
 systemctl --user daemon-reload
+```
+
+**Activer les services**
+```
 systemctl --user enable --now blueman-applet.service
 systemctl --user enable --now /usr/lib/systemd/system/blueman-applet.service
 ```
