@@ -163,9 +163,14 @@ Noyaux et Modules
 pacstrap -i /mnt --noconfirm base linux linux-firmware linux-headers ;
 ```
 
-EFI et Grub
+EFI 
 ```
-pacstrap -i /mnt --noconfirm grub efibootmgr ;
+pacstrap -i /mnt --noconfirm efibootmgr ;
+```
+
+Grub
+```
+pacstrap -i /mnt --noconfirm grub ;
 ```
 
 Prise en chargedes types de partitions
