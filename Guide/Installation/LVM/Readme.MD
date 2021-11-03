@@ -331,7 +331,7 @@ makepkg -si ;
 
 **NANO par défaut**
 ```
-echo "export EDITOR=nano" > ~/.bashrc
+echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc 
 ```
 
 ```
