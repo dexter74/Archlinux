@@ -356,7 +356,6 @@ Created symlink /etc/systemd/system/dbus-org.freedesktop.resolve1.service → /u
 Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.service → /usr/lib/systemd/system/systemd-resolved.service.
 ```
 ```
-systemctl enable dbus.service ;
 systemctl enable systemd-homed.service ;
 systemctl enable systemd-resolved.service ;
 # pacman -S --noconfirm pam pambase ;
