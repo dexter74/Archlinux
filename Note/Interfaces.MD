@@ -100,7 +100,7 @@ Mir
 **Documentation**
 ```
 https://debian-handbook.info/browse/fr-FR/stable/sect.customizing-graphical-interface.html
- - > Gestionnaire d'écran     : Permet l'affichage
+ - > Gestionnaire d'écran     : Permet l'affichage uniquement
  - > Gestionnaire d'affichage : Permet l'authentification et le lancement de l'environnement
  - > Gestionnare de fenêtre   : Permet de charger l'interface
 ```
