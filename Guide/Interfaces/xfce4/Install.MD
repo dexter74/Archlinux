@@ -44,7 +44,14 @@ systemctl --user daemon-reload
 
 **Activer les services**
 ```
-systemctl --user enable --now blueman-applet.service
-systemctl --user enable --now /usr/lib/systemd/system/blueman-applet.service
+systemctl --user enable --now /usr/lib/systemd/system/nm-applet.service ;
+systemctl --user enable --now /usr/lib/systemd/system/blueman-applet.service ;
+```
+
+
+**Vérifier l'état du service**
+```
+systemctl --user status nm-applet.service ;
+systemctl --user status blueman-applet.service ;
 ```
 https://github.com/nsz32/docklike-plugin
