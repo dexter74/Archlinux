@@ -27,6 +27,13 @@ sudo pacman -S --needed xfce4 xfce4-goodies gvfs vlc quodlibet python-pyinotify 
 ```
 
 
+**Dépendance optionel d'un paquet**
+```
+pacman -Qi thunar gvfs
+```
+
+
+
 **[PulseAudio](https://rudd-o.com/linux-and-free-software/how-to-make-pulseaudio-run-once-at-boot-for-all-your-users)**
 ```
 echo "
