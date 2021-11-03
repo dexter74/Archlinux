@@ -1,0 +1,2 @@
+Liste des paquets installés explicitement: pacman -Qe
+Liste des paquets d'un groupe nommé group: pacman -Sg group
