@@ -15,3 +15,8 @@ yay -S --noconfirm ocs-url ; # Outils pour télécharger thèmes
 ```
 /usr/share/themes
 ```
+
+**Utilisation de ocs-urls**
+```
+pacman -U <lien>
+```
