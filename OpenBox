@@ -14,8 +14,10 @@ pacman -S --noconfirm slim slim-themes ; systemctl enable slim ;
 
 
 # Thèmes: (/usr/share/slim/themes)
-nano /etc/slim.conf
-current_theme archlinux
+nano /etc/slim.conf ; systemctl restart slim ;
+# current_theme archlinux
+
+
 
 # Fichier configuration:
 su - marc ;
