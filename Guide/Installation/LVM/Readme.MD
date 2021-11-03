@@ -229,11 +229,6 @@ hwclock --systohc ;
 EDITOR=nano crontab -e
 ```
 
-```
-
-```
-
-
 --------------------------------------------------------------------------------
 **AJout d'un USER**
 ```
@@ -417,8 +412,6 @@ systemctl status * | grep -i fail ;
 ```
 
 
-
-
 --------------------------------------------------------------------------------
 **Gestionnaire de fenêtre**
 ```
@@ -479,7 +472,6 @@ localectl set-x11-keymap fr
 
 
 systemctl set-default graphical.target
-
 
 
 ## Note:
