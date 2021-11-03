@@ -16,6 +16,15 @@ sddm
 lightgdm
 ```
 
+
+**Interface Utilisateur**
+```
+openBox
+Fluxbox
+blackbox
+```
+
+
 **Gestionnaire de fenêtres**
 ```
 thunar
