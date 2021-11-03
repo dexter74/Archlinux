@@ -207,6 +207,8 @@ arch-chroot /mnt ;
 **TImezone et Synchronisation***
 ```
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime ;
+
+sed -i -e "s/\#NTP\=/\NTP\=fr.pool.ntp.org/g" /etc/systemd/timesyncd.conf ;
 timedatectl set-ntp true ;
 hwclock --systohc ;
 ```
