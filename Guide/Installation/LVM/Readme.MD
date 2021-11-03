@@ -172,7 +172,7 @@ Grub
 pacstrap -i /mnt --noconfirm grub ;
 ```
 
-Firmware
+Firmware (750 Mo)
 ```
 pacstrap -i /mnt --noconfirm linux-firmware ;
 ```
