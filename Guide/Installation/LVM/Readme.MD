@@ -242,11 +242,11 @@ EDITOR=nano crontab -e
 **AJout d'un USER**
 ```
 /usr/sbin/useradd \
-  --home-dir /home/test --base-dir /home/test \
+  --home-dir /home/marc --base-dir /home/marc \
   --uid 1005 \
   --groups wheel,storage,power --no-user-group \
   --shell /bin/bash \
-  --create-home test ;
+  --create-home marc ;
 ```
 
 Archive: 
