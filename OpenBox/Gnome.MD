@@ -10,9 +10,6 @@ pacman -S --noconfirm
 
 ```
 
-
-
-
 **Dépôt extra**
 1) [**baobab**](https://archlinux.org/packages/extra/x86_64/baobab/) (DiskUsageAnalyzer)
 2) [cheese](https://archlinux.org/packages/extra/x86_64/cheese/) (Photo / Vidéo depuis Webcam)
@@ -45,4 +42,44 @@ pacman -S --noconfirm
 29) [**gnome-settings-daemon**](https://archlinux.org/packages/extra/x86_64/gnome-settings-daemon/) (Démon : gestion session, paramètres)
 30) [**gnome-shell**](https://archlinux.org/packages/extra/x86_64/gnome-shell) (Fonction de base Utilisateur pour le bureau)
 31) [**gnome-shell-extensions**](https://archlinux.org/packages/extra/x86_64/gnome-shell-extensions/) (Extension de la Fonction de base Utilisateur pour le bureau)
-[test]()
+32) [**gnome-software**](https://archlinux.org/packages/extra/x86_64/gnome-software/) (Store applicatif)
+33) [**gnome-system-monitor**](https://archlinux.org/packages/extra/x86_64/gnome-system-monitor/) (Moniteur de processus)
+34) [**gnome-terminal**](https://archlinux.org/packages/extra/x86_64/gnome-terminal/) (Terminal)
+35) [**gnome-themes-extra**](https://archlinux.org/packages/extra/x86_64/gnome-themes-extra/) (Thèmes et extra)
+36) [gnome-user-docs](https://archlinux.org/packages/extra/x86_64/gnome-user-docs/) (Documentation)
+37) [**gnome-user-share**](https://archlinux.org/packages/extra/x86_64/gnome-user-share/) (Outils pour le Partage)
+38) [gnome-video-effects](https://archlinux.org/packages/extra/x86_64/gnome-video-effects/) (???)
+39) [gnome-weather](https://archlinux.org/packages/extra/x86_64/gnome-weather/) (Météo)
+40) [**grilo-plugins**](https://archlinux.org/packages/extra/x86_64/grilo-plugins/) (Framework Grilo)
+41) [**gvfs**](https://archlinux.org/packages/extra/x86_64/gvfs/) (Prise en charge des systèmes de fichiers)
+42) [gvfs-afc](https://archlinux.org/packages/extra/x86_64/gvfs-afc/) (Apple)
+43) [gvfs-goa](https://archlinux.org/packages/extra/x86_64/gvfs-goa/) (Cloud)
+44) [gvfs-google](https://archlinux.org/packages/extra/x86_64/gvfs-google/) (Google)
+45) [**gvfs-gphoto2**](https://archlinux.org/packages/extra/x86_64/gvfs-gphoto2/) (FTP)
+46) [**gvfs-mtp**](https://archlinux.org/packages/extra/x86_64/gvfs-ntf/) (Android)
+47) [**gvfs-nfs**](https://archlinux.org/packages/extra/x86_64/gvfs-ntfs/) (NFS)
+48) [**gvfs-smb**](https://archlinux.org/packages/extra/x86_64/gvfs-smb/) (NFS/CIFS)
+
+49) [**mutter**](https://archlinux.org/packages/extra/x86_64/mutter/) (Gestionnaire de Fenêtre)
+50) [**nautilus**](https://archlinux.org/packages/extra/x86_64/nautilus/) (Gestionnaire de fichiers)
+51) [orca](https://archlinux.org/packages/extra/x86_64/orca/) (Inutiles)
+52) [rygel](https://archlinux.org/packages/extra/x86_64/rygel/) (Serveur UPnP)
+53) [**sushi**](https://archlinux.org/packages/extra/x86_64/sushi/) (Prévisualisateur de fichier dans Nautilus)
+54) [totem](https://archlinux.org/packages/extra/x86_64/totem/) (Lecteur de Films)
+55) [**tracker**](https://archlinux.org/packages/extra/x86_64/tracker/)
+56) [tracker-miners](https://archlinux.org/packages/extra/x86_64/tracker-miners/)
+57) [tracker3-miners](https://archlinux.org/packages/extra/x86_64/tracker3-miners/)
+58) [vino](https://archlinux.org/packages/extra/x86_64/vino/) (VNC)
+59) [**xdg-user-dirs-gtk**](https://archlinux.org/packages/extra/x86_64/xdg-user-dirs-gtk/) (Important)
+60) [yelp](https://archlinux.org/packages/extra/x86_64/yelp/) (Aide Gnome)
+
+# Dépôt community
+61) [gnome-boxes](https://archlinux.org/packages/community/x86_64/gnome-boxes/)
+62) [simple-scan](https://archlinux.org/packages/community/x86_64/simple-scan/)
+
+
+``` 
+baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds gnome-books gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-maps gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus orca rygel sushi totem tracker tracker-miners tracker3-miners vino xdg-user-dirs-gtk yelp
+
+gnome-boxes simple-scan
+``` 
