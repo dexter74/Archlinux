@@ -5,6 +5,7 @@ Le guide est fonctionnel .
 **LiveCD**
 ```
 loadkeys fr-pc ;
+iwctl
 ```
 
 
