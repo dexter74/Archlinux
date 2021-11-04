@@ -5,7 +5,7 @@ Utilité de chaque paquet pour la distribution .
 
 **pacman -Syu gnome**
 ```
-pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds gnome-books gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-maps gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus orca rygel sushi totem tracker tracker-miners tracker3-miners vino xdg-user-dirs-gtk yelp
+pacman -S 
 ```
 
 **Dépôt extra**
@@ -15,7 +15,7 @@ pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrou
 4) [epiphany](https://archlinux.org/packages/extra/x86_64/epiphany/) (Navigateur)
 5) [**evince**](https://archlinux.org/packages/extra/x86_64/evince/) (Lecteur PDF)
 6) [**file-roller**](https://archlinux.org/packages/extra/x86_64/file-roller/) (Gestionnaire Archives)
-7) [gdm](https://archlinux.org/packages/extra/x86_64/gdm/) (Gestionnaire de session)
+7) [**gdm**](https://archlinux.org/packages/extra/x86_64/gdm/) (Gestionnaire de session)
 8) [**gedit**](https://archlinux.org/packages/extra/x86_64/gedit/) (Editeur de fichier)
 9) [**gnome-backgrounds**](https://archlinux.org/packages/extra/any/gnome-backgrounds/) (Fond d'Écran)
 10) [gnome-books](https://archlinux.org/packages/extra/x86_64/gnome-books/) (Gestionnaire de E-Books)
@@ -76,3 +76,9 @@ pacman -S baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrou
 61) [gnome-boxes](https://archlinux.org/packages/community/x86_64/gnome-boxes/)
 62) [simple-scan](https://archlinux.org/packages/community/x86_64/simple-scan/)
 
+
+``` 
+baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds gnome-books gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-maps gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus orca rygel sushi totem tracker tracker-miners tracker3-miners vino xdg-user-dirs-gtk yelp
+
+gnome-boxes simple-scan
+``` 
