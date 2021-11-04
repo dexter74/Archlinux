@@ -1,0 +1,70 @@
+Utilité de chaque paquet pour la distribution .
+
+
+
+pacman -Syu gnome
+
+# Dépôt extra
+	# 1) baobab
+	# 2) cheese
+	# 3) eog
+	# 4) epiphany
+	# 5) evince
+	# 6) file-roller
+	# 7) gdm
+	# 8) gedit
+	# 9) gnome-backgrounds
+	# 10) gnome-books
+	# 11) gnome-calculator
+	# 12) gnome-calendar
+	# 13) gnome-characters
+	# 14) gnome-clocks
+	# 15) gnome-color-manager
+	# 16) gnome-contacts
+	# 17) gnome-control-center
+	# 18) gnome-disk-utility
+	# 19) gnome-font-viewer
+	# 20) gnome-keyring
+	# 21) gnome-logs
+	# 22) gnome-maps
+	# 23) gnome-menus
+	# 24) gnome-music
+	# 25) gnome-photos
+	# 26) gnome-remote-desktop
+	# 27) gnome-screenshot
+	# 28) gnome-session
+	# 29) gnome-settings-daemon
+	# 30) gnome-shell
+	# 31) gnome-shell-extensions
+	# 32) gnome-software
+	# 33) gnome-system-monitor
+	# 34) gnome-terminal
+	# 35) gnome-themes-extra
+	# 36) gnome-user-docs
+	# 37) gnome-user-share
+	# 38) gnome-video-effects
+	# 39) gnome-weather
+	# 40) grilo-plugins
+	# 41) gvfs
+	# 42) gvfs-afc
+	# 43) gvfs-goa
+	# 44) gvfs-google
+	# 45) gvfs-gphoto2
+	# 46) gvfs-mtp
+	# 47) gvfs-nfs
+	# 48) gvfs-smb
+	# 49) mutter
+	# 50) nautilus
+	# 51) orca
+	# 52) rygel
+	# 53) sushi
+	# 54) totem
+	# 55) tracker
+	# 56) tracker-miners
+	# 57) tracker3-miners
+	# 58) vino
+	# 59) xdg-user-dirs-gtk
+	# 60) yelp
+
+# Dépôt community
+	# 61) gnome-boxes  62) simple-scan
