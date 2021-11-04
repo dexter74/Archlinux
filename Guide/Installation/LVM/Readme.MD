@@ -145,15 +145,16 @@ Home:
 ```
 mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home ;
 ```
-EFI:
+
+EFI: (Non testé)
+
+``` 
+mkdir -p /mnt/boot/efi && mount ${DISK}1 /mnt/boot/efi ;
+```
+
+Boot
 ```
 mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot ;
-```
-
-
-A TESTER :
-``` 
-mkdir -p /mnt/efi && mount ${DISK}1 /mnt/boot/efi ;
 ```
 
 
