@@ -165,16 +165,6 @@ Noyaux et Modules
 pacstrap -i /mnt --noconfirm base linux ;
 ```
 
-MicroCode AMD: 
-``` 
-pacstrap -i /mnt --noconfirm amd-ucode  ;
-```
-
-MicroCode Intel:
-``` 
-pacstrap -i /mnt --noconfirm intel-ucode ;
-``` 
-
 EFI 
 ```
 pacstrap -i /mnt --noconfirm efibootmgr ;
@@ -190,19 +180,9 @@ Firmware (750 Mo)
 pacstrap -i /mnt --noconfirm linux-firmware ;
 ```
 
-Optionnel
-```
-pacstrap -i /mnt --noconfirm linux-headers ;
-```
-
 Prise en charge des types de partitions
 ```
 pacstrap -i /mnt --noconfirm ntfs-3g exfat-utils dosfstools lvm2 ;
-```
-
-Utilitaires Réseau
-```
-pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw wireless_tools ;
 ```
 
 X11
@@ -210,10 +190,38 @@ X11
 pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
 ```
 
+Utilitaires Réseau
+```
+pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw wireless_tools ;
+```
+
 Utilitaires
 ```
 pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib neofetch ntp reflector samba smbclient sudo unzip zip wget ;
 ```
+
+
+Optionnel
+```
+pacstrap -i /mnt --noconfirm linux-headers ;
+```
+
+
+--------------------------------------------------------------------------------
+** Installation du MicroCode :**
+MicroCode AMD: 
+``` 
+pacstrap -i /mnt --noconfirm amd-ucode  ;
+```
+
+MicroCode Intel:
+``` 
+pacstrap -i /mnt --noconfirm intel-ucode ;
+``` 
+--------------------------------------------------------------------------------
+
+
+
 
 **FSTAB**
 ```
