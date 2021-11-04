@@ -1,7 +1,7 @@
 
 **Installer KDE :** (Plasma)
 ```
-pacman -S --noconfirm 
+pacman -S --noconfirm plasma
 ```
 
 **Groupe Plasma**
@@ -56,11 +56,16 @@ xdg-desktop-portal-kde
 ```
 
 
-
 **Extras**
 ```
 plasma-meta
 plasma-desktop
 kde-applications
 kde-applications-meta
+```
+
+**Supports**
+```
+Les Applications Qt5 > installé qtcurve-qt5 | qtcurve-kde 
+Les Applications Qt4 > installé qtcurve-qt4
 ```
