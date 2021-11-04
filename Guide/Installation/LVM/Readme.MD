@@ -153,7 +153,7 @@ mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot ;
 
 A TESTER :
 ``` 
-mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot/efi
+mkdir -p /mnt/efi && mount ${DISK}1 /mnt/boot/efi ;
 ```
 
 
