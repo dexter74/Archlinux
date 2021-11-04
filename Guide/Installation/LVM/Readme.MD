@@ -540,6 +540,7 @@ nano /home/marc/.config/openbox/autostart
 # plank &
 # rofi &
 # tint2 &
+# xfce4-panel &
 ################################################
 # Modules
 #
