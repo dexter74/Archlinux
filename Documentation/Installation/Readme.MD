@@ -5,7 +5,7 @@ Le guide est fonctionnel .
 **LiveCD**
 ```
 loadkeys fr-pc ;
-iwctl
+iwctl --passphrase <Clé WPA> station wlan0 connect ASUS_A8_5G
 ```
 
 
