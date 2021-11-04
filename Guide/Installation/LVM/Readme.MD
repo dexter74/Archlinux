@@ -246,7 +246,7 @@ EDITOR=nano crontab -e
   --uid 1005 \
   --groups wheel,storage,power --no-user-group \
   --shell /bin/bash \
-  --coment 'Drthrax' \
+  --comment 'Drthrax' \
   --create-home marc ;
 ```
 
