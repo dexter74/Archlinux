@@ -1,23 +1,26 @@
 ########################################################################################################
 # Script pour l'interface OpenBox                                                                      # 
 #
-# Guide : https://www.youtube.com/watch?v=v0yk6BCY1Tg
-#       : http://sdz.tdct.org/sdz/comprendre-et-configurer-x-org.html
-#
-# Liste dépendance optionnel  : pacman -Si openbox 
-# 
+# Guide :
+# - https://www.manjaro.fr/forum/viewtopic.php?t=2925
+# - https://github.com/owl4ce/dotfiles (complet)
+# - 
+# -  
+# -  
+# -  
+# -  
+# -  
+# - 
 ########################################################################################################
 
-########################################################################################################
-# |  
-########################################################################################################
 
 ########################################################################################################
-# Barre information : polybar | fbpanel
-# Les icônes sur le bureau : rox-filer | Pcmanfm | idesk | fbdesk
-# Barre menu : docky | 
-
-
+# Barre information     : | polybar | fbpanel
+# icônes sur le bureau  : rox-filer | Pcmanfm | idesk | fbdesk
+# Barre menu            : tint2 | docky | Dash to Panel | Dotfiles |xfce4-panel (Tableau de bord)
+#                       : yabar | lemonbar | rofli
+# Compositeur           : Picom
+# Daemon Notification   : Dunst
 
 ########################################################################################################
 # Installation des paquets (yay requis)
@@ -87,3 +90,8 @@ echo 'tint2 &'                                                  >> ~/.config/ope
 # 
 #echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &'     >> ~/.config/openbox/autostart ;
 #echo 'sleep 1 && /usr/lib/polit-gnome-authenication-agent-1 &' >> ~/.config/openbox/autostart ;
+
+
+
+# http://sdz.tdct.org/sdz/comprendre-et-configurer-x-org.html
+# Liste dépendance optionnel  : pacman -Si openbox 
