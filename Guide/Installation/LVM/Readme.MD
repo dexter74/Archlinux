@@ -391,7 +391,7 @@ systemctl enable systemd-resolved.service ;
 ```
 
 --------------------------------------------------------------------------------
-**Bootloader**
+**Bootloader** (AMD)
 ```
 # Récupérer la Valeur UUID de la racine du système
 UUID_SYSTEM=$(blkid | grep "SYSTEM: UUID=" | cut -d '"' -f 2)
@@ -406,6 +406,7 @@ linux /vmlinuz-linux
 
 # ls /boot/*img
 initrd /initramfs-linux.img
+initrd /amd-ucode.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf ;
 clear ;
 
@@ -413,6 +414,27 @@ bootctl list ;
 ```
 
 
+**Bootloader** (Intel)
+```
+# Récupérer la Valeur UUID de la racine du système
+UUID_SYSTEM=$(blkid | grep "SYSTEM: UUID=" | cut -d '"' -f 2)
+
+# Installation EFI
+bootctl install
+echo "default  arch.*" > /boot/loader/loader.conf
+
+# BootLoader:
+echo "title Arch Linux
+linux /vmlinuz-linux
+
+# ls /boot/*img
+initrd /initramfs-linux.img
+initrd /intel-ucode.img
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf ;
+clear ;
+
+bootctl list ;
+```
 
 
 --------------------------------------------------------------------------------
@@ -420,9 +442,6 @@ bootctl list ;
 ```
 exit
 ```
-
-
-
 
 --------------------------------------------------------------------------------
 **Démontage des partitions** (Si besoin)
@@ -443,12 +462,23 @@ systemctl --failed --fail --all   ;
 systemctl status * | grep -i fail ;
 ```
 
-
 --------------------------------------------------------------------------------
 **X11 en FR**
 ```
 localectl set-x11-keymap fr ;
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
 --------------------------------------------------------------------------------
 **Installation d'une Interface Graphique**
