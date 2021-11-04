@@ -315,6 +315,7 @@ systemctl enable NetworkManager ;
 systemctl enable sshd ;
 systemctl enable cronie ;
 systemctl enable ntpd ;
+systemctl enable iwd ;
 ```
 --------------------------------------------------------------------------------
 **Modification de fichiers**
