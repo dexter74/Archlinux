@@ -591,6 +591,11 @@ nano /home/marc/.config/openbox/autostart
 ################################################
 # xfce4-panel &
 # xfce4-volumed &
+#
+# Effets de transparence et ombre
+# xcompmgr -c &
+################################################
+lxpanel
 ################################################
 ```
 
