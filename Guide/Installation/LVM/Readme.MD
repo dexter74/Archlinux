@@ -146,18 +146,10 @@ Home:
 mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home ;
 ```
 
-EFI: (Non testé)
-
-``` 
-mkdir -p /mnt/boot/efi && mount ${DISK}1 /mnt/boot/efi ;
-```
-
-Boot
+EFI / MBR
 ```
 mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot ;
 ```
-
-
 
 
 **Vérification du montage**
@@ -409,28 +401,6 @@ clear ;
 bootctl list ;
 ```
 
-
-
-A tester :
-```
-# Récupérer la Valeur UUID de la racine du système
-UUID_SYSTEM=$(blkid | grep "SYSTEM: UUID=" | cut -d '"' -f 2)
-
-# Installation EFI
-bootctl install
-echo "default  arch.*" > /mnt/boot/efi/loader/loader.conf
-
-# BootLoader:
-echo "title Arch Linux
-linux /vmlinuz-linux
-
-# ls /boot/*img
-initrd /initramfs-linux.img
-options root=UUID=$UUID_SYSTEM rw" > /mnt/boot/efi/loader/entries/arch.conf ;
-clear ;
-
-bootctl list ;
-```
 
 
 
