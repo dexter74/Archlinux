@@ -82,8 +82,11 @@ Lister les partitions
 
 Appliquer les changements de partition sans reboot
 ```
-partprobe ${DISK}2 ;
+partprobe ${DISK}2  ; # sdXy
+partprobe ${DISK}p2 ; # /dev/mmcblk02p2
 ```
+
+
 --------------------------------------------------------------------------------
 **Création du Volume Physique**
 ```
