@@ -246,10 +246,11 @@ EDITOR=nano crontab -e
   --uid 1005 \
   --groups wheel,storage,power --no-user-group \
   --shell /bin/bash \
+  --coment 'Drthrax' \
   --create-home marc ;
 ```
 
-Archive: 
+Archive:
 ```
 useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
 ```
