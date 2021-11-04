@@ -4,9 +4,9 @@ Utilité de chaque paquet pour la distribution .
 pacman -Syu gnome
 
 Dépôt extra
-1) [baobab]()
-2) [cheese]()
-3) [eog]()
+1 ) [baobab]()
+2 ) [cheese]()
+3 ) [eog]()
 4) [epiphany]()
 5) [evince]()
 6) [file-roller]()
