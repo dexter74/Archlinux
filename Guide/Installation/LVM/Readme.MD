@@ -22,7 +22,6 @@ SIZE_SYST=+20G
 SIZE_HOME=+7G
 LVM_NAMEVG=VG0
 ```
-
 --------------------------------------------------------------------------------
 **Démontage des partitions** (Si besoin)
 ```
@@ -54,7 +53,6 @@ clear ; lvdisplay ; vgdisplay ; pvdisplay ;
 ```
 dd if=/dev/zero of=${DISK}  bs=512  count=1 ;
 ```
-
 --------------------------------------------------------------------------------
 **Création des partitions**
 ```
@@ -79,7 +77,6 @@ Appliquer les changements de partition sans reboot
 ```
 partprobe ${DISK}2 ;
 ```
-
 --------------------------------------------------------------------------------
 **Création du Volume Physique**
 ```
@@ -98,7 +95,6 @@ echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG ;
 echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG ;
 echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG ;
 ```
-
 --------------------------------------------------------------------------------
 **Vérification LVM**
 ```
@@ -117,7 +113,6 @@ echo "Path des Volumes Logiques"
 lvdisplay | grep "LV Path" ;
 echo "###########################################"
 ```
-
 --------------------------------------------------------------------------------
 **Formatage des partitions**
 ```
@@ -127,7 +122,6 @@ echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP ;
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM ;
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME ;
 ```
-
 --------------------------------------------------------------------------------
 **Montage des partitions**
 
@@ -156,7 +150,6 @@ mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot ;
 ```
 clear ; df -h | grep "/mnt" ; swapon -s ;
 ```
-
 --------------------------------------------------------------------------------
 **Installation de paquet**
 
@@ -200,13 +193,10 @@ Utilitaires
 pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib neofetch ntp reflector samba smbclient sudo unzip zip wget ;
 ```
 
-
 Optionnel
 ```
 pacstrap -i /mnt --noconfirm linux-headers ;
 ```
-
-
 --------------------------------------------------------------------------------
 **Installation du MicroCode :**
 MicroCode AMD: 
@@ -219,23 +209,15 @@ MicroCode Intel:
 pacstrap -i /mnt --noconfirm intel-ucode ;
 ``` 
 --------------------------------------------------------------------------------
-
-
-
-
 **FSTAB**
 ```
 genfstab -U /mnt >> /mnt/etc/fstab ;
 ```
-
-
-
 --------------------------------------------------------------------------------
 **Chroot**
 ```
 arch-chroot /mnt ;
 ```
-
 --------------------------------------------------------------------------------
 **TImezone et Synchronisation***
 ```
@@ -249,7 +231,6 @@ hwclock --systohc ;
 ```
 EDITOR=nano crontab -e ;
 ```
-
 --------------------------------------------------------------------------------
 **AJout d'un USER**
 ```
@@ -266,16 +247,11 @@ Archive:
 ```
 useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
 ```
-
-
-
-
 **Changements des mot de passe :**
 ```
 (echo "admin"; echo "admin") | passwd marc ;
 (echo "root" ; echo "root")  | passwd root ;
 ```
-
 --------------------------------------------------------------------------------
 **Clavier en FR**
 ```
@@ -301,9 +277,6 @@ echo 'KEYMAP=fr'                        > /etc/vconsole.conf ;
 echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen ;
 locale-gen ;
 ```
-
-
-
 --------------------------------------------------------------------------------
 **Hostname et Host**
 ```
@@ -317,7 +290,6 @@ echo "#IPV4
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters" > /etc/hosts ;
 ```
-
 --------------------------------------------------------------------------------
 **Activation des services**
 ```
@@ -326,12 +298,13 @@ systemctl enable sshd ;
 systemctl enable cronie ;
 systemctl enable ntpd ;
 ```
-
 --------------------------------------------------------------------------------
 **Modification de fichiers**
 ```
+# sed -i -e "s/\# \%wheel ALL\=(ALL) ALL/\%wheel ALL\=(ALL) ALL/g" /etc/sudoers ;
+sed -i -e "s/\# \%wheel ALL\=(ALL) NOPASSWD\: ALL/\%wheel ALL\=(ALL)  NOPASSWD\: ALL/g" /etc/sudoers ;
+
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf ;
-sed -i -e "s/\# \%wheel ALL\=(ALL) ALL/\%wheel ALL\=(ALL) ALL/g" /etc/sudoers ;
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config ;
 sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.conf ;
 ```
