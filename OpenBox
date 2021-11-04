@@ -41,7 +41,7 @@ nano /etc/slim.conf ; # /usr/share/slim/themes
 current_defaut archlinux
 
 # Activation du service:
-systemctl enable slim ;
+systemctl enable --now slim ;
 ########################################################################################################
 
 
