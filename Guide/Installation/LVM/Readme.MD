@@ -164,6 +164,17 @@ Noyaux et Modules
 ```
 pacstrap -i /mnt --noconfirm base linux ;
 ```
+
+MicroCode AMD: 
+``` 
+pacstrap -i /mnt --noconfirm amd-ucode  ;
+```
+
+MicroCode Intel:
+``` 
+pacstrap -i /mnt --noconfirm intel-ucode ;
+``` 
+
 EFI 
 ```
 pacstrap -i /mnt --noconfirm efibootmgr ;
