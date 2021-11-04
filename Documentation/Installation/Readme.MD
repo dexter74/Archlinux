@@ -357,12 +357,15 @@ cd yay ;
 makepkg -si --noconfirm ;
 ```
 
+**Wi-Fi**
+```
+yay -S --noconfirm iwd ;
+``` 
+
 **NANO par défaut**
 ```
 echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc ;
-```
-```
-exit
+exit ;
 ```
 
 --------------------------------------------------------------------------------
