@@ -34,7 +34,7 @@
 
 ########################################################################################################
 # Installation des paquets (yay requis)
-pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm ;
+pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm xorg-xrandr ;
 pacman -S --noconfirm openbox obconf plasma-workspace ;
 pacman -S --noconfirm slim slim-themes ;
 pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
