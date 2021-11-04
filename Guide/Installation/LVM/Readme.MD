@@ -517,10 +517,24 @@ mkdir -p /home/marc/.config/openbox ;
 cp -a /etc/xdg/openbox/. /home/marc/.config/openbox ;
 chown -R marc:users /home/marc/.config/openbox ;
 ```
+--------------------------------------------------------------------------------
+**Autostart**
+```
+nano /home/marc/.config/openbox/autostart
+```
 
+# Fond d'écran & Résolution
+```
+# Background: feh --bg-tile Wallpaper/bg.jpg &
+# xrandr -s 1920x1080 -r 60
+```
 
-
-
+# Lanceur
+```
+# plank &
+# rofi &
+# tint2 &
+```
 
 
 
