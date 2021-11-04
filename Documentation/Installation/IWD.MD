@@ -37,7 +37,7 @@ iwctl --passphrase Azerty74@1213 station wlan0 connect ASUS_A8_5G ;
 
 **Information sur la connexion au réseau**
 ```
-known-networks list ;
+station wlan0 show ;
 ```
 
 **Demander une IP**
