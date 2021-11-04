@@ -40,7 +40,7 @@ Deepin Desktop Environnement
 Enlightenment
 Gnome Shell
 i3
-KDE Plasma
+KDE-Plasma
 LXQt
 Mate
 Pantheon
