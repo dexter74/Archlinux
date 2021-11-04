@@ -447,7 +447,7 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 --------------------------------------------------------------------------------
 **Installation d'une Interface Graphique**
 ```
-pacman -S --noconfirm openbox obconf ;
+pacman -S --noconfirm openbox obconf	menumaker ;
 ```
 
 
@@ -520,6 +520,7 @@ pacman -S --noconfirm xfce4 ;
 ## Note:
 ```
 lvm2-activation.service > https://man7.org/linux/man-pages/man8/lvm2-activation-generator.8.html
-
 systemctl set-default graphical.target ;
+lxappearance-obconf	lxappearance-obconf-gtk3 obconf-qt ;
+
 ```
