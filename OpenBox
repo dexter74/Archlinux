@@ -18,7 +18,17 @@ pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
 pacman -S --noconfirm conky lsb-release ;
 pacman -S --noconfirm tint2 ;
 ########################################################################################################
-yay -S --noconfirm obmenu-generator geany perl-gtk2-unique ; # gtk2-perl est dans perl-gtk2-unique
+yay -S --noconfirm obmenu-generator geany perl-gtk2-unique        ; # gtk2-perl est dans perl-gtk2-unique
+
+
+
+# Problème:
+yay -S --noconfirm pamac-tray-appindicator
+yay -S --noconfirm polkit-gnome
+yay -S --noconfirm pamac-aur
+
+
+
 ########################################################################################################
 # Thèmes
 nano /etc/slim.conf ; # /usr/share/slim/themes
@@ -52,13 +62,16 @@ git clone https://github.com/addy-dclxvi/tint2-theme-collections.git ~/.config/t
 
 # Lancer tint2 
 # > Thème > importer >  ~/.config/tint2/blocks/blocks.tint2rc) 
-# Editer thèmes > Bouton 1,2,3,4 > Icônes > Remplacer "/home/addy" en ~
+# Editer thèmes > Bouton 1,2,3,4 > Icônes > Remplacer "/home/addy" en "~"
 
+# Générer le menu (Ficier Menu: /home/marc/.config/obmenu-generator/schema.pl)
+obmenu-generator -p -i ;
 
-obmenu-generator -p -i
 
 ########################################################################################################
 #Autostart
-echo 'feh --bg-tile "Wallpaper/bg.jpg &'"                   >  ~/.config/openbox/autostart ;
-echo 'tint2 &'                                             >>  ~/.config/openbox/autostart ;
-echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &' >>  ~/.config/openbox/autostart ;
+echo 'feh --bg-tile "Wallpaper/bg.jpg &'"                     > ~/.config/openbox/autostart ;
+echo 'tint2 &'                                               >> ~/.config/openbox/autostart ;
+
+#echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &'   >> ~/.config/openbox/autostart ;
+#echo 'sleep 1 && /usr/lib/polit-gnome-authenication-agent-1 &' >> ~/.config/openbox/autostart ;
