@@ -63,4 +63,4 @@ systemctl --user edit <nom du service>.service --full --force
 Un service de type simple (type par défaut) lance un processus principal
 n service de type forking, lance un processus père qui créera un processus fils dans le cadre de son démarrage.
   
-
+[Systemd-LancementConteneur](https://www.linuxtricks.fr/wiki/wiki.php?title=systemd-demarrer-une-distribution-comme-un-conteneur)
