@@ -338,8 +338,6 @@ cd upd72020x-fw     ; makepkg -si --noconfirm ; cd /tmp ;
 git clone https://aur.archlinux.org/yay.git ;
 cd yay ;
 makepkg -si --noconfirm ;
-
-
 ```
 
 **NANO par défaut**
