@@ -507,6 +507,7 @@ pacman -S --noconfirm xfce4 ;
 **Modules**
 ```
 pacman -S --noconfirm feh plank rofi tint2 ;
+# lxkeymap (raccourcis claviers)
 ```
 
 --------------------------------------------------------------------------------
