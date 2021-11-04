@@ -83,7 +83,7 @@ Lister les partitions
 Appliquer les changements de partition sans reboot
 ```
 partprobe ${DISK}2  ; # sdXy
-partprobe ${DISK}p2 ; # /dev/mmcblk02p2
+partprobe ${DISK}p2 ; # SSD
 ```
 
 
@@ -91,12 +91,14 @@ partprobe ${DISK}p2 ; # /dev/mmcblk02p2
 **Création du Volume Physique**
 ```
 clear ; 
-pvcreate ${DISK}2;
+pvcreate ${DISK}2 ;
+pvcreate ${DISK}p2; # SSD
 ```
 
 **Création du Volume Groupe**
 ```
-clear ; vgcreate $LVM_NAMEVG ${DISK}2 ;
+clear ; vgcreate $LVM_NAMEVG ${DISK}2  ;
+clear ; vgcreate $LVM_NAMEVG ${DISK}p2 ; # SSD
 ```
 **Création des Volumes Logiques**
 ```
@@ -127,7 +129,9 @@ echo "###########################################"
 **Formatage des partitions**
 ```
 clear ;
-echo "yes" | mkfs.fat -F32 ${DISK}1 ;
+echo "yes" | mkfs.fat -F32 ${DISK}1  ; # Disk
+echo "yes" | mkfs.fat -F32 ${DISK}p1 ; # SSD
+
 echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP ;
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM ;
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME ;
@@ -152,7 +156,8 @@ mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home ;
 
 EFI / MBR
 ```
-mkdir -p /mnt/boot && mount ${DISK}1 /mnt/boot ;
+mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot ;
+mkdir -p /mnt/boot && mount ${DISK}p1 /mnt/boot ; # SSD
 ```
 
 
