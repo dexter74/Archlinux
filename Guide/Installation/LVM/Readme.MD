@@ -521,10 +521,6 @@ chown -R marc:users /home/marc/ ;
 **Autostart**
 ```
 nano /home/marc/.config/openbox/autostart
-```
-
-# Fond d'écran & Résolution (xrandr -q
-```
 
 ################################################
 # Arrière-plan 
@@ -547,7 +543,10 @@ nano /home/marc/.config/openbox/autostart
 ################################################
 ```
 
-
+**Configuration des Programmes**
+```
+/home/marc/.config/tint2/tint2rc
+```
 
 
 
