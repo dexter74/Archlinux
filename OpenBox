@@ -2,6 +2,7 @@
 # Script pour l'interface OpenBox                                                                      # 
 #
 # Guide :
+# - https://help.ubuntu.com/community/Openbox
 # - https://urukrama.wordpress.com/openbox-guide/
 # - https://www.manjaro.fr/forum/viewtopic.php?t=2925
 # - https://github.com/owl4ce/dotfiles (complet)
@@ -16,13 +17,12 @@
 
 
 ########################################################################################################
-# Barre information     : | polybar | fbpanel
-# icônes sur le bureau  : rox-filer | Pcmanfm | idesk | fbdesk
-# Barre menu            : tint2 | docky | Dash to Panel | Dotfiles | polydock |
-#                       : yabar | lemonbar | rofi
-# Compositeur           : Picom
-# Daemon Notification   : Dunst
+# polybar | fbpanel | rox-filer | Pcmanfm | idesk | fbdesk | Dash to Panel | Docky | Dotfiles |
+# Polydock | Tint2 | yabar | lemonbar | rofi | Picom | Dunst | 
 
+
+
+# Remplacer Metacity : openbox --replace
 # gnome-settings-daemon | gnome-panel
 # xfce4-panel (Tableau de bord)
 
