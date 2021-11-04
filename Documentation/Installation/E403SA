@@ -6,6 +6,21 @@
 ==> WARNING: Possibly missing firmware for module: aic94xx
 ==> WARNING: Possibly missing firmware for module: xhci_pci
 
+````
+/usr/sbin/useradd --home-dir /home/marc --base-dir /home/marc --uid 1005 --groups wheel,storage,power --no-user-group --shell /bin/bash --comment 'Drthrax' --create-home marc ;
+(echo "admin"; echo "admin") | passwd marc ;
+````
+
+````
+su - marc
+````
+
+````
+git clone https://aur.archlinux.org/yay.git ;
+cd yay ;
+makepkg -si --noconfirm ;
+````
+
 
 # Correctif 
 yay -S --noconfirm wd719x-firmware  ; # wd719x
