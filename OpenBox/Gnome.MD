@@ -3,9 +3,7 @@ Utilité de chaque paquet pour la distribution .
 
 **Paquet Retenue**
 ```
-pacman -S --noconfirm baobab eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-characters gnome-clocks gnome-color-manager gnome-control-center gnome-disk-utility gnome-font-viewer gnome-logs gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal
-gnome-themes-extra gnome-user-share gnome-video-effects grilo-plugins gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb
-mutter nautilus sushi totem tracker xdg-user-dirs-gtk
+pacman -S --noconfirm baobab eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-characters gnome-clocks gnome-color-manager gnome-control-center gnome-disk-utility gnome-font-viewer gnome-logs gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-share gnome-video-effects grilo-plugins gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus sushi totem tracker xdg-user-dirs-gtk ;
 ```
 
 
