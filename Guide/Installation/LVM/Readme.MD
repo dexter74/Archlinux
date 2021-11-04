@@ -500,4 +500,3 @@ systemctl set-default graphical.target
 ```
 lvm2-activation.service > https://man7.org/linux/man-pages/man8/lvm2-activation-generator.8.html
 ```
-
