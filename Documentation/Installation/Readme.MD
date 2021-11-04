@@ -200,7 +200,8 @@ pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
 
 Utilitaires Réseau
 ```
-pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw wireless_tools wpa_supplicant netcfg ;
+pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw wireless_tools ;
+pacstrap -i /mnt --noconfirm wpa_supplicant netctl ;
 ```
 
 Utilitaires
