@@ -5,7 +5,7 @@
 # - https://www.manjaro.fr/forum/viewtopic.php?t=2925
 # - https://github.com/owl4ce/dotfiles (complet)
 # - https://github.com/folke/polydock
-# -  
+# - https://commentouvrir.com/blog/comment-installer-et-configurer-openbox-a-laide-dubuntu/
 # -  
 # -  
 # -  
@@ -90,6 +90,7 @@ echo 'tint2 &'                                                  >> ~/.config/ope
 # 
 #echo 'conky -c .config/conky/informant/inf-cyan.conkyrc &'     >> ~/.config/openbox/autostart ;
 #echo 'sleep 1 && /usr/lib/polit-gnome-authenication-agent-1 &' >> ~/.config/openbox/autostart ;
+# echo "xrandr -s 1920x1080 -r 60"                                 > ~/.config/openbox/autostart ;
 
 
 
