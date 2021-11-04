@@ -49,7 +49,9 @@ echo "yes" | lvremove /dev/$LVM_NAMEVG/SWAP ;
 echo "yes" | lvremove /dev/$LVM_NAMEVG/SYSTEM ;
 echo "yes" | lvremove /dev/$LVM_NAMEVG/HOME ;
 echo "yes" | vgremove $LVM_NAMEVG ;
-echo "yes" | pvremove ${DISK}2 ;
+echo "yes" | pvremove ${DISK}2  ;
+echo "yes" | pvremove ${DISK}p2 ; # SSD
+
 ```
 
 **Vérification LVM**
