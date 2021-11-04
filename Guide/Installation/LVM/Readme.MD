@@ -509,12 +509,14 @@ pacman -S --noconfirm xfce4 ;
 pacman -S --noconfirm feh plank rofi tint2 ;
 ```
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-**Configuration**
+--------------------------------------------------------------------------------
+**Génération des fichiers de Configuration par défaut**
+```
 rm -r /home/marc/.config/openbox ;
 mkdir -p /home/marc/.config/openbox ;
 cp -a /etc/xdg/openbox/. /home/marc/.config/openbox ;
 chown -R marc:users /home/marc/.config/openbox ;
+```
 
 
 
@@ -524,8 +526,7 @@ chown -R marc:users /home/marc/.config/openbox ;
 
 
 
-
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Note:
 ```
 lvm2-activation.service > https://man7.org/linux/man-pages/man8/lvm2-activation-generator.8.html
