@@ -53,7 +53,7 @@ systemctl -t service -a --full | grep dead
 systemctl --user edit <nom du service>.service --full
 ```
 
-**[Création de service Utilisateur](https://doc.ubuntu-fr.org/creer_un_service_avec_systemd)** ([Syntax](https://www.linuxtricks.fr/wiki/systemd-creer-des-services-timers-unites))
+**[Création de service Utilisateur](https://doc.ubuntu-fr.org/creer_un_service_avec_systemd)** ([Syntax](https://www.linuxtricks.fr/wiki/systemd-creer-des-services-timers-unites) | [Timers](https://www.linuxtricks.fr/wiki/systemd-creer-des-services-timers-unites))
 ```
 systemctl --user edit <nom du service>.service --full --force
 ```
