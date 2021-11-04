@@ -506,10 +506,25 @@ pacman -S --noconfirm xfce4 ;
 --------------------------------------------------------------------------------
 **Modules**
 ```
-pacman -S --noconfirm tint2 plank ;
+pacman -S --noconfirm feh plank rofi tint2 ;
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+**Configuration**
+rm -r /home/marc/.config/openbox ;
+mkdir -p /home/marc/.config/openbox ;
+cp -a /etc/xdg/openbox/. /home/marc/.config/openbox ;
+chown -R marc:users /home/marc/.config/openbox ;
+
+
+
+
+
+
+
+
+
+
 
 ## Note:
 ```
