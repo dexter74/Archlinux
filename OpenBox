@@ -20,14 +20,15 @@ pacman -S --noconfirm tint2 ;
 ########################################################################################################
 yay -S --noconfirm obmenu-generator geany perl-gtk2-unique        ; # gtk2-perl est dans perl-gtk2-unique
 
-
-
-# Problème:
+########################################################################################################
 yay -S --noconfirm pamac-tray-appindicator
 yay -S --noconfirm polkit-gnome
 yay -S --noconfirm pamac-aur
 
-
+https://aur.archlinux.org/packages/pamac-all/
+FredBezies commented on 2021-06-10 14:25
+KDE users: do not build directly this package if you want to use https://aur.archlinux.org/packages/pamac-tray-icon-plasma/
+You will have to modify the PKBGUILD and modify ENABLE_APPINDICATOR=1 by ENABLE_APPINDICATOR=0 or there will be a conflict between this package and the tray indicator one.
 
 ########################################################################################################
 # Thèmes
