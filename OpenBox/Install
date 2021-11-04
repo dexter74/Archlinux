@@ -7,10 +7,18 @@
 # Icon Theme: Dracula
 ###########################################################################################################################
 
+
+pacman -S --noconfirm xorg-server xorg-xinit xorg-twm xorg-xclock xterm ;
+pacman -S --noconfirm openbox obconf plasma-workspace ;
+pacman -S --noconfirm slim slim-themes ;
+pacman -S --noconfirm feh firefox ; # https://wallpaperstock.net/
+pacman -S --noconfirm conky lsb-release ;
+pacman -S --noconfirm ;
+
 ###########################################################################################################################
 # Pacman #
 ##########
-pacman -S --noconfirm kitty neofetch  plank sddm ;
+pacman -S --noconfirm conky kitty neofetch tint2 plank sddm ;
 systemctl enable --now sddm ;
 
 ###########################################################################################################################
