@@ -44,3 +44,9 @@ station wlan0 show ;
 ```
 dhclient wlan0 ; ip add | grep -i wlan0 | grep -i UP ;
 ```
+
+**Activer la demande de DHCP** (Alpha)
+```
+systemctl start systemd-networkd.service ;
+systemctl start systemd-networkd-wait-online.service ;
+```
