@@ -23,7 +23,7 @@
 # Compositeur           : Picom
 # Daemon Notification   : Dunst
 
-# gnome-settings-daemon
+# gnome-settings-daemon | gnome-panel
 # xfce4-panel (Tableau de bord)
 
 
