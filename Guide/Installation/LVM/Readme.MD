@@ -327,9 +327,9 @@ cd /tmp ;
 git clone https://aur.archlinux.org/aic94xx-firmware.git ; # aic94xx
 git clone https://aur.archlinux.org/wd719x-firmware.git  ; # wd719x
 git clone https://aur.archlinux.org/upd72020x-fw.git     ; # xhci_pci
-cd aic94xx-firmware ; makepkg -si ; cd /tmp ;
-cd wd719x-firmware  ; makepkg -si ; cd /tmp ;
-cd upd72020x-fw     ; makepkg -si ; cd /tmp ;
+cd aic94xx-firmware ; makepkg -si --noconfirm ; cd /tmp ;
+cd wd719x-firmware  ; makepkg -si --noconfirm ; cd /tmp ;
+cd upd72020x-fw     ; makepkg -si --noconfirm ; cd /tmp ;
 ```
 
 --------------------------------------------------------------------------------
@@ -337,7 +337,9 @@ cd upd72020x-fw     ; makepkg -si ; cd /tmp ;
 ```
 git clone https://aur.archlinux.org/yay.git ;
 cd yay ;
-makepkg -si ;
+makepkg -si --noconfirm ;
+
+
 ```
 
 **NANO par défaut**
