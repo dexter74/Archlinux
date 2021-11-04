@@ -18,7 +18,7 @@
 # Barre information     : | polybar | fbpanel
 # icônes sur le bureau  : rox-filer | Pcmanfm | idesk | fbdesk
 # Barre menu            : tint2 | docky | Dash to Panel | Dotfiles | polydock | | xfce4-panel (Tableau de bord)
-#                       : yabar | lemonbar | rofli
+#                       : yabar | lemonbar | rofi
 # Compositeur           : Picom
 # Daemon Notification   : Dunst
 
