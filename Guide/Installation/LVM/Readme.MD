@@ -446,6 +446,11 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 --------------------------------------------------------------------------------
 **Installation d'une Interface Graphique**
 ```
+pacman -S --noconfirm openbox ;
+```
+
+
+```
 pacman -S --noconfirm cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver 	cinnamon-session cinnamon-settings-daemon cinnamon-translations cjs muffin nemo ;
 pacman -S --noconfirm cutefish ;
 pacman -S --noconfirm deepin deepin-desktop-base deepin-extra ;
@@ -469,17 +474,19 @@ pacman -S --noconfirm xfce4 ;
 ```
 
 --------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
 **Configuration du Gestionnaire de fenêtre**
 
 La première étape est de lister les interfaces.
 ```
 ls /usr/share/xsessions/
 ```
-
 ```
 echo "[Autologin]
 User=marc
-Session=cinnamon.desktop
+Session=openbox.desktop
 
 [General]
 Numlock=on
