@@ -53,7 +53,6 @@ systemctl --user enable --now pulseaudio.service
 systemctl --user status --now pulseaudio.service
 ```
 
-
 **nm-applet**
 ```
 echo "[Unit]
