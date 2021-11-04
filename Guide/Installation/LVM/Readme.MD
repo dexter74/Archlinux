@@ -515,7 +515,7 @@ pacman -S --noconfirm feh plank rofi tint2 ;
 rm -r /home/marc/.config/openbox ;
 mkdir -p /home/marc/.config/openbox ;
 cp -a /etc/xdg/openbox/. /home/marc/.config/openbox ;
-chown -R marc:users /home/marc/.config/openbox ;
+chown -R marc:users /home/marc/ ;
 ```
 --------------------------------------------------------------------------------
 **Autostart**
@@ -523,22 +523,27 @@ chown -R marc:users /home/marc/.config/openbox ;
 nano /home/marc/.config/openbox/autostart
 ```
 
-# Fond d'écran & Résolution
-```
-# Background: feh --bg-tile Wallpaper/bg.jpg &
-# xrandr -s 1920x1080 -r 60
+# Fond d'écran & Résolution (xrandr -q
 ```
 
-# Son:
-```
-alsamixer &
-```
-
-# Lanceur
-```
+################################################
+# Arrière-plan 
+# feh --bg-tile Wallpaper/bg.jpg &
+################################################
+# Résolution Ecran
+# xrandr -s 640x480 -r 60
+################################################
+# Son
+# alsamixer &
+################################################
+# barre des tâches
 # plank &
 # rofi &
 # tint2 &
+################################################
+# Modules
+#
+################################################
 ```
 
 
