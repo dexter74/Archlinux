@@ -51,6 +51,16 @@ dhclient wlan0 ; ip add | grep -i wlan0 | grep -i UP ;
 
 **Activer la demande de DHCP** (Alpha)
 ```
-systemctl start systemd-networkd.service ;
-systemctl start systemd-networkd-wait-online.service ;
+systemctl disable --now NetworkManager.service ;
+systemctl enable --now systemd-networkd.service ;
+```
+
+```
+# /etc/systemd/network/20-dhcp.network
+
+[Match]
+Name=wlan0
+
+[Network]
+DHCP=Yes
 ```
