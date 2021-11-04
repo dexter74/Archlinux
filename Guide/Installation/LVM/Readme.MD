@@ -241,8 +241,21 @@ EDITOR=nano crontab -e
 --------------------------------------------------------------------------------
 **AJout d'un USER**
 ```
+/usr/sbin/useradd \
+  --home-dir /home/test --base-dir /home/test \
+  --uid 1005 \
+  --groups wheel,storage,power --no-user-group \
+  --shell /bin/bash \
+  --create-home test ;
+```
+
+Archive: 
+```
 useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
 ```
+
+
+
 
 **Changements des mot de passe :**
 ```
