@@ -2,6 +2,12 @@
 Installation sur une disque-dur avec 2 partitions.
 Le guide est fonctionnel .
 
+**LiveCD**
+```
+loadkeys fr-pc ;
+```
+
+
 --------------------------------------------------------------------------------
 **Disque**
 ```
