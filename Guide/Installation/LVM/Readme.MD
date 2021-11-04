@@ -466,6 +466,7 @@ systemctl status * | grep -i fail ;
 --------------------------------------------------------------------------------
 **X11 en FR**
 ```
+su - marc ;
 localectl set-x11-keymap fr ;
 ```
 
