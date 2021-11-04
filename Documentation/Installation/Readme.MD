@@ -410,9 +410,7 @@ echo "title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 initrd /amd-ucode.img
-options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf ;
-
-
+options root=UUID=$UUID_SYSTEM rw quiet vga=current splash" > /boot/loader/entries/arch.conf ;
 
 clear ;
 bootctl random-seed ;
@@ -434,7 +432,7 @@ echo "title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 initrd /intel-ucode.img
-options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf ;
+options root=UUID=$UUID_SYSTEM rw quiet vga=current splash" > /boot/loader/entries/arch.conf ;
 clear ;
 
 
