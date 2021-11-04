@@ -10,7 +10,7 @@
 ###########################################################################################################################
 # Pacman #
 ##########
-pacman -S --noconfirm conky feh kitty neofetch tint2 plank sddm ;
+pacman -S --noconfirm conky feh kitty neofetch tint2 plank sddm xorg-xrandr ;
 systemctl enable --now sddm ;
 
 ###########################################################################################################################
