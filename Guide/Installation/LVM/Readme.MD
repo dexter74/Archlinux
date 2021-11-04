@@ -538,8 +538,8 @@ nano /home/marc/.config/openbox/autostart
 # tint2 &
 # xfce4-panel &
 ################################################
-# Modules
-#
+# Applicatifs:
+# xscreensaver &
 ################################################
 ```
 
