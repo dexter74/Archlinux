@@ -540,6 +540,14 @@ nano /home/marc/.config/openbox/autostart
 # Applicatifs:
 # xscreensaver -no-splash &
 # nitrogen --restore &
+# wicd-client &
+# ivman &
+#ossxmix -b -x #& # OSS4 mixer applet
+################################################
+# Thunar as Auto-Mount
+# if [ $(pgrep #Thunar) ]
+#    then true;
+#    else Thunar --daemon &
 ################################################
 # xfce4-panel &
 # xfce4-volumed &
