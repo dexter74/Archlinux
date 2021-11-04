@@ -206,7 +206,7 @@ pacstrap -i /mnt --noconfirm wpa_supplicant netctl ;
 
 Utilitaires
 ```
-pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib neofetch ntp reflector samba smbclient sudo unzip zip wget ;
+pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl dialog fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib neofetch ntp reflector samba smbclient sudo unzip zip wget ;
 ```
 
 Optionnel
