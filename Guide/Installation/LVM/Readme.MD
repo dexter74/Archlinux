@@ -485,7 +485,7 @@ localectl set-x11-keymap fr ;
 --------------------------------------------------------------------------------
 **Installation d'une Interface Graphique**
 ```
-pacman -S --noconfirm openbox obconf	menumaker ;
+yay -S --noconfirm kde1-kdebase-git ;
 ```
 
 ```
@@ -495,20 +495,20 @@ pacman -S --noconfirm deepin deepin-desktop-base deepin-extra ;
 pacman -S --noconfirm element-desktop ;
 pacman -S --noconfirm enlightenment ;
 pacman -S --noconfirm gnome gnome-remote-desktop ;
-pacman -S --noconfirm kde1-kdebase-git ;
 pacman -S --noconfirm liri-shell-git ;
 pacman -S --noconfirm lumina-desktop ;
 pacman -S --noconfirm lxde     ; # GTK 2
 pacman -S --noconfirm lxde-gtk3; # GTK 3
 pacman -S --noconfirm lxqt ;
 pacman -S --noconfirm mate-desktop ;
+pacman -S --noconfirm openbox obconf	menumaker ;
 pacman -S --noconfirm pantheon ;
 pacman -S --noconfirm paperdea ;
 pacman -S --noconfirm phosh ;
 pacman -S --noconfirm plasma-desktop ;
 pacman -S --noconfirm sugar sugar-fructose ;
 pacman -S --noconfirm ukui ;
-pacman -S --noconfirm xfce4 ;
+pacman -S --noconfirm xfce4 ; # xfce4-panel
 ```
 
 --------------------------------------------------------------------------------
@@ -520,7 +520,7 @@ ls /usr/share/xsessions/
 ```
 echo "[Autologin]
 User=marc
-Session=openbox.desktop
+Session=plasma-kde.desktop
 
 [General]
 Numlock=on
@@ -536,75 +536,6 @@ Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 #systemctl enable --now avahi-daemon.service ;
 pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
-
---------------------------------------------------------------------------------
-**OpenBox - XFCE4** (xfce4-panel)
-```
-pacman -S --noconfirm xfce4 ;
-```
---------------------------------------------------------------------------------
-**Modules**
-```
-pacman -S --noconfirm feh plank rofi tint2 ;
-# lxkeymap (raccourcis claviers)
-```
-
---------------------------------------------------------------------------------
-**Génération des fichiers de Configuration par défaut**
-```
-rm -r /home/marc/.config/openbox ;
-mkdir -p /home/marc/.config/openbox ;
-cp -a /etc/xdg/openbox/. /home/marc/.config/openbox ;
-chown -R marc:users /home/marc/ ;
-```
---------------------------------------------------------------------------------
-**Autostart**
-```
-nano /home/marc/.config/openbox/autostart
-
-################################################
-# Arrière-plan 
-# feh --bg-tile Wallpaper/bg.jpg &
-################################################
-# Résolution Ecran
-# xrandr -s 640x480 -r 60
-################################################
-# Son
-# alsamixer &
-################################################
-# barre des tâches
-# plank &
-# rofi &
-# tint2 &
-################################################
-# Applicatifs:
-# xscreensaver -no-splash &
-# nitrogen --restore &
-# wicd-client &
-# ivman &
-# ossxmix -b -x #& # OSS4 mixer applet
-# batterymon &
-################################################
-# Thunar as Auto-Mount
-# if [ $(pgrep #Thunar) ]
-#    then true;
-#    else Thunar --daemon &
-################################################
-# xfce4-panel &
-# xfce4-volumed &
-#
-# Effets de transparence et ombre
-# xcompmgr -c &
-################################################
-lxpanel
-################################################
-```
-
-**Configuration des Programmes**
-```
-/home/marc/.config/tint2/tint2rc
-```
-
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
