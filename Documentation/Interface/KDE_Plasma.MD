@@ -1,5 +1,5 @@
 
-**Installer [KDE](https://wiki.archlinux.fr/KDE) :** (Plasma)
+**Installer [KDE](https://wiki.archlinux.fr/KDE) :** (groupe plasma)
 ```
 pacman -S --noconfirm plasma
 ```
@@ -54,7 +54,6 @@ sddm-kcm
 systemsettings
 xdg-desktop-portal-kde
 ```
-
 
 **Extras**
 ```
