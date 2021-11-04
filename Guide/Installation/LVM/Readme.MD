@@ -89,14 +89,14 @@ pvcreate ${DISK}2;
 
 **Création du Volume Groupe**
 ```
-clear ; vgcreate $LVM_NAMEVG ${DISK}2
+clear ; vgcreate $LVM_NAMEVG ${DISK}2 ;
 ```
 **Création des Volumes Logiques**
 ```
 clear ;
-echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG
-echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG
-echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG
+echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG ;
+echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG ;
+echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG ;
 ```
 
 --------------------------------------------------------------------------------
@@ -122,10 +122,10 @@ echo "###########################################"
 **Formatage des partitions**
 ```
 clear ;
-echo "yes" | mkfs.fat -F32 ${DISK}1
-echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP
-echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM
-echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
+echo "yes" | mkfs.fat -F32 ${DISK}1 ;
+echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP ;
+echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM ;
+echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME ;
 ```
 
 --------------------------------------------------------------------------------
@@ -134,7 +134,7 @@ echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME
 SWAP:
 ```
 clear ; 
-swapon /dev/$LVM_NAMEVG/SWAP && swapon -s :
+swapon /dev/$LVM_NAMEVG/SWAP && swapon -s ;
 ```
 
 SYSTEM:
@@ -235,7 +235,7 @@ hwclock --systohc ;
 
 **[Plannificateur de tâche](https://www.linuxtricks.fr/wiki/cron-et-crontab-le-planificateur-de-taches)**
 ```
-EDITOR=nano crontab -e
+EDITOR=nano crontab -e ;
 ```
 
 --------------------------------------------------------------------------------
@@ -338,7 +338,7 @@ su - marc ;
 --------------------------------------------------------------------------------
 **Firmware**
 ```
-cd /tmp
+cd /tmp ;
 git clone https://aur.archlinux.org/aic94xx-firmware.git ; # aic94xx
 git clone https://aur.archlinux.org/wd719x-firmware.git  ; # wd719x
 git clone https://aur.archlinux.org/upd72020x-fw.git     ; # xhci_pci
@@ -357,7 +357,7 @@ makepkg -si ;
 
 **NANO par défaut**
 ```
-echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc 
+echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc ;
 ```
 ```
 exit
@@ -402,9 +402,10 @@ linux /vmlinuz-linux
 
 # ls /boot/*img
 initrd /initramfs-linux.img
-options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf ;
 clear ;
-bootctl list
+
+bootctl list ;
 ```
 --------------------------------------------------------------------------------
 **Quitter le Chroot**
@@ -490,14 +491,15 @@ Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 
 **X11 en FR**
 ```
-localectl set-x11-keymap fr
+localectl set-x11-keymap fr ;
 ```
 
 
-systemctl set-default graphical.target
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Note:
 ```
 lvm2-activation.service > https://man7.org/linux/man-pages/man8/lvm2-activation-generator.8.html
+
+systemctl set-default graphical.target ;
 ```
