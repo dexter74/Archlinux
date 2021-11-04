@@ -18,10 +18,9 @@
 
 # Etape 1 : Connaitre les différents utilités des paquets de Gnome, XFCE4 pour mieux les utiliser.
 # 
-# Obconf = Configurer l'apparence d'Openbox
-# Menu Maker = Configurer le menu contextuel (que vous pouvez également éditer en texte pur si vous avez le temps et le désir)
-# LXAppearance = Pour configurer l'apparence des applications GTK
-
+# Obconf        = Configurer l'apparence d'Openbox
+# MenuMaker     = Configurer le menu contextuel (que vous pouvez également éditer en texte pur si vous avez le temps et le désir)
+# LXAppearance  = Pour configurer l'apparence des applications GTK
 
 ########################################################################################################
 # polybar | fbpanel | rox-filer | Pcmanfm | idesk | fbdesk | Dash to Panel | Docky | Dotfiles |
