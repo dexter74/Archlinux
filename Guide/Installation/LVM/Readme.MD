@@ -285,7 +285,7 @@ echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /etc/locale.conf ;
 echo 'LC_ALL='                         >> /etc/locale.conf ;
 echo 'LANGUAGE="fr_FR:en_US"'          >> /etc/locale.conf ;
 echo 'KEYMAP=fr'                        > /etc/vconsole.conf ;
-echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen
+echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen ;
 locale-gen ;
 ```
 
