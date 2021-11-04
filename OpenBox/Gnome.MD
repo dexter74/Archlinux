@@ -41,7 +41,7 @@ pacman -S --noconfirm
 28) [**gnome-session**](https://archlinux.org/packages/extra/x86_64/gnome-session/) (Session Gnome)
 29) [**gnome-settings-daemon**](https://archlinux.org/packages/extra/x86_64/gnome-settings-daemon/) (Démon : gestion session, paramètres)
 30) [**gnome-shell**](https://archlinux.org/packages/extra/x86_64/gnome-shell) (Fonction de base Utilisateur pour le bureau)
-31) [**gnome-shell-extensions**](https://archlinux.org/packages/extra/x86_64/gnome-shell-extensions/) (Extension de la Fonction de base Utilisateur pour le bureau
+31) [**gnome-shell-extensions**](https://archlinux.org/packages/extra/x86_64/gnome-shell-extensions/) (Extension de la Fonction de base Utilisateur pour le bureau)
 32) [**gnome-software**](**https://archlinux.org/packages/extra/x86_64/gnome-software/) (Store applicatif)
 33) [**gnome-system-monitor**](https://archlinux.org/packages/extra/x86_64/gnome-system-monitor/) (Moniteur de processus)
 34) [**gnome-terminal**](https://archlinux.org/packages/extra/x86_64/gnome-terminal/) (Terminal)
