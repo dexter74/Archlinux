@@ -529,6 +529,10 @@ nano /home/marc/.config/openbox/autostart
 # xrandr -s 1920x1080 -r 60
 ```
 
+#Son:
+```
+alsamixer &
+```
 # Lanceur
 ```
 # plank &
