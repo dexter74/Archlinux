@@ -46,7 +46,8 @@ mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.
 ###########################################################################################################################
 # Autostart #
 #############
-echo '
+
+echo "
 ##############################
 # Configuration du démarrage #
 ##############################
@@ -60,14 +61,10 @@ echo '
 xrandr -s 1920x1080 -r 60 &
 #
 # Fond d'écran:
-feh --bg-tile "Wallpaper/bg.jpg" &
+feh --bg-tile \"Wallpaper/bg.jpg\" &
 #
 ##############################
 # tint2 & 
 # conky &
-##############################'> /home/marc/.config/openbox/autostart ;
-
-
-" > ~/.config/openbox/autostart
-
-
+##############################
+"> /home/marc/.config/openbox/autostart ; clear ; cat  /home/marc/.config/openbox/autostart 
