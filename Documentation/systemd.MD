@@ -27,6 +27,12 @@ systemctl status /dev/sda2
 ```
 
 [Erreur dans le chargement](https://wiki.archlinux.fr/systemd)
-````
-display-manager.service not found
+
+**display-manager.service**
+```
+ln -s '/usr/lib/systemd/system/sdd.service' '/etc/systemd/system/display-manager.service'
+systemctl enable --now display-manager.service ;
+```
+
+
 syslog.service
