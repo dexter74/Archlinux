@@ -33,6 +33,14 @@ systemctl status /dev/sda2
 ln -s '/usr/lib/systemd/system/sdd.service' '/etc/systemd/system/display-manager.service'
 systemctl enable --now display-manager.service ;
 ```
+
+**systemd-timesyncd.service**
+```
+La configuration se fait dans /etc/systemd/timesyncd.conf
+systemctl enable --now systemd-timesyncd.service ;
+```
+
+
 **Service en Erreur / Non Activ** (A regarder)
 ```
 systemctl -t service -a --full | grep error
