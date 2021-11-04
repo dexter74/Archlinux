@@ -39,3 +39,8 @@ iwctl --passphrase Azerty74@1213 station wlan0 connect ASUS_A8_5G ;
 ```
 known-networks list ;
 ```
+
+**Demander une IP**
+```
+dhclient wlan0 ; ip add | grep -i wlan0 | grep -i UP ;
+```
