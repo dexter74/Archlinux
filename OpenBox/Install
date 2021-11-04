@@ -10,7 +10,7 @@
 ###########################################################################################################################
 # Pacman #
 ##########
-pacman -S --noconfirm neofetch kitty plank sddm ;
+pacman -S --noconfirm kitty neofetch  plank sddm ;
 systemctl enable --now sddm ;
 
 ###########################################################################################################################
@@ -35,9 +35,6 @@ Numlock=on
 [Theme]
 Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 
-
-
-
 ###########################################################################################################################
 # configurer User #
 ###################
@@ -45,3 +42,32 @@ su - marc ;
 
 # Configuration par défaut:
 mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
+
+###########################################################################################################################
+# Autostart #
+#############
+echo '
+##############################
+# Configuration du démarrage #
+##############################
+# 
+# <ma commande 1> & 
+# <ma commande 2> & 
+# <ma commande 3>
+#
+#
+# Résolution:
+xrandr -s 1920x1080 -r 60 &
+#
+# Fond d'écran:
+feh --bg-tile "Wallpaper/bg.jpg" &
+#
+##############################
+# tint2 & 
+# conky &
+##############################'> /home/marc/.config/openbox/autostart ;
+
+
+" > ~/.config/openbox/autostart
+
+
