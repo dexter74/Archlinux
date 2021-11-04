@@ -1,0 +1,26 @@
+############################################################################################################
+# https://www.reddit.com/r/unixporn/comments/q5pcw0/openbox_rice_based_on_the_dracula_theme/
+# WM: Openbox
+# Terminal: Kitty
+# Top bar: Polybar
+# Bottom bar: Plank
+# Icon Theme: Dracula
+############################################################################################################
+
+
+# Paquet:
+pacman -S --noconfirm neofetch kitty plank sddm ;
+systemctl enable --now sddm ;
+
+# Thème:
+wget -c https://github.com/dracula/gtk/archive/master.zip -O /tmp/1.zip ; unzip /tmp/1.zip -d /usr/share/themes ;
+
+
+echo "[Autologin]
+User=marc
+#Session=openbox-kde.desktop
+Session=openbox.desktop
+[General]
+Numlock=on
+[Theme]
+Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
