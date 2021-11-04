@@ -75,7 +75,7 @@ Lister les partitions
 (echo "p") | fdisk $DISK | grep $DISK ;
 ```
 
-Correctif:
+Appliquer les changements de partition sans reboot
 ```
 partprobe ${DISK}2 ;
 ```
