@@ -44,7 +44,10 @@ systemctl enable slim ;
 su - marc ;
 
 mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
-echo "exec openbox-session" > ~/.xinitrc ;
+
+# Sans D-BUS: echo "exec openbox-session" > ~/.xinitrc ;
+# Avec D-BUG: echo "exec dbus openbox-session" > ~/.xinitrc ;
+
 
 # Config:
 localectl set-x11-keymap fr ;
