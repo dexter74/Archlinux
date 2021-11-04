@@ -208,7 +208,7 @@ pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
 
 Utilitaires
 ```
-pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib ntp reflector samba smbclient sudo unzip zip wget ;
+pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib neofetch ntp reflector samba smbclient sudo unzip zip wget ;
 ```
 
 **FSTAB**
