@@ -542,7 +542,8 @@ nano /home/marc/.config/openbox/autostart
 # nitrogen --restore &
 # wicd-client &
 # ivman &
-#ossxmix -b -x #& # OSS4 mixer applet
+# ossxmix -b -x #& # OSS4 mixer applet
+# batterymon &
 ################################################
 # Thunar as Auto-Mount
 # if [ $(pgrep #Thunar) ]
