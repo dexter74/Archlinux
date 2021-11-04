@@ -408,6 +408,32 @@ clear ;
 
 bootctl list ;
 ```
+
+
+
+A tester :
+```
+# Récupérer la Valeur UUID de la racine du système
+UUID_SYSTEM=$(blkid | grep "SYSTEM: UUID=" | cut -d '"' -f 2)
+
+# Installation EFI
+bootctl install
+echo "default  arch.*" > /mnt/boot/efi/loader/loader.conf
+
+# BootLoader:
+echo "title Arch Linux
+linux /vmlinuz-linux
+
+# ls /boot/*img
+initrd /initramfs-linux.img
+options root=UUID=$UUID_SYSTEM rw" > /mnt/boot/efi/loader/entries/arch.conf ;
+clear ;
+
+bootctl list ;
+```
+
+
+
 --------------------------------------------------------------------------------
 **Quitter le Chroot**
 ```
