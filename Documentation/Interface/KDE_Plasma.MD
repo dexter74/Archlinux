@@ -1,5 +1,5 @@
 
-**Installer KDE :** (Plasma)
+**Installer [KDE](https://wiki.archlinux.fr/KDE) :** (Plasma)
 ```
 pacman -S --noconfirm plasma
 ```
