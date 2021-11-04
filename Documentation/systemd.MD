@@ -25,6 +25,7 @@ systemctl status /home
 systemctl status /dev/sda2
 ```
 
+-------------------------------------------------------------------------------------------------
 [Erreur dans le chargement](https://wiki.archlinux.fr/systemd)
 
 **display-manager.service**
@@ -38,4 +39,20 @@ systemctl -t service -a --full | grep error
 systemctl -t service -a --full | grep dead
 ```
 
+-------------------------------------------------------------------------------------------------
+**Editer un service**
+```
+systemctl --user edit <nom du service>.service --full
+```
+
+**[Création de service Utilisateur](https://doc.ubuntu-fr.org/creer_un_service_avec_systemd)**
+```
+systemctl --user edit <nom du service>.service --full --force
+```
+-------------------------------------------------------------------------------------------------
+**Type de services systemd**
+```
+Un service de type simple (type par défaut) lance un processus principal
+n service de type forking, lance un processus père qui créera un processus fils dans le cadre de son démarrage.
+  
 
