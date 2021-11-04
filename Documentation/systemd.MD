@@ -11,7 +11,6 @@ systemctl poweroff
 systemctl suspend
 systemctl hibernate
 
-
 systemctl list-units --all ; # Une unité = Un service
 systemctl start <unit>
 systemctl stop <unit>
@@ -33,6 +32,10 @@ systemctl status /dev/sda2
 ln -s '/usr/lib/systemd/system/sdd.service' '/etc/systemd/system/display-manager.service'
 systemctl enable --now display-manager.service ;
 ```
+**Service en Erreur / Non Activ** (A regarder)
+```
+systemctl -t service -a --full | grep error
+systemctl -t service -a --full | grep dead
+```
 
 
-syslog.service
