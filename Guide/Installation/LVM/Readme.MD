@@ -438,10 +438,9 @@ systemctl status * | grep -i fail ;
 
 
 --------------------------------------------------------------------------------
-**Gestionnaire de fenêtre**
+**X11 en FR**
 ```
-#systemctl enable --now avahi-daemon.service ;
-pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
+localectl set-x11-keymap fr ;
 ```
 
 --------------------------------------------------------------------------------
@@ -449,7 +448,6 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
 pacman -S --noconfirm openbox obconf	menumaker ;
 ```
-
 
 ```
 pacman -S --noconfirm cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver 	cinnamon-session cinnamon-settings-daemon cinnamon-translations cjs muffin nemo ;
@@ -475,11 +473,7 @@ pacman -S --noconfirm xfce4 ;
 ```
 
 --------------------------------------------------------------------------------
-
-
---------------------------------------------------------------------------------
 **Configuration du Gestionnaire de fenêtre**
-
 La première étape est de lister les interfaces.
 ```
 ls /usr/share/xsessions/
@@ -497,23 +491,23 @@ Numlock=on
 Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 ```
 
-**X11 en FR**
+--------------------------------------------------------------------------------
+**Gestionnaire de fenêtre**
 ```
-localectl set-x11-keymap fr ;
+#systemctl enable --now avahi-daemon.service ;
+pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
--------------------------------------------------------------------------------------------------------------------------------------------------------
-**OpenBox - XFCE4**
+
+--------------------------------------------------------------------------------
+**OpenBox - XFCE4** (xfce4-panel)
 ```
 pacman -S --noconfirm xfce4 ;
 ```
-
-
-
-
-
-
-
-
+--------------------------------------------------------------------------------
+**Modules**
+```
+pacman -S --noconfirm tint2 plank ;
+```
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
