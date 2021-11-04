@@ -28,10 +28,13 @@ wget -c https://github.com/dracula/gtk/archive/master.zip -O /tmp/1.zip ; unzip 
 ###########################
 echo "[Autologin]
 User=marc
+
 #Session=openbox-kde.desktop
 Session=openbox.desktop
+
 [General]
 Numlock=on
+
 [Theme]
 Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 
@@ -60,7 +63,7 @@ mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.
 
 echo "
 ##############################
-# Configuration du démarrage #
+# Configuration du demarrage #
 ##############################
 # 
 # <ma commande 1> & 
@@ -68,14 +71,16 @@ echo "
 # <ma commande 3>
 #
 #
-# Résolution:
-xrandr -s 1920x1080 -r 60 &
+# Resolution:
+# xrandr -s 1920x1080 -r 60 &
 #
 # Fond d'écran:
-feh --bg-tile \"Wallpaper/bg.jpg\" &
+#feh --bg-tile \"Wallpaper/bg.jpg\" &
 #
+#
+xterm
 ##############################
 # tint2 & 
 # conky &
 ##############################
-"> /home/marc/.config/openbox/autostart ; clear ; cat  /home/marc/.config/openbox/autostart 
+"> /home/marc/.config/openbox/autostart ; clear ; cat  /home/marc/.config/openbox/autostart && systemctl restart sddm
