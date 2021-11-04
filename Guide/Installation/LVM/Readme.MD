@@ -208,7 +208,7 @@ pacstrap -i /mnt --noconfirm linux-headers ;
 
 
 --------------------------------------------------------------------------------
-** Installation du MicroCode :**
+**Installation du MicroCode :**
 MicroCode AMD: 
 ``` 
 pacstrap -i /mnt --noconfirm amd-ucode  ;
