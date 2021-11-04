@@ -40,10 +40,10 @@ Deepin Desktop Environnement
 Enlightenment
 Gnome Shell
 i3
-KDE-Plasma
 LXQt
 Mate
 Pantheon
+Plasma (KDE)
 Session Gnome Flashback
 Sugar
 Sway
