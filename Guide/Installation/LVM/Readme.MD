@@ -607,5 +607,5 @@ nano /home/marc/.config/openbox/autostart
 lvm2-activation.service > https://man7.org/linux/man-pages/man8/lvm2-activation-generator.8.html
 systemctl set-default graphical.target ;
 lxappearance-obconf	lxappearance-obconf-gtk3 obconf-qt ;
-
+https://github.com/coimbrap/archlinux
 ```
