@@ -413,24 +413,6 @@ initrd /amd-ucode.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf ;
 
 
-echo "
-title   EFI ArchLinux 1
-efi     /boot/EFI/BOOT/BOOTX64.EFI" > /boot/loader/entries/arch-uefi.conf
-
-echo "
-title   EFI ArchLinux 2
-efi     /boot/EFI/systemd/systemd-bootx64.efi" > /boot/loader/entries/arch-uefi2.conf
-
-echo "
-title   EFI ArchLinux 3
-efi     /boot/EFI/BOOT/BOOTX64.EFI
-options root=UUID=$UUID_SYSTEM rw
-" > /boot/loader/entries/arch-uefi3.conf
-
-echo "
-title   EFI ArchLinux 4
-efi     /boot/EFI/systemd/systemd-bootx64.efi
-options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch-uefi4.conf
 
 clear ;
 bootctl random-seed ;
