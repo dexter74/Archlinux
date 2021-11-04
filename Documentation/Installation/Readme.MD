@@ -336,7 +336,7 @@ su - marc ;
 ```
 
 --------------------------------------------------------------------------------
-**Firmware**
+**Firmware** (Hyper-V)
 ```
 cd /tmp ;
 git clone https://aur.archlinux.org/aic94xx-firmware.git ; # aic94xx
@@ -346,6 +346,8 @@ cd aic94xx-firmware ; makepkg -si --noconfirm ; cd /tmp ;
 cd wd719x-firmware  ; makepkg -si --noconfirm ; cd /tmp ;
 cd upd72020x-fw     ; makepkg -si --noconfirm ; cd /tmp ;
 ```
+
+
 
 --------------------------------------------------------------------------------
 **Yaourt**
