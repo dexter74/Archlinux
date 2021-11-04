@@ -43,6 +43,17 @@ su - marc ;
 # Configuration par défaut:
 mkdir -p ~/.config/openbox ; cp -a /etc/xdg/openbox/. ~/.config/openbox ; ls ~/.config/openbox ;
 
+
+
+
+###########################################################################################################################
+# Polybar #
+###########
+  Get started with the example configuration:
+    $ install -Dm644 /usr/share/doc/polybar/config $HOME/.config/polybar/config
+    $ polybar example
+
+
 ###########################################################################################################################
 # Autostart #
 #############
