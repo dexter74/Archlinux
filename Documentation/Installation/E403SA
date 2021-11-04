@@ -1,0 +1,13 @@
+###############################################
+# Installation sur le PC Portable Asus E403SA #
+###############################################
+#
+==> WARNING: Possibly missing firmware for module: wd719x
+==> WARNING: Possibly missing firmware for module: aic94xx
+==> WARNING: Possibly missing firmware for module: xhci_pci
+
+
+# Correctif 
+yay -S --noconfirm wd719x-firmware  ; # wd719x
+yay -S --noconfirm aic94xx-firmware ; # aic94xx
+yay -S --noconfirm upd72020x-fw     ; # xhci_pci
