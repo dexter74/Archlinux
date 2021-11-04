@@ -16,6 +16,9 @@
 # - 
 ########################################################################################################
 
+# Etape 1 : Connaitre les différents utilités des paquets de Gnome, XFCE4 pour mieux les utiliser.
+
+
 
 ########################################################################################################
 # polybar | fbpanel | rox-filer | Pcmanfm | idesk | fbdesk | Dash to Panel | Docky | Dotfiles |
@@ -99,4 +102,4 @@ echo 'tint2 &'                                                  >> ~/.config/ope
 
 
 # http://sdz.tdct.org/sdz/comprendre-et-configurer-x-org.html
-# Liste dépendance optionnel  : pacman -Si openbox 
+# Liste dépendance optionnel  : pacman -Si openbox
