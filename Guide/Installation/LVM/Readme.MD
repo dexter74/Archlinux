@@ -447,7 +447,7 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 --------------------------------------------------------------------------------
 **Installation d'une Interface Graphique**
 ```
-pacman -S --noconfirm openbox ;
+pacman -S --noconfirm openbox obconf ;
 ```
 
 
