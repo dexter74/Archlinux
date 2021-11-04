@@ -391,6 +391,8 @@ initrd /amd-ucode.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf ;
 clear ;
 
+
+bootctl random-seed ;
 bootctl list ;
 ```
 
@@ -414,9 +416,11 @@ initrd /intel-ucode.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf ;
 clear ;
 
+
+bootctl random-seed ;
 bootctl list ;
 ```
-
+bootctl systemd-efi-options 
 
 --------------------------------------------------------------------------------
 **Quitter le Chroot**
