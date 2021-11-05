@@ -542,6 +542,15 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
 
 
+
+
+Amélioration à faire:
+[Définir le timeZone par SystemD](https://www.xmodulo.com/change-timezone-linux.html)
+
+
+
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Note:
 ```
