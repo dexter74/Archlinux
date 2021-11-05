@@ -87,3 +87,6 @@ ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 [NetworkManager](https://doc.fedora-fr.org/wiki/Le_service_network)
 [nmcli](https://sysreseau.net/networkmanager-nmcli-nmtui/)
+
+
+[VFIO](https://hackmd.io/@edingroot/SkGD3Q7Wv#B-Enable-the-IOMMU-for-systemd-boot-Proxmox-on-UEFI)
