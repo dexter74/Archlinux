@@ -83,4 +83,4 @@ ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 [Services et serveurs](https://www.linuxtricks.fr/wiki/services-et-serveurs) (Apache, dnsmasq, jal2fail ...)
 
 [NetworkManager](https://doc.fedora-fr.org/wiki/Le_service_network)
-
+[nmcli](https://sysreseau.net/networkmanager-nmcli-nmtui/)
