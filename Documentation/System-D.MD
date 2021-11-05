@@ -72,12 +72,15 @@ n service de type forking, lance un processus père qui créera un processus fil
 
 
 ```
-
 systemctl disable --now NetworkManager ;
 systemctl enable --now systemd-networkd ;
 systemctl enable --now systemd-resolved ;
 ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 ```
+
+[Configurer le réseau EASY](https://www.xmodulo.com/switch-from-networkmanager-to-systemd-networkd.html)
+
+
 
 [Systemd-LancementConteneur](https://www.linuxtricks.fr/wiki/wiki.php?title=systemd-demarrer-une-distribution-comme-un-conteneur)
 [Services et serveurs](https://www.linuxtricks.fr/wiki/services-et-serveurs) (Apache, dnsmasq, jal2fail ...)
