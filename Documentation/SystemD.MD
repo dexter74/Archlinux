@@ -31,7 +31,7 @@ systemctl status /dev/sda2
 
 **display-manager.service**
 ```
-ln -s '/usr/lib/systemd/system/sdd.service' '/etc/systemd/system/display-manager.service'
+ln -s '/usr/lib/systemd/system/sdd.service' '/etc/systemd/system/display-manager.service' ;
 systemctl enable --now display-manager.service ;
 ```
 
@@ -44,14 +44,14 @@ systemctl enable --now systemd-timesyncd.service ;
 
 **Service en Erreur / Non Activ** (A regarder)
 ```
-systemctl -t service -a --full | grep error
-systemctl -t service -a --full | grep dead
+systemctl -t service -a --full | grep error ;
+systemctl -t service -a --full | grep dead ;
 ```
 
 -------------------------------------------------------------------------------------------------
 **Editer un service**
 ```
-systemctl --user edit <nom du service>.service --full
+systemctl --user edit <nom du service>.service --full ;
 ```
 
 **[Service des Users](https://wiki.archlinux.fr/Systemd/utilisateur)**
@@ -65,7 +65,7 @@ systemctl --user edit <nom du service>.service --full
 
 **[Création de service Utilisateur](https://doc.ubuntu-fr.org/creer_un_service_avec_systemd)** ([Syntax](https://www.linuxtricks.fr/wiki/systemd-creer-des-services-timers-unites) | [Timers](https://www.linuxtricks.fr/wiki/systemd-creer-des-services-timers-unites))
 ```
-systemctl --user edit <nom du service>.service --full --force
+systemctl --user edit <nom du service>.service --full --force ;
 ```
 -------------------------------------------------------------------------------------------------
 **Type de services systemd**
@@ -78,7 +78,7 @@ n service de type forking, lance un processus père qui créera un processus fil
 systemctl disable --now NetworkManager ;
 systemctl enable --now systemd-networkd ;
 systemctl enable --now systemd-resolved ;
-ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ;
 ```
 
 [Configurer le réseau EASY](https://www.xmodulo.com/switch-from-networkmanager-to-systemd-networkd.html)
