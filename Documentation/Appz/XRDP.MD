@@ -1,3 +1,6 @@
+# NON FONCTIONNEL !
+
+
 **Installation du paquet**
 ```
 yay -S --noconfirm xrdp ; # Paquet de base
