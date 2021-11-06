@@ -320,12 +320,16 @@ systemctl enable iwd ;
 
 **Facultatif**
 ```
-systemctl disable --now NetworkManager  ; # Désactivation de NetWorkManager
-systemctl enable --now systemd-networkd ; # Activation de NetWorkD par SystemD
-systemctl enable --now systemd-resolved ; # Activation de ResolveD par SystemD
-ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ; # Liens de resolvD vers resolv
-``
+pacman -S --noconfirm resolvconf  ; # Indispensables
+systemctl disable NetworkManager  ; # Désactivation de NetWorkManager
+systemctl enable systemd-networkd ; # Activation de NetWorkD par SystemD
+systemctl enable systemd-resolved ; # Activation de ResolveD par SystemD
+```
 
+**BUG:**
+```
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ; #
+```
 
 --------------------------------------------------------------------------------
 **Modification de fichiers**
