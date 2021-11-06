@@ -13,7 +13,6 @@ systemctl restart xrdp ;
 
 **/etc/xrdp/sesman.ini**
 ```
-
 # Définir sur "false" pour empêcher le compte "root" de se connecter en RDP (par défaut, c'est autorisé)
 AllowRootLogin=false
 
@@ -35,7 +34,6 @@ DisconnectedTimeLimite=0
 
 
 **/etc/xrdp/xrdp.ini**
-
 
 
 **Définir l'environnement de bureau**
