@@ -1,27 +1,13 @@
 **Installation du paquet**
 ```
-yay -S --noconfirm xrdp     ; # Paquet de base
+yay -S --noconfirm xrdp ; # Paquet de base
 ```
 
 **xorgxrdp** :
 ```
 gpg --keyserver keys.gnupg.net --recv-keys 61ECEABBF2BB40E3A35DF30A9F72CDBC01BF10EB ;
-yay -S --noconfirm xorgxrdp ; # Paquet de base
-
+yay -S --noconfirm xorgxrdp ;
 ```
-
-
-
-
-**Configuration du service XRDP et XRDP-SESMAN**
-```
-```
-
-
-
-
-
-
 
 **Activation des services**
 ```
@@ -34,4 +20,13 @@ systemctl enable xrdp-sesman ;
 systemctl status xrdp        ;
 systemctl status xrdp-sesman ;
 ```
+
+**Configuration du service XRDP et XRDP-SESMAN**
+```
+```
+
+
+
+
+
 
