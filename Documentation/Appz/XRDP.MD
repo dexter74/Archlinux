@@ -1,12 +1,13 @@
 **Installation du paquet**
 ```
-pacman -S --noconfirm xrdp     ; # Paquet de base
+yay -S --noconfirm xrdp     ; # Paquet de base
 ```
 
 **xorgxrdp** :
 ```
-su - marc ;
-cd /tmp
+gpg --keyserver keys.gnupg.net --recv-keys 61ECEABBF2BB40E3A35DF30A9F72CDBC01BF10EB ;
+yay -S --noconfirm xorgxrdp ; # Paquet de base
+
 ```
 
 
