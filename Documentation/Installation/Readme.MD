@@ -330,34 +330,38 @@ Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.ser
 ```
 
 **Facultatif**
-```
-pacman -S --noconfirm resolvconf  ; # Indispensables
-systemctl disable NetworkManager  ; # Désactivation de NetWorkManager
-systemctl enable systemd-networkd ; # Activation de NetWorkD par SystemD
-systemctl enable systemd-resolved ; # Activation de ResolveD par SystemD
-systemctl enable systemd-homed.service ;
-systemctl enable systemd-resolved.service ;
-# pacman -S --noconfirm pam pambase ;
-```
-
 
 ```
 # DHCP=
 # > YES  Supporte IPV4 et IPV6 
 # > IPV4 Supporte IPV4 uniquement
 # > IPV6 Supporte IPV6 uniquement
-
-
 echo "[Match]
 Name=eth0
 
 [Network]
-DHCP=ipv4" > /etc/systemd/network/20-dhcp.network
+#DHCP=ipv4
+Address=192.168.1.108/24
+Gateway=192.168.1.1
+DNS=8.8.8.8" > /etc/systemd/network/20-dhcp.network ; systemctl restart systemd-networkd.service ;
 ```` 
+
+
+```
+pacman -S --noconfirm resolvconf  ; # Indispensables
+systemctl disable NetworkManager  ; #
+systemctl enable systemd-networkd ; #
+systemctl enable systemd-resolved ; #
+systemctl enable systemd-homed.service ;
+systemctl enable systemd-resolved.service ;
+# pacman -S --noconfirm pam pambase ;
+```
+
 
 **BUG:**
 ```
-ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ; #
+sudo rm /etc/resolv.conf ;
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ;
 ```
 
 
