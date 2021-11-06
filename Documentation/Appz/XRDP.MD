@@ -6,6 +6,13 @@ yay -S --noconfirm xorgxrdp ; # Xorg drivers for xrdp
 
 **Activation des services**
 ```
-systemctl enable xrdp
-systemctl enable xrdp-sesman
+systemctl enable xrdp        ;
+systemctl enable xrdp-sesman ;
 ```
+
+**Vérification des services**
+```
+systemctl status xrdp        ;
+systemctl status xrdp-sesman ;
+```
+
