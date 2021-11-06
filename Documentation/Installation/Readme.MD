@@ -338,14 +338,30 @@ systemctl enable systemd-resolved ; # Activation de ResolveD par SystemD
 systemctl enable systemd-homed.service ;
 systemctl enable systemd-resolved.service ;
 # pacman -S --noconfirm pam pambase ;
-
 ```
 
+
+```
+# DHCP=
+# > YES  Supporte IPV4 et IPV6 
+# > IPV4 Supporte IPV4 uniquement
+# > IPV6 Supporte IPV6 uniquement
+
+
+echo "[Match]
+Name=eth0
+
+[Network]
+DHCP=ipv4" > /etc/systemd/network/20-dhcp.network
+```` 
 
 **BUG:**
 ```
 ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ; #
 ```
+
+
+
 
 --------------------------------------------------------------------------------
 **Modification de fichiers**
