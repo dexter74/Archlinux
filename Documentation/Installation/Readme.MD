@@ -451,12 +451,10 @@ initrd /initramfs-linux.img
 initrd /intel-ucode.img
 options root=UUID=$UUID_SYSTEM rw quiet vga=current splash" > /boot/loader/entries/arch.conf ;
 clear ;
-
-
 bootctl random-seed ;
 bootctl list ;
+# bootctl systemd-efi-options XXXXX
 ```
-bootctl systemd-efi-options 
 
 --------------------------------------------------------------------------------
 **Quitter le Chroot**
