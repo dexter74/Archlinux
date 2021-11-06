@@ -6,9 +6,10 @@ pacman -S --noconfirm xfce4           ; # Groupe de paquet
 pacman -S --noconfirm xfce4-goodies   ; # extra
 pacman -S --noconfirm xfce4-dev-tools ; # Outils
 pacman -S --noconfirm gvfs            ; # Thunar > Parcourir réseau
-pacman -S --noconfirm pacman -S xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-appfinder xfce-utils xfconf
-pacman -S gstreamer0.10-base-plugins
-pacman -S dbus
+
+pacman -S --noconfirm pacman -S xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-appfinder xfce-utils xfconf ;
+pacman -S gstreamer0.10-base-plugins ;
+pacman -S dbus ;
 ```
 
 
