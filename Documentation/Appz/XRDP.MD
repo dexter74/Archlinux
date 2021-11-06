@@ -11,13 +11,13 @@ yay -S --noconfirm xorgxrdp ;
 
 **Activation des services**
 ```
-systemctl enable xrdp        ;
-systemctl enable xrdp-sesman ;
+systemctl enable --now xrdp ;
+systemctl enable --now  xrdp-sesman ;
 ```
 
 **Vérification des services**
 ```
-systemctl status xrdp        ;
+systemctl status xrdp ;
 systemctl status xrdp-sesman ;
 ```
 
