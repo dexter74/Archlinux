@@ -1,10 +1,13 @@
 **Installation du paquet**
 ```
-yay -S --noconfirm xrdp ;
+yay -S --noconfirm xrdp     ; # Paquet de base
+yay -S --noconfirm xorgxrdp ; # Xorg drivers for xrdp
 ```
 
 **Activation du service xRDP**
 ```
 systemctl enable --now xrdp ;
 systemctl status xrdp ;
+systemctl restart xrdp ;
+
 ```
