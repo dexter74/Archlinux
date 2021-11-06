@@ -311,12 +311,22 @@ ff02::2 ip6-allrouters" > /etc/hosts ;
 --------------------------------------------------------------------------------
 **Activation des services**
 ```
-systemctl enable NetworkManager ;
+systemctl enable NetworkManager ; #
 systemctl enable sshd ;
 systemctl enable cronie ;
 systemctl enable ntpd ;
 systemctl enable iwd ;
 ```
+
+**Facultatif**
+```
+systemctl disable --now NetworkManager  ; # Désactivation de NetWorkManager
+systemctl enable --now systemd-networkd ; # Activation de NetWorkD par SystemD
+systemctl enable --now systemd-resolved ; # Activation de ResolveD par SystemD
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ; # Liens de resolvD vers resolv
+``
+
+
 --------------------------------------------------------------------------------
 **Modification de fichiers**
 ```
