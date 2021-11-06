@@ -28,6 +28,7 @@ systemctl status xrdp-sesman ;
 ```
 su - marc ;
 echo "exec xfce4-session" > ~/.xinitrc ;
+echo "allowed_users = anybody" > /etc/X11/Xwrapper.config
 ```
 
 ```
