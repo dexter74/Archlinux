@@ -26,3 +26,9 @@ systemctl status xrdp-sesman ;
 su - marc ;
 echo "exec xfce4-session" > ~/.xinitrc ;
 ```
+
+
+```
+find / -type f -name *xrdp* ;
+find / -type d -name *xrdp* ;
+```
