@@ -1,8 +1,23 @@
 **Installation du paquet**
 ```
-yay -S --noconfirm xrdp     ; # Paquet de base
-yay -S --noconfirm xorgxrdp ; # Xorg drivers for xrdp
+pacman -S --noconfirm xrdp     ; # Paquet de base
 ```
+
+**Désactiver la vérification PGP**
+```
+nano /etc/pacman.conf
+SigLevel = never
+sed -i -e "s/\#SigLevel \= Optional TrustAll/\SigLevel \= Never/g" /etc/pacman.conf ;
+```
+
+
+```
+su - marc ;
+cd /tmp
+git clone https://aur.archlinux.org/xorgxrdp.git
+cd xorgxrdp ;
+makepkg -si --noconfirm ;
+
 
 **Configuration du service XRDP et XRDP-SESMAN**
 ```
