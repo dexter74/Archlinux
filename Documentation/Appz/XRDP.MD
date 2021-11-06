@@ -23,6 +23,7 @@ systemctl status xrdp-sesman ;
 
 **Configuration du service XRDP et XRDP-SESMAN**
 ```
+echo "exec xfce4-session" > ~/.xinitrc
 ```
 
 
