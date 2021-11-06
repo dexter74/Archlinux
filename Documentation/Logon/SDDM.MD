@@ -22,7 +22,7 @@ systemctl status sddm ;
 ```
 echo "[Autologin]
 User=marc
-Session=XXXXXX
+Session=xfce.desktop
 
 [General]
 Numlock=on
