@@ -27,8 +27,8 @@ su - marc ;
 echo "exec xfce4-session" > ~/.xinitrc ;
 ```
 
-
 ```
 find / -type f -name *xrdp* ;
-find / -type d -name *xrdp* ;
+rm -f /etc/systemd/system/multi-user.target.wants/xrdp.service xrdp-sesman.service
+systemctl daemon-reload ;
 ```
