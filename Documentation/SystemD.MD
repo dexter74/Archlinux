@@ -6,10 +6,7 @@ systemctl   : contrôle systemd et gère les unités.
 journalctl  : consultation du journal de systemd.
 loginctl    : contrôle des sessions utilisateurs (systemd-logind).
 
-
-
 systemctl --version
-
 systemctl reboot
 systemctl poweroff
 systemctl suspend
