@@ -1,0 +1,9 @@
+**Installation du paquet**
+```
+yay -S --noconfirm xrdp ;
+```
+
+**Activation du service xRDP**
+```
+systemctl enable --now xrdp ;
+```
