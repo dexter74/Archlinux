@@ -6,4 +6,5 @@ yay -S --noconfirm xrdp ;
 **Activation du service xRDP**
 ```
 systemctl enable --now xrdp ;
+systemctl status xrdp ;
 ```
