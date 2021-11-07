@@ -30,6 +30,7 @@ yay    -S --noconfirm chromium ;
 **Thèmes :**
 ```
 https://www.xfce-look.org/p/1483325/
+https://www.xfce-look.org/p/1574551/
 ```
 
 
