@@ -8,6 +8,12 @@
 [Mon Topic](https://forums.archlinux.fr/viewtopic.php?f=1&t=22413&p=177221#p177221)
 
 
+
+**Outils pour la compilation**
+```
+pacman -S --noconfirm meson ;
+```
+
 **Dépendance :**
 ```
 pacman -S --noconfirm glib2 gtk3 vala bamf ;
@@ -30,7 +36,8 @@ ninja install ;
 ```
 
 
+
 ```
-pacman -S --noconfirm meson  gtk2 cmake appmenu-gtk-module
+ gtk2 cmake appmenu-gtk-module
 yay -S --noconfirm vala-panel ;
 ```
