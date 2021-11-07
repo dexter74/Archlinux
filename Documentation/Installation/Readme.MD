@@ -314,7 +314,7 @@ ff02::2 ip6-allrouters" > /etc/hosts ;
 --------------------------------------------------------------------------------
 **Activation des services**
 ```
-systemctl enable NetworkManager ; #
+systemctl disable NetworkManager ; #
 systemctl enable sshd ;
 systemctl enable cronie ;
 systemctl enable ntpd ;
