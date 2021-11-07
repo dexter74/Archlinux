@@ -2,10 +2,13 @@
 
 **Installation de XFCE4** (Base)
 ```
-pacman -S --asexplicit xfce4           ; # Groupe de paquet
-pacman -S --asexplicit xfce4-goodies   ; # extra
-pacman -S --asexplicit xfce4-dev-tools ; # Outils
-pacman -S --asexplicit gvfs            ; # Requiert pour la corbeille, Thunar
+pacman -S --asexplicit xfce4              ; # Groupe de paquet
+pacman -S --asexplicit xfce4-goodies      ; # extra
+pacman -S --asexplicit xfce4-dev-tools    ; # Outils
+pacman -S --asexplicit gvfs               ; # Requiert pour la corbeille, Thunar
+pacman -S --asexplicit pavucontrol        ; # Contrôleur de son
+pacman -S --asexplicit pulseaudio         ; # Son
+systemctl --user enable ---now pulseaudio ; # Service gérent le son
 ```
 
 **Thunar** (Dépendances optionnel)
