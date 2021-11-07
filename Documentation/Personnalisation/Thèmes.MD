@@ -15,6 +15,12 @@ yay    -S --noconfirm chromium ;
 /usr/share/plank/themes
 ```
 
+**User**
+```
+/.themes/
+/.local/share/icons
+/.local/share/plank/theme
+```
 
 **Gestionnaire de fenêtre :**
 ```
@@ -23,6 +29,7 @@ yay    -S --noconfirm chromium ;
 
 **Thèmes :**
 ```
+https://www.xfce-look.org/p/1483325/
 ```
 
 
