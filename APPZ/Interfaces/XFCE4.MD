@@ -20,10 +20,13 @@ systemctl --user enable --now pulseaudio  ; # Service gérent le son
 **Thunar** (Dépendances optionnel)
 ```
 pacman -S --asexplicit thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfdesktop ;
-systemctl --global enable --now thunar.service
-systemctl --user enable --now
-thunar.service
+pacman -S --asexplicit gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb ;
 ```
+
+**prise Partage**
+```
+```
+
 
 **Répertoire par défaut**
 ```
