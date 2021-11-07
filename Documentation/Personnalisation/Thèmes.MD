@@ -22,8 +22,15 @@ yay    -S --noconfirm chromium ;
 ```
 
 **Thèmes :**
+```
+```
 
 
 **Icônes :**
+```
+```
+
 
 **Plank :**
+```
+```
