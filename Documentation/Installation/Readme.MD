@@ -8,7 +8,6 @@ loadkeys fr-pc ;
 iwctl --passphrase <Clé WPA> station wlan0 connect ASUS_A8_5G ;
 ```
 
-
 --------------------------------------------------------------------------------
 **Disque**
 ```
@@ -314,7 +313,7 @@ ff02::2 ip6-allrouters" > /etc/hosts ;
 --------------------------------------------------------------------------------
 **Activation des services**
 ```
-systemctl disable NetworkManager ; #
+systemctl enable NetworkManager ;
 systemctl enable sshd ;
 systemctl enable cronie ;
 systemctl enable ntpd ;
@@ -335,7 +334,6 @@ Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.ser
 **Facultatif**
 
 ```
-echo "
 # DHCP=
 # > YES  Supporte IPV4 et IPV6 
 # > IPV4 Supporte IPV4 uniquement
