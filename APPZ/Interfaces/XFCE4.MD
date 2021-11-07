@@ -6,20 +6,17 @@ pacman -S --asexplicit xfce4              ; # Groupe de paquet
 pacman -S --asexplicit xfce4-goodies      ; # extra
 pacman -S --asexplicit xfce4-dev-tools    ; # Outils
 pacman -S --asexplicit gvfs               ; # Requiert pour la corbeille, Thunar
+```
+
+**Son**
+```
 pacman -S --asexplicit pavucontrol        ; # Contrôleur de son
+pacman -S --asexplicit pipewire           ; # Son (A testé)
 pacman -S --asexplicit pulseaudio         ; # Son
-systemctl --user enable ---now pulseaudio ; # Service gérent le son
+systemctl --user enable --now pipewire    ; # Service gérent le son
+systemctl --user enable --now pulseaudio  ; # Service gérent le son
 ```
 
-**Thunar** (Dépendances optionnel)
-```
-pacman -Qi thunar ;
-# Requis par : thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfdesktop
-```
-
-```
-pacman -S --asexplicit thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfdesktop ;
-```
 
 **Répertoire par défaut**
 ```
@@ -33,4 +30,9 @@ XDG_PICTURES_DIR="$HOME/Images"
 XDG_VIDEOS_DIR="$HOME/Videos"' > ~/.config/user-dirs.dirs
 
 mkdir $HOME/ Bureau Téléchargements Templates Public Documents Musiques Images Videos
+```
+
+**Thunar** (Dépendances optionnel)
+```
+pacman -S --asexplicit thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfdesktop ;
 ```
