@@ -20,14 +20,15 @@ systemctl status sddm ;
 
 **Configuration de SSDM**
 ```
-echo "
-#[Autologin]
-#User=marc
-#Session=xfce.desktop
-#[General]
-#Numlock=on
-#[Theme]
-#Current=breeze" > /etc/sddm.conf ;
+echo "[Autologin]
+User=marc
+Session=xfce.desktop
+
+[General]
+Numlock=on
+
+[Theme]
+Current=breeze" > /etc/sddm.conf ;
 systemctl restart sddm ;
 ```
 
