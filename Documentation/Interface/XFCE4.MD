@@ -5,14 +5,20 @@
 pacman -S --noconfirm xfce4           ; # Groupe de paquet
 pacman -S --noconfirm xfce4-goodies   ; # extra
 pacman -S --noconfirm xfce4-dev-tools ; # Outils
-pacman -S --noconfirm gvfs            ; # Thunar > Parcourir réseau
+pacman -S --noconfirm gvfs            ; # Requiert pour la corbeille, Thunar
 
-pacman -S --noconfirm pacman -S xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-appfinder xfce-utils xfconf ;
+pacman -S --noconfirm xfwm4 xfce4-panel xfdesktop thunar xfce4-session xfce4-settings xfce4-appfinder xfconf ;
 pacman -S gstreamer0.10-base-plugins ;
 pacman -S dbus ;
 ```
 
 
+
+---------------------------------------------------------------------------------------------
+**Indispensable ?**
+```
+yay -S --noconfirm xfce4-panel-sntray-git
+```
 
 ---------------------------------------------------------------------------------------------
 **EN DEV**
@@ -25,6 +31,7 @@ pacman -S --noconfirm network-manager-applet  ;
 
 sudo pacman -S --needed gvfs-{afc,goa,google,gphoto2,mtp,nfs,smb} 
 sudo pacman -S --needed xfce4 xfce4-goodies gvfs vlc quodlibet python-pyinotify lightdm-gtk-greeter xarchiver claws-mail galculator evince ffmpegthumbnailer xscreensaver  system-config-printer
+
 ```
 
 
