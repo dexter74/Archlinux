@@ -234,25 +234,6 @@ pacstrap -i /mnt --noconfirm intel-ucode ;
 genfstab -U /mnt >> /mnt/etc/fstab ;
 ```
 --------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---------------------------------------------------------------------------------
 **Chroot**
 ```
 arch-chroot /mnt ;
@@ -270,7 +251,6 @@ hwclock --systohc ;
 ```
 loadkeys fr-pc ;
 export LANG=fr_FR.UTF-8 ;
-
 echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf ;
 echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /etc/locale.conf ;
 echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /etc/locale.conf ;
@@ -313,6 +293,14 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.conf ;
 ```
 --------------------------------------------------------------------------------
+**NANO par défaut**
+```
+echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc ;
+```
+
+
+
+--------------------------------------------------------------------------------
 **Mise à jour des paquets**
 ```
 pacman -Syy ;
@@ -322,23 +310,8 @@ pacman -Syy ;
 ```
 yay -S --noconfirm iwd ;
 ``` 
-**NANO par défaut**
-```
-echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc ;
-```
-
-
-
-
-
-
-
-
-
-
-
-
 --------------------------------------------------------------------------------
+
 **AJout d'un USER**
 ```
 /usr/sbin/useradd \
@@ -367,7 +340,6 @@ git clone https://aur.archlinux.org/yay.git ;
 cd yay ;
 makepkg -si --noconfirm ;
 ```
-
 --------------------------------------------------------------------------------
 **Firmware** (Hyper-V)
 ```
@@ -381,15 +353,6 @@ cd upd72020x-fw     ; makepkg -si --noconfirm ; cd /tmp ;
 exit ;
 ```
 
-
-
-
---------------------------------------------------------------------------------
-**Prise en charge de SystemD et LVM2**
-```
-sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems keyboard fsck)/g" /etc/mkinitcpio.conf ;
-mkinitcpio -p linux ;
-```
 --------------------------------------------------------------------------------
 **Activation des services**
 ```
@@ -399,6 +362,13 @@ systemctl enable cronie ;
 systemctl enable ntpd ;
 systemctl enable iwd ;
 ```
+--------------------------------------------------------------------------------
+**Prise en charge de SystemD et LVM2**
+```
+sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS\=(base systemd autodetect modconf block lvm2 filesystems keyboard fsck)/g" /etc/mkinitcpio.conf ;
+mkinitcpio -p linux ;
+```
+
 
 --------------------------------------------------------------------------------
 **Bootloader** (AMD)
