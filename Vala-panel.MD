@@ -20,10 +20,9 @@ pacman -S --noconfirm gobject-introspection ;
 
 
 
-
+```
 pacman -S --noconfirm meson  gtk2 cmake appmenu-gtk-module
 yay -S --noconfirm vala-panel ;
-
 cd /tmp ;
 rm -r /tmp/* ;
 git clone https://gitlab.com/vala-panel-project/vala-panel-appmenu.git ;
@@ -31,4 +30,3 @@ cd /tmp/vala-panel-appmenu ;
 meson -Dxfce=enabled --prefix=/usr/local /tmp ;
 ninja install ;
 ```
-
