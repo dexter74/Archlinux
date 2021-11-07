@@ -18,6 +18,8 @@ Partitions!
      |-> SYSTEM
      |-> HOME
  ```
+ 
+ 
 --------------------------------------------------------------------------------
 **Déclarations des valeurs**
 ```
@@ -29,6 +31,7 @@ SIZE_SYST=+20G
 SIZE_HOME=+7G
 LVM_NAMEVG=VG0
 ```
+
 --------------------------------------------------------------------------------
 **Démontage des partitions** (Si besoin)
 ```
@@ -36,6 +39,7 @@ umount -R /mnt /mnt/* ;
 swapoff ${DISK}2 ;
 ```
 
+--------------------------------------------------------------------------------
 **Vérification du montage**
 ```
 clear ; 
@@ -43,6 +47,7 @@ df -h | grep "/mnt" ;
 swapon -s ;
 ```
 
+--------------------------------------------------------------------------------
 **Suppression du LVM**
 ```
 echo "yes" | lvremove /dev/$LVM_NAMEVG/SWAP ;
@@ -52,14 +57,18 @@ echo "yes" | vgremove $LVM_NAMEVG ;
 echo "yes" | pvremove ${DISK}2  ;
 ```
 
+--------------------------------------------------------------------------------
 **Vérification LVM**
 ```
 clear ; lvdisplay ; vgdisplay ; pvdisplay ;
 ```
+
+--------------------------------------------------------------------------------
 **Wype le Disque-dur**
 ```
 dd if=/dev/zero of=${DISK}  bs=512  count=1 ;
 ```
+
 --------------------------------------------------------------------------------
 **Création des partitions**
 ```
@@ -85,7 +94,6 @@ Appliquer les changements de partition sans reboot
 partprobe ${DISK}2  ; # sdXy
 ```
 
-
 --------------------------------------------------------------------------------
 **Création du Volume Physique**
 ```
@@ -93,10 +101,13 @@ clear ;
 pvcreate ${DISK}2 ;
 ```
 
+--------------------------------------------------------------------------------
 **Création du Volume Groupe**
 ```
 clear ; vgcreate $LVM_NAMEVG ${DISK}2  ;
 ```
+
+--------------------------------------------------------------------------------
 **Création des Volumes Logiques**
 ```
 clear ;
@@ -104,6 +115,7 @@ echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG ;
 echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG ;
 echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG ;
 ```
+
 --------------------------------------------------------------------------------
 **Vérification LVM**
 ```
@@ -122,6 +134,7 @@ echo "Path des Volumes Logiques"
 lvdisplay | grep "LV Path" ;
 echo "###########################################"
 ```
+
 --------------------------------------------------------------------------------
 **Formatage des partitions**
 ```
@@ -132,6 +145,7 @@ echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP ;
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM ;
 echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME ;
 ```
+
 --------------------------------------------------------------------------------
 **Montage des partitions**
 
@@ -155,11 +169,12 @@ EFI / MBR
 mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot ;
 ```
 
-
+--------------------------------------------------------------------------------
 **Vérification du montage**
 ```
 clear ; df -h | grep "/mnt" ; swapon -s ;
 ```
+
 --------------------------------------------------------------------------------
 **Installation de paquet**
 
@@ -212,7 +227,6 @@ pacstrap -i /mnt --noconfirm pavucontrol pipewire-pulse ;
 # pacstrap -i /mnt --noconfirm pulseaudio-alsa ;
 ```
 
-
 Optionnel
 ```
 pacstrap -i /mnt --noconfirm linux-headers ;
@@ -233,6 +247,12 @@ pacstrap -i /mnt --noconfirm intel-ucode ;
 ```
 genfstab -U /mnt >> /mnt/etc/fstab ;
 ```
+--------------------------------------------------------------------------------
+
+
+
+
+
 --------------------------------------------------------------------------------
 **Chroot**
 ```
@@ -271,6 +291,11 @@ echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen ;
 locale-gen ;
 ```
 --------------------------------------------------------------------------------
+**NANO par défaut**
+```
+echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc ;
+```
+--------------------------------------------------------------------------------
 **Hostname et Host**
 ```
 echo "archlinux" > /etc/hostname
@@ -293,14 +318,6 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.conf ;
 ```
 --------------------------------------------------------------------------------
-**NANO par défaut**
-```
-echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc ;
-```
-
-
-
---------------------------------------------------------------------------------
 **Mise à jour des paquets**
 ```
 pacman -Syy ;
@@ -310,6 +327,15 @@ pacman -Syy ;
 ```
 yay -S --noconfirm iwd ;
 ``` 
+--------------------------------------------------------------------------------
+**Activation des services**
+```
+systemctl enable NetworkManager ;
+systemctl enable sshd ;
+systemctl enable cronie ;
+systemctl enable ntpd ;
+systemctl enable iwd ;
+```
 --------------------------------------------------------------------------------
 
 **AJout d'un USER**
@@ -322,8 +348,9 @@ yay -S --noconfirm iwd ;
   --comment 'Drthrax' \
   --create-home marc ;
 ```
---------------------------------------------------------------------------------
+
 **Changements des mot de passe :**
+
 ```
 (echo "admin"; echo "admin") | passwd marc ;
 (echo "root" ; echo "root")  | passwd root ;
@@ -353,15 +380,6 @@ cd upd72020x-fw     ; makepkg -si --noconfirm ; cd /tmp ;
 exit ;
 ```
 
---------------------------------------------------------------------------------
-**Activation des services**
-```
-systemctl enable NetworkManager ;
-systemctl enable sshd ;
-systemctl enable cronie ;
-systemctl enable ntpd ;
-systemctl enable iwd ;
-```
 --------------------------------------------------------------------------------
 **Prise en charge de SystemD et LVM2**
 ```
