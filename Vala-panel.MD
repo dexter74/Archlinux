@@ -7,8 +7,21 @@
 [topic](https://www.reddit.com/r/xfce/comments/pyzbrn/how_to_actually_enable_global_menu_in_xfce/)
 [Mon Topic](https://forums.archlinux.fr/viewtopic.php?f=1&t=22413&p=177221#p177221)
 
+
+**Dépendance :**
 ```
-pacman -S --noconfirm meson gobject-introspection vala gtk2 cmake appmenu-gtk-module bamf ;
+pacman -S --noconfirm glib2 gtk3 vala bamf ;
+```
+
+**Correctif erreur:**
+```
+pacman -S --noconfirm gobject-introspection ;
+```
+
+
+
+
+pacman -S --noconfirm meson  gtk2 cmake appmenu-gtk-module
 yay -S --noconfirm vala-panel ;
 
 cd /tmp ;
