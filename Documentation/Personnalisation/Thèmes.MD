@@ -5,6 +5,7 @@
 pacman -S --noconfirm qt5-base qt5-svg qt5-declarative qt5-quickcontrols ;
 yay    -S --noconfirm ocs-url ;
 yay    -S --noconfirm plank ;
+yay    -S --noconfirm chromium ; 
 ```
 
 **Dossiers Communs**
