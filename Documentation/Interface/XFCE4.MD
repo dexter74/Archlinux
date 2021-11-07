@@ -19,7 +19,7 @@ pacman -S --asexplicit thunar-archive-plugin thunar-media-tags-plugin thunar-vol
 ```
 
 **Répertoire par défaut**
-
+```
 echo 'XDG_DESKTOP_DIR="$HOME/Bureau"
 XDG_DOWNLOAD_DIR="$HOME/Téléchargements"
 XDG_TEMPLATES_DIR="$HOME/Templates"
@@ -30,3 +30,4 @@ XDG_PICTURES_DIR="$HOME/Images"
 XDG_VIDEOS_DIR="$HOME/Videos"' > ~/.config/user-dirs.dirs
 
 mkdir $HOME/ Bureau Téléchargements Templates Public Documents Musiques Images Videos
+```
