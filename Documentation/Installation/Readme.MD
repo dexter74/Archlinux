@@ -320,30 +320,6 @@ systemctl enable ntpd ;
 systemctl enable iwd ;
 ```
 
-**Facultatif**
-```
-# DHCP=
-# > YES  Supporte IPV4 et IPV6 
-# > IPV4 Supporte IPV4 uniquement
-# > IPV6 Supporte IPV6 uniquement
-echo "[Match]
-Name=eth0
-
-[Network]
-#DHCP=ipv4
-Address=192.168.1.108/24
-Gateway=192.168.1.1
-DNS=8.8.8.8" > /etc/systemd/network/20-dhcp.network ;
-
-pacman -S --noconfirm resolvconf  ; # Indispensables
-systemctl disable NetworkManager  ; #
-systemctl enable systemd-networkd ; #
-systemctl enable systemd-resolved ; #
-systemctl enable systemd-homed.service ;
-systemctl enable systemd-resolved.service ;
-# pacman -S --noconfirm pam pambase ;
-```
-
 --------------------------------------------------------------------------------
 **Modification de fichiers**
 ```
@@ -498,14 +474,6 @@ localectl set-x11-keymap fr ;
 
 
 
-
-
-
-
-
-
-
-
 --------------------------------------------------------------------------------
 **Installation d'une Interface Graphique**
 ```
@@ -561,11 +529,39 @@ Current=breeze" > /etc/sddm.conf ; systemctl restart sddm ;
 pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 ```
 
-
-
-
 Amélioration à faire:
 [Définir le timeZone par SystemD](https://www.xmodulo.com/change-timezone-linux.html)
+
+
+
+
+**Facultatif**
+```
+# DHCP=
+# > YES  Supporte IPV4 et IPV6 
+# > IPV4 Supporte IPV4 uniquement
+# > IPV6 Supporte IPV6 uniquement
+echo "[Match]
+Name=eth0
+
+[Network]
+#DHCP=ipv4
+Address=192.168.1.108/24
+Gateway=192.168.1.1
+DNS=8.8.8.8" > /etc/systemd/network/20-dhcp.network ;
+
+pacman -S --noconfirm resolvconf  ; # Indispensables
+systemctl disable NetworkManager  ; #
+systemctl enable systemd-networkd ; #
+systemctl enable systemd-resolved ; #
+systemctl enable systemd-homed.service ;
+systemctl enable systemd-resolved.service ;
+# pacman -S --noconfirm pam pambase ;
+```
+
+
+
+
 
 
 
