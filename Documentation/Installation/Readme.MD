@@ -234,6 +234,25 @@ pacstrap -i /mnt --noconfirm intel-ucode ;
 genfstab -U /mnt >> /mnt/etc/fstab ;
 ```
 --------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
 **Chroot**
 ```
 arch-chroot /mnt ;
@@ -245,32 +264,6 @@ ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime ;
 sed -i -e "s/\#NTP\=/\NTP\=fr.pool.ntp.org/g" /etc/systemd/timesyncd.conf ;
 timedatectl set-ntp true ;
 hwclock --systohc ;
-```
-
-**[Plannificateur de tâche](https://www.linuxtricks.fr/wiki/cron-et-crontab-le-planificateur-de-taches)**
-```
-EDITOR=nano crontab -e ;
-```
---------------------------------------------------------------------------------
-**AJout d'un USER**
-```
-/usr/sbin/useradd \
-  --home-dir /home/marc --base-dir /home/marc \
-  --uid 1005 \
-  --groups wheel,storage,power --no-user-group \
-  --shell /bin/bash \
-  --comment 'Drthrax' \
-  --create-home marc ;
-```
-
-Archive:
-```
-useradd -m -g users -G wheel,storage,power -s /bin/bash marc ;
-```
-**Changements des mot de passe :**
-```
-(echo "admin"; echo "admin") | passwd marc ;
-(echo "root" ; echo "root")  | passwd root ;
 ```
 --------------------------------------------------------------------------------
 **Clavier en FR**
@@ -311,16 +304,6 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters" > /etc/hosts ;
 ```
 --------------------------------------------------------------------------------
-**Activation des services**
-```
-systemctl enable NetworkManager ;
-systemctl enable sshd ;
-systemctl enable cronie ;
-systemctl enable ntpd ;
-systemctl enable iwd ;
-```
-
---------------------------------------------------------------------------------
 **Modification de fichiers**
 ```
 # sed -i -e "s/\# \%wheel ALL\=(ALL) ALL/\%wheel ALL\=(ALL) ALL/g" /etc/sudoers ;
@@ -335,11 +318,55 @@ sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.
 ```
 pacman -Syy ;
 ```
+--------------------------------------------------------------------------------
+**Wi-Fi**
+```
+yay -S --noconfirm iwd ;
+``` 
+**NANO par défaut**
+```
+echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc ;
+```
 
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+**AJout d'un USER**
+```
+/usr/sbin/useradd \
+  --home-dir /home/marc --base-dir /home/marc \
+  --uid 1005 \
+  --groups wheel,storage,power --no-user-group \
+  --shell /bin/bash \
+  --comment 'Drthrax' \
+  --create-home marc ;
+```
+--------------------------------------------------------------------------------
+**Changements des mot de passe :**
+```
+(echo "admin"; echo "admin") | passwd marc ;
+(echo "root" ; echo "root")  | passwd root ;
+```
 --------------------------------------------------------------------------------
 **Marc**
 ```
 su - marc ;
+```
+--------------------------------------------------------------------------------
+**Yaourt**
+```
+git clone https://aur.archlinux.org/yay.git ;
+cd yay ;
+makepkg -si --noconfirm ;
 ```
 
 --------------------------------------------------------------------------------
@@ -352,37 +379,11 @@ git clone https://aur.archlinux.org/upd72020x-fw.git     ; # xhci_pci
 cd aic94xx-firmware ; makepkg -si --noconfirm ; cd /tmp ;
 cd wd719x-firmware  ; makepkg -si --noconfirm ; cd /tmp ;
 cd upd72020x-fw     ; makepkg -si --noconfirm ; cd /tmp ;
-```
-
-
-**BUG:**
-```
-sudo rm /etc/resolv.conf ;
-sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ;
-```
-
-
-
-
-
---------------------------------------------------------------------------------
-**Yaourt**
-```
-git clone https://aur.archlinux.org/yay.git ;
-cd yay ;
-makepkg -si --noconfirm ;
-```
-
-**Wi-Fi**
-```
-yay -S --noconfirm iwd ;
-``` 
-
-**NANO par défaut**
-```
-echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc ;
 exit ;
 ```
+
+
+
 
 --------------------------------------------------------------------------------
 **Prise en charge de SystemD et LVM2**
@@ -391,7 +392,14 @@ sed -i -e "s/HOOKS\=(base udev autodetect modconf block filesystems keyboard fsc
 mkinitcpio -p linux ;
 ```
 --------------------------------------------------------------------------------
-
+**Activation des services**
+```
+systemctl enable NetworkManager ;
+systemctl enable sshd ;
+systemctl enable cronie ;
+systemctl enable ntpd ;
+systemctl enable iwd ;
+```
 
 --------------------------------------------------------------------------------
 **Bootloader** (AMD)
@@ -532,6 +540,16 @@ pacman -S --noconfirm sddm ; systemctl enable --now sddm ;
 Amélioration à faire:
 [Définir le timeZone par SystemD](https://www.xmodulo.com/change-timezone-linux.html)
 
+
+
+
+
+
+**BUG:**
+```
+sudo rm /etc/resolv.conf ;
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ;
+```
 
 
 
