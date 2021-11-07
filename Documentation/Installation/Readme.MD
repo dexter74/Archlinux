@@ -205,9 +205,12 @@ Utilitaires
 pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl dialog fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib neofetch ntp reflector samba smbclient sudo unzip zip wget ;
 ```
 
-Son:
+Son: (A peaufiné)
 ```
-pacstrap -i /mnt --noconfirm alsa-utils pavucontrol pulseaudio-alsa ;
+pacstrap -i /mnt --noconfirm pavucontrol pipewire-pulse ;
+
+# pacstrap -i /mnt --noconfirm alsa-utils ;
+# pacstrap -i /mnt --noconfirm pulseaudio-alsa ;
 ```
 
 
