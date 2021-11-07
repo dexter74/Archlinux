@@ -308,7 +308,6 @@ ff02::2 ip6-allrouters" > /etc/hosts ;
 ```
 # sed -i -e "s/\# \%wheel ALL\=(ALL) ALL/\%wheel ALL\=(ALL) ALL/g" /etc/sudoers ;
 sed -i -e "s/\# \%wheel ALL\=(ALL) NOPASSWD\: ALL/\%wheel ALL\=(ALL)  NOPASSWD\: ALL/g" /etc/sudoers ;
-
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf ;
 sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config ;
 sed -i -e "s/\#COMPRESSION\=\"bzip2\"/COMPRESSION\=\"bzip2\"/g" /etc/mkinitcpio.conf ;
