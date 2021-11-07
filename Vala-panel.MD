@@ -16,12 +16,12 @@ pacman -S --noconfirm meson ;
 
 **Dépendance :**
 ```
-pacman -S --noconfirm glib2 gtk3 vala bamf ;
+pacman -S --noconfirm bamf cmake glib2 gtk2 gtk3 vala  ;
 ```
 
-**Correctif erreur:**
+**Correctif:** (budgie-1.0 found)
 ```
-pacman -S --noconfirm gobject-introspection ;
+yay -S --noconfirm gobject-introspection ;
 ```
 
 
@@ -33,11 +33,4 @@ git clone https://gitlab.com/vala-panel-project/vala-panel-appmenu.git ;
 cd /tmp/vala-panel-appmenu ;
 meson -Dxfce=enabled --prefix=/usr/local /tmp ;
 ninja install ;
-```
-
-
-
-```
- gtk2 cmake appmenu-gtk-module
-yay -S --noconfirm vala-panel ;
 ```
