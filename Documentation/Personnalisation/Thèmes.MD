@@ -2,10 +2,10 @@
 
 **Package:**
 ```
-pacman -S --noconfirm qt5-base qt5-svg qt5-declarative qt5-quickcontrols ;
-yay    -S --noconfirm ocs-url ;
-yay    -S --noconfirm plank ;
-yay    -S --noconfirm chromium ; 
+pacman -S --asexplicit qt5-base qt5-svg qt5-declarative qt5-quickcontrols ;
+yay    -S --asexplicit ocs-url ;
+yay    -S --asexplicit plank ;
+yay    -S --asexplicit chromium ;
 ```
 
 **Dossiers Communs**
@@ -32,7 +32,6 @@ yay    -S --noconfirm chromium ;
 https://www.xfce-look.org/p/1483325/
 https://www.xfce-look.org/p/1574551/
 ```
-
 
 **Icônes :**
 ```
