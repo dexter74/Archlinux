@@ -233,12 +233,11 @@ pacstrap -i /mnt --noconfirm linux-headers ;
 ```
 --------------------------------------------------------------------------------
 **Installation du MicroCode :**
-MicroCode AMD: 
+MicroCode **AMD**: 
 ``` 
 pacstrap -i /mnt --noconfirm amd-ucode  ;
 ```
-
-MicroCode Intel:
+MicroCode **Intel**:
 ``` 
 pacstrap -i /mnt --noconfirm intel-ucode ;
 ``` 
@@ -247,12 +246,6 @@ pacstrap -i /mnt --noconfirm intel-ucode ;
 ```
 genfstab -U /mnt >> /mnt/etc/fstab ;
 ```
---------------------------------------------------------------------------------
-
-
-
-
-
 --------------------------------------------------------------------------------
 **Chroot**
 ```
@@ -337,7 +330,6 @@ systemctl enable ntpd ;
 systemctl enable iwd ;
 ```
 --------------------------------------------------------------------------------
-
 **AJout d'un USER**
 ```
 /usr/sbin/useradd \
@@ -348,7 +340,6 @@ systemctl enable iwd ;
   --comment 'Drthrax' \
   --create-home marc ;
 ```
-
 **Changements des mot de passe :**
 
 ```
