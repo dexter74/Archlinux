@@ -320,19 +320,7 @@ systemctl enable ntpd ;
 systemctl enable iwd ;
 ```
 
-**Dbus** 
-```
-systemctl status dbus.service
-Created symlink /etc/systemd/system/dbus-org.freedesktop.home1.service → /usr/lib/systemd/system/systemd-homed.service.
-Created symlink /etc/systemd/system/multi-user.target.wants/systemd-homed.service → /usr/lib/systemd/system/systemd-homed.service.
-Created symlink /etc/systemd/system/systemd-homed.service.wants/systemd-homed-activate.service → /usr/lib/systemd/system/systemd-homed-activate.service.
-Created symlink /etc/systemd/system/sockets.target.wants/systemd-userdbd.socket → /usr/lib/systemd/system/systemd-userdbd.socket.
-Created symlink /etc/systemd/system/dbus-org.freedesktop.resolve1.service → /usr/lib/systemd/system/systemd-resolved.service.
-Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.service → /usr/lib/systemd/system/systemd-resolved.service.
-```
-
 **Facultatif**
-
 ```
 # DHCP=
 # > YES  Supporte IPV4 et IPV6 
@@ -345,11 +333,8 @@ Name=eth0
 #DHCP=ipv4
 Address=192.168.1.108/24
 Gateway=192.168.1.1
-DNS=8.8.8.8" > /etc/systemd/network/20-dhcp.network ; systemctl restart systemd-networkd.service ;
-```` 
+DNS=8.8.8.8" > /etc/systemd/network/20-dhcp.network ;
 
-
-```
 pacman -S --noconfirm resolvconf  ; # Indispensables
 systemctl disable NetworkManager  ; #
 systemctl enable systemd-networkd ; #
@@ -358,16 +343,6 @@ systemctl enable systemd-homed.service ;
 systemctl enable systemd-resolved.service ;
 # pacman -S --noconfirm pam pambase ;
 ```
-
-
-**BUG:**
-```
-sudo rm /etc/resolv.conf ;
-sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ;
-```
-
-
-
 
 --------------------------------------------------------------------------------
 **Modification de fichiers**
@@ -402,6 +377,15 @@ cd aic94xx-firmware ; makepkg -si --noconfirm ; cd /tmp ;
 cd wd719x-firmware  ; makepkg -si --noconfirm ; cd /tmp ;
 cd upd72020x-fw     ; makepkg -si --noconfirm ; cd /tmp ;
 ```
+
+
+**BUG:**
+```
+sudo rm /etc/resolv.conf ;
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ;
+```
+
+
 
 
 
