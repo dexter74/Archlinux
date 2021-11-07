@@ -194,7 +194,7 @@ X11
 pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
 ```
 
-Utilitaires Réseau
+Utilitaires Réseaux
 ```
 pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw wireless_tools ;
 pacstrap -i /mnt --noconfirm wpa_supplicant netctl ;
