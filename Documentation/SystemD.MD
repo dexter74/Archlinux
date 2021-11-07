@@ -1,7 +1,7 @@
 **Service Utilisateur**
 ```
+ls -la /usr/lib/systemd/user | cut -c44-100 ;
 systemctl --user --all | grep dead | grep ".service" | cut -c1-50 ;
-systemctl --global enable --now 
 systemctl --user enable --now
 thunar.service
 ```
@@ -13,6 +13,9 @@ thunar.service
 systemctl   : contrôle systemd et gère les unités.
 journalctl  : consultation du journal de systemd.
 loginctl    : contrôle des sessions utilisateurs (systemd-logind).
+
+
+systemctl --global enable --now 
 
 systemctl --version
 systemctl reboot
