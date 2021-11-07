@@ -1,6 +1,14 @@
+**Service Utilisateur**
+```
+systemctl --user --all | grep dead | grep ".service" | cut -c1-50 ;
+systemctl --global enable --now 
+systemctl --user enable --now
+thunar.service
+```
+
+
 
 **Information**
-
 ```bash
 systemctl   : contrôle systemd et gère les unités.
 journalctl  : consultation du journal de systemd.
@@ -25,6 +33,7 @@ systemctl restart avahi-daemon.service
 systemctl status /home
 systemctl status /dev/sda2
 ```
+
 
 -------------------------------------------------------------------------------------------------
 [Erreur dans le chargement](https://wiki.archlinux.fr/systemd)
