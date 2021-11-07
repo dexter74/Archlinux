@@ -335,6 +335,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.ser
 **Facultatif**
 
 ```
+echo "
 # DHCP=
 # > YES  Supporte IPV4 et IPV6 
 # > IPV4 Supporte IPV4 uniquement
