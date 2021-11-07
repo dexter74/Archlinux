@@ -31,6 +31,11 @@ echo "
 systemctl restart sddm ;
 ```
 
+**Langue Locale**
+```
+localectl set-x11-keymap fr ;
+```
+
 
 **Dossier Utiles**
 ```
