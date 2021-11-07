@@ -359,15 +359,11 @@ cd yay ;
 makepkg -si --noconfirm ;
 ```
 --------------------------------------------------------------------------------
-**Firmware** (Hyper-V)
+**Firmware**
 ```
-cd /tmp ;
-git clone https://aur.archlinux.org/aic94xx-firmware.git ; # aic94xx
-git clone https://aur.archlinux.org/wd719x-firmware.git  ; # wd719x
-git clone https://aur.archlinux.org/upd72020x-fw.git     ; # xhci_pci
-cd aic94xx-firmware ; makepkg -si --noconfirm ; cd /tmp ;
-cd wd719x-firmware  ; makepkg -si --noconfirm ; cd /tmp ;
-cd upd72020x-fw     ; makepkg -si --noconfirm ; cd /tmp ;
+yay -S --noconfirm wd719x-firmware  ; # wd719x
+yay -S --noconfirm aic94xx-firmware ; # aic94xx
+yay -S --noconfirm upd72020x-fw     ; # xhci_pci
 exit ;
 ```
 
