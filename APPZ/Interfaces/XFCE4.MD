@@ -17,6 +17,13 @@ systemctl --user enable --now pipewire    ; # Service gérent le son
 systemctl --user enable --now pulseaudio  ; # Service gérent le son
 ```
 
+**Thunar** (Dépendances optionnel)
+```
+pacman -S --asexplicit thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfdesktop ;
+```
+
+
+
 
 **Répertoire par défaut**
 ```
@@ -30,9 +37,4 @@ XDG_PICTURES_DIR="$HOME/Images"
 XDG_VIDEOS_DIR="$HOME/Videos"' > ~/.config/user-dirs.dirs
 
 mkdir $HOME/ Bureau Téléchargements Templates Public Documents Musiques Images Videos
-```
-
-**Thunar** (Dépendances optionnel)
-```
-pacman -S --asexplicit thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfdesktop ;
 ```
