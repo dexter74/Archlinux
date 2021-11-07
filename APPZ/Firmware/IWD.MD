@@ -27,7 +27,7 @@ station wlan0 get-networks ;
 
 **Se connecter au Réseau Wi-FI**
 ```
-station device connect ASUS_A8_5G ;
+station wlan0 connect ASUS_A8_5G ;
 ```
 
 **Se connecter directement**
