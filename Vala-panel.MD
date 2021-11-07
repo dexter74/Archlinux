@@ -15,7 +15,7 @@ cd /tmp ;
 rm -r /tmp/* ;
 git clone https://gitlab.com/vala-panel-project/vala-panel-appmenu.git ;
 cd /tmp/vala-panel-appmenu ;
-meson -Dxfce=auto --prefix=/usr/local /tmp ;
+meson -Dxfce=enabled --prefix=/usr/local /tmp ;
 ninja install ;
 ```
 
