@@ -1,0 +1,76 @@
+**LiveCD**
+```bash
+loadkeys fr-pc ;
+iwctl --passphrase <Clé WPA> station wlan0 connect ASUS_A8_5G ;
+```
+
+--------------------------------------------------------------------------------
+**Installation de paquet**
+
+Noyaux et Modules
+```bash
+pacstrap -i /mnt --noconfirm base linux ;
+```
+
+EFI 
+```bash
+pacstrap -i /mnt --noconfirm efibootmgr ;
+```
+
+Grub
+```bash
+pacstrap -i /mnt --noconfirm grub ;
+```
+
+Firmware (750 Mo)
+```bash
+pacstrap -i /mnt --noconfirm linux-firmware ;
+```
+
+Prise en charge des types de partitions
+```bash
+pacstrap -i /mnt --noconfirm ntfs-3g exfat-utils dosfstools lvm2 ;
+```
+
+Affichage (X11)
+```bash
+pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
+```
+
+Utilitaires Réseaux
+```bash
+pacstrap -i /mnt --noconfirm dhcpcd dhclient networkmanager iw iwd wireless_tools ;
+pacstrap -i /mnt --noconfirm wpa_supplicant netctl ;
+```
+
+Utilitaires
+```bash
+pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl dialog fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib neofetch ntp reflector samba smbclient sudo unzip zip wget ;
+pacstrap -i /mnt --noconfirm linux-headers ;
+```
+
+Son: (A peaufiné)
+```bash
+pacstrap -i /mnt --noconfirm pavucontrol pipewire-pulse ;
+
+# pacstrap -i /mnt --noconfirm alsa-utils ;
+# pacstrap -i /mnt --noconfirm pulseaudio-alsa ;
+```
+
+**Installation du MicroCode :**
+
+MicroCode **AMD**: 
+``` bash
+pacstrap -i /mnt --noconfirm amd-ucode  ;
+```
+
+MicroCode **Intel**:
+```bash
+pacstrap -i /mnt --noconfirm intel-ucode ;
+``` 
+
+**FSTAB**
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab ;
+```
+--------------------------------------------------------------------------------
