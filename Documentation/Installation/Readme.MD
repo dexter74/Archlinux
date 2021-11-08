@@ -22,7 +22,7 @@ Partitions!
 --------------------------------------------------------------------------------
 **Déclarations des valeurs**
 ```
-#DISK=/dev/mmcblk0
+#DISK=/dev/mmcblk0p
 DISK=/dev/sda
 SIZE_BOOT=+512M
 SIZE_SWAP=+4G
