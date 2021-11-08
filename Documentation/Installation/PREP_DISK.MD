@@ -1,0 +1,173 @@
+
+--------------------------------------------------------------------------------
+**Disque**
+```bash
+Partitions!
+ |-> EFI
+ |-> LVM
+     |-> SWAP
+     |-> SYSTEM
+     |-> HOME
+ ```
+ 
+--------------------------------------------------------------------------------
+**Déclarations des valeurs**
+```bash
+#DISK=/dev/mmcblk0p
+DISK=/dev/sda
+SIZE_BOOT=+512M
+SIZE_SWAP=+4G
+SIZE_SYST=+20G
+SIZE_HOME=+7G
+LVM_NAMEVG=VG0
+clear ;
+```
+
+--------------------------------------------------------------------------------
+**Démontage des partitions** (Si besoin)
+```bash
+umount -R /mnt /mnt/* ;
+swapoff ${DISK}2 ;
+```
+
+--------------------------------------------------------------------------------
+**Vérification du montage**
+```bash
+df -h | grep "/mnt" ;
+swapon -s ;
+```
+
+--------------------------------------------------------------------------------
+**Suppression du LVM**
+```bash
+echo "yes" | lvremove /dev/$LVM_NAMEVG/SWAP ;
+echo "yes" | lvremove /dev/$LVM_NAMEVG/SYSTEM ;
+echo "yes" | lvremove /dev/$LVM_NAMEVG/HOME ;
+echo "yes" | vgremove $LVM_NAMEVG ;
+echo "yes" | pvremove ${DISK}2  ;
+```
+
+--------------------------------------------------------------------------------
+**Vérification LVM**
+```bash
+lvdisplay ;
+vgdisplay ;
+pvdisplay ;
+```
+
+--------------------------------------------------------------------------------
+**Wype le Disque-dur**
+```bash
+clear ; dd if=/dev/zero of=${DISK}  bs=512  count=1 ;
+```
+
+--------------------------------------------------------------------------------
+**Création des partitions**
+```bash
+clear ;
+(echo "g"; echo "w") | fdisk ${DISK} ;
+```
+
+Partition 1:
+```bash
+(echo "n"; echo "1"; echo ""; echo "$SIZE_BOOT" ; echo "t"; echo "1" ; echo "w")  | fdisk $DISK ;
+```
+
+Partition 2:
+```bash
+(echo "n"; echo "2"; echo ""; echo "" ; echo "t"; echo "2" ; echo "30"; echo "w") | fdisk $DISK ;
+```
+
+Lister les partitions
+```bash
+(echo "p") | fdisk $DISK | grep $DISK ;
+```
+
+Appliquer les changements de partition sans reboot
+```bash
+partprobe ${DISK}2  ; # sdXy
+```
+
+--------------------------------------------------------------------------------
+**Création du Volume Physique**
+```bash
+clear ; 
+pvcreate ${DISK}2 ;
+```
+
+--------------------------------------------------------------------------------
+**Création du Volume Groupe**
+```bash
+clear ; vgcreate $LVM_NAMEVG ${DISK}2  ;
+```
+
+--------------------------------------------------------------------------------
+**Création des Volumes Logiques**
+```bash
+clear ;
+echo "yes" | lvcreate -n SWAP   -L $SIZE_SWAP $LVM_NAMEVG ;
+echo "yes" | lvcreate -n SYSTEM -L $SIZE_SYST $LVM_NAMEVG ;
+echo "yes" | lvcreate -n HOME   -L $SIZE_HOME $LVM_NAMEVG ;
+```
+
+--------------------------------------------------------------------------------
+**Vérification LVM**
+```bash
+clear ;
+echo "###########################################"
+echo "# Volume Physique" ;
+pvdisplay | grep "VG Name" ;
+echo "" ;
+echo "# Volume Groupe" ;
+vgdisplay | grep "VG Name" ;
+echo "" ;
+echo "Volume Logique"
+lvdisplay | grep "LV Name" ;
+echo "" ;
+echo "Path des Volumes Logiques"
+lvdisplay | grep "LV Path" ;
+echo "###########################################"
+```
+
+--------------------------------------------------------------------------------
+**Formatage des partitions**
+```bash
+clear ;
+echo "yes" | mkfs.fat -F32 ${DISK}1  ; # Disk
+
+echo "yes" | mkswap /dev/$LVM_NAMEVG/SWAP ;
+echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/SYSTEM ;
+echo "yes" | mkfs -t ext4  /dev/$LVM_NAMEVG/HOME ;
+```
+
+--------------------------------------------------------------------------------
+**Montage des partitions**
+
+SWAP:
+```bash
+clear ; 
+swapon /dev/$LVM_NAMEVG/SWAP && swapon -s ;
+```
+
+SYSTEM:
+```bash
+mount /dev/$LVM_NAMEVG/SYSTEM /mnt ;
+```
+
+Home:
+```bash
+mkdir -p /mnt/home && mount /dev/$LVM_NAMEVG/HOME /mnt/home ;
+```
+
+EFI / MBR
+```bash
+mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot ;
+```
+
+--------------------------------------------------------------------------------
+**Vérification du montage**
+```bash
+clear ; df -h | grep "/mnt" ; swapon -s ;
+```
+
+
