@@ -179,6 +179,15 @@ mkdir -p /mnt/boot && mount ${DISK}1  /mnt/boot ;
 clear ; df -h | grep "/mnt" ; swapon -s ;
 ```
 
+
+
+
+
+
+
+
+
+
 --------------------------------------------------------------------------------
 **Installation de paquet**
 
@@ -207,7 +216,7 @@ Prise en charge des types de partitions
 pacstrap -i /mnt --noconfirm ntfs-3g exfat-utils dosfstools lvm2 ;
 ```
 
-X11
+Affichage (X11)
 ```bash
 pacstrap -i /mnt --noconfirm xorg-server xorg-xinit xf86-video-vesa ;
 ```
@@ -221,6 +230,7 @@ pacstrap -i /mnt --noconfirm wpa_supplicant netctl ;
 Utilitaires
 ```bash
 pacstrap -i /mnt --noconfirm bash-completion base-devel binutils cronie curl dialog fakeroot git gnome-keyring lha lsb-release mtools nano openssh os-prober p7zip pacman-contrib neofetch ntp reflector samba smbclient sudo unzip zip wget ;
+pacstrap -i /mnt --noconfirm linux-headers ;
 ```
 
 Son: (A peaufiné)
@@ -231,11 +241,6 @@ pacstrap -i /mnt --noconfirm pavucontrol pipewire-pulse ;
 # pacstrap -i /mnt --noconfirm pulseaudio-alsa ;
 ```
 
-Optionnel
-```bash
-pacstrap -i /mnt --noconfirm linux-headers ;
-```
---------------------------------------------------------------------------------
 **Installation du MicroCode :**
 
 MicroCode **AMD**: 
@@ -247,12 +252,16 @@ MicroCode **Intel**:
 ```bash
 pacstrap -i /mnt --noconfirm intel-ucode ;
 ``` 
---------------------------------------------------------------------------------
+
+
 **FSTAB**
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab ;
 ```
+--------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------- #
 
 
 --------------------------------------------------------------------------------
@@ -337,11 +346,20 @@ yay -S --noconfirm iwd ;
 --------------------------------------------------------------------------------
 **Activation des services**
 ```bash
-systemctl enable NetworkManager ;
 systemctl enable sshd ;
 systemctl enable cronie ;
 systemctl enable ntpd ;
-systemctl enable iwd ;
+
+systemcl enable systemd-journald.service ;
+systemcl enable systemd-logind.service ;
+systemcl enable systemd-networkd.service ;
+systemcl enable systemd-resolved.service ;
+systemcl enable systemd-udevd.service ;
+systemcl enable systemd-networkd.socket ;
+systemcl enable systemd-journald.socket ;
+systemcl enable systemd-journald-audit.socket ;
+
+
 ```
 --------------------------------------------------------------------------------
 **AJout d'un USER**
