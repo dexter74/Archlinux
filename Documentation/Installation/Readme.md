@@ -6,7 +6,7 @@
 loadkeys fr-pc ;
 ```
 
-**Se connecter au point WI-FI**
+**Se connecter au point WI-FI** (Paquets: iw iwd)
 ```bash
 iwctl --passphrase <Clé WPA> station <Interface> connect <SSID> ;
 ```
