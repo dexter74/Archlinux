@@ -1,5 +1,5 @@
 
-[Etape 0: Préparation Installation à Distance](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/00.Remote.MD)
+[Etape 0: Préparation de l'installation à Distance](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/00.Remote.MD)
 
 [Etape 1: Préparation du Disque](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/01.DISK.MD)
 
