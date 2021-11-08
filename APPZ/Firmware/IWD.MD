@@ -32,7 +32,7 @@ station wlan0 connect ASUS_A8_5G ;
 
 **Se connecter directement**
 ```
-iwctl --passphrase Azerty74@1213 station wlan0 connect ASUS_A8_5G ;
+iwctl --passphrase "Azerty74@1213" station wlan0 connect ASUS_A8_5G ;
 ```
 
 **Information sur la connexion au réseau**
