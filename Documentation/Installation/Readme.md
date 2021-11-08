@@ -1,16 +1,3 @@
-### Démarrage du le LiveCD :
-
-
-**Passer le Clavier en Azerty**
-```bash
-loadkeys fr-pc ;
-```
-
-**Se connecter au point WI-FI** (Paquets: iw iwd)
-```bash
-iwctl --passphrase <Clé WPA> station <Interface> connect <SSID> ;
-```
-
 
 [Etape 1: Préparation du Disque](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/01.DISK.MD)
 
