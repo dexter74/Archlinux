@@ -1,3 +1,31 @@
+**Service et Daemon Réseau**
+A vérifier: Quel Service réseau doit être activer ? (iwd, wpa_supplicant, systemd-networkd
+
+
+NetworkD:
+```bash
+echo "[Match]
+Name=wlan0
+
+[Network]
+DHCP=Yes" > /etc/systemd/network/20-dhcp.network ;
+```
+
+```bash
+systemctl status systemd-networkd.service ;
+systemctl status iwd.service ;
+systemctl status wpa_supplicant.service ;
+```
+
+**Synchronisation de l'heure**
+A vérifier: Est ce utiles d'avoir les deux et si y'a conflit ?
+```
+systemctl status systemd-resolved.service ;
+systemctl status ntpd
+```
+
+
+
 **Service Utilisateur**
 ```
 ls -la /usr/lib/systemd/user | cut -c44-100 ;
@@ -5,8 +33,6 @@ systemctl --user --all | grep dead | grep ".service" | cut -c1-50 ;
 systemctl --user enable --now
 thunar.service
 ```
-
-
 
 **Information**
 ```bash
