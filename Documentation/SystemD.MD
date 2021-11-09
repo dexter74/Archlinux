@@ -1,3 +1,9 @@
+**Home**
+```bash
+systemctl enable systemd-homed-activate
+```
+
+
 **Service et Daemon Réseau**
 A vérifier: Quel Service réseau doit être activer ? (iwd, wpa_supplicant, systemd-networkd
 
@@ -11,9 +17,9 @@ DHCP=Yes" > /etc/systemd/network/20-dhcp.network ;
 ```
 
 ```bash
-systemctl status systemd-networkd.service ;
-systemctl status iwd.service ;
-systemctl status wpa_supplicant.service ;
+systemctl status systemd-networkd ;
+systemctl status iwd ;
+systemctl status wpa_supplicant ;
 ```
 
 **Synchronisation de l'heure** ([Conflit](https://www.linuxtricks.fr/wiki/systemd-le-ntp-avec-systemd-timesyncd))
@@ -22,12 +28,12 @@ La configuration se fait dans /etc/systemd/timesyncd.conf ;
 
 ```
 systemctl disable ntpd ;
-systemctl enable systemd-timesyncd.service ;
+systemctl enable systemd-timesyncd ;
 ```
 
 **Résolveur DNS**
 ```
-systemctl enable systemd-resolved.service ;
+systemctl enable systemd-resolved ;
 ```
 
 
@@ -62,8 +68,8 @@ systemctl reload <unit>
 systemctl status <unit>
 systemctl enable <unit>
 systemctl disable <unit>
-systemctl list-dependencies [<unit>]
-systemctl restart avahi-daemon.service
+systemctl list-dependencies
+systemctl restart avahi-daemon
 systemctl status /home
 systemctl status /dev/sda2
 ```
