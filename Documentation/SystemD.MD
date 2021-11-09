@@ -37,7 +37,6 @@ systemctl enable systemd-resolved.service ;
 ls -la /usr/lib/systemd/user | cut -c44-100 ;
 systemctl --user --all | grep dead | grep ".service" | cut -c1-50 ;
 systemctl --user enable --now
-thunar.service
 ```
 
 **Information**
