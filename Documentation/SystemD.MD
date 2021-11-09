@@ -21,7 +21,8 @@ systemctl status wpa_supplicant.service ;
 La configuration se fait dans /etc/systemd/timesyncd.conf ;
 
 ```
-systemctl enable --now systemd-timesyncd.service ;
+systemctl disable ntpd ;
+systemctl enable systemd-timesyncd.service ;
 ```
 
 **Résolveur DNS**
