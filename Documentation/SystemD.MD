@@ -1,7 +1,6 @@
 **Service et Daemon Réseau**
 A vérifier: Quel Service réseau doit être activer ? (iwd, wpa_supplicant, systemd-networkd
 
-
 NetworkD:
 ```bash
 echo "[Match]
@@ -17,11 +16,17 @@ systemctl status iwd.service ;
 systemctl status wpa_supplicant.service ;
 ```
 
-**Synchronisation de l'heure**
-A vérifier: Est ce utiles d'avoir les deux et si y'a conflit ?
+**Synchronisation de l'heure** ([Conflit](https://www.linuxtricks.fr/wiki/systemd-le-ntp-avec-systemd-timesyncd))
+
+La configuration se fait dans /etc/systemd/timesyncd.conf ;
+
 ```
-systemctl status systemd-resolved.service ;
-systemctl status ntpd
+systemctl enable --now systemd-timesyncd.service ;
+```
+
+**Résolveur DNS**
+```
+systemctl enable systemd-resolved.service ;
 ```
 
 
@@ -73,11 +78,6 @@ ln -s '/usr/lib/systemd/system/sdd.service' '/etc/systemd/system/display-manager
 systemctl enable --now display-manager.service ;
 ```
 
-**systemd-timesyncd.service**
-```
-La configuration se fait dans /etc/systemd/timesyncd.conf
-systemctl enable --now systemd-timesyncd.service ;
-```
 
 
 **Service en Erreur / Non Activ** (A regarder)
