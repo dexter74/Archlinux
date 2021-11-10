@@ -13,3 +13,7 @@ Note: this setting controls a global kernel option, and does so one way only: if
 To allow IP packet forwarding only between specific network interfaces use a firewall.
 
 ```
+
+
+# Autoriser le Forward :
+echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ;
