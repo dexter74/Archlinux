@@ -1,6 +1,8 @@
 [Guide](https://www.freedesktop.org/software/systemd/man/systemd.network.html)
 [Info](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS)
-[topic](https://unix.stackexchange.com/questions/501928/systemd-set-mac-address-and-ip-address)
+[topic](https://qastack.fr/server/753977/how-to-properly-permanent-enable-ip-forwarding-in-linux-with-systemd)
+
+
 
 ```
 IPForward=
