@@ -17,6 +17,7 @@ Name=wg0
 Kind=wireguard
 Description=WireGuard tunnel wg0
 
+
 [WireGuard]
 ListenPort = 51820
 PrivateKey = wEwo7cQxT7/UwNyKyy3qQg6diTW77EvZXs6ybANaZW8=
@@ -37,6 +38,9 @@ PersistentKeepalive = 25
 /etc/systemd/network/99-wg0.network
 [Match]
 Name=wg0
+
+[Link]
+Unmanaged=yes
 
 [Network]
 Address = 192.168.2.2/24
