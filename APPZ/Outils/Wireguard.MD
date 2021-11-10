@@ -1,7 +1,7 @@
 [Guide](https://www.freedesktop.org/software/systemd/man/systemd.network.html)
 [Info](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS)
 [topic](https://qastack.fr/server/753977/how-to-properly-permanent-enable-ip-forwarding-in-linux-with-systemd)
-
+[GestionInterface](https://man.archlinux.org/man/systemd.network.5) (ActivationPolicy=)
 
 # Autoriser le Forward :
 ```
@@ -10,8 +10,9 @@ echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ; # Permanent
 cat /proc/sys/net/ipv4/ip_forward ; 
 ```
 
+
+**Configuration du Client** ( /etc/systemd/network/99-wg0.netdev )
 ```
-/etc/systemd/network/99-wg0.netdev
 [NetDev]
 Name=wg0
 Kind=wireguard
@@ -33,20 +34,27 @@ PersistentKeepalive = 25
 ```
 
 
-
+**Création de l'interface wg0** (Administré par Systemd-NetworkD )
 ```
 /etc/systemd/network/99-wg0.network
 [Match]
 Name=wg0
 
 [Link]
-Unmanaged=yes
+# Interface Down par défaut
+ActivationPolicy=manual
 
 [Network]
 Address = 192.168.2.2/24
 ```
 
+**Permission**
 ```
 chown root:systemd-network /etc/systemd/network/99-*.netdev
 chmod 0640 /etc/systemd/network/99-*.netdev
+```
+
+**Démarrer interface**
+```
+ip link set wg0 up
 ```
