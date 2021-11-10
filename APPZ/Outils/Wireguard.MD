@@ -58,3 +58,57 @@ chmod 0640 /etc/systemd/network/99-*.netdev
 ```
 ip link set wg0 up
 ```
+
+
+**Expérimental**
+
+systemctl edit wireguard.service --full --force
+
+```
+[Unit]
+Description=Gestion de l'interface Wireguard
+After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/ip link set wg0 up
+ExecStop=/usr/bin/ip link set wg0 down
+
+[Install]
+WantedBy=default.target
+
+
+systemctl daemon-reload ;
+systemctl enable  --now wireguard ;
+systemctl disable --now wireguard ;
+systemctl status wireguard ;
+```
+
+
+**Script Commutateur**
+
+Ce script permet de switcher le VPN. (ON / OFF)
+Il suffit de crée un raccourcis qui pointe vers le script.
+
+````bash
+echo '
+clear ;
+WG_STATUS=$(systemctl status wireguard.service | grep "Active:" | cut -c22-27)
+
+# Start = exited
+# down  = dead
+
+if [ $WG_STATUS == "exited" ]
+ then
+  # Service est UP
+  echo "Arrêt du service"
+  systemctl stop wireguard.service  
+ else
+  # Service est DOWN
+  echo "Démarrage du service"
+  systemctl start wireguard.service
+fi' > test.sh; sudo sh test.sh
+
+
+````
