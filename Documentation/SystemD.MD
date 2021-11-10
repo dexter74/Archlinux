@@ -138,3 +138,5 @@ ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf ;
 [nmcli](https://sysreseau.net/networkmanager-nmcli-nmtui/)
 
 [VFIO](https://hackmd.io/@edingroot/SkGD3Q7Wv#B-Enable-the-IOMMU-for-systemd-boot-Proxmox-on-UEFI)
+
+[Systemd-Option](https://github.com/systemdaemon/systemd/blob/master/src/linux/Documentation/x86/x86_64/boot-options.txt)
