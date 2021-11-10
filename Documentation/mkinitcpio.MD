@@ -31,12 +31,15 @@ modconf     : Permet l'installation de la configuration de modprobe. (/etc/modpr
 resume      : Prise en charge de la reprise à partir du disque
 sd-encrypt  : Permet à un périphérique racine crypté avec systemd initramfs.
 sd-shutdown : Ajoute systemd-shutdown au fichier initramfs. C'est seulement
-sd-vconsole : Ce hook ajoute le(s) keymap(s) et la police spécifiés dans vconsole.conf à l'image et les charge au début de l'espace utilisateur.
-sleep       :
-shutdown    :   
-strip       :
-systemd     :
-udev        :
-usr         :
+sd-vconsole : Ajoute le(s) keymap(s) et la police spécifiés dans vconsole.conf à l'image et les charge au début de l'espace utilisateur.
+sleep       : Provoque l'interruption du processus d'initialisation pendant un intervalle de temps fixe
+shutdown    : Copie le contenu de l'initramfs dans /run/initramfs pour le réutiliser à l'arrêt. Cela est nécessaire lorsque /usr est monté sur une partition séparée.
+strip       : Localisera et supprimera les binaires de votre image avant l'archivage et la compression. En dernière position
+
+systemd     : Installera une configuration de base de systemd dans votre initramfs et est destiné à remplacer les crochets 'base', 'usr', 'udev' et 'resume'.
+            : Ajouter base pour vous assurer qu'un shell de secours existe sur votre initramfs.
+
+udev        : Permettant un chargement dynamique des modules et une détection fiable du périphérique racine via des balises (par exemple, UUID ou LABEL).
+usr         : Cela fournit un support pour le montage de /usr via un crochet à exécution tardive.
 
 ```
