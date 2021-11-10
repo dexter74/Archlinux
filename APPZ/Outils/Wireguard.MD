@@ -92,22 +92,33 @@ Ce script permet de switcher le VPN. (ON / OFF)
 Il suffit de crée un raccourcis qui pointe vers le script.
 
 ````bash
+
+
 echo '
+###########################################
+# Script pour commuter Wireguard (On/OFF) #
+###########################################
+
+# Nettoyage de la console
 clear ;
+
+# Déclarer une variable
 WG_STATUS=$(systemctl status wireguard.service | grep "Active:" | cut -c22-27)
 
-# Start = exited
-# down  = dead
+# Si le service est UP   : exited
+# Si le service est Down : dead
 
 if [ $WG_STATUS == "exited" ]
  then
   # Service est UP
   echo "Arrêt du service"
-  systemctl stop wireguard.service  
+  systemctl stop wireguard.service
+  systemctl status wireguard.service | grep "Active:" | cut -c6-28
  else
   # Service est DOWN
   echo "Démarrage du service"
   systemctl start wireguard.service
+  systemctl status wireguard.service | grep "Active:" | cut -c6-28
 fi' > test.sh; sudo sh test.sh
 
 
