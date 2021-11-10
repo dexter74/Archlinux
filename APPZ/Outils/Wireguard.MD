@@ -3,7 +3,9 @@
 [topic](https://qastack.fr/server/753977/how-to-properly-permanent-enable-ip-forwarding-in-linux-with-systemd)
 
 
-
-
 # Autoriser le Forward :
-echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ;
+```
+/sbin/sysctl -w net.ipv4.ip_forward=1 ; # Temporaire 
+echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ; # Permanent
+cat /proc/sys/net/ipv4/ip_forward ; 
+```
