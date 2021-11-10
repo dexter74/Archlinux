@@ -1,0 +1,94 @@
+### Liste des services qui sont désactiver
+```
+systemctl list-unit-files --state=disabled | cut -c1-41
+```
+
+
+dhclient@.service
+
+
+```
+proc-sys-fs-binfmt_misc.mount
+auditd.service                            # Journalisé
+avahi-daemon.service                      #
+avahi-dnsconfd.service                    #
+blk-availability.service                  #
+canberra-system-bootup.service            #
+canberra-system-shutdown-reboot.service   #
+canberra-system-shutdown.service          #
+console-getty.service                     #
+debug-shell.service                       #
+dhclient@.service                         #
+dhcpcd.service                            #
+dhcpcd@.service                           #
+dmraid.service                            #
+e2scrub_reap.service                      #
+ead.service                               #
+fancontrol.service                        #
+gpm.service                               #
+healthd.service                           #
+ip6tables.service                         #
+iptables.service                          #
+iwd.service                               #
+krb5-kadmind.service                      #
+krb5-kdc.service                          #
+krb5-kpropd.service                       #
+lm_sensors.service                        #
+ndctl-monitor.service                     #
+netctl-auto@.service                      #
+netctl-ifplugd@.service                   #
+netctl-sleep.service                      #
+netctl-wait-online.service                #
+netctl.service                            #
+ninfod.service                            #
+nmb.service                               #
+nscd.service                              #
+ntpd.service                              #
+ntpdate.service                           #
+rarpd@.service                            #
+rdisc.service                             #
+reflector.service                         #
+rfkill-block@.service                     #
+rfkill-unblock@.service                   #
+rtkit-daemon.service                      #
+samba.service                             #
+sensord.service                           #
+serial-getty@.service                     #
+smb.service                               #
+sudo_logsrvd.service                      #
+systemd-boot-check-no-failures.service    #
+systemd-journal-upload.service            #
+systemd-network-generator.service
+systemd-nspawn@.service
+systemd-oomd.service
+systemd-pstore.service
+systemd-sysext.service
+systemd-time-wait-sync.service
+udisks2.service
+upower.service
+winbind.service
+wpa_supplicant-nl80211@.service
+wpa_supplicant-wired@.service
+wpa_supplicant.service
+avahi-daemon.socket
+git-daemon.socket
+krb5-kpropd.socket
+systemd-journal-gatewayd.socket
+systemd-journal-remote.socket
+uuidd.socket
+exit.target
+halt.target
+kexec.target
+machines.target
+poweroff.target
+reboot.target
+remote-cryptsetup.target
+remote-veritysetup.target
+btrfs-scrub@.timer
+e2scrub_all.timer
+fstrim.timer
+paccache.timer
+reflector.timer
+xfs_scrub_all.timer
+
+```
