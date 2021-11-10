@@ -5,13 +5,15 @@ mkinitcpio -H <hook>
 ```
 
 
+```
+nano /etc/mkinitcpio.conf ; mkinitcpio -p linux
+
+Tutorial : HOOKS=(base systemd autodetect modconf block lvm2 filesystems keyboard fsck)
+Perso    : HOOKS=(base systemd autodetect modconf block lvm2 filesystems udev  resume fsck keyboard keymap sd-vconsole)
 
 ```
-nano /etc/mkinitcpio.conf
 
-HOOKS=(base systemd autodetect modconf block lvm2 filesystems keyboard fsck)
-
-
+```
 autodetect  : Permet la détection et le lancement des modules uniquement nécessaire au système. (Indispensable)
 base        : Charge le système de base. (Indispensable)
 block       : Permet le chargement des blocs pour le SATA (Indispensable > A voir)
@@ -21,7 +23,7 @@ dmraid      : Permet de charger les modules dmraid (????)
 encrypt     : Permet la prise en charge du cryptage sur la Racine. (Inutiles)
 filesystems : Ce hook ajoute des modules de système de fichiers à l'image.
 fsck        : Permet une amélioration sur les options de fsck.
-hostdata    : Ce hook installe des fichiers de configuration spécifiques à l'hôte dans le fichier initramfs.
+hostdata    : Iinstalle des fichiers de configuration spécifiques à l'hôte dans le fichier initramfs.
 keyboard    : Permet la prise en charge du clavier, à placer après autodetect.
 keymap      : Charge les keymaps spécifiés dans vconsole.conf au début de l'espace utilisateur. (Utiles)
 lvm2        : Permet la prise en charge du LVM2
