@@ -1,13 +1,17 @@
-Mise à jour de la liste des paquets   : pacman -Sy
-Mise à niveau des paquets             : pacman -Syu ou pacman -Syyu
-Ajout de package sur le système       : pacman -S
-Suppression du package sur le système : pacman -R (Dépendance avec yay -Rns XXX)
-
-
-
+Mise à jour de la liste des paquets         : pacman -Sy
+Mise à niveau des paquets                   : pacman -Syu ou pacman -Syyu
+Ajout de package sur le système             : pacman -S
+Suppression du package sur le système       : pacman -R (Dépendance avec yay -Rns XXX)
 
 Liste des paquets installés explicitement   : pacman -Qe
 Liste des paquets d'un groupe nommé group   : pacman -Sg <group>
 Liste toute les informations sur le paquets : pacman -Si
+Générer le Package                          : makepkg -si
 
-Générer le Package : makepkg -si
+
+
+Dépôts :
+Core - Contient tous les paquets requis pour installer un système GNU/Linux de base ;
+Extra - Contient des paquets non requis pour un système de base mais utiles pour améliorer l'utilisation quotidienne (environnements de bureau etc) ;
+Community - Contient les paquetages choisis par vote sur AUR et maintenus par les Trusted Users (TU)
+Multilib - Contient les paquets des programmes/bibliothèques en 32bits pour l'architecture 64bits.
