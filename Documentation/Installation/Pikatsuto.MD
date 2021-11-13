@@ -62,7 +62,7 @@ mkdir -p /mnt/data /mnt/save /mnt/sup /mnt/travaille ;
 
 ```
 echo "[Unit]
-Description=Montage de Data Save
+Description=Montage de Data-Save
 
 [Mount]
 What=/dev/sdc5
@@ -104,7 +104,7 @@ WantedBy=multi-user.target" > /etc/systemd/system/mnt-data.mount ;
 
 ```
 echo "[Unit]
-Description=Montage de Data sup
+Description=Montage de Data-SUP
 
 [Mount]
 What=/dev/sdc8
