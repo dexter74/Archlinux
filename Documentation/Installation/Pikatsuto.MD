@@ -32,7 +32,7 @@ makepkg -si --noconfirm ;
 ```
 
 ```bash
-cd /tmp ;
+clear ;
 yay -S --noconfirm isci ;
 yay -S --noconfirmadvansys ;
 ```
