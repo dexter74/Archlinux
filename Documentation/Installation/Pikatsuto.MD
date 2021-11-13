@@ -89,19 +89,16 @@ echo "
 Description=Additional drive
 
 [Mount]
-What=/dev/sdc5
-Where=/mnt/data-save
+What=/dev/sdc7
+Where=/mnt/data
 Type=ntfs
 Options=defaults
 
 [Install]
-WantedBy=multi-user.target" > /etc/systemd/system/mnt-data.save.mount ;
+WantedBy=multi-user.target" > /etc/systemd/system/mnt-data.mount ;
 ```
 
 ```
 systemctl daemon-reload ;
-systemctl start mnt-data-save.mount ;
-systemctl start mnt-travaille.mount ;
-systemctl start mnt-data.mount ;
-systemctl start mnt-data-sup.mount ;
+systemctl restart mnt-data.mount ;
 ```
