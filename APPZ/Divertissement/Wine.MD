@@ -33,6 +33,14 @@ https://aur.archlinux.org/packages/winetricks-git/
 ----------------------------------------------------------------------------------------------------
 
 **Définir l'architecture de Wine**
+
+```bash
+WINEARCH=win32 winecfg
+WINEARCH=win64 winecfg
 ```
-WINEARCH=win32 winecfg ;
+
+**Environnement séparée:
+```bash
+WINEARCH=win32 WINEPREFIX=~/win32 winecfg 
+WINEARCH=win64 WINEPREFIX=~/win64 winecfg
 ```
