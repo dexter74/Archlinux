@@ -16,6 +16,11 @@
 ```
 
 
+**Root**
+```bash
+sudo pacman -S --noconfirm open-iscsi ;
+```
+
 **Marc**
 ```bash
 su - marc ;
@@ -31,12 +36,12 @@ cd yay ;
 makepkg -si --noconfirm ;
 ```
 
+**Mise à jour**
 ```bash
 pacman -Sy ;
 ```
 
 ```bash
 clear ;
-pacman -S --noconfirm open-iscsi ;
-yay -S --noconfirmadvansys ;
+yay -S --noconfirm advansys ;
 ```
