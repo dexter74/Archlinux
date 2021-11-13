@@ -77,7 +77,7 @@ mkdir -p /mnt/data-save /mnt/travaille /mnt/data /mnt/data-sup ;
 
 
 ```bash
-systemctl edit --full --force mnt-data-save.mount ;
+systemctl edit --full --force mnt-data.save.mount ;
 systemctl edit --full --force mnt-travaille.mount ;
 systemctl edit --full --force mnt-data.mount ;
 systemctl edit --full --force mnt-data-sup.mount ;
@@ -95,7 +95,7 @@ Type=ntfs
 Options=defaults
 
 [Install]
-WantedBy=multi-user.target" > /etc/systemd/system/mnt-data-save.mount ;
+WantedBy=multi-user.target" > /etc/systemd/system/mnt-data.save.mount ;
 ```
 
 ```
