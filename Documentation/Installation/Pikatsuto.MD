@@ -52,6 +52,9 @@ yay -S --noconfirm aic94xx-firmware wd719x-firmware upd72020x-fw ;
 
 **Montage des partitions via SystemD** ([ici](https://dev.to/adarshkkumar/mount-a-volume-using-systemd-1h2f)
 
+[Echapper tiret nom mount](https://doc.zordhak.fr/d/systemd/%C3%89chapper_tiret-nom-mount.html)
+
+
 Création des dossiers de montage:
 ```bash
 mkdir -p /mnt/data-save /mnt/travaille /mnt/data /mnt/data-sup ;
