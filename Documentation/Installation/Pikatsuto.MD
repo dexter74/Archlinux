@@ -70,7 +70,7 @@ Description=Montage de Data Save
 What=/dev/sdc5
 Where=/mnt/save
 Type=ntfs
-Options=defaults
+Options=defaults,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-save.mount ;
@@ -84,7 +84,7 @@ Description=Montage de Travaille
 What=/dev/sdc6
 Where=/mnt/travaille
 Type=ntfs
-Options=defaults
+Options=defaults,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-travaille.mount ;
@@ -98,7 +98,7 @@ Description=Montage de Data
 What=/dev/sdc7
 Where=/mnt/data
 Type=ntfs
-Options=defaults
+Options=defaults,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-data.mount ;
@@ -117,8 +117,6 @@ Options=defaults,x-gvfs-show
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-sup.mount ;
 ```
-
-
 
 
 ```
