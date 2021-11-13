@@ -54,13 +54,9 @@ yay -S --noconfirm aic94xx-firmware wd719x-firmware upd72020x-fw ;
 
 [Echapper tiret nom mount](https://doc.zordhak.fr/d/systemd/%C3%89chapper_tiret-nom-mount.html)
 
-
-Création des dossiers de montage:
 ```bash
 mkdir -p /mnt/data /mnt/save /mnt/sup /mnt/travaille ;
-```
-
-```
+########################################################################
 echo "[Unit]
 Description=Montage de Data-Save
 
@@ -72,9 +68,7 @@ Options=defaults,nofail,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-save.mount ;
-```
-
-```
+########################################################################
 echo "[Unit]
 Description=Montage de Travaille
 
@@ -86,9 +80,7 @@ Options=defaults,nofail,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-travaille.mount ;
-```
-
-```
+########################################################################
 echo "[Unit]
 Description=Montage de Data
 
@@ -100,9 +92,7 @@ Options=defaults,nofail,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-data.mount ;
-```
-
-```
+########################################################################
 echo "[Unit]
 Description=Montage de Data-SUP
 
@@ -114,15 +104,7 @@ Options=defaults,nofail,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-sup.mount ;
-```
-
-
-```
-systemctl daemon-reload ;
-systemctl restart mnt-*.mount ;
-```
-
-```
+########################################################################
 systemctl daemon-reload ;
 systemctl restart mnt-data.mount ;
 systemctl restart mnt-save.mount ;
