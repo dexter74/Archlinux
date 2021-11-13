@@ -9,12 +9,13 @@
 
 [Etape 4: Préparation de l'environnement (User)](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/04.Chroot_USERS.MD)
 
-[Etape 5: Installation du Gestionnaire de session](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/05.Sessions.MD)
+[Etape 5: Installation de l'environnement Graphique](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/05.Interfaces.MD)
 
-[Etape 6: Installation de l'environnement Graphique]()
+[Etape 6: Installation du Gestionnaire de session](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/06.Sessions.MD)
 
-[Etape 7: Gestions des services SystemD](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/07.SystemD.MD)
+[Etape 7: Installation du Bootloader (SystemD-Boot)](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/07.BootLoader.MD)
 
-[Etape 8: Installation du Bootloader (SystemD-Boot)](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/08.BootLoader.MD)
+[Etape 8: Gestions des services SystemD](https://github.com/dexter74/Archlinux/blob/main/Documentation/Installation/08.SystemD.MD)
+
 
 [Etape 9: Personnalisation de l'interface Graphique]() 
