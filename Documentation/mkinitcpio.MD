@@ -10,7 +10,6 @@ nano /etc/mkinitcpio.conf ; mkinitcpio -p linux
 
 Tutorial : HOOKS=(base systemd autodetect modconf block lvm2 filesystems keyboard fsck)
 Perso    : HOOKS=(base systemd autodetect modconf block lvm2 filesystems udev resume keyboard keymap sd-vconsole fsck)
-
 ```
 
 ```
