@@ -1,7 +1,7 @@
 
 ```
-==> WARNING: Possibly missing firmware for module: isci
-==> WARNING: Possibly missing firmware for module: advansys
+==> WARNING: Possibly missing firmware for module: isci 
+==> WARNING: Possibly missing firmware for module: advansys (linux-firmware)
 ==> WARNING: Possibly missing firmware for module: aic94xx
 ==> WARNING: Possibly missing firmware for module: cxgb4
 ==> WARNING: Possibly missing firmware for module: csiostor
@@ -13,7 +13,9 @@
 ==> WARNING: Possibly missing firmware for module: wd719x
 ==> WARNING: Possibly missing firmware for module: xhci_pci
 ==> WARNING: Possibly missing firmware for module: ums_eneub6250
+==> WARNING: Possibly missing firmware for module: softing_cs
 ```
+
 
 
 **Root**
@@ -43,5 +45,5 @@ pacman -Sy ;
 
 ```bash
 clear ;
-yay -S --noconfirm
+yay -S --noconfirm aic94xx-firmware wd719x-firmware upd72020x-fw ;
 ```
