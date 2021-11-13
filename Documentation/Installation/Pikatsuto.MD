@@ -16,8 +16,6 @@
 ==> WARNING: Possibly missing firmware for module: softing_cs
 ```
 
-
-
 **Root**
 ```bash
 sudo pacman -S --noconfirm open-iscsi ;
