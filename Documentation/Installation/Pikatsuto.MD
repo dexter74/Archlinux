@@ -129,7 +129,10 @@ systemctl restart mnt-*.mount ;
 ```
 systemctl daemon-reload ;
 systemctl restart mnt-*.mount ;
-systemctl enable --now mnt-*.mount ;
+systemctl enable --now mnt-data.mount ;
+systemctl enable --now mnt-save.mount ;
+systemctl enable --now mnt-sup.mount ;
+systemctl enable --now mnt-travaille.mount ;
 ```
 
 ```
