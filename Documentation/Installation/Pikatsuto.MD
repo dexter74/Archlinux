@@ -78,6 +78,12 @@ systemctl edit --full --force mnt-data-sup.mount ;
 ```
 
 ```
+systemctl restart mnt-data-save.mount ;
+journal -u mnt-data-save.mount ;
+```
+
+
+```
 [Unit]
 Description=Additional drive
 
