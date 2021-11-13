@@ -43,5 +43,5 @@ pacman -Sy ;
 
 ```bash
 clear ;
-yay -S --noconfirm advansys ;
+yay -S --noconfirm
 ```
