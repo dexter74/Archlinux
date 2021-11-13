@@ -112,7 +112,7 @@ Description=Montage de Data sup
 What=/dev/sdc8
 Where=/mnt/sup
 Type=ntfs
-Options=defaults
+Options=defaults,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-sup.mount ;
