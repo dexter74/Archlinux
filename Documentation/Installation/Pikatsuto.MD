@@ -70,7 +70,13 @@ blkid ;
 /dev/nvme0n1p4: BLOCK_SIZE="512" UUID="828A01498A013AE5" TYPE="ntfs" PARTUUID="7f51bb21-2d76-47f0-952e-1d09bb0f1199"
 ```
 
+
+```bash
+mkdir -p /mnt/data-save /mnt/travaille /mnt/data /mnt/data-sup ;
 ```
+
+
+```bash
 systemctl edit --full --force mnt-data-save.mount ;
 systemctl edit --full --force mnt-travaille.mount ;
 systemctl edit --full --force mnt-data.mount ;
@@ -78,28 +84,24 @@ systemctl edit --full --force mnt-data-sup.mount ;
 ```
 
 ```
-systemctl restart mnt-data-save.mount ;
-journal -u mnt-data-save.mount ;
-```
-
-
-```
+echo "
 [Unit]
 Description=Additional drive
 
 [Mount]
-What=/dev/sdc
-Where=/mnt/
-Type=ext4
+What=/dev/sdc5
+Where=/mnt/data-save
+Type=ntfs
 Options=defaults
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target" > /etc/systemd/system/mnt-data-save.mount ;
 ```
 
 ```
+systemctl daemon-reload ;
+systemctl start mnt-data-save.mount ;
+systemctl start mnt-travaille.mount ;
 systemctl start mnt-data.mount ;
 systemctl start mnt-data-sup.mount ;
-systemctl start mnt-data-travaille.mount ;
-systemctl start mnt-data-save.mount ;
 ```
