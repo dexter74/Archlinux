@@ -68,7 +68,7 @@ Description=Montage de Data Save
 What=/dev/sdc5
 Where=/mnt/save
 Type=ntfs
-Options=defaults, x-gvfs-show, nofail
+Options=defaults,nofail,x-gvfs-show
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-save.mount ;
