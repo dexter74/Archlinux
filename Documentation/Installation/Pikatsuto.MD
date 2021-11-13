@@ -32,7 +32,11 @@ makepkg -si --noconfirm ;
 ```
 
 ```bash
+pacman -Sy ;
+```
+
+```bash
 clear ;
-yay -S --noconfirm isci ;
+pacman -S --noconfirm isci ;
 yay -S --noconfirmadvansys ;
 ```
