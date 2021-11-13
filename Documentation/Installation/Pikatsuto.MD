@@ -37,6 +37,6 @@ pacman -Sy ;
 
 ```bash
 clear ;
-pacman -S --noconfirm isci ;
+pacman -S --noconfirm open-iscsi ;
 yay -S --noconfirmadvansys ;
 ```
