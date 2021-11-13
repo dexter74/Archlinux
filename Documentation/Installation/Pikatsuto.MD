@@ -57,7 +57,7 @@ yay -S --noconfirm aic94xx-firmware wd719x-firmware upd72020x-fw ;
 
 Création des dossiers de montage:
 ```bash
-mkdir -p /mnt/data-save /mnt/travaille /mnt/data /mnt/data-sup ;
+mkdir -p /mnt/data /mnt/save /mnt/data-sup /mnt/travaille ;
 ```
 
 
