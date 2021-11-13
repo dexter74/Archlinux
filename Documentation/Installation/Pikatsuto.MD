@@ -60,8 +60,6 @@ Création des dossiers de montage:
 mkdir -p /mnt/data /mnt/save /mnt/sup /mnt/travaille ;
 ```
 
-
-
 ```
 echo "[Unit]
 Description=Montage de Data Save
@@ -70,7 +68,7 @@ Description=Montage de Data Save
 What=/dev/sdc5
 Where=/mnt/save
 Type=ntfs
-Options=defaults,x-gvfs-show
+Options=defaults, x-gvfs-show, nofail
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-save.mount ;
@@ -84,7 +82,7 @@ Description=Montage de Travaille
 What=/dev/sdc6
 Where=/mnt/travaille
 Type=ntfs
-Options=defaults,x-gvfs-show
+Options=defaults, x-gvfs-show, nofail
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-travaille.mount ;
@@ -98,7 +96,7 @@ Description=Montage de Data
 What=/dev/sdc7
 Where=/mnt/data
 Type=ntfs
-Options=defaults,x-gvfs-show
+Options=defaults, x-gvfs-show, nofail
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-data.mount ;
@@ -112,7 +110,7 @@ Description=Montage de Data sup
 What=/dev/sdc8
 Where=/mnt/sup
 Type=ntfs
-Options=defaults,x-gvfs-show
+Options=defaults, x-gvfs-show, nofail
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/mnt-sup.mount ;
