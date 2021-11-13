@@ -10,14 +10,12 @@ echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ; # Permanent
 cat /proc/sys/net/ipv4/ip_forward ; 
 ```
 
-
 **Configuration du Client** ( /etc/systemd/network/99-wg0.netdev )
 ```
 [NetDev]
 Name=wg0
 Kind=wireguard
-Description=WireGuard tunnel wg0
-
+Description=Tunnel wg0 Wireguard
 
 [WireGuard]
 ListenPort = XXXX
@@ -61,8 +59,10 @@ ip link set wg0 up
 
 
 **Expérimental**
-
+```
 systemctl edit wireguard.service --full --force
+```
+
 
 ```
 [Unit]
@@ -77,7 +77,6 @@ ExecStop=/usr/bin/ip link set wg0 down
 
 [Install]
 WantedBy=default.target
-
 
 systemctl daemon-reload ;
 systemctl enable  --now wireguard ;
