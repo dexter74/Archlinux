@@ -71,10 +71,10 @@ blkid ;
 ```
 
 ```
+systemctl edit --full --force mnt-data-save.mount ;
+systemctl edit --full --force mnt-travaille.mount ;
 systemctl edit --full --force mnt-data.mount ;
 systemctl edit --full --force mnt-data-sup.mount ;
-systemctl edit --full --force mnt-data-travaille.mount ;
-systemctl edit --full --force mnt-data-save.mount ;
 ```
 
 ```
