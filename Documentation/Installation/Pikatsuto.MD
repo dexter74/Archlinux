@@ -84,8 +84,7 @@ systemctl edit --full --force mnt-data-sup.mount ;
 ```
 
 ```
-echo "
-[Unit]
+echo "[Unit]
 Description=Additional drive
 
 [Mount]
