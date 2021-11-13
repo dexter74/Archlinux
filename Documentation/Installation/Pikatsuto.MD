@@ -108,7 +108,7 @@ WantedBy=multi-user.target" > /etc/systemd/system/mnt-sup.mount ;
 systemctl daemon-reload ;
 systemctl restart mnt-data.mount ;
 systemctl restart mnt-save.mount ;
-systemctl restart mnt-sup.mount
+systemctl restart mnt-sup.mount ;
 systemctl restart mnt-travaille.mount ;
 
 systemctl enable --now mnt-data.mount ;
