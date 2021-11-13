@@ -126,7 +126,11 @@ systemctl daemon-reload ;
 systemctl restart mnt-*.mount ;
 ```
 
-
+```
+systemctl daemon-reload ;
+systemctl restart mnt-*.mount ;
+systemctl eanble --now mnt-*.mount ;
+```
 
 ```
 blkid ;
