@@ -339,8 +339,8 @@ lscpu | grep -i "cœur" ;
 lscpu | grep -i "numa" ;
 lscpu -e | cut -c1-20  ;
 ```
-La colonne CPU sont les Threads
-La colonne CORE sont les Threads.
+La colonne CPU sont les Thread
+La colonne CORE sont les Thread.
 
 
 ```
@@ -365,6 +365,8 @@ CPU NODE SOCKET CORE
  11    0      0    5
 ```
 
+### Ajout du code XML après </feature>
+
 | Core |   Thread  |
 | ---- | --------- |
 |  0   |   0, 6    |
@@ -374,14 +376,64 @@ CPU NODE SOCKET CORE
 |  4   |   4, 10   |
 |  5   |   5, 11   |
 
+```
+Core 0: Réserver à l'hôte
+Core 1: Réserver à la VM
+Core 2: Réserver à la VM
+Core 3: Réserver à la VM
+Core 4: Réserver à la VM
+Core 5: Réserver à la VM
 
+Soit un totale de 5 Core pour la VM soit 10 Thread. (2 threads / core)
+La valeur Vcpu seront les références CPU dans la VM. (0-9 => 10 Core)
+La valeur cpuset sont les correspondances Thread avec le CPU.
+```
+
+```xml
+  <vcpu placement="static">10</vcpu>
+  <iothreads>1</iothreads>
+  <cputune>
+    <vcpupin vcpu="0" cpuset="1"/>
+    <vcpupin vcpu="1" cpuset="7"/>
+    <vcpupin vcpu="2" cpuset="2"/>
+    <vcpupin vcpu="3" cpuset="8"/>
+    <vcpupin vcpu="4" cpuset="3"/>
+    <vcpupin vcpu="5" cpuset="9"/>
+    <vcpupin vcpu="6" cpuset="4"/>
+    <vcpupin vcpu="7" cpuset="10"/>
+    <vcpupin vcpu="8" cpuset="5"/>
+    <vcpupin vcpu="9" cpuset="11"/>
+    <emulatorpin cpuset="0,6"/>
+    <iothreadpin iothread="1" cpuset="0,6"/>
+  </cputune>
+```
+
+**Remplacer la section CPU (<cpu> ... </cpu>)**
+La valeur cores sont le nombre de core attribué à la VM.
+La valeur Thread est le nombre par core . (2 Thread / core > 5 core x 2 = 10 thread)
+```xml
+  <cpu mode="host-passthrough" check="none" migratable="on">
+    <topology sockets="1" dies="1" cores="5" threads="2"/>
+    <cache mode="passthrough"/>
+    <feature policy="require" name="topoext"/>
+  </cpu>
+```
+
+**Hyper-V Enlightenments**
+Les éclaircissements Hyper-V aident la VM invitée à gérer les tâches de virtualisation.
 
 
 ------------------------------------------------------------------------------------------------------------------------------
 #  
-```bash
+```xml
+...
+  <qemu:commandline>
+   <qemu:arg value="-rtc"/>
+    <qemu:arg value="base=localtime"/>
+    <qemu:arg value="-cpu"/>
+    <qemu:arg value="host,host-cache-info=on,kvm=off,l3-cache=on,kvm-hint-dedicated=on,migratable=no,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time,hv_vendor_id=buttplug,+invtsc,+topoext"/>
+  </qemu:commandline>
 ```
-
 
 ------------------------------------------------------------------------------------------------------------------------------
 #  
