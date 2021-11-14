@@ -218,6 +218,27 @@ systemctl start sddm.service ;
 ```
 
 
+**/etc/libvirt/qemu.conf **
+```xml
+user = "root"
+group = "kvm"
+
+cgroup_device_acl = [
+    "/dev/input/by-id/usb-SEMICO_USB_Keyboard-event-kbd",
+    "/dev/input/by-id/usb-Full-Speed_Mouse_Full-Speed_Mouse-event-mouse",
+    "/dev/null", "/dev/full", "/dev/zero",
+    "/dev/random", "/dev/urandom",
+    "/dev/ptmx", "/dev/kvm", "/dev/kqemu",
+    "/dev/rtc","/dev/hpet", "/dev/sev"
+]
+```
+
+
+
+
+
+
+
 ------------------------------------------------------------------------------------------------------------------------------
 # VI. Récupération des Events ID du matériel. (Clavier et la Souris)
 Pour pouvoir attribuer le Clavier, souris il faut pour celà récupérer les Event ID du matériel.
