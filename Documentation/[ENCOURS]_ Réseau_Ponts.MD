@@ -1,4 +1,6 @@
 ## I. Récupérer les informations du réseau
+
+
 **Commande**
 ```bash
 ip link | grep -i "down\|up"
