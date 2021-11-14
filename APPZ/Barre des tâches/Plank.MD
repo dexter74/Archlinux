@@ -5,9 +5,8 @@ pacman -S --noconfirm plank ;
 
 **Correctif de bug :**
 ```
-Démarrer > Paramètres > Peaufinage des fenêtres
-Onglet compositeur
- - Décochez "affichez les ombres sous les fenêtres dock"
+Démarrer > Paramètres > Peaufinage des fenêtres > Onglet compositeur >  - Décochez "affichez les ombres sous les fenêtres dock"
+xfwm4-tweaks-settings
 ```
 
 **AutoStart**
