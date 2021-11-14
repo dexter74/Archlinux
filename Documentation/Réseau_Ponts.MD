@@ -12,14 +12,19 @@ ip link | grep -i "down\|up"
 
 ## II. Mise en place du Pont
 
-#### A. Création du Pont
+#### A. Purge de la configuration actuel
+```
+rm -f /etc/systemd/network/* ;
+```
+
+#### B. Création du Pont
 ```
 echo "[NetDev]
 Name=br0
 Kind=bridge" > /etc/systemd/network/bridge-br0.netdev ;
 ```
 
-#### B. Reliée le pont avec l'interface Physique
+#### C. Reliée le pont avec l'interface Physique
 ```
 echo "[Match]
 Name=eth0
@@ -28,7 +33,7 @@ Name=eth0
 Bridge=br0" > /etc/systemd/network/bridge-br0-slave.network ;
 ```
 
-#### C. Configurer le réseau du pont
+#### D. Configurer le réseau du pont
 ```
 echo "[Match]
 Name=br0
@@ -40,12 +45,12 @@ DNS=192.168.1.1
 DNS=192.168.1.40" > /etc/systemd/network/bridge-br0.network ;
 ```
 
-#### D. Redémarrer le service NetworkD de SystemD.
+#### E. Redémarrer le service NetworkD de SystemD.
 ```bash
 systemctl restart systemd-networkd ;
 ```
 
-#### E. Vérification
+#### F. Vérification
 ```bash
 systemctl status systemd-networkd ;
 ip link | grep -i "down\|up"
