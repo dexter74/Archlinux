@@ -45,7 +45,7 @@ Périphérique CDROM1 : /.../Virtio-last.iso
 ```
 
 ### B. Explication sur l'installation de Windows
-```bash
+```
 Installé Windows sans GPU.
 Lors de l'installation de Windows, charger le pilote Virtio . (virtio-iso/amd64/win10)
 Sous Windows, installer les pilotes manquant.
