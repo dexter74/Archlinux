@@ -25,6 +25,10 @@ Address=192.168.1.109/24
 Gateway=192.168.1.1
 DNS=192.168.1.1
 DNS=192.168.1.40" > 10-static-eth0.network ;
+
+systemctl restart systemd-networkd ;
+systemctl status systemd-networkd ;
+
 ```
 
 
