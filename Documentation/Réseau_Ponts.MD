@@ -9,6 +9,26 @@ ip link | grep -i "down\|up"
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
 ```
 
+Ancien:
+```
+echo "[Match]
+Name=eth0
+
+[Network]
+DHCP=ipv4" > 20-dhcp.network
+
+echo "[Match]
+Name=eth0
+
+[Network]
+Address=192.168.1.109/24
+Gateway=192.168.1.1
+DNS=192.168.1.1
+DNS=192.168.1.40" > 10-static-eth0.network ;
+```
+
+
+
 
 ## II. Mise en place du Pont
 
@@ -39,12 +59,11 @@ echo "[Match]
 Name=br0
 
 [Network]
-Address=192.168.1.108/24
+Address=192.168.1.109/24
 Gateway=192.168.1.1
 DNS=192.168.1.1
 DNS=192.168.1.40" > /etc/systemd/network/bridge-br0.network ;
 ```
-
 
 #### E. Vérification de la configuration :
 ```
