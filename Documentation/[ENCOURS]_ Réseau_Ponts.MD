@@ -1,5 +1,6 @@
 ## I. Récupérer les informations du réseau
 
+[Guide](https://www.xmodulo.com/switch-from-networkmanager-to-systemd-networkd.html)
 
 **Commande**
 ```bash
