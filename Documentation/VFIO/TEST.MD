@@ -218,7 +218,7 @@ systemctl start sddm.service ;
 ```
 
 
-**/etc/libvirt/qemu.conf **
+**/etc/libvirt/qemu.conf**
 ```xml
 user = "root"
 group = "kvm"
