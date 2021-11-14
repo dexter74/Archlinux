@@ -58,6 +58,7 @@ cat /etc/systemd/network/bridge-br0-slave.network ;
 #### F. Redémarrer le service NetworkD de SystemD.
 ```bash
 systemctl restart systemd-networkd ;
+systemctl status systemd-networkd ;
 ```
 
 #### G. Vérification
