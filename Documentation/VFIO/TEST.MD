@@ -67,7 +67,7 @@ KVM_NAME="Window10
 ```
 
 ```bash
-mkdir -p //etc/libvirt/hooks
+mkdir -p /etc/libvirt/hooks
 mkdir -p /etc/libvirt/hooks/qemu.d/$KVM_NAME/prepare/begin
 mkdir -p /etc/libvirt/hooks/qemu.d/$KVM_NAME/release/end
 
