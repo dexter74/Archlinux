@@ -15,7 +15,7 @@ echo "[Match]
 Name=eth0
 
 [Network]
-DHCP=ipv4" > 20-dhcp.network
+DHCP=ipv4" > /etc/systemd/network/20-dhcp.network
 
 echo "[Match]
 Name=eth0
@@ -24,7 +24,7 @@ Name=eth0
 Address=192.168.1.109/24
 Gateway=192.168.1.1
 DNS=192.168.1.1
-DNS=192.168.1.40" > 10-static-eth0.network ;
+DNS=192.168.1.40" > /etc/systemd/network/10-static-eth0.network ;
 
 systemctl restart systemd-networkd ;
 systemctl status systemd-networkd ;
