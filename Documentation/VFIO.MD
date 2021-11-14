@@ -113,6 +113,7 @@ fi
 
 ### F. Configurer les Hooks de Libvirt (kvm.conf)
 Ce fichier de configuration permet de créer des variables lisibles par les scripts ci-dessous.
+Ce fichier est à adapter.
 
 
 ```bash
@@ -122,8 +123,8 @@ VM_MEMORY=13312
 # Adresse PCI du GPU (Vidéo, Audio, USB et Serial)
 VIRSH_GPU_VIDEO=pci_0000_09_00_0
 VIRSH_GPU_AUDIO=pci_0000_09_00_1
-#VIRSH_USB=pci_0000_09_00_2
-#VIRSH_SERIAL_BUS=pci_0000_09_00_3
+VIRSH_USB=pci_0000_09_00_2
+VIRSH_SERIAL_BUS=pci_0000_09_00_3
 ```
 
 La valeur VM_MEMORY est la quantité exacte de Mémoire-Vive qui servira pour la pagination.
@@ -216,43 +217,164 @@ modprobe nvidia
 systemctl start sddm.service ;
 ```
 
-```bash
 
+------------------------------------------------------------------------------------------------------------------------------
+# VI. Récupération des Events ID du matériel. (Clavier et la Souris)
+Pour pouvoir attribuer le Clavier, souris il faut pour celà récupérer les Event ID du matériel.
+
+### A. Lister le matériel
+```bash
+ls /dev/input/by-id
+ls /dev/input/by-id | grep "event-mouse\|Keyboard-event"
 ```
 
 
+### B. Ecouter le matériel
+Pour écouter le matériel, il suffit de faire un cat <chemin vers l'event ID> puis de faire de l'activité sur le matériel concernés. (Prendre les event id contenenant le mot "event")
+
+Si c'est bon le terminal affichera un contenu.
+
+Exemple: 
+- La souris  : il suffit de la bouger
+- Le clavier : il suffit de taper
 
 ```bash
+cat "/dev/input/by-id/..."
 ```
 
+------------------------------------------------------------------------------------------------------------------------------
+# VII. Configuration de la VM (XML)
 
 
-```bash
+### A. Activation de l'édtion XML
+Virt-manager > Edit > Préférence > "Enable Edit XML"
+
+### B. Edition de la VM - Partie I (XML)
+
+**Ligne de code à remplacer** (1ère ligne)
+```xml
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
 ```
 
-
-
-```bash
+**Code à ajouter dans la zone <devices>..... </devices>**
+```xml
+  <input type='mouse' bus='virtio'/>
+  <input type='keyboard' bus='virtio'/>
 ```
 
+### C. Edition de la VM - Partie II (XML)
+Cette partie est à adapter selon votre configuration.
 
+Exemple
+```
+- Le clavier à comme Event-ID : usb-Full-Speed_Mouse_Full-Speed_Mouse-event-mouse 
+- La souris  à comme Event-ID : usb-SEMICO_USB_Keyboard-event-kbd
+```
 
-```bash
+**Code à ajouter après </domain>**
+```xml
+  <qemu:commandline>
+    <qemu:arg value='-object'/>
+    <qemu:arg value='input-linux,id=mouse1,evdev=/dev/input/by-id/usb-Full-Speed_Mouse_Full-Speed_Mouse-event-mouse'/>
+    <qemu:arg value='-object'/>
+    <qemu:arg value='input-linux,id=kbd1,evdev=/dev/input/by-id/usb-SEMICO_USB_Keyboard-event-kbd,grab_all=on,repeat=on'/>
+  </qemu:commandline>
+```
+
+### D. Edition de la VM - Partie III (XML)
+
+Observation:
+```
+- L'audio de la VM peut être acheminé vers l'hôte. Vous avez besoin de Pulseaudio (ou Pipewire avec pipewire-pulse). 
+- Le code semnble être pour PulseAudio.
+```
+
+**Code à ajouter dans la section <qemu:commandline> ....... </qemu:commandline>
+```xml
+    <qemu:arg value="-device"/>
+    <qemu:arg value="ich9-intel-hda,bus=pcie.0,addr=0x1b"/>
+    <qemu:arg value="-device"/>
+    <qemu:arg value="hda-micro,audiodev=hda"/>
+    <qemu:arg value="-audiodev"/>
+    <qemu:arg value="pa,id=hda,server=/run/user/1000/pulse/native"/>
+```
+
+### E. Détection de virtualisation de pilote de carte vidéo :
+```xml
+...
+<features>
+  ...
+  <hyperv>
+    ...
+    <vendor_id state='on' value='buttplug'/>
+    ...
+  </hyperv>
+  ...
+</features>
+...
+```
+
+```xml
+
+...
+<features>
+  ...
+  <kvm>
+    <hidden state='on'/>
+  </kvm>
+  <ioapic driver="kvm"/>
+  ...
+</features>
+...
 ```
 
 
 
 
 ------------------------------------------------------------------------------------------------------------------------------
-#  
+#  IX. Configuration du CPU
 ```bash
+lscpu | grep -i "nom de modèle" ;
+lscpu | grep -i "cœur" ;
+lscpu | grep -i "numa" ;
+lscpu -e | cut -c1-20  ;
 ```
+La colonne CPU sont les Threads
+La colonne CORE sont les Threads.
 
 
-------------------------------------------------------------------------------------------------------------------------------
-#  
-```bash
 ```
+Nom de modèle      : AMD Ryzen 5 3600 6-Core Processor
+Thread(s) par cœur           : 2
+Cœur(s) par socket           : 6
+Nœud(s) NUMA                 : 1
+Nœud NUMA 0 de processeur(s) : 0-11
+
+CPU NODE SOCKET CORE
+  0    0      0    0
+  1    0      0    1
+  2    0      0    2
+  3    0      0    3
+  4    0      0    4
+  5    0      0    5
+  6    0      0    0
+  7    0      0    1
+  8    0      0    2
+  9    0      0    3
+ 10    0      0    4
+ 11    0      0    5
+```
+
+| Core |   Thread  |
+| ---- | --------- |
+|  0   |   0, 6    |
+|  1   |   1, 7    |
+|  2   |   2, 8    |
+|  3   |   3, 9    |
+|  4   |   4, 10   |
+|  5   |   5, 11   |
+
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------
