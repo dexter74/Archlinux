@@ -15,3 +15,7 @@ sudo pacman -S libvirt edk2-ovmf virt-manager ;
 sudo pacman -S dnsmasq ebtables usbutils ;
 ```
 
+**Commandes:**
+```bash
+virt-manager
+```
