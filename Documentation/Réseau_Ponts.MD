@@ -45,12 +45,20 @@ DNS=192.168.1.1
 DNS=192.168.1.40" > /etc/systemd/network/bridge-br0.network ;
 ```
 
-#### E. Redémarrer le service NetworkD de SystemD.
+
+#### E. Vérification de la configuration :
+```
+less /etc/systemd/network/bridge-br0.netdev ;
+less /etc/systemd/network/bridge-br0.network ;
+less /etc/systemd/network/bridge-br0-slave.network ;
+```
+
+#### F. Redémarrer le service NetworkD de SystemD.
 ```bash
 systemctl restart systemd-networkd ;
 ```
 
-#### F. Vérification
+#### G. Vérification
 ```bash
 systemctl status systemd-networkd ;
 ip link | grep -i "down\|up"
