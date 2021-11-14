@@ -271,7 +271,7 @@ Exemple
 - La souris  à comme Event-ID : usb-SEMICO_USB_Keyboard-event-kbd
 ```
 
-**Code à ajouter après </domain>**
+**Code à ajouter après:** </domain>
 ```xml
   <qemu:commandline>
     <qemu:arg value='-object'/>
