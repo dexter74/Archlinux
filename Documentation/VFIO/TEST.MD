@@ -63,7 +63,7 @@ Les hooks Libvirt automatisent le processus d'exécution de tâches spécifiques
 
 Définir le nom de la VM (La VM devra porter le même nom)
 ```
-KVM_NAME="Window10
+KVM_NAME="Window10"
 ```
 
 ```bash
