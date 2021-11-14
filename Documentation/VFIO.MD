@@ -32,9 +32,7 @@ virsh net-start     default ;
 virsh net-autostart default ;
 ```
 
-
-------------------------------------------------------------------------------------------------------------------------------
-#  Caractéristique de la VM
+### A. Caractéristique de la VM
 ```bash
 Le Chipset          : Q35
 Le Firmware         : UEFI
@@ -46,9 +44,7 @@ Périphérique CDROM0 : /.../win10.iso
 Périphérique CDROM1 : /.../Virtio-last.iso
 ```
 
-
-------------------------------------------------------------------------------------------------------------------------------
-#  Explication sur l'installation de Windows
+### B. Explication sur l'installation de Windows
 ```bash
 Installé Windows sans GPU.
 Lors de l'installation de Windows, charger le pilote Virtio . (virtio-iso/amd64/win10)
@@ -59,19 +55,16 @@ Démarrer la VM
 Le signale de sortie vidéo est sur le GPU. (Branche l'écran sur le GPU correspondant pour avoir l'image.
 ```
 
-
-------------------------------------------------------------------------------------------------------------------------------
-#  Ajout d'un Hooks Libvirt
-
+### C. Ajout d'un Hooks Libvirt
 Les hooks Libvirt automatisent le processus d'exécution de tâches spécifiques lors du changement d'état de la machine virtuelle.
 
-### A. Création des dossiers et des fichiers vide (permissions incluse)
+
+### D. Création des dossiers et des fichiers vide (permissions incluse)
 
 Définir le nom de la VM (La VM devra porter le même nom)
 ```
 KVM_NAME="Window10
 ```
-
 
 ```bash
 mkdir -p //etc/libvirt/hooks
@@ -88,7 +81,7 @@ chmod +x /etc/libvirt/hooks/qemu.d/$KVM_NAME/prepare/begin/start.sh
 chmod +x /etc/libvirt/hooks/qemu.d/$KVM_NAME/release/end/stop.sh
 ```
 
-### Fichier qemu
+### E. qemu
 ```bash
 #!/bin/bash
 
@@ -118,7 +111,7 @@ elif [ -d "$HOOKPATH" ]; then
 fi
 ```
 
-### B. Configurer les Hooks de Libvirt (kvm.conf)
+### F. Configurer les Hooks de Libvirt (kvm.conf)
 Ce fichier de configuration permet de créer des variables lisibles par les scripts ci-dessous.
 
 
@@ -136,9 +129,8 @@ VIRSH_GPU_AUDIO=pci_0000_09_00_1
 La valeur VM_MEMORY est la quantité exacte de Mémoire-Vive qui servira pour la pagination.
 
 
-
 ------------------------------------------------------------------------------------------------------------------------------
-#  Création des scripts d'autmatisation
+# V. Création des scripts d'autmatisation
 
 **Observation:**
 ```
@@ -224,7 +216,6 @@ modprobe nvidia
 systemctl start sddm.service ;
 ```
 
-qemu.conf
 ```bash
 
 ```
