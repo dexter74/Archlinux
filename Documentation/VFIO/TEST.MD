@@ -220,8 +220,11 @@ systemctl start sddm.service ;
 
 **/etc/libvirt/qemu.conf**
 ```xml
+# Utilisateur qui lancera Qemu
 user = "root"
-group = "kvm"
+
+# Groupe: (kvm par défaut)
+# group = "root"
 
 cgroup_device_acl = [
     "/dev/input/by-id/usb-SEMICO_USB_Keyboard-event-kbd",
