@@ -66,6 +66,7 @@ newgrp libvirt ;
 ### IV Activation du service LibVirtd
 ```
 systemctl enable --now libvirtd ;
+systemctl restart libvirtd ;
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
