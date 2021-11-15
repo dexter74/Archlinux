@@ -15,10 +15,15 @@ LC_ALL=C lscpu | grep Virtualization ;
 **Modules Virtio**
 ```
 zgrep CONFIG_KVM /proc/config.gz ; # Vérifier si le noyaux gère virtio
-lsmod | grep virtio ; # Vérifier si le module est chargé
-modprobe virtio     ; # Charger le module (temporaire)
+lsmod | grep virtio ; # Vérifier si les modules Virtio-* sont chargés
+```
+
+**Load / Unload Virtio**
+```
+modprobe virtio
 modprobe -r virtio  ; # Décharger le module (Si besoin) 
 ```
+
 
 ### II. Activation des modules (SystemD)
 
