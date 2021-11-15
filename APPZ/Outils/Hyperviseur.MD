@@ -41,14 +41,16 @@ echo "" > /etc/modules-load.d/kvm.conf ;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 ### II. Installation de KVM
+
+
 ```
 pacman -S --asexplicit --noconfirm qemu ;
 pacman -S --asexplicit --noconfirm virt-manager ;
 pacman -S --asexplicit --noconfirm vde2 ;
-pacman -S --asexplicit --noconfirm ebtables ; # Conflit avec iptables-nft et iptables
 pacman -S --asexplicit --noconfirm dnsmasq ;
 pacman -S --asexplicit --noconfirm bridge-utils ;
 pacman -S --asexplicit --noconfirm openbsd-netcat ;
+pacman -S --asexplicit ebtables ; # Conflit avec iptables-nft et iptables
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
