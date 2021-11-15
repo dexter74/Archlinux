@@ -12,10 +12,14 @@ sudo pacman -S --asexplicit --noconfirm bridge-utils netctl ;
 
 **Commande**
 ```bash
+clear ;
 brctl show ;
+echo ""
 networkctl ;
-ip link | grep -i "down\|up"
-ip route
+echo ""
+ip link | grep -i "down\|up" ;
+echo ""
+ip route ;
 
 ```
 **Résultat:**
@@ -30,6 +34,7 @@ ip route
 
 #### A. Purge de la configuration actuel
 ```
+clear ;
 rm -f /etc/systemd/network/* ;
 ```
 
