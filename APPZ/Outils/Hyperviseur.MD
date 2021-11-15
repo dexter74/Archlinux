@@ -69,9 +69,7 @@ systemctl enable --now libvirtd ;
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-### V. Nested Virtualisation
+### V. Nested Virtualisation (SystemD)
 ```
-echo "kvm_intel
-kvm_intel nested=1" > /etc/modules-load.d/kvm.conf ;
+echo "" > /etc/modules-load.d/kvm.conf ;
 ```
-
