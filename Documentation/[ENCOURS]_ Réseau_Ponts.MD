@@ -1,6 +1,12 @@
+## Documentation :
+
+[NetDev](https://www.freedesktop.org/software/systemd/man/systemd.netdev.html)
+
+[NetWork](https://www.freedesktop.org/software/systemd/man/systemd.network.html)
+
+
+
 ## I. Récupérer les informations du réseau
-
-
 
 **Paquet** (brctl)
 ```
@@ -9,7 +15,6 @@ sudo pacman -S --asexplicit --noconfirm bridge-utils netctl ;
 
 **Commande**
 ```bash
-
 clear ;
 echo "###################################################################"
 echo "Etat des Bridges:"
@@ -24,8 +29,63 @@ echo "##########################################################################
 echo "IP Route:"
 ip route ;
 echo "#################################################################"
-
 ```
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+## II. Mise en place du Pont
+
+#### A. Purge de la configuration actuel
+```bash
+clear ;
+rm -f /etc/systemd/network/* ;
+```
+
+#### B. Création du Pont
+```bash
+echo "[Match]
+Host=archlinux
+Virtualization=yes
+Architecture=x86-64
+KernelVersion=5.14.16-arch1-1
+
+[NetDev]
+Description=Interface pont 0
+Name=br0
+Kind=bridge
+MTUBytes=1500
+MACAddress=00:15:5d:38:01:06" > /etc/systemd/network/50-br0.netdev
+```
+
+#### B. Configurer le réseau du pont
+```bash
+echo "[Match]
+Name=br0
+
+[Network]
+Description=Configuration du pont
+DHCP=no
+Address=192.168.1.108/24
+Gateway=192.168.1.1
+DNS=192.168.1.40
+DNS=192.168.1.1
+Domains=lan" > /etc/systemd/network/50-br0.network
+```
+
+#### C. Reliée le pont avec l'interface Physique
+```bash
+echo "[Match]
+Name=eth0
+Type=ether
+MACAddress=00:15:5d:38:01:06
+
+[Network]
+Description=Lier la physique au pont
+Bridge=br0" > /etc/systemd/network/50-br0-eth0.network
+```
+
+
+
 **Résultat finale:**
 ```
 ###################################################################
@@ -51,83 +111,6 @@ default via 192.168.1.1 dev br0 proto static
 192.168.1.0/24 dev br0 proto kernel scope link src 192.168.1.109
 #################################################################
 ```
-
-
--------------------------------------------------------------------------------------------------------------------------------------------------
-## II. Mise en place du Pont
-
-#### A. Purge de la configuration actuel
-```
-clear ;
-rm -f /etc/systemd/network/* ;
-```
-
-
-[NetDev](https://www.freedesktop.org/software/systemd/man/systemd.netdev.html)
-
-[NetWork](https://www.freedesktop.org/software/systemd/man/systemd.network.html)
-
-
-
-#### B. Création du Pont
-```
-echo "[NetDev]
-Name=br0
-Kind=bridge
-MACAddress=00:15:5d:38:01:06" > /etc/systemd/network/50-br0.netdev ;
-```
-
-#### C. Reliée le pont avec l'interface Physique
-```
-echo "[Match]
-Name=eth*
-MACAddress=00:15:5d:38:01:06
-
-[Network]
-Bridge=br0" > /etc/systemd/network/50-network-interface.network ;
-```
-
-#### D. Configurer le réseau du pont
-```
-echo "[Match]
-Name=br0
-
-[Network]
-DHCP=no
-Address=192.168.1.108/24
-Gateway=192.168.1.1
-DNS=192.168.1.40
-DNS=192.168.1.1" > /etc/systemd/network/50-br0.network ;
-```
-
-#### E. Vérification de la configuration :
-```
-clear ;
-echo "############################"
-cat /etc/systemd/network/50-br0.netdev ;
-echo "############################"
-cat /etc/systemd/network/50-network-interface.network ;
-echo "############################"
-cat /etc/systemd/network/50-br0.network ;
-```
-
-#### F. Redémarrer le service NetworkD de SystemD.
-```bash
-systemctl restart systemd-networkd ;
-systemctl status systemd-networkd ;
-```
-
-#### G. Vérification
-```bash
-systemctl status systemd-networkd ;
-ip link | grep -i "down\|up"
-```
--------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
 
 
 
