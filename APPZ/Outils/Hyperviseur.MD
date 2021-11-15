@@ -4,45 +4,29 @@ Pour mettre en place l'hyperviseur, il faut installer les paquets, démarrer les
 
 [Création du pont](https://github.com/dexter74/Archlinux/blob/main/Documentation/R%C3%A9seau_Ponts.MD)
 
-
 -----------------------------------------------------------------------------------------------------------------------------------------------
-### I. Vérifier la prise en charge de la virtualisation
+### X. Vérifier la prise en charge de la virtualisation
 ```
 clear ;
 LC_ALL=C lscpu | grep Virtualization ;
 zgrep CONFIG_KVM /proc/config.gz ;
 ```
 
-```
-CONFIG_KVM_GUEST=y
-CONFIG_KVM_MMIO=y
-CONFIG_KVM_ASYNC_PF=y
-CONFIG_KVM_VFIO=y
-CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT=y
-CONFIG_KVM_COMPAT=y
-CONFIG_KVM_XFER_TO_GUEST_WORK=y
-CONFIG_KVM=m
-CONFIG_KVM_INTEL=m
-CONFIG_KVM_AMD=m
-CONFIG_KVM_AMD_SEV=y
-CONFIG_KVM_XEN=y
-CONFIG_KVM_MMU_AUDIT=y
-```
+-----------------------------------------------------------------------------------------------------------------------------------------------
+### X. Gestions des modules KVM (A peaufiné)
 
-### Activation des modules KVM:
 ```
-modprobe vhost_net
-
-modprobe kvm
-modprobe kvm-amd
-modprobe kvm-intel
-echo "" > /etc/modules-load.d/kvm.conf ;
+lsmod | grep 'kvm\|vhost_net'
+modprobe vhost_net ;
+modprobe kvm ;
+modprobe kvm-amd ;
+modprobe kvm-intel ;
+echo "vhost_net
+kvm" > /etc/modules-load.d/kvm.conf ;
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-### II. Installation de KVM
-
-
+### X. Installation de KVM
 ```
 pacman -S --asexplicit --noconfirm qemu ;
 pacman -S --asexplicit --noconfirm virt-manager ;
@@ -50,7 +34,7 @@ pacman -S --asexplicit --noconfirm vde2 ;
 pacman -S --asexplicit --noconfirm dnsmasq ;
 pacman -S --asexplicit --noconfirm bridge-utils ;
 pacman -S --asexplicit --noconfirm openbsd-netcat ;
-pacman -S --asexplicit ebtables ; # Conflit avec iptables-nft et iptables
+pacman -S --asexplicit ebtables ;
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -58,7 +42,7 @@ pacman -S --asexplicit ebtables ; # Conflit avec iptables-nft et iptables
 
 #### A. Edition du fichier libvirtd.conf
 ```
-nano /etc/libvirt/libvirtd.conf
+nano /etc/libvirt/libvirtd.conf ;
 ```
 
 #### B. Décommenter les lignes
@@ -72,6 +56,26 @@ unix_sock_ro_perms = "0777"
 usermod -a -G libvirt marc ;
 newgrp libvirt ;
 ```
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+### IV Activation du service LibVirtd
+```
+systemctl enable --now libvirtd ;
+systemctl restart libvirtd ;
+systemctl status libvirtd ;
+```
+
+
+
+
+
+
+
+
+
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Prise en charge réseau
@@ -92,18 +96,13 @@ virsh net-start default
 virsh net-autostart default
 ```
 
-
 -----------------------------------------------------------------------------------------------------------------------------------------------
-### X Activation du service LibVirtd
+### X 
 ```
-systemctl enable --now libvirtd ;
-systemctl restart libvirtd ;
-systemctl status libvirtd ;
 ```
 
 
 
-### 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 ### X. Nested Virtualisation (SystemD)
