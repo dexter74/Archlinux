@@ -81,7 +81,12 @@ Description=Lier la physique au pont
 Bridge=$BRIDGE_NAME" > /etc/systemd/network/50-$BRIDGE_NAME-eth0.network
 ```
 
-#### D. Service Linux
+#### D. Lister les fichiers
+```bash
+ls /etc/systemd/network/ ;
+```
+
+#### E. Systemd NetWorkD
 
 **Relance du service**
 ```bash
@@ -92,13 +97,10 @@ systemctl restart systemd-networkd ;
 ```bash
 systemctl status systemd-networkd ;
 ```
+
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## III. Vérication de la configuration
 
-**Lister les fichiers*
-```bash
-ls /etc/systemd/network/ ;
-```
 
 
 **Récupération les informations**
