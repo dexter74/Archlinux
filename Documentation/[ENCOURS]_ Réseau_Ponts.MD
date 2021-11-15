@@ -1,9 +1,5 @@
 ## I. Récupérer les informations du réseau
 
-[NetDev](https://www.freedesktop.org/software/systemd/man/systemd.netdev.html)
-[NetWork](https://www.freedesktop.org/software/systemd/man/systemd.network.html)
-
-
 
 
 **Paquet** (brctl)
@@ -65,6 +61,13 @@ default via 192.168.1.1 dev br0 proto static
 clear ;
 rm -f /etc/systemd/network/* ;
 ```
+
+
+[NetDev](https://www.freedesktop.org/software/systemd/man/systemd.netdev.html)
+
+[NetWork](https://www.freedesktop.org/software/systemd/man/systemd.network.html)
+
+
 
 #### B. Création du Pont
 ```
