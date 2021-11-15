@@ -49,7 +49,7 @@ Description=Interface pont 0
 Name=$BRIDGE_NAME
 Kind=bridge
 MTUBytes=$NET_MTU
-MACAddress=$MAC_ADRESS" > /etc/systemd/network/50-$BRIDGE_NAME.netdev
+MACAddress=$MAC_ADRESS" > /etc/systemd/network/50-$BRIDGE_NAME.netdev ;
 ```
 
 #### B. Configurer le réseau du pont
@@ -64,7 +64,7 @@ Address=$NET_IP
 Gateway=$NET_GW
 DNS=$NET_DNS1
 DNS=NET_DNS2
-Domains=$NET_DOMAINE" > /etc/systemd/network/50-$BRIDGE_NAME.network
+Domains=$NET_DOMAINE" > /etc/systemd/network/50-$BRIDGE_NAME.network ;
 ```
 
 #### C. Reliée le pont avec l'interface Physique
@@ -76,7 +76,7 @@ MACAddress=$MAC_ADRESS
 
 [Network]
 Description=Lier la physique au pont
-Bridge=$BRIDGE_NAME" > /etc/systemd/network/50-$BRIDGE_NAME-eth0.network
+Bridge=$BRIDGE_NAME" > /etc/systemd/network/50-$BRIDGE_NAME-eth0.network ;
 ```
 
 #### D. Lister les fichiers
@@ -144,8 +144,6 @@ default via 192.168.1.1 dev br0 proto static
 192.168.1.0/24 dev br0 proto kernel scope link src 192.168.1.109
 #################################################################
 ```
-
-
 
 Ancien:
 ```
