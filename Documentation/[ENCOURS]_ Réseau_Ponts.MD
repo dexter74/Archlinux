@@ -38,15 +38,14 @@ rm -f /etc/systemd/network/* ;
 echo "[NetDev]
 Name=br0
 Kind=bridge
-MACAddress=00:15:5d:38:01:06
-" > /etc/systemd/network/50-br0.netdev
+#MACAddress=00:15:5d:38:01:06" > /etc/systemd/network/50-br0.netdev
 ```
 
 #### C. Reliée le pont avec l'interface Physique
 ```
 echo "[Match]
-MACAddress=00:15:5d:38:01:06
 Name=eth*
+#MACAddress=00:15:5d:38:01:06
 
 [Network]
 Bridge=br0" > /etc/systemd/network/50-network-interface.network
@@ -58,11 +57,11 @@ echo "[Match]
 Name=br0
 
 [Network]
-DHCP=no
-DNS=192.168.1.1
-Address=192.168.1.109/24
-Gateway=192.168.1.1
-DNS=192.168.1.1" > /etc/systemd/network/50-br0.network
+DHCP=ipv4
+#DNS=192.168.1.1
+#Address=192.168.1.109/24
+#Gateway=192.168.1.1
+#DNS=192.168.1.1" > /etc/systemd/network/50-br0.network
 ```
 
 #### E. Vérification de la configuration :
