@@ -5,17 +5,18 @@
 [Article 1](https://unix.stackexchange.com/questions/411936/configuring-a-bridge-interface-with-systemd-networkd)
 
 
-
-
 **Paquet** (brctl)
 ```
 sudo pacman -S --asexplicit --noconfirm bridge-utils netctl ;
 ```
 
-
 **Commande**
 ```bash
+brctl show ;
+networkctl ;
 ip link | grep -i "down\|up"
+ip route
+
 ```
 **Résultat:**
 ```
@@ -23,31 +24,8 @@ ip link | grep -i "down\|up"
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
 ```
 
-Ancien:
-```
-##################################################################
-echo "[Match]
-Name=eth0
 
-[Network]
-DHCP=ipv4" > /etc/systemd/network/20-dhcp.network
-##################################################################
-echo "[Match]
-Name=eth0
-
-[Network]
-Address=192.168.1.109/24
-Gateway=192.168.1.1
-DNS=192.168.1.1
-DNS=192.168.1.40" > /etc/systemd/network/10-static-eth0.network ;
-##################################################################
-systemctl restart systemd-networkd ;
-systemctl status systemd-networkd ;
-```
-
-
-
-
+-------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Mise en place du Pont
 
 #### A. Purge de la configuration actuel
@@ -102,5 +80,34 @@ systemctl status systemd-networkd ;
 systemctl status systemd-networkd ;
 ip link | grep -i "down\|up"
 ```
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+Ancien:
+```
+##################################################################
+echo "[Match]
+Name=eth0
+
+[Network]
+DHCP=ipv4" > /etc/systemd/network/20-dhcp.network
+##################################################################
+echo "[Match]
+Name=eth0
+
+[Network]
+Address=192.168.1.109/24
+Gateway=192.168.1.1
+DNS=192.168.1.1
+DNS=192.168.1.40" > /etc/systemd/network/10-static-eth0.network ;
+##################################################################
+systemctl restart systemd-networkd ;
+systemctl status systemd-networkd ;
+```
 
