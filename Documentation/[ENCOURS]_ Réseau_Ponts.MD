@@ -90,9 +90,9 @@ Name=br0
 
 [Network]
 DHCP=no
-DNS=192.168.1.1
 Address=192.168.1.108/24
 Gateway=192.168.1.1
+DNS=192.168.1.40
 DNS=192.168.1.1" > /etc/systemd/network/50-br0.network ;
 ```
 
