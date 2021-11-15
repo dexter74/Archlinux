@@ -35,6 +35,7 @@ pacman -S --asexplicit --noconfirm vde2 ;
 pacman -S --asexplicit --noconfirm dnsmasq ;
 pacman -S --asexplicit --noconfirm bridge-utils ;
 pacman -S --asexplicit --noconfirm openbsd-netcat ;
+pacman -S --asexplicit --noconfirm dmidecode ;
 pacman -S --asexplicit ebtables ;
 ```
 
