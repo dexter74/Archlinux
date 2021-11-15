@@ -1,26 +1,28 @@
+## Présentation
 
-**Installer Qemu**
-```bash
-sudo pacman -S --asexplicit --noconfirm qemu ;
+Pour mettre en place l'hyperviseur, il faut installer les paquets, démarrer les services liés et mettre en place un pont pour les VM est accès à internet.
+
+[Création du pont](https://github.com/dexter74/Archlinux/blob/main/Documentation/R%C3%A9seau_Ponts.MD)
+
+
+### I. Vérification de la prise en charge de la Virtualisation, des modules KVM
+
+**Check le CPU**
+```
+LC_ALL=C lscpu | grep Virtualization ;
 ```
 
-
-**Installer Virt-Manager**
-```bash
-sudo pacman -S --asexplicit --noconfirm libvirt edk2-ovmf virt-manager ;
+**Modules Virtio**
+```
+zgrep CONFIG_KVM /proc/config.gz ; # Vérifier si le noyaux gère virtio
+lsmod | grep virtio ; # Vérifier si le module est chargé
+modprobe virtio     ; # Charger le module (temporaire)
+modprobe -r virtio  ; # Décharger le module (Si besoin) 
 ```
 
-**Utiles**
-```bash
-sudo pacman -S --asexplicit --noconfirm dnsmasq ebtables usbutils ;
-```
-
-**Démarrage du service:**
-```bash
-systemctl enable --now libvirtd
+### II. Activation des modules (SystemD)
 
 ```
+echo "virtio_net" > /etc/modules-load.d/virtio-net.conf
+```
 
-Note:
-- Virt-Manager à ses interfaces Down sur les ponts.
-- Il faut crée le pont à la main via systemd
