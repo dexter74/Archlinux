@@ -56,11 +56,31 @@ unix_sock_ro_perms = "0777"
 ```
 
 #### C. Autoriser un utilisateur à lancer KVM
-
 ```
 usermod -a -G libvirt marc ;
 newgrp libvirt ;
 ```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+### IV. Prise en charge réseau
+
+[Guide](https://linuxconfig.org/how-to-use-bridged-networking-with-libvirt-and-kvm)
+
+#### A. Lister les réseaux
+```
+sudo virsh net-list --all
+```
+
+#### B. Activation du réseau
+```
+virsh net-start default
+virsh net-autostart default
+```
+
+```
+```
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 ### IV Activation du service LibVirtd
