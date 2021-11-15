@@ -34,6 +34,7 @@ KERNEL_VERSION=5.14.16-arch1-1
 ```bash
 clear ;
 rm -f /etc/systemd/network/* ;
+ls /etc/systemd/network/ ;
 ```
 
 #### B. Création du Pont
@@ -94,7 +95,13 @@ systemctl status systemd-networkd ;
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## III. Vérication de la configuration
 
-**Commande**
+**Lister les fichiers*
+```bash
+ls /etc/systemd/network/ ;
+```
+
+
+**Récupération les informations**
 ```bash
 clear ;
 echo "###################################################################"
