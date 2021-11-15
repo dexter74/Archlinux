@@ -1,6 +1,7 @@
 ## I. Récupérer les informations du réseau
 
 [Guide](https://www.xmodulo.com/switch-from-networkmanager-to-systemd-networkd.html)
+
 [Article 1](https://unix.stackexchange.com/questions/411936/configuring-a-bridge-interface-with-systemd-networkd)
 
 
