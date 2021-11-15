@@ -29,6 +29,16 @@ CONFIG_KVM_XEN=y
 CONFIG_KVM_MMU_AUDIT=y
 ```
 
+### Activation des modules KVM:
+```
+modprobe vhost_net
+
+modprobe kvm
+modprobe kvm-amd
+modprobe kvm-intel
+echo "" > /etc/modules-load.d/kvm.conf ;
+```
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
 ### II. Installation de KVM
 ```
@@ -42,7 +52,7 @@ pacman -S --asexplicit --noconfirm openbsd-netcat ;
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-### III. Configurer KVM
+### X. Configurer KVM
 
 #### A. Edition du fichier libvirtd.conf
 ```
@@ -62,7 +72,7 @@ newgrp libvirt ;
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-### IV. Prise en charge réseau
+### X. Prise en charge réseau
 
 [Guide](https://linuxconfig.org/how-to-use-bridged-networking-with-libvirt-and-kvm)
 
@@ -80,20 +90,21 @@ virsh net-start default
 virsh net-autostart default
 ```
 
-```
-```
-
-
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-### IV Activation du service LibVirtd
+### X Activation du service LibVirtd
 ```
 systemctl enable --now libvirtd ;
 systemctl restart libvirtd ;
+systemctl status libvirtd ;
 ```
 
+
+
+### 
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
-### V. Nested Virtualisation (SystemD)
+### X. Nested Virtualisation (SystemD)
 ```
 echo "" > /etc/modules-load.d/kvm.conf ;
 ```
