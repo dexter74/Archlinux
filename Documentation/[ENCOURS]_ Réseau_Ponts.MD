@@ -6,32 +6,10 @@
 
 
 
-## I. Récupérer les informations du réseau
-
-**Paquet** (brctl)
+## I. Installer les paquets pour la gestion du pont
 ```
 sudo pacman -S --asexplicit --noconfirm bridge-utils netctl ;
 ```
-
-**Commande**
-```bash
-clear ;
-echo "###################################################################"
-echo "Etat des Bridges:"
-brctl show ;
-echo "###################################################################"
-echo "Etat de la gestion des interfaces:"
-networkctl ;
-echo "########################################################################################################################"
-echo "Informations sur les interfaces:"
-ip link | grep -i "down\|up" ;
-echo "########################################################################################################################"
-echo "IP Route:"
-ip route ;
-echo "#################################################################"
-```
-
-
 -------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Mise en place du Pont
 
@@ -84,7 +62,37 @@ Description=Lier la physique au pont
 Bridge=br0" > /etc/systemd/network/50-br0-eth0.network
 ```
 
+#### D. Service Linux
 
+**Relance du service**
+```bash
+systemctl restart systemd-networkd ;
+```
+
+**Etat du service**
+```bash
+systemctl status systemd-networkd ;
+```
+-------------------------------------------------------------------------------------------------------------------------------------------------
+## III. Vérication de la configuration
+
+**Commande**
+```bash
+clear ;
+echo "###################################################################"
+echo "Etat des Bridges:"
+brctl show ;
+echo "###################################################################"
+echo "Etat de la gestion des interfaces:"
+networkctl ;
+echo "########################################################################################################################"
+echo "Informations sur les interfaces:"
+ip link | grep -i "down\|up" ;
+echo "########################################################################################################################"
+echo "IP Route:"
+ip route ;
+echo "#################################################################"
+```
 
 **Résultat finale:**
 ```
