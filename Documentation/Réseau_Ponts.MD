@@ -27,7 +27,6 @@ NET_MTU=1500
 MAC_ADRESS=00:15:5d:38:01:06
 HOST_ARCH=x86-64
 KERNEL_VERSION=5.14.16-arch1-1
-
 ```
 
 #### A. Purge de la configuration actuel
@@ -74,7 +73,6 @@ echo "[Match]
 Name=$NET_PHYS
 Type=$NET_TYPE
 MACAddress=$MAC_ADRESS
-
 
 [Network]
 Description=Lier la physique au pont
