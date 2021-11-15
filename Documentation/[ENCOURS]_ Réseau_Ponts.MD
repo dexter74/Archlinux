@@ -5,6 +5,14 @@
 [Article 1](https://unix.stackexchange.com/questions/411936/configuring-a-bridge-interface-with-systemd-networkd)
 
 
+
+
+**Paquet** (brctl)
+```
+sudo pacman -S bridge-utils netctl
+```
+
+
 **Commande**
 ```bash
 ip link | grep -i "down\|up"
