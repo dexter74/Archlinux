@@ -9,7 +9,7 @@
 
 **Paquet** (brctl)
 ```
-sudo pacman -S bridge-utils netctl
+sudo pacman -S --asexplicit --noconfirm bridge-utils netctl ;
 ```
 
 
