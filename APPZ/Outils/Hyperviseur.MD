@@ -1,18 +1,18 @@
 
 **Installer Qemu**
 ```bash
-sudo pacman -S qemu ;
+sudo pacman -S --asexplicit --noconfirm qemu ;
 ```
 
 
 **Installer Virt-Manager**
 ```bash
-sudo pacman -S libvirt edk2-ovmf virt-manager ;
+sudo pacman -S --asexplicit --noconfirm libvirt edk2-ovmf virt-manager ;
 ```
 
 **Utiles**
 ```bash
-sudo pacman -S dnsmasq ebtables usbutils ;
+sudo pacman -S --asexplicit --noconfirm dnsmasq ebtables usbutils ;
 ```
 
 **Commandes:**
