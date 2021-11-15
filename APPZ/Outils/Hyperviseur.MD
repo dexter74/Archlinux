@@ -15,12 +15,12 @@ sudo pacman -S --asexplicit --noconfirm libvirt edk2-ovmf virt-manager ;
 sudo pacman -S --asexplicit --noconfirm dnsmasq ebtables usbutils ;
 ```
 
-**Commandes:**
+**Démarrage du service:**
 ```bash
-virt-manager
+systemctl enable --now libvirtd
+
 ```
 
 Note:
 - Virt-Manager à ses interfaces Down sur les ponts.
 - Il faut crée le pont à la main via systemd
-
