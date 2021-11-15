@@ -5,29 +5,70 @@ Pour mettre en place l'hyperviseur, il faut installer les paquets, démarrer les
 [Création du pont](https://github.com/dexter74/Archlinux/blob/main/Documentation/R%C3%A9seau_Ponts.MD)
 
 
-### I. Vérification de la prise en charge de la Virtualisation, des modules KVM
-
-**Check le CPU**
+-----------------------------------------------------------------------------------------------------------------------------------------------
+### I. Vérifier la prise en charge de la virtualisation
 ```
+clear ;
 LC_ALL=C lscpu | grep Virtualization ;
+zgrep CONFIG_KVM /proc/config.gz ;
 ```
 
-**Modules Virtio**
 ```
-zgrep CONFIG_KVM /proc/config.gz ; # Vérifier si le noyaux gère virtio
-lsmod | grep virtio ; # Vérifier si les modules Virtio-* sont chargés
+CONFIG_KVM_GUEST=y
+CONFIG_KVM_MMIO=y
+CONFIG_KVM_ASYNC_PF=y
+CONFIG_KVM_VFIO=y
+CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT=y
+CONFIG_KVM_COMPAT=y
+CONFIG_KVM_XFER_TO_GUEST_WORK=y
+CONFIG_KVM=m
+CONFIG_KVM_INTEL=m
+CONFIG_KVM_AMD=m
+CONFIG_KVM_AMD_SEV=y
+CONFIG_KVM_XEN=y
+CONFIG_KVM_MMU_AUDIT=y
 ```
 
-**Load / Unload Virtio**
+-----------------------------------------------------------------------------------------------------------------------------------------------
+### II. Installation de KVM
 ```
-modprobe virtio
-modprobe -r virtio  ; # Décharger le module (Si besoin) 
+pacman -S --asexplicit --noconfirm qemu ;
+pacman -S --asexplicit --noconfirm virt-manager ;
+pacman -S --asexplicit --noconfirm vde2 ;
+pacman -S --asexplicit --noconfirm ebtables ; 
+pacman -S --asexplicit --noconfirm dnsmasq ;
+pacman -S --asexplicit --noconfirm bridge-utils ;
+pacman -S --asexplicit --noconfirm openbsd-netcat ;
 ```
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+### III. Configurer KVM
 
-### II. Activation des modules (SystemD)
+#### A. Edition du fichier libvirtd.conf
+```
+nano /etc/libvirt/libvirtd.conf
+```
+
+#### B. Décommenter les lignes
+```
+unix_sock_group = "libvirt"
+unix_sock_ro_perms = "0777"
+```
+
+#### C. Autoriser un utilisateur à lancer KVM
 
 ```
-echo "virtio_net" > /etc/modules-load.d/virtio-net.conf
+usermod -a -G libvirt marc ;
+newgrp libvirt ;
 ```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+### IV Activation du service LibVirtd
+```
+systemctl enable --now libvirtd ;
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+### V. Nested Virtualisation
+
 
