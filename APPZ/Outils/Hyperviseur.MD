@@ -66,6 +66,9 @@ newgrp libvirt ;
 
 [Guide](https://linuxconfig.org/how-to-use-bridged-networking-with-libvirt-and-kvm)
 
+[Important](https://code.lardcave.net/2019/07/20/1/)
+
+
 #### A. Lister les réseaux
 ```
 sudo virsh net-list --all
