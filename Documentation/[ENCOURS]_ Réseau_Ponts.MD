@@ -13,12 +13,15 @@ sudo pacman -S --asexplicit --noconfirm bridge-utils netctl ;
 **Commande**
 ```bash
 clear ;
+echo "#######################"
+echo "### Liste des ponts ###"
+echo "#######################"
 brctl show ;
-echo ""
+echo "#######################"
 networkctl ;
-echo ""
+echo "#######################"
 ip link | grep -i "down\|up" ;
-echo ""
+echo "#######################"
 ip route ;
 
 ```
