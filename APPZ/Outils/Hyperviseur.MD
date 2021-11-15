@@ -16,6 +16,8 @@ zgrep CONFIG_KVM /proc/config.gz ;
 ### X. Gestions des modules KVM (A peaufiné)
 
 ```
+find / -type f -name kvm* ;
+
 modprobe vhost_net ;
 modprobe kvm ;
 lsmod | grep 'kvm\|vhost_net'
