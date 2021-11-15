@@ -59,16 +59,19 @@ rm -f /etc/systemd/network/* ;
 ```
 echo "[NetDev]
 Name=br0
-Kind=bridge" > /etc/systemd/network/bridge-br0.netdev ;
+Kind=bridge
+MACAddress=00:15:5d:38:01:06
+" > /etc/systemd/network/50-br0.netdev
 ```
 
 #### C. Reliée le pont avec l'interface Physique
 ```
 echo "[Match]
-Name=eth0
+MACAddress=00:15:5d:38:01:06
+Name=eth*
 
 [Network]
-Bridge=br0" > /etc/systemd/network/bridge-br0-slave.network ;
+Bridge=br0" > /etc/systemd/network/50-network-interface.network
 ```
 
 #### D. Configurer le réseau du pont
@@ -77,19 +80,15 @@ echo "[Match]
 Name=br0
 
 [Network]
+DHCP=no
+DNS=192.168.1.1
 Address=192.168.1.109/24
 Gateway=192.168.1.1
-DNS=192.168.1.1
-DNS=192.168.1.40" > /etc/systemd/network/bridge-br0.network ;
+DNS=192.168.1.1" > /etc/systemd/network/50-br0.network
 ```
 
 #### E. Vérification de la configuration :
 ```
-cat /etc/systemd/network/bridge-br0.netdev ;
-echo "" ;
-cat /etc/systemd/network/bridge-br0.network ;
-echo "" ;
-cat /etc/systemd/network/bridge-br0-slave.network ;
 ```
 
 #### F. Redémarrer le service NetworkD de SystemD.
