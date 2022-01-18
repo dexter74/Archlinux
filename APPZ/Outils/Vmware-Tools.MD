@@ -34,6 +34,7 @@ RemainAfterExit=yes
 WantedBy=multi-user.target" > /etc/systemd/system/vmwaretools.service;
 ```
 
-systemctl start vmwaretools
-systemctl enable --now vmwaretools
-
+```
+systemctl start vmwaretools;
+systemctl enable --now vmwaretools;
+```
