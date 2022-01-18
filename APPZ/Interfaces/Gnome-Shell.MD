@@ -7,3 +7,8 @@ cd /tmp/chrome-gnome-shell/;
 sudo pacman -U chrome-gnome-shell-10.1-5-any.pkg.tar.zst;
 sudo pacman -S --asexplicit --noconfirm gnome-tweak-tool;
 ````
+
+**[Flatpak](https://doc.ubuntu-fr.org/flatpak)**
+```
+sudo pacman -S --asexplicit --noconfirm flatpak;
+```
