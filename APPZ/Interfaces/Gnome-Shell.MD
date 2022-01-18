@@ -58,9 +58,11 @@ Arch Linux Updates Indicator
 Bluetooth Quick Connect
 Dash to Dock
 Dash to Panel
+Disconnext Wifi
 IdeaPad
 Tray icons: Reloaded
 User Themes
+
 ````
 
 **Thème**
