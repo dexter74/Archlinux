@@ -55,7 +55,7 @@ Rafraichir la page https://extensions.gnome.org/
 ````
 ArcMenu
 Arch Linux Updates Indicator
-Bluetooth Quick Connect
+Bluetooth Quick Connect (pacman -S bluez-utils)
 Containers
 Dash to Dock
 Dash to Panel
