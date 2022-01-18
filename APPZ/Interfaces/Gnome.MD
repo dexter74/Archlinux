@@ -3,7 +3,6 @@
 https://www.linuxtricks.fr/wiki/gnome-3-quelques-extensions-sympa
 ```
 
-
 **Installation de Gnome** (Générique)
 ```
 pacman -Syu --noconfirm gnome ;
@@ -33,10 +32,7 @@ XDG_VIDEOS_DIR="$HOME/Vidéos"' > ~/.config/user-dirs
 pacman -S --noconfirm gnome-tweaks
 ```
 
-
-
 Utilité de chaque paquet pour la distribution .
-
 
 **Dépôt extra**
 1) [**baobab**](https://archlinux.org/packages/extra/x86_64/baobab/) (DiskUsageAnalyzer)
