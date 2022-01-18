@@ -53,6 +53,7 @@ Rafraichir la page https://extensions.gnome.org/
 
 **Extension**
 ````
+AppIndicator and KStatusNotifierItem Support
 ArcMenu
 Arch Linux Updates Indicator
 Bluetooth Quick Connect (pacman -S bluez-utils)
