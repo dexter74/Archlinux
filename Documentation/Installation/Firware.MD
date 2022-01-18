@@ -5,23 +5,12 @@ su - marc ;
 ```
 
 
-**Installation de YAY**
-```
-cd /tmp ;
-git clone https://aur.archlinux.org/yay.git ;
-cd yay ;
-makepkg -si --noconfirm ;
-cd /tmp ;
-```
-
-
 **Hyper-V**
 ```
 yay -S --noconfirm wd719x-firmware  ; # wd719x
 yay -S --noconfirm aic94xx-firmware ; # aic94xx
 yay -S --noconfirm upd72020x-fw     ; # xhci_pci
 ```
-
 
 **Vmware**
 ````
@@ -52,6 +41,7 @@ yay -S --noconfirm qla1280
 yay -S --noconfirm xhci_pci
 yay -S --noconfirm ums_eneub6250
 ````
+
 
 
 **VirtualBox**
