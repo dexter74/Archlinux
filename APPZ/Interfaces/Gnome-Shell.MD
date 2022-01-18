@@ -1,4 +1,9 @@
-# Installation de Gnome-Shell et Gnome-Tweak-tool**
+# Installation de Gnome-Shell et Gnome-Tweak-tool
+
+````
+su - marc
+````
+
 
 ````
 git clone https://aur.archlinux.org/chrome-gnome-shell.git /tmp/chrome-gnome-shell;
