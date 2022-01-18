@@ -53,10 +53,14 @@ Rafraichir la page https://extensions.gnome.org/
 
 **Extension**
 ````
+ArcMenu
+Arch Linux Updates Indicator
+Bluetooth Quick Connect
 Dash to Dock
 Dash to Panel
+IdeaPad
+Tray icons: Reloaded
 User Themes
-Tray icones: Reloaded
 ````
 
 **Thème**
