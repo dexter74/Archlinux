@@ -43,3 +43,19 @@ sudo systemctl restart sddm;
 Aller dans Activités en haut à Gauche
 puis ajouter: Extensions, Ajustements (tweak)
 ````
+
+**Chromium** (Extension)
+````
+https://extensions.gnome.org/
+Installer l'extension Gnome Extension pour le Navigateur en premier
+Rafraichir la page https://extensions.gnome.org/
+````
+
+**Extension**
+````
+Dash to Dock
+Dash to Panel
+User Themes
+Tray icones: Reloaded
+````
+
