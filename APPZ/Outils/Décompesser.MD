@@ -1,4 +1,4 @@
 **Logiciel pour la décompression :**
 ```
-pacman -S --asexplicit p7zip xarchiver
+sudo pacman -S --asexplicit --noconfirm p7zip xarchiver;
 ```
