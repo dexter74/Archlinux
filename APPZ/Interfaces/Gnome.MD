@@ -100,12 +100,11 @@ Utilité de chaque paquet pour la distribution .
 58) [vino](https://archlinux.org/packages/extra/x86_64/vino/) (VNC)
 59) [**xdg-user-dirs-gtk**](https://archlinux.org/packages/extra/x86_64/xdg-user-dirs-gtk/) (Important)
 60) [yelp](https://archlinux.org/packages/extra/x86_64/yelp/) (Aide Gnome)
-
-# Dépôt community
 61) [gnome-boxes](https://archlinux.org/packages/community/x86_64/gnome-boxes/)
 62) [simple-scan](https://archlinux.org/packages/community/x86_64/simple-scan/)
 
 
+# Dépôt community
 ``` 
 baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds gnome-books gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-maps gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grilo-plugins gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus orca rygel sushi totem tracker tracker-miners tracker3-miners vino xdg-user-dirs-gtk yelp
 
