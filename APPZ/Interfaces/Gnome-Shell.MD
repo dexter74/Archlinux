@@ -62,4 +62,7 @@ Tray icones: Reloaded
 **Thème**
 ````
 sudo pacman -S --asexplicit --noconfirm gtk-engine-murrine gnome-themes-extra sassc;
+git clone https://github.com/vinceliuice/Graphite-gtk-theme.git;
+cd Graphite-gtk-theme/
+./install.sh;
 ````
