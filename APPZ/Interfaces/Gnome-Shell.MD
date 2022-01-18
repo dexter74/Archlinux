@@ -74,3 +74,10 @@ git clone https://github.com/vinceliuice/Graphite-gtk-theme.git;
 cd Graphite-gtk-theme/
 ./install.sh;
 ````
+
+**Icon**
+````
+git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git /tmp/icons/Tela-circle-icon-theme;
+cd /tmp/icons/Tela-circle-icon-theme;
+./install.sh;
+````
