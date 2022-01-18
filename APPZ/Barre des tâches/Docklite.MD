@@ -15,7 +15,7 @@ make
 sudo make install
 ```
 
-**Pré-Requis:
+**Pré-Requis:**
 ```
 sudo pacman -S --noconfirm xfce4-dev-tools ;
 ```
