@@ -56,6 +56,7 @@ Rafraichir la page https://extensions.gnome.org/
 ArcMenu
 Arch Linux Updates Indicator
 Bluetooth Quick Connect
+Containers
 Dash to Dock
 Dash to Panel
 Disconnext Wifi
