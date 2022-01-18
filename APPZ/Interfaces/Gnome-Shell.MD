@@ -59,3 +59,7 @@ User Themes
 Tray icones: Reloaded
 ````
 
+**Thème**
+````
+sudo pacman -S --asexplicit --noconfirm gtk-engine-murrine gnome-themes-extra sassc;
+````
