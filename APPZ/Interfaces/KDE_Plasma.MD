@@ -1,7 +1,7 @@
 
 **Installer [KDE](https://wiki.archlinux.fr/KDE) :** (groupe plasma)
 ```
-pacman -S --noconfirm plasma
+pacman -S --noconfirm plasma;
 ```
 
 **Groupe Plasma**
@@ -57,10 +57,10 @@ xdg-desktop-portal-kde
 
 **Extras**
 ```
-plasma-meta
-plasma-desktop
-kde-applications
-kde-applications-meta
+pacman -S --noconfirm plasma-meta;
+pacman -S --noconfirm plasma-desktop;
+pacman -S --noconfirm kde-applications;
+pacman -S --noconfirm kde-applications-meta;
 ```
 
 **Supports**
