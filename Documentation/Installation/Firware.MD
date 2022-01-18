@@ -1,4 +1,9 @@
 
+**User**
+```bash
+su - marc ;
+```
+
 
 **Installation de YAY**
 ```
