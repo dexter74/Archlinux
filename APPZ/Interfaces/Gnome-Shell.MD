@@ -61,6 +61,7 @@ Dash to Dock
 Dash to Panel
 Disconnext Wifi
 IdeaPad
+IdeaPad Mode
 Mounter
 Tray icons: Reloaded
 User Themes
