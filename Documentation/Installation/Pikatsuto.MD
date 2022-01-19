@@ -1,4 +1,7 @@
-
+**Pré-Requis**
+```
+pacman -S --noconfirm fakeroot go
+```
 
 **USER**
 ```
@@ -13,19 +16,11 @@
 (echo "root"; echo "root")  | passwd root;
 ```
 
+
+**Changer User**
 ```
 su - marc
 ```
-
-
-## YAY
-
-#### A. Pré-Requis
-
-```
-pacman -Sy fakeroot
-```
-
 
 ```
 cd /tmp ;
