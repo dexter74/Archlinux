@@ -18,8 +18,12 @@ pacman -Syu --noconfirm gnome-extra;
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
-**Installation de Gnome-Shell** (Requis pour les Extensions)
+**Installation de Gnome-Shell** ([ici](https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation))
 ```bash
+su - marc
+git clone https://aur.archlinux.org/chrome-gnome-shell.git
+cd chrome-gnome-shell
+(echo "o"; echo "o") | makepkg -si
 ```
 
 
@@ -93,7 +97,7 @@ Desktop Icons NG (Ding)
 Disconnext Wifi
 IdeaPad
 IdeaPad Mode
-Mounter
+Removable Drive Menu
 Tray icons: Reloaded
 User Themes
 ````
