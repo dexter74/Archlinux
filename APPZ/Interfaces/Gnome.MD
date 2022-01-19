@@ -4,37 +4,47 @@ https://www.linuxtricks.fr/wiki/gnome-3-quelques-extensions-sympa
 https://linuxiac.com/best-gnome-shell-extensions/
 ```
 
-
+-------------------------------------------------------------------------------------------------------------------------------------
 **Installation de Gnome** (Custom)
-```
+```bash
 pacman -Syu --noconfirm baobab eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-characters gnome-clocks gnome-color-manager gnome-control-center gnome-disk-utility gnome-font-viewer gnome-logs gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-share gnome-video-effects grilo-plugins gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus sushi totem tracker xdg-user-dirs-gtk ;
 ```
 
+
 **Installation de Gnome** (Générique)
-```
+```bash
 pacman -Syu --noconfirm gnome;
 pacman -Syu --noconfirm gnome-extra;
 ```
 
-**Tweak**
+-------------------------------------------------------------------------------------------------------------------------------------
+**Installation de Gnome-Shell** (Requis pour les Extensions)
+```bash
 ```
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+**Tweak**
+```bash
 pacman -S --noconfirm gnome-tweaks;
 ```
 
 
+-------------------------------------------------------------------------------------------------------------------------------------
 **[Flatpak](https://doc.ubuntu-fr.org/flatpak)**
 ````bash
 sudo pacman -S --asexplicit --noconfirm flatpak;
 ````
 
+-------------------------------------------------------------------------------------------------------------------------------------
 **Chromium**
 ````bash
 sudo pacman -S --asexplicit --noconfirm chromium;
 ````
 
-
+-------------------------------------------------------------------------------------------------------------------------------------
 **Nautilus**
-```
+```bash
 echo 'XDG_DESKTOP_DIR="$HOME/Bureau"
 XDG_DOWNLOAD_DIR="$HOME/Téléchargement"
 XDG_TEMPLATES_DIR="$HOME/Modèles"
@@ -45,7 +55,7 @@ XDG_PICTURES_DIR="$HOME/Images"
 XDG_VIDEOS_DIR="$HOME/Vidéos"' > ~/.config/user-dirs
 ```
 
-
+-------------------------------------------------------------------------------------------------------------------------------------
 **Relance de l'interface**
 ````bash
 sudo systemctl restart sddm;
@@ -54,12 +64,14 @@ sudo systemctl restart sddm;
 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------
 **Menu**
 ````
 Aller dans Activités en haut à Gauche
 puis ajouter: Extensions, Ajustements (tweak)
 ````
 
+-------------------------------------------------------------------------------------------------------------------------------------
 **Chromium** (Extension)
 ````
 https://extensions.gnome.org/
@@ -67,6 +79,7 @@ Installer l'extension Gnome Extension pour le Navigateur en premier
 Rafraichir la page https://extensions.gnome.org/
 ````
 
+-------------------------------------------------------------------------------------------------------------------------------------
 **Extension**
 ````
 AppIndicator and KStatusNotifierItem Support
@@ -85,27 +98,27 @@ Tray icons: Reloaded
 User Themes
 ````
 
+-------------------------------------------------------------------------------------------------------------------------------------
 **Thème**
-````
+```bash
 sudo pacman -S --asexplicit --noconfirm gtk-engine-murrine gnome-themes-extra sassc;
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git;
 cd Graphite-gtk-theme/
 ./install.sh;
 ````
 
+-------------------------------------------------------------------------------------------------------------------------------------
 **Icon**
-````
+```bash
 git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git /tmp/icons/Tela-circle-icon-theme;
 cd /tmp/icons/Tela-circle-icon-theme;
 ./install.sh;
 ````
 
+-------------------------------------------------------------------------------------------------------------------------------------
+**Utilité de chaque paquet pour la distribution .**
 
-
-
-Utilité de chaque paquet pour la distribution .
-
-**Dépôt extra**
+Dépôt extra:
 1) [**baobab**](https://archlinux.org/packages/extra/x86_64/baobab/) (DiskUsageAnalyzer)
 2) [cheese](https://archlinux.org/packages/extra/x86_64/cheese/) (Photo / Vidéo depuis Webcam)
 3) [**eog**](https://archlinux.org/packages/extra/x86_64/eog/) (Lecteur d'image)
