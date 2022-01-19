@@ -11,7 +11,6 @@ Pour installer le Pilote, il faut YAY qui lui à besoin:
  - Dépendance
 ```
 
-
 #### A. Compte USER
 ```
 /usr/sbin/useradd \
@@ -21,8 +20,9 @@ Pour installer le Pilote, il faut YAY qui lui à besoin:
   --shell /bin/bash \
   --comment 'Drthrax' \
   --create-home marc;
+
 (echo "admin"; echo "admin") | passwd marc;
-(echo "root"; echo "root")  | passwd root;
+(echo "root";  echo "admin") | passwd root;
 ```
 
 #### B. Dépendances
