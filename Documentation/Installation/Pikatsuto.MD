@@ -4,7 +4,6 @@ Disk 0: Windows
 Disk 1: ArcLinux
 Disk 2: VM
 Disk 3: Data (Raid Matériel)
-
 Il faut installer le Pilote Raid en premier. (User, Dépendance / YAY)
 ```
 
@@ -20,7 +19,7 @@ SDA:
  -   4G SWAP
  - 225G LVM2 (35G Sys | 180G Home)
 
-SDB:
+SDB: VM
 
 SDC: NTFS (Data)
 ```
@@ -71,6 +70,7 @@ cd /tmp ;
 ```
 yay -S --noconfirm rcraid-dkms;
 ```
+
 ------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------
