@@ -1,7 +1,11 @@
 ### Présentation
 ```
-Un Raid Matériel qui est présent sur la machine.
-Il faut installé le pilote Raid.
+Disk 0: Windows
+Disk 1: ArcLinux
+Disk 2: VM
+Disk 3: Data (Raid Matériel)
+
+Il faut installer le Pilote Raid en premier. (User, Dépendance / YAY)
 ```
 
 ```YAML
