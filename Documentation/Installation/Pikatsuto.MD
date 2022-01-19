@@ -46,7 +46,7 @@ Pour installer le Pilote, il faut YAY qui lui à besoin:
 
 #### B. Dépendances
 ```
-pacman -S --noconfirm fakeroot go
+pacman -S --noconfirm fakeroot go;
 ```
 
 #### C. Connexion au compte User
@@ -57,12 +57,13 @@ su - marc
 #### D. Installation de YAY
 ```
 cd /tmp ;
-git clone https://aur.archlinux.org/yay.git ;
+git clone https://aur.archlinux.org/yay.git;
 cd yay ;
-makepkg -si --noconfirm ;
+makepkg -si --noconfirm;
 cd /tmp ;
 ```
 
 #### E. Pilote Raid ([ici](https://aur.archlinux.org/packages/rcraid-dkms/))
 ```
+yay -S --noconfirm rcraid-dkms;
 ```
