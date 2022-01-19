@@ -4,6 +4,26 @@ Un Raid Logiciel qui est présent sur la machine.
 Il faut installé le pilote Raid
 ```
 
+
+```YAML
+nvme0n1p: NTFS (Windows)
+ > nvme0n1p1 = EFI System
+ > nvme0n1p2 = Microsoft ReservedPartition
+ > nvme0n1p3 = Basic Data Partition (Windows)
+ > nvme0n1p4 = Windows Recovery
+
+SDA:
+ - 512M Boot
+ -   4G SWAP
+ - 225G LVM2 (35G Sys | 180G Home)
+
+SDB:
+
+SDC: NTFS (Data)
+```
+
+
+
 ### Pilote Raid
 ```
 Pour installer le Pilote, il faut YAY qui lui à besoin:
