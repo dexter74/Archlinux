@@ -1,13 +1,13 @@
 #### Guide:
 ```
 https://www.linuxtricks.fr/wiki/gnome-3-quelques-extensions-sympa
+https://linuxiac.com/best-gnome-shell-extensions/
 ```
 
 **Installation de Gnome** (Générique)
 ```
 pacman -Syu --noconfirm gnome ;
 pacman -S  --noconfirm gnome-extra ;
-systemctl restart sddm ;
 ```
 
 **Installation de Gnome** (Custom)
@@ -31,6 +31,73 @@ XDG_VIDEOS_DIR="$HOME/Vidéos"' > ~/.config/user-dirs
 ```
 pacman -S --noconfirm gnome-tweaks
 ```
+
+**[Flatpak](https://doc.ubuntu-fr.org/flatpak)**
+````bash
+sudo pacman -S --asexplicit --noconfirm flatpak;
+````
+
+**Chromium**
+````bash
+sudo pacman -S --asexplicit --noconfirm chromium;
+````
+
+**Relance de l'interface**
+````bash
+sudo systemctl restart sddm;
+````
+
+**Menu**
+````
+Aller dans Activités en haut à Gauche
+puis ajouter: Extensions, Ajustements (tweak)
+````
+
+**Chromium** (Extension)
+````
+https://extensions.gnome.org/
+Installer l'extension Gnome Extension pour le Navigateur en premier
+Rafraichir la page https://extensions.gnome.org/
+````
+
+
+
+
+**Extension**
+````
+AppIndicator and KStatusNotifierItem Support
+ArcMenu
+Arch Linux Updates Indicator
+Bluetooth Quick Connect (pacman -S bluez-utils)
+Containers
+Dash to Dock
+Dash to Panel
+Desktop Icons NG (Ding)
+Disconnext Wifi
+IdeaPad
+IdeaPad Mode
+Mounter
+Tray icons: Reloaded
+User Themes
+````
+
+**Thème**
+````
+sudo pacman -S --asexplicit --noconfirm gtk-engine-murrine gnome-themes-extra sassc;
+git clone https://github.com/vinceliuice/Graphite-gtk-theme.git;
+cd Graphite-gtk-theme/
+./install.sh;
+````
+
+**Icon**
+````
+git clone https://github.com/vinceliuice/Tela-circle-icon-theme.git /tmp/icons/Tela-circle-icon-theme;
+cd /tmp/icons/Tela-circle-icon-theme;
+./install.sh;
+````
+
+
+
 
 Utilité de chaque paquet pour la distribution .
 
