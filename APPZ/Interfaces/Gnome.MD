@@ -21,6 +21,9 @@ pacman -Syu --noconfirm gnome-extra;
 **Installation de Gnome-Shell** ([ici](https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation))
 ```bash
 su - marc
+```
+
+```bash
 git clone https://aur.archlinux.org/chrome-gnome-shell.git
 cd chrome-gnome-shell
 (echo "o"; echo "o") | makepkg -si
