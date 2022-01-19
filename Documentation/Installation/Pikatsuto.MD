@@ -1,6 +1,6 @@
 ### Présentation
 ```
-Un Raid Matéiriel qui est présent sur la machine.
+Un Raid Matériel qui est présent sur la machine.
 Il faut installé le pilote Raid.
 ```
 
