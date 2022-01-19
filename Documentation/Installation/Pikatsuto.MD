@@ -67,3 +67,11 @@ cd /tmp ;
 ```
 yay -S --noconfirm rcraid-dkms;
 ```
+
+
+
+#### X. Note de Travaille
+
+```
+https://github.com/thopiekar/rcraid-dkms
+```
