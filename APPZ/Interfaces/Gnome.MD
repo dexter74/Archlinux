@@ -18,7 +18,7 @@ pacman -Syu --noconfirm gnome-extra;
 
 **Tweak**
 ```
-pacman -S --noconfirm gnome-tweaks
+pacman -S --noconfirm gnome-tweaks;
 ```
 
 
