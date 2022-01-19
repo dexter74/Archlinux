@@ -1,9 +1,18 @@
-**Pré-Requis**
+### Présentation
 ```
-pacman -S --noconfirm fakeroot go
+Un Raid Logiciel qui est présent sur la machine.
+Il faut installé le pilote Raid
 ```
 
-**USER**
+### Pilote Raid
+```
+Pour installer le Pilote, il faut YAY qui lui à besoin:
+ - Un compte USER
+ - Dépendance
+```
+
+
+#### A. Compte USER
 ```
 /usr/sbin/useradd \
   --home-dir /home/marc --base-dir /home/marc \
@@ -16,12 +25,17 @@ pacman -S --noconfirm fakeroot go
 (echo "root"; echo "root")  | passwd root;
 ```
 
+#### B. Dépendances
+```
+pacman -S --noconfirm fakeroot go
+```
 
-**Changer User**
+#### C. Connexion au compte User
 ```
 su - marc
 ```
 
+#### D. Installation de YAY
 ```
 cd /tmp ;
 git clone https://aur.archlinux.org/yay.git ;
