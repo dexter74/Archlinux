@@ -95,6 +95,7 @@ Dash to Dock
 Dash to Panel
 Desktop Icons NG (Ding)
 Disconnext Wifi
+Just Perfection
 IdeaPad
 IdeaPad Mode
 Removable Drive Menu
