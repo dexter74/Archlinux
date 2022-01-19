@@ -7,6 +7,8 @@ Disk 3: Data (Raid Matériel)
 Il faut installer le Pilote Raid en premier. (User, Dépendance / YAY)
 ```
 
+------------------------------------------------------------------------------------------
+
 ```YAML
 nvme0n1p: NTFS (Windows)
  > nvme0n1p1 = EFI System
