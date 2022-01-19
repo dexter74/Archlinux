@@ -101,6 +101,7 @@ IdeaPad Mode
 Removable Drive Menu
 Tray icons: Reloaded
 User Themes
+WG Indicator
 ````
 
 -------------------------------------------------------------------------------------------------------------------------------------
