@@ -23,7 +23,6 @@ SDC: NTFS (Data)
 ```
 
 
-
 ### Pilote Raid
 ```
 Pour installer le Pilote, il faut YAY qui lui à besoin:
@@ -62,4 +61,8 @@ git clone https://aur.archlinux.org/yay.git ;
 cd yay ;
 makepkg -si --noconfirm ;
 cd /tmp ;
+```
+
+#### E. Pilote Raid ([ici](https://aur.archlinux.org/packages/rcraid-dkms/))
+```
 ```
