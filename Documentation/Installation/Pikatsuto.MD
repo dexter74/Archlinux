@@ -1,9 +1,8 @@
 ### Présentation
 ```
-Un Raid Logiciel qui est présent sur la machine.
-Il faut installé le pilote Raid
+Un Raid Matéiriel qui est présent sur la machine.
+Il faut installé le pilote Raid.
 ```
-
 
 ```YAML
 nvme0n1p: NTFS (Windows)
