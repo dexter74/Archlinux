@@ -60,6 +60,7 @@ Bluetooth Quick Connect (pacman -S bluez-utils)
 Containers
 Dash to Dock
 Dash to Panel
+Desktop Icons NG (Ding)
 Disconnext Wifi
 IdeaPad
 IdeaPad Mode
