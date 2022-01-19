@@ -24,9 +24,9 @@ su - marc
 ```
 
 ```bash
-git clone https://aur.archlinux.org/chrome-gnome-shell.git
-cd chrome-gnome-shell
-(echo "o"; echo "o") | makepkg -si
+git clone https://aur.archlinux.org/chrome-gnome-shell.git;
+cd chrome-gnome-shell;
+makepkg -si;
 ```
 
 
