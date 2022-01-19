@@ -4,16 +4,34 @@ https://www.linuxtricks.fr/wiki/gnome-3-quelques-extensions-sympa
 https://linuxiac.com/best-gnome-shell-extensions/
 ```
 
-**Installation de Gnome** (Générique)
-```
-pacman -Syu --noconfirm gnome ;
-pacman -S  --noconfirm gnome-extra ;
-```
 
 **Installation de Gnome** (Custom)
 ```
 pacman -S --noconfirm baobab eog evince file-roller gdm gedit gnome-backgrounds gnome-calculator gnome-characters gnome-clocks gnome-color-manager gnome-control-center gnome-disk-utility gnome-font-viewer gnome-logs gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-screenshot gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-themes-extra gnome-user-share gnome-video-effects grilo-plugins gvfs gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb mutter nautilus sushi totem tracker xdg-user-dirs-gtk ;
 ```
+
+**Installation de Gnome** (Générique)
+```
+pacman -S gnome;
+pacman -Syu --noconfirm gnome-extra;
+```
+
+**Tweak**
+```
+pacman -S --noconfirm gnome-tweaks
+```
+
+
+**[Flatpak](https://doc.ubuntu-fr.org/flatpak)**
+````bash
+sudo pacman -S --asexplicit --noconfirm flatpak;
+````
+
+**Chromium**
+````bash
+sudo pacman -S --asexplicit --noconfirm chromium;
+````
+
 
 **Nautilus**
 ```
@@ -27,25 +45,14 @@ XDG_PICTURES_DIR="$HOME/Images"
 XDG_VIDEOS_DIR="$HOME/Vidéos"' > ~/.config/user-dirs
 ```
 
-**Tweak**
-```
-pacman -S --noconfirm gnome-tweaks
-```
-
-**[Flatpak](https://doc.ubuntu-fr.org/flatpak)**
-````bash
-sudo pacman -S --asexplicit --noconfirm flatpak;
-````
-
-**Chromium**
-````bash
-sudo pacman -S --asexplicit --noconfirm chromium;
-````
 
 **Relance de l'interface**
 ````bash
 sudo systemctl restart sddm;
 ````
+
+
+
 
 **Menu**
 ````
@@ -59,9 +66,6 @@ https://extensions.gnome.org/
 Installer l'extension Gnome Extension pour le Navigateur en premier
 Rafraichir la page https://extensions.gnome.org/
 ````
-
-
-
 
 **Extension**
 ````
