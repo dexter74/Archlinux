@@ -1,5 +1,3 @@
-# Installation de Gnome-Shell et Gnome-Tweak-tool
-
 **Dépendance**
 ````bash
 clear;
@@ -19,10 +17,8 @@ cd /tmp/chrome-gnome-shell/;
 (echo "o") | makepkg -si;
 ````
 
-
 **Installation**
 ````bash
 clear;
 sudo pacman -U chrome-gnome-shell-10.1-5-any.pkg.tar.zst;
-sudo pacman -S --asexplicit --noconfirm gnome-tweak-tool;
 ````
