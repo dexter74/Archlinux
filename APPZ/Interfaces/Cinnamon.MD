@@ -2,8 +2,8 @@
 ```bash
 # pacman-key --populate;
 pacman -Sy --noconfirm cinnamon;
-systemctl enable  --now sddm;
-systemctl restart --now sddm;
+systemctl enable --now sddm;
+systemctl restart sddm;
 ```
 
 ```bash
