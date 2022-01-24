@@ -61,13 +61,14 @@ pacman -S --noconfirm plasma;
 
 [ksystemstats](https://archlinux.org/packages/extra/x86_64/ksystemstats/): Un démon de surveillance du système basé sur un plugin
 
-[kwallet-pam]()
+[kwallet-pam](https://archlinux.org/packages/extra/x86_64/kwallet-pam/): Intégration DE KWallet PAM
 
-[kwayland-integration]()
+[kwayland-integration](https://archlinux.org/packages/extra/x86_64/kwayland-integration/): Fournit des plugins d’intégration pour divers frameworks KDE pour le système de fenêtrage wayland
 
-[kwayland-server]()
+[kwayland-server](https://archlinux.org/packages/extra/x86_64/kwayland-server/): Composants serveur Wayland basés sur des frameworks KDE
 
-[kwin]()
+[kwin](https://archlinux.org/packages/extra/x86_64/kwin/): Un gestionnaire de fenêtres composite facile à utiliser, mais flexible
+
 
 [kwrited]()
 
