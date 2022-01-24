@@ -1,7 +1,8 @@
 #### Installation de Cinnamon
 ```bash
-pacman -Sy --noconfirm cinnamon;
 # pacman-key --populate;
+pacman -Sy --noconfirm cinnamon;
+systemctl restart sddm;
 ```
 
 ```bash
