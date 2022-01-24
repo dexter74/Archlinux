@@ -31,7 +31,7 @@ pacman -S libkscreen
 pacman -S libksysguard
 pacman -S milou
 
-pacman -S plasma-desktop
+pacman -S plasma-desktop;#1.1G
 pacman -S plasma-disks
 pacman -S plasma-firewall
 pacman -S plasma-integration
