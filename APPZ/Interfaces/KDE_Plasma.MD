@@ -46,13 +46,13 @@ pacman -S powerdevil;
 pacman -S sddm-kcm;
 
 ########################################
+pacman -S chromium;
+########################################
 systemctl enable --now sddm;
 systemctl restart sddm;
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
-
-
 [bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil/): Intégrez la technologie Bluetooth dans l’espace de travail et les applications KDE
 
 [breeze](https://archlinux.org/packages/kde-unstable/x86_64/breeze/): Themes.
