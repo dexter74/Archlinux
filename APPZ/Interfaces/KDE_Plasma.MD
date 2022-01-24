@@ -11,7 +11,8 @@ systemctl restart sddm;
 -------------------------------------------------------------------------------------------------------------------------------------
 ### Installation Sélectif:
 ```
-#GUI
+pacman -S plasma-desktop;#1.1G
+
 pacman -S bluedevil
 pacman -S discover
 pacman -S drkonqi
@@ -30,8 +31,6 @@ pacman -S kwrited
 pacman -S libkscreen
 pacman -S libksysguard
 pacman -S milou
-
-pacman -S plasma-desktop;#1.1G
 pacman -S plasma-disks
 pacman -S plasma-firewall
 pacman -S plasma-integration
@@ -42,11 +41,6 @@ pacman -S plasma-workspace-wallpapers
 pacman -S polkit-kde-agent
 pacman -S powerdevil
 pacman -S sddm-kcm
-pacman -S 
-pacman -S 
-pacman -S 
-
-
 systemctl enable --now sddm;
 systemctl restart sddm;
 ```
