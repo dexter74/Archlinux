@@ -6,14 +6,14 @@ systemctl restart sddm;
 ```
 
 ```bash
-cinnamon-translations
-gnome-{terminal,screenshot,calculator,extra}
-eog
-evince
-file-roller
-gedit
-lightdm-gtk-greeter
-shotwell
-rhythmbox
-system-config-printer
+pacman -S --noconfirm cinnamon-translations;
+pacman -S --noconfirm gnome-{terminal,screenshot,calculator,extra};
+pacman -S --noconfirm eog;
+pacman -S --noconfirm evince;
+pacman -S --noconfirm file-roller;
+pacman -S --noconfirm gedit;
+pacman -S --noconfirm lightdm-gtk-greeter;
+pacman -S --noconfirm shotwell;
+pacman -S --noconfirm rhythmbox;
+pacman -S --noconfirm system-config-printer;
 ```
