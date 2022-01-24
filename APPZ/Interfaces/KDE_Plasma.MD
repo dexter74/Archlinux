@@ -6,7 +6,9 @@ pacman -Sy;
 
 **Minimal**
 ```bash
-pacman -S --noconfirm plasma-desktop;
+pacman -S plasma-desktop;
+
+
 systemctl enable ---now ssdm;
 systemctl restart ssdm;
 ```
