@@ -5,6 +5,12 @@ systemctl enable --now sddm;
 systemctl restart sddm;
 ```
 
+**Supports**
+```
+Les Applications Qt5 > installé qtcurve-qt5 | qtcurve-kde 
+Les Applications Qt4 > installé qtcurve-qt4
+```
+
 -------------------------------------------------------------------------------------------------------------------------------------
 #### Installation Complète ([Plasma](https://wiki.archlinux.fr/KDE) | 1,4 Go) 
 ```bash
@@ -46,10 +52,18 @@ pacman -S powerdevil;
 pacman -S sddm-kcm;
 
 ########################################
-pacman -S chromium;
+pacman -S --noconfirm chromium;
 ########################################
 systemctl enable --now sddm;
 systemctl restart sddm;
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------
+**Extras**
+```
+pacman -S --noconfirm plasma-meta;
+pacman -S --noconfirm kde-applications;
+pacman -S --noconfirm kde-applications-meta;
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -146,16 +160,3 @@ systemctl restart sddm;
 [systemsettings](https://archlinux.org/packages/extra/x86_64/systemsettings): Gestionnaire de système KDE pour le matériel, les logiciels et les espaces de travail
 
 [xdg-desktop-portal-kde](https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-): Une implémentation backend pour xdg-desktop-portal à l’aide de Qt/KF5
-
-**Extras**
-```
-pacman -S --noconfirm plasma-meta;
-pacman -S --noconfirm kde-applications;
-pacman -S --noconfirm kde-applications-meta;
-```
-
-**Supports**
-```
-Les Applications Qt5 > installé qtcurve-qt5 | qtcurve-kde 
-Les Applications Qt4 > installé qtcurve-qt4
-```
