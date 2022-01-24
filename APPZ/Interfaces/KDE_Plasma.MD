@@ -13,15 +13,15 @@ systemctl restart sddm;
 ### Installation Sélectif:
 
 ```
-pacman -S bluedevil discover drkonqi
-pacman -S
-pacman -S
+#GUI
+pacman -S bluedevil discover kde-cli-tools kde-gtk-config kdeplasma-addons
 
 systemctl enable --now sddm;
 systemctl restart sddm;
 ```
 
 -------------------------------------------------------------------------------------------------------------------------------------
+
 
 [bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil/): Intégrez la technologie Bluetooth dans l’espace de travail et les applications KDE
 
@@ -69,6 +69,7 @@ systemctl restart sddm;
 
 [kwrited](https://archlinux.org/packages/extra/x86_64/kwrited/): Démon KDE écoutant les murs et écrivant des messages.
 
+
 [layer-shell-qt](https://archlinux.org/packages/extra/x86_64/layer-shell-qt/): Composant Qt pour permettre aux applications d’utiliser le protocole Wayland wl-layer-shell.
 
 [libkscreen](https://archlinux.org/packages/extra/x86_64/libkscreen/): Logiciel de gestion d’écran KDE
@@ -78,6 +79,7 @@ systemctl restart sddm;
 [milou](https://archlinux.org/packages/extra/x86_64/milou/): Une application de recherche dédiée construite sur Baloo
 
 [oxygen](https://archlinux.org/packages/extra/x86_64/oxygen/): Style KDE Oxygène
+
 
 [plasma-browser-integration](https://archlinux.org/packages/extra/x86_64/plasma-browser-integration/): Composants nécessaires à l’intégration des navigateurs dans Plasma Desktop
 
@@ -114,7 +116,6 @@ systemctl restart sddm;
 [systemsettings](https://archlinux.org/packages/extra/x86_64/systemsettings): Gestionnaire de système KDE pour le matériel, les logiciels et les espaces de travail
 
 [xdg-desktop-portal-kde](https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-): Une implémentation backend pour xdg-desktop-portal à l’aide de Qt/KF5
-
 
 **Extras**
 ```
