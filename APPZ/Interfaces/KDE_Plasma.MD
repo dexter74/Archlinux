@@ -20,53 +20,53 @@ pacman -S --noconfirm plasma;
 
 **Groupe Plasma**
 ```
-pacman -S --noconfirm plasma
-pacman -S --noconfirm bluedevil
-pacman -S --noconfirm breeze
-pacman -S --noconfirm breeze-gtk
-pacman -S --noconfirm discover
-pacman -S --noconfirm drkonqi
-pacman -S --noconfirm kactivitymanagerd
-pacman -S --noconfirm kde-cli-tools
-pacman -S --noconfirm kde-gtk-config
-pacman -S --noconfirm kdecoration
-pacman -S --noconfirm kdeplasma-addons
-pacman -S --noconfirm kgamma5
-pacman -S --noconfirm khotkeys
-pacman -S --noconfirm kinfocenter
-pacman -S --noconfirm kmenuedit
-pacman -S --noconfirm kscreen
-pacman -S --noconfirm kscreenlocker
-pacman -S --noconfirm ksshaskpass
-pacman -S --noconfirm ksystemstats
-pacman -S --noconfirm kwallet-pam
-pacman -S --noconfirm kwayland-integration
-pacman -S --noconfirm kwayland-server
-pacman -S --noconfirm kwin
-pacman -S --noconfirm kwrited
-pacman -S --noconfirm layer-shell-qt
-pacman -S --noconfirm libkscreen
-pacman -S --noconfirm libksysguard
-pacman -S --noconfirm milou
-pacman -S --noconfirm oxygen
-pacman -S --noconfirm plasma-browser-integration
-pacman -S --noconfirm plasma-desktop
-pacman -S --noconfirm plasma-disks
-pacman -S --noconfirm plasma-firewall
-pacman -S --noconfirm plasma-integration
-pacman -S --noconfirm plasma-nm
-pacman -S --noconfirm plasma-pa
-pacman -S --noconfirm plasma-sdk
-pacman -S --noconfirm plasma-systemmonitor
-pacman -S --noconfirm plasma-thunderbolt
-pacman -S --noconfirm plasma-vault
-pacman -S --noconfirm plasma-workspace
-pacman -S --noconfirm plasma-workspace-wallpapers
-pacman -S --noconfirm polkit-kde-agent
-pacman -S --noconfirm powerdevil
-pacman -S --noconfirm sddm-kcm
-pacman -S --noconfirm systemsettings
-pacman -S --noconfirm xdg-desktop-portal-kde
+pacman -S plasma;
+pacman -S bluedevil;
+pacman -S breeze;
+pacman -S breeze-gtk;
+pacman -S discover;
+pacman -S drkonqi;
+pacman -S kactivitymanagerd;
+pacman -S kde-cli-tools;
+pacman -S kde-gtk-config;
+pacman -S kdecoration;
+pacman -S kdeplasma-addons;
+pacman -S kgamma5;
+pacman -S khotkeys;
+pacman -S kinfocenter;
+pacman -S kmenuedit;
+pacman -S kscreen;
+pacman -S kscreenlocker;
+pacman -S ksshaskpass;
+pacman -S ksystemstats;
+pacman -S kwallet-pam;
+pacman -S kwayland-integration;
+pacman -S kwayland-server;
+pacman -S kwin;
+pacman -S kwrited;
+pacman -S layer-shell-qt;
+pacman -S libkscreen;
+pacman -S libksysguard;
+pacman -S milou;
+pacman -S oxygen;
+pacman -S plasma-browser-integration;
+pacman -S plasma-desktop;
+pacman -S plasma-disks;
+pacman -S plasma-firewall;
+pacman -S plasma-integration;
+pacman -S plasma-nm;
+pacman -S plasma-pa;
+pacman -S plasma-sdk;
+pacman -S plasma-systemmonitor;
+pacman -S plasma-thunderbolt;
+pacman -S plasma-vault;
+pacman -S plasma-workspace;
+pacman -S plasma-workspace-wallpapers;
+pacman -S polkit-kde-agent;
+pacman -S powerdevil;
+pacman -S sddm-kcm;
+pacman -S systemsettings;
+pacman -S xdg-desktop-portal-kde;
 ```
 
 **Extras**
