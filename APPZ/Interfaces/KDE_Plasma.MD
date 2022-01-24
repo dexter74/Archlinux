@@ -5,11 +5,17 @@ systemctl enable --now sddm;
 systemctl restart sddm;
 ```
 
-**Supports**
+**Supports** ([ici](https://community.kde.org/Main_Page))
 ```
+
 Les Applications Qt5 > installé qtcurve-qt5 | qtcurve-kde 
 Les Applications Qt4 > installé qtcurve-qt4
 ```
+
+
+[Menu Démarré](
+https://iwf1.com/make-kde-plasma-5-desktop-look-feel-like-windows-10-using-these-extensions)
+
 
 -------------------------------------------------------------------------------------------------------------------------------------
 #### Installation Complète ([Plasma](https://wiki.archlinux.fr/KDE) | 1,4 Go) 
