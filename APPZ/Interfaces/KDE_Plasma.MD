@@ -1,15 +1,19 @@
 **Update**
 ```
 pacman -Sy;
-# pacman-key --init;
-# pacman-key --populate;
 ```
 
 
 **Minimal**
-```
+```bash
 pacman -S --noconfirm plasma-desktop;
+
+# En cas de soucis:
+# pacman-key --init;
+# pacman-key --populate;
+
 ```
+
 
 **Installer [KDE](https://wiki.archlinux.fr/KDE) :** (groupe plasma)
 ```
