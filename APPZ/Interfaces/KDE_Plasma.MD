@@ -85,35 +85,35 @@ systemctl restart sddm;
 
 [plasma-disks](https://archlinux.org/packages/extra/x86_64/plasma-disks/): Surveille les périphériques compatibles S.M.A.R.T. en cas de défaillance imminente
 
-[plasma-firewall](): 
+[plasma-firewall](https://archlinux.org/packages/extra/x86_64/plasma-firewall/): Panneau de configuration pour le pare-feu de votre système
 
-[plasma-integration](): 
+[plasma-integration](https://archlinux.org/packages/extra/x86_64/plasma-integration/): Plugins d’intégration Qt Platform Theme pour les espaces de travail Plasma
 
-[plasma-nm](): 
+[plasma-nm](https://archlinux.org/packages/extra/x86_64/plasma-nm/): Applet plasma écrite en QML pour la gestion des connexions réseau.
 
-[plasma-pa](): 
+[plasma-pa](https://archlinux.org/packages/extra/x86_64/plasma-pa/): 
 
-[plasma-sdk](): 
+[plasma-sdk](https://archlinux.org/packages/extra/x86_64/plasma-sdk): 
 
-[plasma-systemmonitor](): 
+[plasma-systemmonitor](https://archlinux.org/packages/extra/x86_64/plasma-systemmonitor): 
 
-[plasma-thunderbolt](): 
+[plasma-thunderbolt](https://archlinux.org/packages/extra/x86_64/plasma-thunderbolt): 
 
-[plasma-vault](): 
+[plasma-vault](https://archlinux.org/packages/extra/x86_64/plasma-vault): 
 
-[plasma-workspace](): 
+[plasma-workspace](https://archlinux.org/packages/extra/x86_64/plasma-workspace): 
 
-[plasma-workspace-wallpapers](): 
+[plasma-workspace-wallpapers](https://archlinux.org/packages/extra/x86_64/plasma-workspace-wallpapers): 
 
-[polkit-kde-agent](): 
+[polkit-kde-agent](https://archlinux.org/packages/extra/x86_64/): 
 
-[powerdevil](): 
+[powerdevil](https://archlinux.org/packages/extra/x86_64/): 
 
-[sddm-kcm](): 
+[sddm-kcm](https://archlinux.org/packages/extra/x86_64/): 
 
-[systemsettings](): 
+[systemsettings](https://archlinux.org/packages/extra/x86_64/): 
 
-[xdg-desktop-portal-kde](): 
+[xdg-desktop-portal-kde](https://archlinux.org/packages/extra/x86_64/): 
 
 
 
