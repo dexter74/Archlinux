@@ -1,6 +1,8 @@
 **Update**
 ```
 pacman -Sy;
+# pacman-key --init;
+# pacman-key --populate;
 ```
 
 
