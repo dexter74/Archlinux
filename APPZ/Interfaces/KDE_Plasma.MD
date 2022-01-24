@@ -57,7 +57,7 @@ pacman -S --noconfirm plasma;
 
 [kscreenlocker](https://archlinux.org/packages/extra/x86_64/kscreenlocker/): Bibliothèque et composants pour une architecture d’écran de verrouillage sécurisée
 
-[ksshaskpass](https://archlinux.org/packages/extra/x86_64/ksshaskpass/)
+[ksshaskpass](https://archlinux.org/packages/extra/x86_64/ksshaskpass/): 
 
 [ksystemstats](https://archlinux.org/packages/extra/x86_64/ksystemstats/): Un démon de surveillance du système basé sur un plugin
 
@@ -70,53 +70,53 @@ pacman -S --noconfirm plasma;
 [kwin](https://archlinux.org/packages/extra/x86_64/kwin/): Un gestionnaire de fenêtres composite facile à utiliser, mais flexible
 
 
-[kwrited]()
+[kwrited](): 
 
-[layer-shell-qt]()
+[layer-shell-qt](): 
 
-[libkscreen]()
+[libkscreen](): 
 
-[libksysguard]()
+[libksysguard](): 
 
-[milou]()
+[milou](): 
 
-[oxygen]()
+[oxygen](): 
 
-[plasma-browser-integration]()
+[plasma-browser-integration](): 
 
-[plasma-desktop]()
+[plasma-desktop](): 
 
-[plasma-disks]()
+[plasma-disks](): 
 
-[plasma-firewall]()
+[plasma-firewall](): 
 
-[plasma-integration]()
+[plasma-integration](): 
 
-[plasma-nm]()
+[plasma-nm](): 
 
-[plasma-pa]()
+[plasma-pa](): 
 
-[plasma-sdk]()
+[plasma-sdk](): 
 
-[plasma-systemmonitor]()
+[plasma-systemmonitor](): 
 
-[plasma-thunderbolt]()
+[plasma-thunderbolt](): 
 
-[plasma-vault]()
+[plasma-vault](): 
 
-[plasma-workspace]()
+[plasma-workspace](): 
 
-[plasma-workspace-wallpapers]()
+[plasma-workspace-wallpapers](): 
 
-[polkit-kde-agent]()
+[polkit-kde-agent](): 
 
-[powerdevil]()
+[powerdevil](): 
 
-[sddm-kcm]()
+[sddm-kcm](): 
 
-[systemsettings]()
+[systemsettings](): 
 
-[xdg-desktop-portal-kde]()
+[xdg-desktop-portal-kde](): 
 
 
 
