@@ -13,7 +13,7 @@ systemctl restart sddm;
 ### Installation Sélectif:
 
 ```
-pacman -S
+pacman -S bluedevil discover drkonqi
 pacman -S
 pacman -S
 
@@ -99,22 +99,21 @@ systemctl restart sddm;
 
 [plasma-thunderbolt](https://archlinux.org/packages/extra/x86_64/plasma-thunderbolt): Intégration plasma pour le contrôle des appareils Thunderbolt.
 
-[plasma-vault](https://archlinux.org/packages/extra/x86_64/plasma-vault): 
+[plasma-vault](https://archlinux.org/packages/extra/x86_64/plasma-vault): Applet plasma et services pour la création de coffres-forts chiffrés
 
-[plasma-workspace](https://archlinux.org/packages/extra/x86_64/plasma-workspace): 
+[plasma-workspace](https://archlinux.org/packages/extra/x86_64/plasma-workspace): Espace de travail plasma KDE
 
-[plasma-workspace-wallpapers](https://archlinux.org/packages/extra/x86_64/plasma-workspace-wallpapers): 
+[plasma-workspace-wallpapers](https://archlinux.org/packages/extra/x86_64/plasma-workspace-wallpapers): Fonds d’écran supplémentaires pour l’espace de travail Plasma
 
-[polkit-kde-agent](https://archlinux.org/packages/extra/x86_64/polkit-kde-agent): 
+[polkit-kde-agent](https://archlinux.org/packages/extra/x86_64/polkit-kde-agent): Démon fournissant une interface utilisateur d’authentification polkit pour KDE
 
-[powerdevil](https://archlinux.org/packages/extra/x86_64/powerdevil): 
+[powerdevil](https://archlinux.org/packages/extra/x86_64/powerdevil): Gère les paramètres de consommation d’énergie d’une coque plasma
 
-[sddm-kcm](https://archlinux.org/packages/extra/x86_64/sddm-kcm): 
+[sddm-kcm](https://archlinux.org/packages/extra/x86_64/sddm-kcm): Module de configuration KDE pour SDDM
 
-[systemsettings](https://archlinux.org/packages/extra/x86_64/systemsettings): 
+[systemsettings](https://archlinux.org/packages/extra/x86_64/systemsettings): Gestionnaire de système KDE pour le matériel, les logiciels et les espaces de travail
 
-[xdg-desktop-portal-kde](https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-): 
-
+[xdg-desktop-portal-kde](https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-): Une implémentation backend pour xdg-desktop-portal à l’aide de Qt/KF5
 
 
 **Extras**
