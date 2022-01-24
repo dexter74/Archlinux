@@ -91,13 +91,13 @@ systemctl restart sddm;
 
 [plasma-nm](https://archlinux.org/packages/extra/x86_64/plasma-nm/): Applet plasma écrite en QML pour la gestion des connexions réseau.
 
-[plasma-pa](https://archlinux.org/packages/extra/x86_64/plasma-pa/): 
+[plasma-pa](https://archlinux.org/packages/extra/x86_64/plasma-pa/): Applet plasma pour la gestion du volume audio à l’aide de PulseAudio ([Pirewire](https://www.reddit.com/r/kde/comments/nj8c97/plasma_audio_applet_for_pipewire/))
 
-[plasma-sdk](https://archlinux.org/packages/extra/x86_64/plasma-sdk): 
+[plasma-sdk](https://archlinux.org/packages/extra/x86_64/plasma-sdk): Applications utiles pour le développement de plasma.
 
-[plasma-systemmonitor](https://archlinux.org/packages/extra/x86_64/plasma-systemmonitor): 
+[plasma-systemmonitor](https://archlinux.org/packages/extra/x86_64/plasma-systemmonitor): Une interface pour la surveillance des capteurs du système, des informations de processus et d’autres ressources système.
 
-[plasma-thunderbolt](https://archlinux.org/packages/extra/x86_64/plasma-thunderbolt): 
+[plasma-thunderbolt](https://archlinux.org/packages/extra/x86_64/plasma-thunderbolt): Intégration plasma pour le contrôle des appareils Thunderbolt.
 
 [plasma-vault](https://archlinux.org/packages/extra/x86_64/plasma-vault): 
 
@@ -105,15 +105,15 @@ systemctl restart sddm;
 
 [plasma-workspace-wallpapers](https://archlinux.org/packages/extra/x86_64/plasma-workspace-wallpapers): 
 
-[polkit-kde-agent](https://archlinux.org/packages/extra/x86_64/): 
+[polkit-kde-agent](https://archlinux.org/packages/extra/x86_64/polkit-kde-agent): 
 
-[powerdevil](https://archlinux.org/packages/extra/x86_64/): 
+[powerdevil](https://archlinux.org/packages/extra/x86_64/powerdevil): 
 
-[sddm-kcm](https://archlinux.org/packages/extra/x86_64/): 
+[sddm-kcm](https://archlinux.org/packages/extra/x86_64/sddm-kcm): 
 
-[systemsettings](https://archlinux.org/packages/extra/x86_64/): 
+[systemsettings](https://archlinux.org/packages/extra/x86_64/systemsettings): 
 
-[xdg-desktop-portal-kde](https://archlinux.org/packages/extra/x86_64/): 
+[xdg-desktop-portal-kde](https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-): 
 
 
 
