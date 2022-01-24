@@ -72,7 +72,7 @@ pacman -S --noconfirm plasma;
 
 [layer-shell-qt](https://archlinux.org/packages/extra/x86_64/layer-shell-qt/): Composant Qt pour permettre aux applications d’utiliser le protocole Wayland wl-layer-shell.
 
-[libkscreen](https://archlinux.org/packages/extra/x86_64/libkscreen/): 
+[libkscreen](https://archlinux.org/packages/extra/x86_64/libkscreen/): Logiciel de gestion d’écran KDE
 
 [libksysguard](https://archlinux.org/packages/extra/x86_64/libksysguard/): Bibliothèque pour récupérer des informations sur l’état actuel du matériel informatique
 
