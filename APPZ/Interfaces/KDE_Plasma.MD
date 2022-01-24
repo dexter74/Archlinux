@@ -1,3 +1,5 @@
+[Présentation](https://kde.org/plasma-desktop/)
+
 **Update**
 ```
 pacman -Sy;
@@ -20,44 +22,44 @@ pacman -S --noconfirm plasma;
 
 **Groupe Plasma**
 
-[plasma]()
+[plasma](): 
 
-[bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil)
+[bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil): Bluetooth
 
 
-[breeze](https://archlinux.org/packages/kde-unstable/x86_64/breeze/)
+[breeze](https://archlinux.org/packages/kde-unstable/x86_64/breeze/): Themes
 
-[breeze-gtk](https://archlinux.org/packages/extra/any/breeze-gtk/)
+[breeze-gtk](https://archlinux.org/packages/extra/any/breeze-gtk/): Themes
 
-[discover](https://archlinux.org/packages/extra/x86_64/discover/)
+[discover](https://archlinux.org/packages/extra/x86_64/discover/): 
 
-[drkonqi](https://archlinux.org/packages/extra/x86_64/drkonqi/)
+[drkonqi](https://archlinux.org/packages/extra/x86_64/drkonqi/): 
 
-[kactivitymanagerd](https://archlinux.org/packages/extra/x86_64/kactivitymanagerd/)
+[kactivitymanagerd](https://archlinux.org/packages/extra/x86_64/kactivitymanagerd/): 
 
-[kde-cli-tools](https://archlinux.org/packages/extra/x86_64/kde-cli-tools/)
+[kde-cli-tools](https://archlinux.org/packages/extra/x86_64/kde-cli-tools/): 
 
-[kde-gtk-config](https://archlinux.org/packages/extra/x86_64/kde-gtk-config/)
+[kde-gtk-config](https://archlinux.org/packages/extra/x86_64/kde-gtk-config/): 
 
-[kdecoration](https://archlinux.org/packages/extra/x86_64/kdecoration/)
+[kdecoration](https://archlinux.org/packages/extra/x86_64/kdecoration/): 
 
-[kdeplasma-addons](https://archlinux.org/packages/extra/x86_64/kdeplasma-addons/)
+[kdeplasma-addons](https://archlinux.org/packages/extra/x86_64/kdeplasma-addons/): 
 
-[kgamma5](https://archlinux.org/packages/extra/x86_64/kgamma5/)
+[kgamma5](https://archlinux.org/packages/extra/x86_64/kgamma5/): 
 
-[khotkeys](https://archlinux.org/packages/extra/x86_64/khotkeys/)
+[khotkeys](https://archlinux.org/packages/extra/x86_64/khotkeys/): 
 
-[kinfocenter]()
+[kinfocenter](https://archlinux.org/packages/extra/x86_64/kinfocenter/): Information sur le PC
 
-[kmenuedit]()
+[kmenuedit](https://archlinux.org/packages/extra/x86_64/kmenuedit/): Editeur Menu KDE
 
-[kscreen]()
+[kscreen](https://archlinux.org/packages/extra/x86_64/kscreen/): Logiciel de gestion d’écran KDE
 
-[kscreenlocker]()
+[kscreenlocker](https://archlinux.org/packages/extra/x86_64/kscreenlocker/): Bibliothèque et composants pour une architecture d’écran de verrouillage sécurisée
 
-[ksshaskpass]()
+[ksshaskpass](https://archlinux.org/packages/extra/x86_64/ksshaskpass/)
 
-[ksystemstats]()
+[ksystemstats](https://archlinux.org/packages/extra/x86_64/ksystemstats/): Un démon de surveillance du système basé sur un plugin
 
 [kwallet-pam]()
 
