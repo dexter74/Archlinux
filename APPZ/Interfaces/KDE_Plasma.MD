@@ -35,17 +35,17 @@ systemctl restart sddm;
 
 [kactivitymanagerd](https://archlinux.org/packages/extra/x86_64/kactivitymanagerd/): Service système pour gérer les activités des utilisateurs et suivre les modèles d’utilisation
 
-[kde-cli-tools](https://archlinux.org/packages/extra/x86_64/kde-cli-tools/): 
+[kde-cli-tools](https://archlinux.org/packages/extra/x86_64/kde-cli-tools/): Outils basés sur KDE Frameworks 5 pour mieux interagir avec le système
 
-[kde-gtk-config](https://archlinux.org/packages/extra/x86_64/kde-gtk-config/): 
+[kde-gtk-config](https://archlinux.org/packages/extra/x86_64/kde-gtk-config/): Configurateur GTK2 et GTK3 pour KDE
 
-[kdecoration](https://archlinux.org/packages/extra/x86_64/kdecoration/): 
+[kdecoration](https://archlinux.org/packages/extra/x86_64/kdecoration/): Bibliothèque basée sur un plugin pour créer des décorations de fenêtre
 
-[kdeplasma-addons](https://archlinux.org/packages/extra/x86_64/kdeplasma-addons/): 
+[kdeplasma-addons](https://archlinux.org/packages/extra/x86_64/kdeplasma-addons/): Toutes sortes d’addons pour améliorer votre expérience Plasma
 
-[kgamma5](https://archlinux.org/packages/extra/x86_64/kgamma5/): 
+[kgamma5](https://archlinux.org/packages/extra/x86_64/kgamma5/): Ajustez les paramètres gamma de votre moniteur
 
-[khotkeys](https://archlinux.org/packages/extra/x86_64/khotkeys/): 
+[khotkeys](https://archlinux.org/packages/extra/x86_64/khotkeys/): Déclencher des actions lorsque certaines touches sont enfoncées
 
 [kinfocenter](https://archlinux.org/packages/extra/x86_64/kinfocenter/): Information sur le PC.
 
