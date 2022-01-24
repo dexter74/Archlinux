@@ -1,6 +1,4 @@
 #### [Présentation](https://kde.org/plasma-desktop/)
-#### [WIKI](https://community.kde.org/)
-
 
 -------------------------------------------------------------------------------------------------------------------------------------
 #### Installation Complète ([Plasma](https://wiki.archlinux.fr/KDE) | 1,4 Go) 
@@ -10,13 +8,44 @@ pacman -S plasma;
 systemctl enable --now sddm;
 systemctl restart sddm;
 ```
-
 -------------------------------------------------------------------------------------------------------------------------------------
 ### Installation Sélectif:
-
 ```
 #GUI
-pacman -S bluedevil discover kde-cli-tools kde-gtk-config kdeplasma-addons
+pacman -S bluedevil
+pacman -S discover
+pacman -S drkonqi
+pacman -S kactivitymanagerd
+pacman -S kde-cli-tools
+pacman -S kde-gtk-config
+pacman -S kdeplasma-addons
+pacman -S kgamma5
+pacman -S kinfocenter
+pacman -S kmenuedit
+pacman -S kscreen
+pacman -S kscreenlocker
+pacman -S ksystemstats
+pacman -S kwin
+pacman -S kwrited
+pacman -S libkscreen
+pacman -S libksysguard
+pacman -S milou
+
+pacman -S plasma-desktop
+pacman -S plasma-disks
+pacman -S plasma-firewall
+pacman -S plasma-integration
+pacman -S plasma-nm
+pacman -S plasma-pa
+pacman -S plasma-systemmonitor
+pacman -S plasma-workspace-wallpapers
+pacman -S polkit-kde-agent
+pacman -S powerdevil
+pacman -S sddm-kcm
+pacman -S 
+pacman -S 
+pacman -S 
+
 
 systemctl enable --now sddm;
 systemctl restart sddm;
