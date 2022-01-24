@@ -1,4 +1,10 @@
-**Minimal
+**Update**
+```
+pacman -Sy;
+```
+
+
+**Minimal**
 ```
 pacman -S --noconfirm plasma-desktop;
 ```
