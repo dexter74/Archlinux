@@ -1,3 +1,7 @@
+**Minimal
+```
+pacman -S --noconfirm plasma-desktop;
+```
 
 **Installer [KDE](https://wiki.archlinux.fr/KDE) :** (groupe plasma)
 ```
