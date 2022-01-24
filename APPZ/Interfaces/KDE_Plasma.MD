@@ -24,17 +24,17 @@ pacman -S --noconfirm plasma;
 
 [plasma](): 
 
-[bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil/): Bluetooth.
+[bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil/): Intégrez la technologie Bluetooth dans l’espace de travail et les applications KDE
 
 [breeze](https://archlinux.org/packages/kde-unstable/x86_64/breeze/): Themes.
 
 [breeze-gtk](https://archlinux.org/packages/extra/any/breeze-gtk/): Themes.
 
-[discover](https://archlinux.org/packages/extra/x86_64/discover/): 
+[discover](https://archlinux.org/packages/extra/x86_64/discover/): Interface graphique de gestion des ressources KDE et Plasma
 
-[drkonqi](https://archlinux.org/packages/extra/x86_64/drkonqi/): 
+[drkonqi](https://archlinux.org/packages/extra/x86_64/drkonqi/): Le gestionnaire de crash KDE
 
-[kactivitymanagerd](https://archlinux.org/packages/extra/x86_64/kactivitymanagerd/): 
+[kactivitymanagerd](https://archlinux.org/packages/extra/x86_64/kactivitymanagerd/): Service système pour gérer les activités des utilisateurs et suivre les modèles d’utilisation
 
 [kde-cli-tools](https://archlinux.org/packages/extra/x86_64/kde-cli-tools/): 
 
@@ -74,17 +74,17 @@ pacman -S --noconfirm plasma;
 
 [libkscreen](https://archlinux.org/packages/extra/x86_64/libkscreen/): 
 
-[libksysguard](): 
+[libksysguard](https://archlinux.org/packages/extra/x86_64/libksysguard/): Bibliothèque pour récupérer des informations sur l’état actuel du matériel informatique
 
-[milou](): 
+[milou](https://archlinux.org/packages/extra/x86_64/milou/): Une application de recherche dédiée construite sur Baloo
 
-[oxygen](): 
+[oxygen](https://archlinux.org/packages/extra/x86_64/oxygen/): Style KDE Oxygène
 
-[plasma-browser-integration](): 
+[plasma-browser-integration](https://archlinux.org/packages/extra/x86_64/plasma-browser-integration/): Composants nécessaires à l’intégration des navigateurs dans Plasma Desktop
 
-[plasma-desktop](): 
+[plasma-desktop](https://archlinux.org/packages/extra/x86_64/plasma-desktop/): Bureau plasma KDE
 
-[plasma-disks](): 
+[plasma-disks](https://archlinux.org/packages/extra/x86_64/plasma-disks/): Surveille les périphériques compatibles S.M.A.R.T. en cas de défaillance imminente
 
 [plasma-firewall](): 
 
