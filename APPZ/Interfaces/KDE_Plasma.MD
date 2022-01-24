@@ -1,28 +1,27 @@
-[Présentation](https://kde.org/plasma-desktop/)
+#### [Présentation](https://kde.org/plasma-desktop/)
 
-**Update**
+-------------------------------------------------------------------------------------------------------------------------------------
+#### Installation Complète ([Plasma](https://wiki.archlinux.fr/KDE) | 1,4 Go) 
 ```
-pacman -Sy;
-```
-
-
-**Minimal**
-```bash
-pacman -S plasma-desktop;
+clear;
+pacman -S plasma;
 systemctl enable --now sddm;
 systemctl restart sddm;
 ```
 
+-------------------------------------------------------------------------------------------------------------------------------------
+### Installation Sélectif:
 
-
-**Installer [KDE](https://wiki.archlinux.fr/KDE) :** (groupe plasma)
 ```
-pacman -S --noconfirm plasma;
+pacman -S
+pacman -S
+pacman -S
+
+systemctl enable --now sddm;
+systemctl restart sddm;
 ```
 
-**Groupe Plasma**
-
-[plasma](): 
+-------------------------------------------------------------------------------------------------------------------------------------
 
 [bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil/): Intégrez la technologie Bluetooth dans l’espace de travail et les applications KDE
 
