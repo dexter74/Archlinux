@@ -75,7 +75,6 @@ xdg-desktop-portal-kde
 **Extras**
 ```
 pacman -S --noconfirm plasma-meta;
-pacman -S --noconfirm plasma-desktop;
 pacman -S --noconfirm kde-applications;
 pacman -S --noconfirm kde-applications-meta;
 ```
