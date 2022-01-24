@@ -20,36 +20,34 @@ pacman -S plasma;
 -------------------------------------------------------------------------------------------------------------------------------------
 ### Installation Sélectif:
 ```bash
-pacman -S --noconfirm plasma-desktop;#1.1G
-
-pacman -S bluedevil;
-pacman -S discover;
-pacman -S drkonqi;
-pacman -S kactivitymanagerd;
-pacman -S kde-cli-tools;
-pacman -S kde-gtk-config;
-pacman -S kdeplasma-addons;
-pacman -S kgamma5;
-pacman -S kinfocenter;
-pacman -S kmenuedit;
-pacman -S kscreen;
-pacman -S kscreenlocker;
-pacman -S ksystemstats;
-pacman -S kwin;
-pacman -S kwrited;
-pacman -S libkscreen;
-pacman -S libksysguard;
-pacman -S milou;
-pacman -S plasma-disks;
-pacman -S plasma-firewall;
-pacman -S plasma-integration;
-pacman -S plasma-nm;
-pacman -S plasma-pa;
-pacman -S plasma-systemmonitor;
-pacman -S plasma-workspace-wallpapers;
-pacman -S polkit-kde-agent;
-pacman -S powerdevil;
-pacman -S sddm-kcm;
+pacman -S --noconfirm bluedevil;
+pacman -S --noconfirm discover;
+pacman -S --noconfirm drkonqi;
+pacman -S --noconfirm kactivitymanagerd;
+pacman -S --noconfirm kde-cli-tools;
+pacman -S --noconfirm kde-gtk-config;
+pacman -S --noconfirm kdeplasma-addons;
+pacman -S --noconfirm kgamma5;
+pacman -S --noconfirm kinfocenter;
+pacman -S --noconfirm kmenuedit;
+pacman -S --noconfirm kscreen;
+pacman -S --noconfirm kscreenlocker;
+pacman -S --noconfirm ksystemstats;
+pacman -S --noconfirm kwin;
+pacman -S --noconfirm kwrited;
+pacman -S --noconfirm libkscreen;
+pacman -S --noconfirm libksysguard;
+pacman -S --noconfirm milou;
+pacman -S --noconfirm plasma-disks;
+pacman -S --noconfirm plasma-firewall;
+pacman -S --noconfirm plasma-integration;
+pacman -S --noconfirm plasma-nm;
+pacman -S --noconfirm plasma-pa;
+pacman -S --noconfirm plasma-S --noconfirm ystemmonitor;
+pacman -S --noconfirm plasma-workspace-wallpapers;
+pacman -S --noconfirm polkit-kde-agent;
+pacman -S --noconfirm powerdevil;
+pacman -S --noconfirm sddm-kcm;
 
 ########################################
 pacman -S --noconfirm chromium;
