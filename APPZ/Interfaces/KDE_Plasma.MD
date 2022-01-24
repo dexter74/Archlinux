@@ -19,29 +19,33 @@ pacman -S --noconfirm plasma;
 ```
 
 **Groupe Plasma**
+
 [plasma]()
 
-[breeze]()
+[bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil)
 
-[breeze-gtk]()
 
-[discover]()
+[breeze](https://archlinux.org/packages/kde-unstable/x86_64/breeze/)
 
-[drkonqi]()
+[breeze-gtk](https://archlinux.org/packages/extra/any/breeze-gtk/)
 
-[kactivitymanagerd]()
+[discover](https://archlinux.org/packages/extra/x86_64/discover/)
 
-[kde-cli-tools]()
+[drkonqi](https://archlinux.org/packages/extra/x86_64/drkonqi/)
 
-[kde-gtk-config]()
+[kactivitymanagerd](https://archlinux.org/packages/extra/x86_64/kactivitymanagerd/)
 
-[kdecoration]()
+[kde-cli-tools](https://archlinux.org/packages/extra/x86_64/kde-cli-tools/)
 
-[kdeplasma-addons]()
+[kde-gtk-config](https://archlinux.org/packages/extra/x86_64/kde-gtk-config/)
 
-[kgamma5]()
+[kdecoration](https://archlinux.org/packages/extra/x86_64/kdecoration/)
 
-[khotkeys]()
+[kdeplasma-addons](https://archlinux.org/packages/extra/x86_64/kdeplasma-addons/)
+
+[kgamma5](https://archlinux.org/packages/extra/x86_64/kgamma5/)
+
+[khotkeys](https://archlinux.org/packages/extra/x86_64/khotkeys/)
 
 [kinfocenter]()
 
