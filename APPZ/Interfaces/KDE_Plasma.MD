@@ -7,12 +7,13 @@ pacman -Sy;
 **Minimal**
 ```bash
 pacman -S --noconfirm plasma-desktop;
-
 # En cas de soucis:
 # pacman-key --init;
 # pacman-key --populate;
-
 ```
+
+
+systemctl enable ---now ssdm;
 
 
 **Installer [KDE](https://wiki.archlinux.fr/KDE) :** (groupe plasma)
