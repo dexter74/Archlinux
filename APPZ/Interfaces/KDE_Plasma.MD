@@ -24,12 +24,11 @@ pacman -S --noconfirm plasma;
 
 [plasma](): 
 
-[bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil): Bluetooth
+[bluedevil](https://archlinux.org/packages/extra/x86_64/bluedevil/): Bluetooth.
 
+[breeze](https://archlinux.org/packages/kde-unstable/x86_64/breeze/): Themes.
 
-[breeze](https://archlinux.org/packages/kde-unstable/x86_64/breeze/): Themes
-
-[breeze-gtk](https://archlinux.org/packages/extra/any/breeze-gtk/): Themes
+[breeze-gtk](https://archlinux.org/packages/extra/any/breeze-gtk/): Themes.
 
 [discover](https://archlinux.org/packages/extra/x86_64/discover/): 
 
@@ -49,32 +48,31 @@ pacman -S --noconfirm plasma;
 
 [khotkeys](https://archlinux.org/packages/extra/x86_64/khotkeys/): 
 
-[kinfocenter](https://archlinux.org/packages/extra/x86_64/kinfocenter/): Information sur le PC
+[kinfocenter](https://archlinux.org/packages/extra/x86_64/kinfocenter/): Information sur le PC.
 
-[kmenuedit](https://archlinux.org/packages/extra/x86_64/kmenuedit/): Editeur Menu KDE
+[kmenuedit](https://archlinux.org/packages/extra/x86_64/kmenuedit/): Editeur Menu KDE.
 
-[kscreen](https://archlinux.org/packages/extra/x86_64/kscreen/): Logiciel de gestion d’écran KDE
+[kscreen](https://archlinux.org/packages/extra/x86_64/kscreen/): Logiciel de gestion d’écran KDE.
 
-[kscreenlocker](https://archlinux.org/packages/extra/x86_64/kscreenlocker/): Bibliothèque et composants pour une architecture d’écran de verrouillage sécurisée
+[kscreenlocker](https://archlinux.org/packages/extra/x86_64/kscreenlocker/): Bibliothèque et composants pour une architecture d’écran de verrouillage sécurisée.
 
-[ksshaskpass](https://archlinux.org/packages/extra/x86_64/ksshaskpass/): 
+[ksshaskpass](https://archlinux.org/packages/extra/x86_64/ksshaskpass/): ssh-add helper qui utilise kwallet et kpassworddialog.
 
-[ksystemstats](https://archlinux.org/packages/extra/x86_64/ksystemstats/): Un démon de surveillance du système basé sur un plugin
+[ksystemstats](https://archlinux.org/packages/extra/x86_64/ksystemstats/): Un démon de surveillance du système basé sur un plugin.
 
-[kwallet-pam](https://archlinux.org/packages/extra/x86_64/kwallet-pam/): Intégration DE KWallet PAM
+[kwallet-pam](https://archlinux.org/packages/extra/x86_64/kwallet-pam/): Intégration DE KWallet PAM.
 
-[kwayland-integration](https://archlinux.org/packages/extra/x86_64/kwayland-integration/): Fournit des plugins d’intégration pour divers frameworks KDE pour le système de fenêtrage wayland
+[kwayland-integration](https://archlinux.org/packages/extra/x86_64/kwayland-integration/): Fournit des plugins d’intégration pour divers frameworks KDE pour le système de fenêtrage wayland.
 
-[kwayland-server](https://archlinux.org/packages/extra/x86_64/kwayland-server/): Composants serveur Wayland basés sur des frameworks KDE
+[kwayland-server](https://archlinux.org/packages/extra/x86_64/kwayland-server/): Composants serveur Wayland basés sur des frameworks KDE.
 
-[kwin](https://archlinux.org/packages/extra/x86_64/kwin/): Un gestionnaire de fenêtres composite facile à utiliser, mais flexible
+[kwin](https://archlinux.org/packages/extra/x86_64/kwin/): Un gestionnaire de fenêtres composite facile à utiliser, mais flexible.
 
+[kwrited](https://archlinux.org/packages/extra/x86_64/kwrited/): Démon KDE écoutant les murs et écrivant des messages.
 
-[kwrited](): 
+[layer-shell-qt](https://archlinux.org/packages/extra/x86_64/layer-shell-qt/): Composant Qt pour permettre aux applications d’utiliser le protocole Wayland wl-layer-shell.
 
-[layer-shell-qt](): 
-
-[libkscreen](): 
+[libkscreen](https://archlinux.org/packages/extra/x86_64/libkscreen/): 
 
 [libksysguard](): 
 
