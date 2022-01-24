@@ -1,4 +1,6 @@
 #### [Présentation](https://kde.org/plasma-desktop/)
+#### [WIKI](https://community.kde.org/)
+
 
 -------------------------------------------------------------------------------------------------------------------------------------
 #### Installation Complète ([Plasma](https://wiki.archlinux.fr/KDE) | 1,4 Go) 
