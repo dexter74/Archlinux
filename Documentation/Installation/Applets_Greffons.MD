@@ -12,8 +12,8 @@ https://debian-facile.org/viewtopic.php?id=19683
 ### Autres:
 ```
 AppletNetworkManager      :
-blueman
-ConnMan                   : 
+blueman                   :
+ConnMan                   :
 xfce4-indicator-plugin    :
 xfce4-wavelan-plugin      :
 xfce4-power-manager       : Gestion de l'énergie
