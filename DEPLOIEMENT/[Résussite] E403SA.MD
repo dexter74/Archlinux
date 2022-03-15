@@ -340,10 +340,13 @@ clear;
 systemctl \$1 systemd-resolved;
 systemctl \$1 systemd-networkd;
 systemctl \$1 systemd-timesyncd;
-systemctl \$1 smb;
 systemctl \$1 sddm;
 systemctl \$1 sshd;
 systemctl \$1 iwd;
+
+#En erreur:
+#systemctl \$1 smb;
+
 
 # Expérimental:
 # systemctl --user enable --now pipewire
