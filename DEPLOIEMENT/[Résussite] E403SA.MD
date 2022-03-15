@@ -1,74 +1,3 @@
-# E4034SA
-
-**bootctl**
-```
-Features: ✓ Boot counting
-          ✓ Menu timeout control
-          ✓ One-shot menu timeout control
-          ✓ Default entry control
-          ✓ One-shot entry control
-          ✓ Support for XBOOTLDR partition
-          ✓ Support for passing random seed to OS
-          ✓ Load drop-in drivers
-          ✓ Boot loader sets ESP information
-```
-
-**Network**
-```
-3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
-    link/ether 7c:5c:f8:ff:5f:4b brd ff:ff:ff:ff:ff:ff
-    inet 192.168.1.9/24 metric 1024 brd 192.168.1.255 scope global dynamic wlan0
-       valid_lft 86145sec preferred_lft 86145sec
-    inet6 fe80::7e5c:f8ff:feff:5f4b/64 scope link
-       valid_lft forever preferred_lft forever
-```
-
-**Touchpad** (fonctionnel)
-```
-# pacman -Sy --noconfirm libinput
-# pacman -Sy --noconfirm synaptics
-# pacman -Sy --noconfirm xf86-input-libinput
-#KO: pacman -Sy --noconfirm xinput
-#KO: pacman -Sy --noconfirm libinput-gestures
-
-Aller dans Applications > Paramètres Sours et pavé tactile > Pavé tactile > Cocher les cas
-
-
-
-cat /proc/bus/input/devices;
-cat /sys/class/input/event*/device/name;
-
-I: Bus=0018 Vendor=04f3 Product=0005 Version=0000
-N: Name="Elan Touchpad"
-P: Phys=
-S: Sysfs=/devices/pci0000:00/808622C1:03/i2c-0/i2c-ELAN1000:00/input/input7
-U: Uniq=
-H: Handlers=event7 mouse0
-B: PROP=5
-B: EV=b
-B: KEY=e520 10000 0 0 0 0
-B: ABS=663800013000003
-
-Elan Touchpad
-```
-
-
-**Son** (Fonctionnel mais pose problème au WIFI)
-````
-
-https://github.com/dexter74/Archlinux/blob/9230efcb9410e66973ec38be0073153a9be5e469/Documentation/Installation/11.TEST.MD
-pacman -Sy --noconfirm pipewire pipewire-alsa pipewire-docs pipewire-jack pipewire-media-session pipewire-pulse pipewire-zeroconf;
-systemctl enable systemd-homed;
-systemctl enable systemd-networkd;
-systemctl enable systemd-resolved;
-systemctl enable systemd-timesyncd;
-systemctl --user enable {pipewire,pulseaudio};
-
-```
-
-
-
-
 ------------------------------------------------------------------
 #### A. Live-CD
 ```shell
@@ -507,7 +436,74 @@ https://www.reddit.com/r/unixporn/comments/crsukb/gnome_arch_linux_and_gnome_osx
 
 
 
+**bootctl**
+```
+Features: ✓ Boot counting
+          ✓ Menu timeout control
+          ✓ One-shot menu timeout control
+          ✓ Default entry control
+          ✓ One-shot entry control
+          ✓ Support for XBOOTLDR partition
+          ✓ Support for passing random seed to OS
+          ✓ Load drop-in drivers
+          ✓ Boot loader sets ESP information
+```
 
+
+
+
+**Network**
+```
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 7c:5c:f8:ff:5f:4b brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.9/24 metric 1024 brd 192.168.1.255 scope global dynamic wlan0
+       valid_lft 86145sec preferred_lft 86145sec
+    inet6 fe80::7e5c:f8ff:feff:5f4b/64 scope link
+       valid_lft forever preferred_lft forever
+```
+
+**Touchpad** (fonctionnel)
+```
+# pacman -Sy --noconfirm libinput
+# pacman -Sy --noconfirm synaptics
+# pacman -Sy --noconfirm xf86-input-libinput
+#KO: pacman -Sy --noconfirm xinput
+#KO: pacman -Sy --noconfirm libinput-gestures
+
+Aller dans Applications > Paramètres Sours et pavé tactile > Pavé tactile > Cocher les cas
+
+
+
+cat /proc/bus/input/devices;
+cat /sys/class/input/event*/device/name;
+
+I: Bus=0018 Vendor=04f3 Product=0005 Version=0000
+N: Name="Elan Touchpad"
+P: Phys=
+S: Sysfs=/devices/pci0000:00/808622C1:03/i2c-0/i2c-ELAN1000:00/input/input7
+U: Uniq=
+H: Handlers=event7 mouse0
+B: PROP=5
+B: EV=b
+B: KEY=e520 10000 0 0 0 0
+B: ABS=663800013000003
+
+Elan Touchpad
+```
+
+
+**Son** (Fonctionnel mais pose problème au WIFI)
+````
+
+https://github.com/dexter74/Archlinux/blob/9230efcb9410e66973ec38be0073153a9be5e469/Documentation/Installation/11.TEST.MD
+pacman -Sy --noconfirm pipewire pipewire-alsa pipewire-docs pipewire-jack pipewire-media-session pipewire-pulse pipewire-zeroconf;
+systemctl enable systemd-homed;
+systemctl enable systemd-networkd;
+systemctl enable systemd-resolved;
+systemctl enable systemd-timesyncd;
+systemctl --user enable {pipewire,pulseaudio};
+
+```
 
 
 
