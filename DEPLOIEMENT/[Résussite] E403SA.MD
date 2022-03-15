@@ -25,7 +25,15 @@ Features: ✓ Boot counting
 
 **Touchpad** (Semi fonctionnel)
 ```
-cat /proc/bus/input/devices
+pacman -Sy --noconfirm libinput
+pacman -Sy --noconfirm synaptics
+pacman -Sy --noconfirm xf86-input-libinput
+#KO: pacman -Sy --noconfirm xinput
+#KO: pacman -Sy --noconfirm libinput-gestures
+
+
+cat /proc/bus/input/devices;
+cat /sys/class/input/event*/device/name;
 
 I: Bus=0018 Vendor=04f3 Product=0005 Version=0000
 N: Name="Elan Touchpad"
@@ -38,18 +46,11 @@ B: EV=b
 B: KEY=e520 10000 0 0 0 0
 B: ABS=663800013000003
 
-pacman -Sy --noconfirm libinput
-pacman -Sy --noconfirm synaptics
-pacman -Sy --noconfirm xf86-input-libinput
-
-#KO: pacman -Sy --noconfirm xinput
-#KO: pacman -Sy --noconfirm libinput-gestures
+Elan Touchpad
 ```
 
 
 
-cat /sys/class/input/event*/device/name
-Elan Touchpad
 
 
 ------------------------------------------------------------------
