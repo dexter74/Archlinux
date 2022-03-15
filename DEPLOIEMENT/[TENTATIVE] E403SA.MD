@@ -1,3 +1,10 @@
+#### Articles
+```
+- https://fhackts.wordpress.com/2016/09/09/installing-archlinux-the-efisystemd-boot-way/?unapproved=970&moderation-hash=e8e626944f7a8bca05805782c535eaf4#comment-970
+- https://gist.github.com/imrvelj/c65cd5ca7f5505a65e59204f5a3f7a6d
+```
+
+
 #### Live-CD
 ```shell
 loadkeys fr-pc;
