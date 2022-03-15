@@ -123,7 +123,42 @@ clear;
 genfstab -U /mnt >> /mnt/etc/fstab;
 ```
 
-#### 2. Configuration Réseau (Manue)
+#### 2. Configuration Réseau (Manuel)
+
+**Loopback**
+```
+echo "[Match]
+Name=lo
+
+[Link]
+RequiredForOnline=yes
+Destination=0.0.0.0/0
+Type=local " > /etc/systemd/network/1-lo.network ;
+```
+
+**Wlan** (Automatique)
+```
+echo "[Match]
+Name=$(ip link | grep wlan | cut -c 4-7)
+
+[Network]
+DHCP=ipv4" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
+```
+
+**Wlan0** (Static)
+```
+echo "[Match]
+Name=$(ip link | grep wlan | cut -c 4-8)
+
+[Network]
+DHCP=no
+Address=192.168.1.9/24
+Gateway=192.168.1.1
+DNS=192.168.1.1
+DNS=192.168.1.31" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
+```
+
+
 
 
 ------------------------------------------------------------------
