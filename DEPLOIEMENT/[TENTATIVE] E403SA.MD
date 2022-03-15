@@ -76,7 +76,7 @@ pacstrap /mnt base;
 pacstrap /mnt dhclient;
 pacstrap /mnt dhcpcd;
 pacstrap /mnt base-devel;
-pacstrap /mnt bash-completi;on;
+pacstrap /mnt bash-completion;
 pacstrap /mnt curl;
 pacstrap /mnt fakeroot;
 pacstrap /mnt git;
