@@ -23,6 +23,28 @@ Features: ✓ Boot counting
        valid_lft forever preferred_lft forever
 ```
 
+**Touchpad** (Semi fonctionnel)
+```
+cat /proc/bus/input/devices
+
+I: Bus=0018 Vendor=04f3 Product=0005 Version=0000
+N: Name="Elan Touchpad"
+P: Phys=
+S: Sysfs=/devices/pci0000:00/808622C1:03/i2c-0/i2c-ELAN1000:00/input/input7
+U: Uniq=
+H: Handlers=event7 mouse0
+B: PROP=5
+B: EV=b
+B: KEY=e520 10000 0 0 0 0
+B: ABS=663800013000003
+```
+
+
+
+cat /sys/class/input/event*/device/name
+Elan Touchpad
+
+
 ------------------------------------------------------------------
 #### A. Live-CD
 ```shell
