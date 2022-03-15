@@ -432,6 +432,23 @@ clear;
 ```
 
 
+#### Optionnel 
+```shell
+clear;
+pacman -S --noconfirm sddm;
+
+echo "[Autologin]
+User=marc
+Session=xfce.desktop
+
+[General]
+Numlock=on
+
+[Theme]
+Current=breeze" > /etc/sddm.conf;
+```
+
+
 ------------------------------------------------------------------
 #### Articles
 ```
