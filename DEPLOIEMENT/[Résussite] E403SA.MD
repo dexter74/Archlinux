@@ -51,10 +51,10 @@ swapoff -a -v;
 ```
 #### E. Formatage des partitions
 ```shell
-echo "yes" | mkfs.fat -F32 /dev/mmcblk0p1;
-echo "yes" | mkswap        /dev/mmcblk0p2;
-echo "yes" | mkfs -t ext4  /dev/mmcblk0p3;
-echo "yes" | mkfs -t ext4  /dev/mmcblk0p4;
+echo "yes" | mkfs.fat -F32 /dev/mmcblk0p1;#EFI
+echo "yes" | mkswap        /dev/mmcblk0p2;#SWAP
+echo "yes" | mkfs -t ext4  /dev/mmcblk0p3;#SYSTEM
+echo "yes" | mkfs -t ext4  /dev/mmcblk0p4;#HOME
 ```
 #### F. Label des Volumes 
 Indispensable pour la valeur qui va chercher UUID.
