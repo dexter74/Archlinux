@@ -138,6 +138,7 @@ Type=local " > /etc/systemd/network/1-lo.network ;
 
 **Wlan** (Automatique)
 `Name=WLAN`
+
 ```
 echo "[Match]
 Name=$(ip link | grep wlan | cut -c 4-7)
@@ -147,8 +148,9 @@ DHCP=ipv4" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
 ```
 
 **Wlan0** (Static)
-```
 `Name=WLAN0`
+
+```
 echo "[Match]
 Name=$(ip link | grep wlan | cut -c 4-8)
 
