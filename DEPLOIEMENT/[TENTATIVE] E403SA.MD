@@ -108,7 +108,6 @@ du -h -d 0 /mnt;
 #### 2. Configuration Réseau
 ```shell
 clear;
-mkdir -p mnt/etc/systemd/network;
 cp /etc/systemd/network/* /mnt/etc/systemd/network;
 ```
 #### 3. FSTAB
