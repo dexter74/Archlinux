@@ -166,46 +166,6 @@ clear;
 genfstab -U /mnt >> /mnt/etc/fstab;
 ```
 
------------------------------------------------------------------------------------
-
-#### 3. Configuration Réseau (Manuel)
-
-Le joker wl* est utilisable
-
-**DHCP** (WLAN0 + ipv4)
-
-```
-echo "[Match]
-Name=$(ip link | grep wlan | cut -c 4-8)
-
-[Network]
-DHCP=ipv4" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
-```
-
-**Static**
-
-`Name=WLAN0`
-
-```
-echo "[Match]
-Name=$(ip link | grep wlan | cut -c 4-8)
-
-[Network]
-DHCP=no
-Address=192.168.1.9/24
-Gateway=192.168.1.1
-DNS=192.168.1.1
-DNS=192.168.1.31" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
-```
-
-
-
-#### 3b. Configuration Réseau (Mode Générique)
-```shell
-clear;
-cp /etc/systemd/network/* /mnt/etc/systemd/network;
-```
-
 ------------------------------------------------------------------
 #### 4. Passage en Chroot
 ```shell
@@ -370,7 +330,6 @@ sudo lspci -vv -s $(lspci | grep Wireless | cut -c 1-7);
 clear;
 exit;
 ```
-
 ------------------------------------------------------------------
 #### Script First-Boot:
 ```shell
@@ -402,6 +361,8 @@ echo "journalctl -u iwd"               > iwd.sh;
 ```
 ------------------------------------------------------------------
 #### Post Démarrage
+
+**Services**
 ```shell
 clear;
 #Gestion Service:
@@ -414,6 +375,44 @@ sh timesyncd.sh
 sh iwd.sh
 ```
 
+
+**Réseau**
+
+```
+echo 'rm -f /etc/systemd/network/*
+
+echo "[Match]
+Name=$(ip link | grep wlan | cut -c 4-8)
+
+[Network]
+DHCP=ipv4" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
+
+clear;
+cat /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;' > wlan_dhcp.sh;
+```
+
+```
+echo 'rm -f /etc/systemd/network/*
+
+echo "[Match]
+Name=$(ip link | grep wlan | cut -c 4-8)
+
+[Network]
+DHCP=no
+Address=192.168.1.9/24
+Gateway=192.168.1.1
+DNS=192.168.1.1
+DNS=192.168.1.31" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
+
+clear;
+cat /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;' > wlan_static.sh;
+```
+
+**Alternative** (Action sous le LiveCD hors CHROOT)
+```shell
+clear;
+cp /etc/systemd/network/* /mnt/etc/systemd/network;
+```
 
 
 ------------------------------------------------------------------
