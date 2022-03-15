@@ -1,9 +1,8 @@
 #### Articles
 ```
-- https://fhackts.wordpress.com/2016/09/09/installing-archlinux-the-efisystemd-boot-way/?unapproved=970&moderation-hash=e8e626944f7a8bca05805782c535eaf4#comment-970
-- https://gist.github.com/imrvelj/c65cd5ca7f5505a65e59204f5a3f7a6d
+https://fhackts.wordpress.com/2016/09/09/installing-archlinux-the-efisystemd-boot-way/?unapproved=970&moderation-hash=e8e626944f7a8bca05805782c535eaf4#comment-970
+https://gist.github.com/imrvelj/c65cd5ca7f5505a65e59204f5a3f7a6d
 ```
-
 
 #### Live-CD
 ```shell
@@ -40,11 +39,62 @@ Partition 4: HOME
 (echo "p")| fdisk /dev/mmcblk0;
 ```
 
-
 #### Formatage des partitions
 ```shell
 echo "yes" | mkfs.fat -F32 /dev/mmcblk0p1;
 echo "yes" | mkswap        /dev/mmcblk0p2;
 echo "yes" | mkfs -t ext4  /dev/mmcblk0p3;
 echo "yes" | mkfs -t ext4  /dev/mmcblk0p4;
+```
+
+#### Label des Volumes 
+Indispensable pour la valeur qui va chercher UUID.
+```shell
+e2label /dev/mmcblk0p1 EFI;
+e2label /dev/mmcblk0p2 SWAP;
+e2label /dev/mmcblk0p3 SYSTEM;
+e2label /dev/mmcblk0p4 HOME;
+```
+
+#### Monter les partitions
+```shell
+mkdir  /mnt/home /mnt/boot
+mount  /dev/mmcblk0p1 /mnt/boot
+mount  /dev/mmcblk0p3 /mnt
+mount  /dev/mmcblk0p4 /mnt/home
+swapon /dev/mmcblk0p2
+df -h
+```
+
+
+#### 
+```shell
+```
+
+#### 
+```shell
+```
+
+#### 
+```shell
+```
+
+#### 
+```shell
+```
+
+#### 
+```shell
+```
+
+#### 
+```shell
+```
+
+#### 
+```shell
+```
+
+#### 
+```shell
 ```
