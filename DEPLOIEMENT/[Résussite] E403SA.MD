@@ -241,6 +241,15 @@ echo 'KEYMAP=fr-latin9'                 > /etc/vconsole.conf;
 echo 'FONT=eurlatgr'                   >> /etc/vconsole.conf;
 echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen;
 locale-gen;
+
+echo 'Section "InputClass"
+    Identifier             "Keyboard Defaults"
+    MatchIsKeyboard        "yes"
+    Option "XkbLayout"     "fr"
+    Option "XkbVariant"    "oss"
+    Option "XkbOptions"    "compose:menu,terminate:ctrl_alt_bksp"
+EndSection' > /etc/X11/xorg.conf.d/00-keyboard.conf;
+
 ```
 ------------------------------------------------------------------
 #### 9. Configuration Host et Hostname
