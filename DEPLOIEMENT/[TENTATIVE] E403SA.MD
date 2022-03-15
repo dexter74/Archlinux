@@ -66,17 +66,27 @@ swapon /dev/mmcblk0p2
 df -h
 ```
 
-
-#### 
+#### [FIX] Mise à jour des Clés PGP
 ```shell
+pacman -Sy --noconfirm archlinux-keyring;
 ```
 
-#### 
+#### Purge du Stockage
 ```shell
+clear;
+rm -r -f /mnt/;
+du -h -d 0 /mnt;
+cd /mnt;
 ```
 
-#### 
+#### Installation des paquets
 ```shell
+clear;
+pacstrap /mnt base base-devel bash-completion curl dhclient git go intel-ucode iw iwd lsb-release man nano neofetch ntfs-3g ntp openssh p7zip samba smbclient sudo unzip wget zip;
+pacstrap /mnt xorg-server xorg-xinit xf86-video-vesa;
+pacstrap /mnt linux;
+pacstrap /mnt linux-firmware;
+du -h -d 0 /mnt;
 ```
 
 #### 
