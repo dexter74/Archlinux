@@ -31,7 +31,6 @@ Features: ✓ Boot counting
 #KO: pacman -Sy --noconfirm xinput
 #KO: pacman -Sy --noconfirm libinput-gestures
 
-
 Aller dans Applications > Paramètres Sours et pavé tactile > Pavé tactile > Cocher les cas
 
 
@@ -53,6 +52,20 @@ B: ABS=663800013000003
 Elan Touchpad
 ```
 
+
+**Son** (Non Fonctionnel
+````
+
+https://github.com/dexter74/Archlinux/blob/9230efcb9410e66973ec38be0073153a9be5e469/Documentation/Installation/11.TEST.MD
+pacman -Sy --noconfirm pipewire pipewire-alsa pipewire-docs pipewire-jack pipewire-media-session pipewire-pulse pipewire-zeroconf;
+
+systemctl enable systemd-homed;
+systemctl enable systemd-networkd;
+systemctl enable systemd-resolved;
+systemctl enable systemd-timesyncd;
+systemctl --user enable {pipewire,pulseaudio};
+
+```
 
 
 
