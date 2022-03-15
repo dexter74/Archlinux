@@ -106,25 +106,6 @@ pacstrap /mnt zip;
 du -h -d 0 /mnt;
 ```
 
-**Erreur**
-```
-==> WARNING: Possibly missing firmware for module: qed
-==> WARNING: Possibly missing firmware for module: cxgb3
-==> WARNING: Possibly missing firmware for module: cxgb4
-==> WARNING: Possibly missing firmware for module: bfa
-==> WARNING: Possibly missing firmware for module: qla2xxx
-==> WARNING: Possibly missing firmware for module: aic94xx
-==> WARNING: Possibly missing firmware for module: wd719x
-==> WARNING: Possibly missing firmware for module: advansys
-==> WARNING: Possibly missing firmware for module: isci
-==> WARNING: Possibly missing firmware for module: csiostor
-==> WARNING: Possibly missing firmware for module: qla1280
-==> WARNING: Possibly missing firmware for module: xhci_pci
-==> WARNING: Possibly missing firmware for module: ums_eneub6250
-```
-
-
-
 #### 2. Configuration Réseau
 ```shell
 clear;
@@ -273,14 +254,24 @@ su - marc;
 ```shell
 clear;
 git clone https://aur.archlinux.org/yay.git /tmp/yay;
-cd /tmp/yay && makepkg -si --noconfirm;
+cd /tmp/yay && makepkg -si --noconfirm
+cd;
 ```
 
 ------------------------------------------------------------------
-#### Pilotes
+#### Récupération des information Système 
 ```shell
 clear;
-sudo mkinitcpio -p linux;
+sudo lspci -nn -s $(lspci | grep Wireless | cut -c 1-7);
+sudo lspci -n  -s $(lspci | grep Wireless | cut -c 1-7);
+sudo lspci -v  -s $(lspci | grep Wireless | cut -c 1-7);
+sudo lspci -vv -s $(lspci | grep Wireless | cut -c 1-7);
+
+02:00.0 0280: 8086:08b1 (rev cb)
+        Subsystem: 8086:4c70
+        Kernel driver in use: iwlwifi
+02:00.0 0280: 8086:08b1 (rev cb)
+
 ```
 ------------------------------------------------------------------
 #### Passage à Root
@@ -297,17 +288,23 @@ exit;
 #### Script First-Boot:
 ```shell
 clear;
+echo "####################################
+clear;
+systemctl \$1 systemd-resolved;
+systemctl \$1 systemd-networkd;
+systemctl \$1 systemd-timesyncd;
+systemctl \$1 iwd;
+####################################" > services.sh;
 
-echo "systemctl $1 {systemd-resolved,systemd-networkd,systemd-timesyncd,iwd};" > services.sh;
 echo "INTERFACE='wlan0'
 SSID='ASUS_A8_5G'
 KEY='Azerty74@123'
-iwctl station $INTERFACE connect $SSID --passphrase $KEY;" > wifi.sh;
+iwctl station \$INTERFACE connect \$SSID --passphrase \$KEY;" > wifi.sh;
 
-echo "journalctl -u systemd-resolved"  > systemd-resolved.sh;
-echo "journalctl -u systemd-networkd"  > systemd-networkd.sh;
-echo "journalctl -u systemd-timesyncd" > systemd-timesyncd.sh;
-echo "journalctl -u iwd"               > systemd-iwd.sh;
+echo "journalctl -u systemd-resolved"  > resolved.sh;
+echo "journalctl -u systemd-networkd"  > networkd.sh;
+echo "journalctl -u systemd-timesyncd" > timesyncd.sh;
+echo "journalctl -u iwd"               > iwd.sh;
 ```
 
 
@@ -316,8 +313,14 @@ echo "journalctl -u iwd"               > systemd-iwd.sh;
 #### Post Démarrage
 ```shell
 clear;
-sh services.sh enable;
-sh services.sh start;
+#Gestion Service:
+sh services.sh {enable,start,status}
+
+#Log service:
+sh resolved.sh
+sh networkd.sh
+sh timesyncd.sh
+sh iwd.sh
 ```
 
 
