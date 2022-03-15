@@ -353,7 +353,8 @@ systemctl \$1 iwd;
 echo "INTERFACE='wlan0'
 SSID='ASUS_A8_5G'
 KEY='Azerty74@123'
-iwctl station \$INTERFACE connect \$SSID --passphrase \$KEY;" > /root/scripts/wifi.sh;
+iwctl station \$INTERFACE connect \$SSID --passphrase \$KEY;
+iwctl station wlan0 show" > /root/scripts/wifi.sh;
 
 
 echo "journalctl -u systemd-resolved"  > /root/scripts/resolved.sh;
