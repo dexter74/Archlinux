@@ -230,20 +230,26 @@ bootctl --path=/boot install;
 ```shell
 clear;
 UUID_SYSTEM=$(blkid | grep 'LABEL="SYSTEM" UUID=' | cut -d '"' -f 4);
-echo "default  arch.*" > /boot/loader/loader.conf;
-echo "title Arch Linux
+echo "timeout 3
+default  arch01.conf
+editor no" > /boot/loader/loader.conf;
+
+
+echo "title Arch Linux (Normal)
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 initrd /intel-ucode.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch01.conf;
 
-echo "title Arch Linux (fallback initramfs)
+
+echo "title Arch Linux (Recovery)
 linux /vmlinuz-linux
 initrd /initramfs-linux-fallback.img
 initrd /intel-ucode.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch02.conf;
-# bootctl update;
-# bootctl;
+
+bootctl update;
+bootctl;
 ```
 ------------------------------------------------------------------
 #### 7. Fuseau Horaire
