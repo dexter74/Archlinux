@@ -147,23 +147,19 @@ genfstab -U /mnt >> /mnt/etc/fstab;
 
 #### 2. Configuration Réseau (Manuel)
 
-Pour la valeur Name on peut utiliser le joker. (wl*, et*, br*)
+Le joker wl* est utilisable
 
-**Wlan** (Automatique)
-
-`Name=WLAN`
+**DHCP** (WLAN0 + ipv4)
 
 ```
 echo "[Match]
-Name=$(ip link | grep wlan | cut -c 4-7)
+Name=$(ip link | grep wlan | cut -c 4-8)
 
 [Network]
 DHCP=ipv4" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
 ```
 
-
-
-**Wlan0** (Static)
+**Static**
 
 `Name=WLAN0`
 
