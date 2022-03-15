@@ -334,6 +334,7 @@ exit;
 #### Script First-Boot:
 ```shell
 clear;
+mkdir -p /root/scripts;
 echo "####################################
 clear;
 systemctl \$1 systemd-resolved;
@@ -347,37 +348,24 @@ systemctl \$1 iwd;
 # Expérimental:
 # systemctl --user enable --now pipewire
 
-####################################" > services.sh;
+####################################" > /root/scripts/services.sh;
 
 echo "INTERFACE='wlan0'
 SSID='ASUS_A8_5G'
 KEY='Azerty74@123'
-iwctl station \$INTERFACE connect \$SSID --passphrase \$KEY;" > wifi.sh;
+iwctl station \$INTERFACE connect \$SSID --passphrase \$KEY;" > /root/scripts/wifi.sh;
 
-echo "journalctl -u systemd-resolved"  > resolved.sh;
-echo "journalctl -u systemd-networkd"  > networkd.sh;
-echo "journalctl -u systemd-timesyncd" > timesyncd.sh;
-echo "journalctl -u iwd"               > iwd.sh;
+
+echo "journalctl -u systemd-resolved"  > /root/scripts/resolved.sh;
+echo "journalctl -u systemd-networkd"  > /root/scripts/networkd.sh;
+echo "journalctl -u systemd-timesyncd" > /root/scripts/timesyncd.sh;
+echo "journalctl -u smb"               > /root/scripts/smb.sh;
+echo "journalctl -u sddm"              > /root/scripts/sddm.sh;
+echo "journalctl -u sshd"              > /root/scripts/sshd.sh;
+echo "journalctl -u iwd"               > /root/scripts/iwd.sh;
 ```
-------------------------------------------------------------------
-#### Post Démarrage
-
-**Services**
-```shell
-clear;
-#Gestion Service:
-sh services.sh {enable,start,status}
-
-#Log service:
-sh resolved.sh
-sh networkd.sh
-sh timesyncd.sh
-sh iwd.sh
-```
-
 
 **Réseau**
-
 ```
 echo 'rm -f /etc/systemd/network/*
 
@@ -388,7 +376,7 @@ Name=$(ip link | grep wlan | cut -c 4-8)
 DHCP=ipv4" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
 
 clear;
-cat /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;' > wlan_dhcp.sh;
+cat /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;' > /root/scripts/wlan_dhcp.sh;
 ```
 
 ```
@@ -405,13 +393,27 @@ DNS=192.168.1.1
 DNS=192.168.1.31" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
 
 clear;
-cat /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;' > wlan_static.sh;
+cat /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;' > /root/scripts/wlan_static.sh;
 ```
 
 **Alternative** (Action sous le LiveCD hors CHROOT)
 ```shell
 clear;
 cp /etc/systemd/network/* /mnt/etc/systemd/network;
+```
+
+------------------------------------------------------------------
+#### Post Démarrage
+
+**Services**
+```shell
+clear;
+#Gestion Service:
+/root/scripts/services.sh start;
+/root/scripts/services.sh enable;
+/root/scripts/wlan_dhcp.sh;
+/root/scripts/wlan_static.sh;
+/root/scripts/wifi.sh;
 ```
 
 
