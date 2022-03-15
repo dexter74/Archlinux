@@ -106,6 +106,7 @@ pacstrap /mnt zip;
 du -h -d 0 /mnt;
 ```
 
+
 #### 2. Configuration Réseau
 ```shell
 clear;
