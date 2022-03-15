@@ -159,25 +159,11 @@ pacstrap /mnt pipewire;    # Son
 
 
 ````
-https://wiki.archlinux.fr/services
+# https://wiki.archlinux.fr/services
 ````
 
 
-
-
-
-
-
-
-
-
-
-#### 2. Configuration Réseau (Mode Automatique)
-```shell
-clear;
-cp /etc/systemd/network/* /mnt/etc/systemd/network;
-```
-#### 3. FSTAB
+#### 2. FSTAB
 ```shell
 clear;
 genfstab -U /mnt >> /mnt/etc/fstab;
@@ -185,7 +171,7 @@ genfstab -U /mnt >> /mnt/etc/fstab;
 
 -----------------------------------------------------------------------------------
 
-#### 2. Configuration Réseau (Manuel)
+#### 3. Configuration Réseau (Manuel)
 
 Le joker wl* est utilisable
 
@@ -217,6 +203,11 @@ DNS=192.168.1.31" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).n
 
 
 
+#### 3b. Configuration Réseau (Mode Générique)
+```shell
+clear;
+cp /etc/systemd/network/* /mnt/etc/systemd/network;
+```
 
 
 
