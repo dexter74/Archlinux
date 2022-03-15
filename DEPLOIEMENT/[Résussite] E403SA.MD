@@ -63,6 +63,7 @@ e2label /dev/mmcblk0p1 EFI;
 e2label /dev/mmcblk0p2 SWAP;
 e2label /dev/mmcblk0p3 SYSTEM;
 e2label /dev/mmcblk0p4 HOME;
+blkid | grep LABEL | cut -d "U" -f 1;
 ```
 #### G. Monter les partitions
 ```shell
