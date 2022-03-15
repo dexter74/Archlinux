@@ -154,14 +154,11 @@ clear;
 pacstrap /mnt pavucontrol; # Contrôleur de son
 pacstrap /mnt pipewire;    # Son
                            #systemctl --user enable --now pipewire
-
 ```
 
-
-````
+```
 # https://wiki.archlinux.fr/services
-````
-
+```
 
 #### 2. FSTAB
 ```shell
@@ -208,10 +205,6 @@ DNS=192.168.1.31" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).n
 clear;
 cp /etc/systemd/network/* /mnt/etc/systemd/network;
 ```
-
-
-
-
 
 ------------------------------------------------------------------
 #### 4. Passage en Chroot
@@ -388,8 +381,13 @@ systemctl \$1 systemd-resolved;
 systemctl \$1 systemd-networkd;
 systemctl \$1 systemd-timesyncd;
 systemctl \$1 smb;
+systemctl \$1 sddm;
 systemctl \$1 sshd;
 systemctl \$1 iwd;
+
+# Expérimental:
+# systemctl --user enable --now pipewire
+
 ####################################" > services.sh;
 
 echo "INTERFACE='wlan0'
