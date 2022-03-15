@@ -1,9 +1,32 @@
-------------------------------------------------------------------
-#### Articles
+# E4034SA
+
+**bootctl**
 ```
-https://fhackts.wordpress.com/2016/09/09/installing-archlinux-the-efisystemd-boot-way/?unapproved=970&moderation-hash=e8e626944f7a8bca05805782c535eaf4#comment-970
-https://gist.github.com/imrvelj/c65cd5ca7f5505a65e59204f5a3f7a6d
+Features: ✓ Boot counting
+          ✓ Menu timeout control
+          ✓ One-shot menu timeout control
+          ✓ Default entry control
+          ✓ One-shot entry control
+          ✓ Support for XBOOTLDR partition
+          ✓ Support for passing random seed to OS
+          ✓ Load drop-in drivers
+          ✓ Boot loader sets ESP information
 ```
+
+**Network**
+```
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 7c:5c:f8:ff:5f:4b brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.9/24 metric 1024 brd 192.168.1.255 scope global dynamic wlan0
+       valid_lft 86145sec preferred_lft 86145sec
+    inet6 fe80::7e5c:f8ff:feff:5f4b/64 scope link
+       valid_lft forever preferred_lft forever
+```
+
+
+
+
+
 ------------------------------------------------------------------
 #### A. Live-CD
 ```shell
@@ -78,6 +101,7 @@ pacstrap /mnt bash-completion;
 pacstrap /mnt curl;
 pacstrap /mnt dhclient;
 pacstrap /mnt dhcpcd;
+pacstrap /mnt dnsutils;
 pacstrap /mnt fakeroot;
 pacstrap /mnt git;
 pacstrap /mnt go;
@@ -86,6 +110,7 @@ pacstrap /mnt iwd;
 pacstrap /mnt iw;
 pacstrap /mnt linux;
 pacstrap /mnt linux-firmware;
+pacstrap /mnt logrotate;
 pacstrap /mnt lsb-release;
 pacstrap /mnt man;
 pacstrap /mnt nano;
@@ -355,7 +380,6 @@ echo "journalctl -u systemd-networkd"  > networkd.sh;
 echo "journalctl -u systemd-timesyncd" > timesyncd.sh;
 echo "journalctl -u iwd"               > iwd.sh;
 ```
-
 ------------------------------------------------------------------
 #### Post Démarrage
 ```shell
@@ -371,3 +395,10 @@ sh iwd.sh
 ```
 
 
+
+------------------------------------------------------------------
+#### Articles
+```
+https://fhackts.wordpress.com/2016/09/09/installing-archlinux-the-efisystemd-boot-way/?unapproved=970&moderation-hash=e8e626944f7a8bca05805782c535eaf4#comment-970
+https://gist.github.com/imrvelj/c65cd5ca7f5505a65e59204f5a3f7a6d
+```
