@@ -127,6 +127,7 @@ genfstab -U /mnt >> /mnt/etc/fstab;
 
 Pour la valeur Name on peut utiliser le joker. (wl*, et*, br*)
 
+
 **Loopback**
 ```
 echo "[Match]
