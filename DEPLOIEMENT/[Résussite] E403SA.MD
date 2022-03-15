@@ -370,11 +370,6 @@ sudo lspci -nn -s $(lspci | grep Wireless | cut -c 1-7);
 sudo lspci -n  -s $(lspci | grep Wireless | cut -c 1-7);
 sudo lspci -v  -s $(lspci | grep Wireless | cut -c 1-7);
 sudo lspci -vv -s $(lspci | grep Wireless | cut -c 1-7);
-
-02:00.0 0280: 8086:08b1 (rev cb)
-        Subsystem: 8086:4c70
-        Kernel driver in use: iwlwifi
-02:00.0 0280: 8086:08b1 (rev cb)
 ```
 ------------------------------------------------------------------
 #### Passage à Root
