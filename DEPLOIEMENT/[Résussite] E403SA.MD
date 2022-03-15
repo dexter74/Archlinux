@@ -1,6 +1,7 @@
 ------------------------------------------------------------------
 #### A. Live-CD
 ```shell
+loadkeys fr-pc;
 iwctl station list;
 iwctl station wlan0 connect MONRESEAUWIFI --passphrase MONMDP;
 iwctl station wlan0 show;
