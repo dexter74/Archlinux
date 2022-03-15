@@ -107,6 +107,11 @@ du -h -d 0 /mnt;
 ```
 
 
+**Paquets supplémentaire**
+````
+https://wiki.archlinux.fr/services
+````
+
 #### 2. Configuration Réseau (Mode Automatique)
 ```shell
 clear;
