@@ -107,7 +107,7 @@ du -h -d 0 /mnt;
 ```
 
 
-#### 2. Configuration Réseau
+#### 2. Configuration Réseau (Mode Automatique)
 ```shell
 clear;
 cp /etc/systemd/network/* /mnt/etc/systemd/network;
@@ -117,6 +117,10 @@ cp /etc/systemd/network/* /mnt/etc/systemd/network;
 clear;
 genfstab -U /mnt >> /mnt/etc/fstab;
 ```
+
+#### 2. Configuration Réseau (Manue)
+
+
 ------------------------------------------------------------------
 #### 4. Passage en Chroot
 ```shell
@@ -272,7 +276,6 @@ sudo lspci -vv -s $(lspci | grep Wireless | cut -c 1-7);
         Subsystem: 8086:4c70
         Kernel driver in use: iwlwifi
 02:00.0 0280: 8086:08b1 (rev cb)
-
 ```
 ------------------------------------------------------------------
 #### Passage à Root
@@ -280,10 +283,6 @@ sudo lspci -vv -s $(lspci | grep Wireless | cut -c 1-7);
 clear;
 exit;
 ```
-
-
-
-
 
 ------------------------------------------------------------------
 #### Script First-Boot:
@@ -294,6 +293,8 @@ clear;
 systemctl \$1 systemd-resolved;
 systemctl \$1 systemd-networkd;
 systemctl \$1 systemd-timesyncd;
+systemctl \$1 smb;
+systemctl \$1 sshd;
 systemctl \$1 iwd;
 ####################################" > services.sh;
 
@@ -307,8 +308,6 @@ echo "journalctl -u systemd-networkd"  > networkd.sh;
 echo "journalctl -u systemd-timesyncd" > timesyncd.sh;
 echo "journalctl -u iwd"               > iwd.sh;
 ```
-
-
 
 ------------------------------------------------------------------
 #### Post Démarrage
