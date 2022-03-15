@@ -143,22 +143,14 @@ clear;
 genfstab -U /mnt >> /mnt/etc/fstab;
 ```
 
+-----------------------------------------------------------------------------------
+
 #### 2. Configuration Réseau (Manuel)
 
 Pour la valeur Name on peut utiliser le joker. (wl*, et*, br*)
 
-**Loopback**
-```
-echo "[Match]
-Name=lo
-
-[Link]
-RequiredForOnline=yes
-Destination=0.0.0.0/0
-Type=local " > /etc/systemd/network/1-lo.network ;
-```
-
 **Wlan** (Automatique)
+
 `Name=WLAN`
 
 ```
@@ -169,7 +161,10 @@ Name=$(ip link | grep wlan | cut -c 4-7)
 DHCP=ipv4" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
 ```
 
+
+
 **Wlan0** (Static)
+
 `Name=WLAN0`
 
 ```
@@ -183,6 +178,13 @@ Gateway=192.168.1.1
 DNS=192.168.1.1
 DNS=192.168.1.31" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
 ```
+
+
+
+
+
+
+
 
 ------------------------------------------------------------------
 #### 4. Passage en Chroot
