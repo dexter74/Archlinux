@@ -37,6 +37,13 @@ B: PROP=5
 B: EV=b
 B: KEY=e520 10000 0 0 0 0
 B: ABS=663800013000003
+
+pacman -Sy --noconfirm libinput
+pacman -Sy --noconfirm synaptics
+pacman -Sy --noconfirm xf86-input-libinput
+
+#KO: pacman -Sy --noconfirm xinput
+#KO: pacman -Sy --noconfirm libinput-gestures
 ```
 
 
