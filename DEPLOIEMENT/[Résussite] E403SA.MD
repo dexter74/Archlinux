@@ -410,6 +410,7 @@ cp /etc/systemd/network/* /mnt/etc/systemd/network;
 clear;
 #Gestion Service:
 /root/scripts/services.sh start;
+/root/scripts/services.sh status;
 /root/scripts/services.sh enable;
 /root/scripts/wlan_dhcp.sh;
 /root/scripts/wlan_static.sh;
