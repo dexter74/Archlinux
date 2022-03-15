@@ -23,10 +23,6 @@ Features: ✓ Boot counting
        valid_lft forever preferred_lft forever
 ```
 
-
-
-
-
 ------------------------------------------------------------------
 #### A. Live-CD
 ```shell
@@ -131,7 +127,6 @@ pacstrap /mnt zip;
 du -h -d 0 /mnt;
 ```
 
-
 **Paquets supplémentaire**
 ````
 https://wiki.archlinux.fr/services
@@ -151,7 +146,6 @@ genfstab -U /mnt >> /mnt/etc/fstab;
 #### 2. Configuration Réseau (Manuel)
 
 Pour la valeur Name on peut utiliser le joker. (wl*, et*, br*)
-
 
 **Loopback**
 ```
@@ -190,9 +184,6 @@ DNS=192.168.1.1
 DNS=192.168.1.31" > /etc/systemd/network/2-$(ip link | grep wlan | cut -c 4-7).network;
 ```
 
-
-
-
 ------------------------------------------------------------------
 #### 4. Passage en Chroot
 ```shell
@@ -215,12 +206,12 @@ echo "title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 initrd /intel-ucode.img
-options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf;
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch01.conf;
 
 echo "title Arch Linux (fallback initramfs)
 linux /vmlinuz-linux
 initrd /initramfs-linux-fallback.img
-options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf;
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch02.conf;
 # bootctl update;
 # bootctl;
 ```
