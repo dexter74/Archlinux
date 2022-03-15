@@ -89,7 +89,7 @@ du -h -d 0 /mnt;
 cd /mnt;
 ```
 
-#### 1. Installation des paquets
+#### 1. Installation des paquets (Base)
 ```shell
 clear;
 pacstrap /mnt base;
@@ -128,10 +128,49 @@ pacstrap /mnt zip;
 du -h -d 0 /mnt;
 ```
 
-**Paquets supplémentaire**
+#### 1. Installation des paquets (Supplémentaire)
+
+**Gestionnaire de Connexion**
+```shell
+clear;
+pacstrap /mnt sddm;
+```
+
+**XFCE4** (Pas testé)
+```shell
+clear;
+pacstrap /mnt xfce4;
+pacstrap /mnt xfce4-goodies;
+pacstrap /mnt xfce4-dev-tools;
+pacstrap /mnt gvfs;
+pacstrap /mnt thunar-archive-plugin;
+pacstrap /mnt thunar-media-tags-plugin;
+pacstrap /mnt thunar-volman xfdesktop;
+```
+
+**Supplément** (Pas testé)
+```shell
+clear;
+pacstrap /mnt pavucontrol; # Contrôleur de son
+pacstrap /mnt pipewire;    # Son
+                           #systemctl --user enable --now pipewire
+
+```
+
+
 ````
 https://wiki.archlinux.fr/services
 ````
+
+
+
+
+
+
+
+
+
+
 
 #### 2. Configuration Réseau (Mode Automatique)
 ```shell
