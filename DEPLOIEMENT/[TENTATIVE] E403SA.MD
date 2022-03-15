@@ -5,7 +5,7 @@ https://fhackts.wordpress.com/2016/09/09/installing-archlinux-the-efisystemd-boo
 https://gist.github.com/imrvelj/c65cd5ca7f5505a65e59204f5a3f7a6d
 ```
 ------------------------------------------------------------------
-#### Live-CD
+#### A. Live-CD
 ```shell
 loadkeys fr-pc;
 iwctl station list;
@@ -14,13 +14,13 @@ iwctl station wlan0 show;
 passwd root;
 systemctl start sshd;
 ```
-#### Démontage des partitions
+#### B. Démontage des partitions
 ```shell
 clear;
 umount -R -f /mnt /mnt/*;
 swapoff -a -v;
 ```
-#### Partitionnements
+#### D. Partitionnements
 
 ```shell
 (echo "g"; echo "p"; echo "w") | fdisk /dev/mmcblk0;
@@ -30,14 +30,14 @@ swapoff -a -v;
 (echo "n"; echo "4"; echo ""; echo "+81.5G" ; echo "t"; echo "4"; echo "28"; echo "w";)  | fdisk /dev/mmcblk0;#HOME
 (echo "p")| fdisk /dev/mmcblk0;
 ```
-#### Formatage des partitions
+#### E. Formatage des partitions
 ```shell
 echo "yes" | mkfs.fat -F32 /dev/mmcblk0p1;
 echo "yes" | mkswap        /dev/mmcblk0p2;
 echo "yes" | mkfs -t ext4  /dev/mmcblk0p3;
 echo "yes" | mkfs -t ext4  /dev/mmcblk0p4;
 ```
-#### Label des Volumes 
+#### F. Label des Volumes 
 Indispensable pour la valeur qui va chercher UUID.
 ```shell
 e2label /dev/mmcblk0p1 EFI;
@@ -45,7 +45,7 @@ e2label /dev/mmcblk0p2 SWAP;
 e2label /dev/mmcblk0p3 SYSTEM;
 e2label /dev/mmcblk0p4 HOME;
 ```
-#### Monter les partitions
+#### G. Monter les partitions
 ```shell
 mkdir  /mnt/home /mnt/boot
 mount  /dev/mmcblk0p1 /mnt/boot
@@ -54,37 +54,43 @@ mount  /dev/mmcblk0p4 /mnt/home
 swapon /dev/mmcblk0p2
 df -h
 ```
-#### Purge du Stockage
+#### I. Purge du Stockage
 ```shell
 clear;
 rm -r -f /mnt/;
 du -h -d 0 /mnt;
 cd /mnt;
 ```
-#### [FIX] Mise à jour des Clés PGP
+
+
+
+
+#### 0. [FIX] Mise à jour des Clés PGP
 ```shell
 pacman -Sy --noconfirm archlinux-keyring;
 ```
-#### Installation des paquets
+#### 1. Installation des paquets
 ```shell
 clear;
 pacstrap /mnt base;
-pacstrap /mnt intel-ucode;
-pacstrap /mnt linux;
-pacstrap /mnt linux-firmware;
-pacstrap /mnt ntfs-3g;
-pacstrap /mnt dhclient
-pacstrap /mnt iwd;
-pacstrap /mnt iw;
+pacstrap /mnt dhclient;
+pacstrap /mnt dhcpcd;
 pacstrap /mnt base-devel;
 pacstrap /mnt bash-completi;on;
 pacstrap /mnt curl;
+pacstrap /mnt fakeroot;
 pacstrap /mnt git;
-pacstrap /mnt go; 
+pacstrap /mnt go;
+pacstrap /mnt intel-ucode;
+pacstrap /mnt iwd;
+pacstrap /mnt iw;
+pacstrap /mnt linux;
+pacstrap /mnt linux-firmware;
 pacstrap /mnt lsb-release;
 pacstrap /mnt man;
 pacstrap /mnt nano;
 pacstrap /mnt neofetch;
+pacstrap /mnt ntfs-3g;
 pacstrap /mnt ntp;
 pacstrap /mnt openssh;
 pacstrap /mnt p7zip;
@@ -93,40 +99,36 @@ pacstrap /mnt smbclient;
 pacstrap /mnt sudo;
 pacstrap /mnt unzip;
 pacstrap /mnt wget;
-pacstrap /mnt zip;
 pacstrap /mnt xorg-server;
 pacstrap /mnt xf86-video-vesa;
 pacstrap /mnt xorg-xinit;
+pacstrap /mnt zip;
 du -h -d 0 /mnt;
 ```
-#### Configuration Réseau
+#### 3. Configuration Réseau
 ```shell
 clear;
 cp /etc/systemd/network/* /mnt/etc/systemd/network
 ```
-#### FSTAB
+#### 4. FSTAB
 ```shell
 clear;
 genfstab -U /mnt >> /mnt/etc/fstab;
 ```
-
-
-
-
 ------------------------------------------------------------------
-#### Passage en Chroot
+#### 5. Passage en Chroot
 ```shell
 clear;
 arch-chroot /mnt;
 ```
 ------------------------------------------------------------------
-#### BootLoader (Install)
+#### 6. BootLoader (Install)
 ```shell
 clear;
 bootctl --path=/boot install;
 ```
 ------------------------------------------------------------------
-#### Bootloader (Intel)
+#### 7. Bootloader (Intel)
 ```shell
 UUID_SYSTEM=$(blkid | grep 'LABEL="SYSTEM" UUID=' | cut -d '"' -f 4);
 
@@ -146,7 +148,7 @@ options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf;
 # bootctl;
 ```
 ------------------------------------------------------------------
-#### Fuseau Horaire
+#### 8. Fuseau Horaire
 
 ```shell
 clear;
@@ -158,7 +160,7 @@ echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc;
 ```
 
 ------------------------------------------------------------------
-#### Clavier et Langue
+#### 9. Clavier et Langue
 ```shell
 clear;
 loadkeys fr-pc;
@@ -184,7 +186,7 @@ echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen;
 locale-gen;
 ```
 ------------------------------------------------------------------
-#### Configuration Host et Hostname
+#### 10. Configuration Host et Hostname
 ```shell
 clear;
 NAME=Arch
@@ -204,7 +206,7 @@ ff02::2 ip6-allrouters
 ```
 
 ------------------------------------------------------------------
-#### Utilisateurs
+#### 11. Utilisateurs
 ```shell
 clear;
 /usr/sbin/useradd \
@@ -219,7 +221,7 @@ clear;
 ```
 
 ------------------------------------------------------------------
-#### Changement Mot de passe
+#### 12. Changement Mot de passe
 ```shell
 clear;
 (echo "root:root")  | chpasswd;
@@ -227,7 +229,7 @@ clear;
 ```
 
 ------------------------------------------------------------------
-#### Modification des fichiers de Configuration
+#### 13. Modification des fichiers de Configuration
 ```shell
 clear;
 
@@ -245,23 +247,27 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 #### 
 ```shell
 clear;
+su - marc;
+```
 
+#### Yaourt
+```shell
+clear;
+cd /tmp;
+git clone https://aur.archlinux.org/yay.git;
+cd yay ;
+makepkg -si --noconfirm;
 ```
 
 
 ------------------------------------------------------------------
-#### 
+#### Pilotes
 ```shell
 clear;
 
-```
-
-
-------------------------------------------------------------------
-#### 
-```shell
-clear;
-
+# yay -S --noconfirm aic94xx-firmware;
+# yay -S --noconfirm upd72020x-fw;
+# yay -S --noconfirm wd719x-firmware;
 ```
 
 
