@@ -4,6 +4,7 @@ https://fhackts.wordpress.com/2016/09/09/installing-archlinux-the-efisystemd-boo
 https://gist.github.com/imrvelj/c65cd5ca7f5505a65e59204f5a3f7a6d
 ```
 
+------------------------------------------------------------------
 #### Live-CD
 ```shell
 loadkeys fr-pc;
@@ -66,11 +67,6 @@ swapon /dev/mmcblk0p2
 df -h
 ```
 
-#### [FIX] Mise à jour des Clés PGP
-```shell
-pacman -Sy --noconfirm archlinux-keyring;
-```
-
 #### Purge du Stockage
 ```shell
 clear;
@@ -79,6 +75,12 @@ du -h -d 0 /mnt;
 cd /mnt;
 ```
 
+------------------------------------------------------------------
+#### [FIX] Mise à jour des Clés PGP
+```shell
+pacman -Sy --noconfirm archlinux-keyring;
+```
+------------------------------------------------------------------
 #### Installation des paquets
 ```shell
 clear;
@@ -88,23 +90,97 @@ pacstrap /mnt linux;
 pacstrap /mnt linux-firmware;
 du -h -d 0 /mnt;
 ```
-
-#### 
+------------------------------------------------------------------
+#### Configuration Réseau
 ```shell
+clear;
+cp /etc/systemd/network/* /mnt/etc/systemd/network
+```
+------------------------------------------------------------------
+#### FSTAB
+```shell
+clear;
+genfstab -U /mnt >> /mnt/etc/fstab;
+```
+------------------------------------------------------------------
+#### Passage en Chroot
+```shell
+clear;
+arch-chroot /mnt;
+```
+------------------------------------------------------------------
+#### BootLoader (Install)
+```shell
+clear;
+bootctl --path=/boot install;
+```
+------------------------------------------------------------------
+#### Bootloader (Intel)
+```shell
+UUID_SYSTEM=$(blkid | grep 'LABEL="SYSTEM" UUID=' | cut -d '"' -f 4);
+
+echo "default  arch.*" > /boot/loader/loader.conf;
+
+echo "title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+initrd /intel-ucode.img
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf;
+
+echo "title Arch Linux (fallback initramfs)
+linux /vmlinuz-linux
+initrd /initramfs-linux-fallback.img
+options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf;
+# bootctl update;
+# bootctl;
 ```
 
+------------------------------------------------------------------
 #### 
 ```shell
+clear;
+
 ```
 
+------------------------------------------------------------------
 #### 
 ```shell
+clear;
+
 ```
 
+------------------------------------------------------------------
 #### 
 ```shell
+clear;
+
 ```
 
+------------------------------------------------------------------
 #### 
 ```shell
+clear;
+
 ```
+
+------------------------------------------------------------------
+#### 
+```shell
+clear;
+
+```
+
+------------------------------------------------------------------
+#### 
+```shell
+clear;
+
+```
+
+------------------------------------------------------------------
+#### 
+```shell
+clear;
+
+```
+
