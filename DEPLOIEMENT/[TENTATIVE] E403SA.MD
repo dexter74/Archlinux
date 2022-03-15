@@ -63,8 +63,6 @@ cd /mnt;
 ```
 
 
-
-
 #### 0. [FIX] Mise à jour des Clés PGP
 ```shell
 pacman -Sy --noconfirm archlinux-keyring;
