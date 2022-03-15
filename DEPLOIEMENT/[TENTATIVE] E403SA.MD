@@ -84,10 +84,35 @@ pacman -Sy --noconfirm archlinux-keyring;
 #### Installation des paquets
 ```shell
 clear;
-pacstrap /mnt base base-devel bash-completion curl dhclient git go intel-ucode iw iwd lsb-release man nano neofetch ntfs-3g ntp openssh p7zip samba smbclient sudo unzip wget zip;
-pacstrap /mnt xorg-server xorg-xinit xf86-video-vesa;
+pacstrap /mnt base;
+pacstrap /mnt intel-ucode;
 pacstrap /mnt linux;
 pacstrap /mnt linux-firmware;
+pacstrap /mnt ntfs-3g;
+pacstrap /mnt dhclient
+pacstrap /mnt iwd;
+pacstrap /mnt iw;
+pacstrap /mnt base-devel;
+pacstrap /mnt bash-completi;on;
+pacstrap /mnt curl;
+pacstrap /mnt git;
+pacstrap /mnt go; 
+pacstrap /mnt lsb-release;
+pacstrap /mnt man;
+pacstrap /mnt nano;
+pacstrap /mnt neofetch;
+pacstrap /mnt ntp;
+pacstrap /mnt openssh;
+pacstrap /mnt p7zip;
+pacstrap /mnt samba;
+pacstrap /mnt smbclient;
+pacstrap /mnt sudo;
+pacstrap /mnt unzip;
+pacstrap /mnt wget;
+pacstrap /mnt zip;
+pacstrap /mnt xorg-server;
+pacstrap /mnt xf86-video-vesa;
+pacstrap /mnt xorg-xinit;
 du -h -d 0 /mnt;
 ```
 ------------------------------------------------------------------
