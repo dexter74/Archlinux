@@ -126,6 +126,8 @@ pacstrap /mnt xf86-video-vesa;
 pacstrap /mnt xorg-xinit;
 pacstrap /mnt zip;
 du -h -d 0 /mnt;
+
+# pacstrap /mnt linux-headers;
 ```
 
 #### 1. Installation des paquets (Supplémentaire)
@@ -447,6 +449,21 @@ Numlock=on
 [Theme]
 Current=breeze" > /etc/sddm.conf;
 ```
+
+
+
+
+### Customisation Interface
+````
+https://www.reddit.com/r/unixporn/comments/crsukb/gnome_arch_linux_and_gnome_osx_rice/
+````
+
+
+
+
+
+
+
 
 
 ------------------------------------------------------------------
