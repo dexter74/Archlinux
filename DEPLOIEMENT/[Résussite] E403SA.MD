@@ -26,7 +26,7 @@ Features: ✓ Boot counting
 ------------------------------------------------------------------
 #### A. Live-CD
 ```shell
-loadkeys fr-pc;
+.
 iwctl station list;
 iwctl station wlan0 connect MONRESEAUWIFI --passphrase MONMDP;
 iwctl station wlan0 show;
@@ -273,7 +273,7 @@ echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf;
 echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /etc/locale.conf;
 echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /etc/locale.conf;
 echo 'LC_TIME="fr_FR.UTF-8"'           >> /etc/locale.conf;
-echo 'LC_COLLATE="fr_FR.UTF-8"'        >> /etc/locale.conf;	
+echo 'LC_COLLATE="fr_FR.UTF-8"'        >> /etc/locale.conf;
 echo 'LC_MONETARY="fr_FR.UTF-8"'       >> /etc/locale.conf;
 echo 'LC_MESSAGES='                    >> /etc/locale.conf;
 echo 'LC_PAPER="fr_FR.UTF-8"'          >> /etc/locale.conf;
