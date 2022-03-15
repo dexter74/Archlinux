@@ -240,6 +240,7 @@ options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch01.conf;
 echo "title Arch Linux (fallback initramfs)
 linux /vmlinuz-linux
 initrd /initramfs-linux-fallback.img
+initrd /intel-ucode.img
 options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch02.conf;
 # bootctl update;
 # bootctl;
