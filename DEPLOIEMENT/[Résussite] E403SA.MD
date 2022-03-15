@@ -301,6 +301,15 @@ cd /tmp/yay && makepkg -si --noconfirm;
 cd;
 ```
 
+
+#### timeshift (A tester)
+```shell
+#clear;
+#yay -Sy --noconfirm timeshift;
+```shell
+
+
+
 ------------------------------------------------------------------
 #### Récupération des information Système 
 ```shell
