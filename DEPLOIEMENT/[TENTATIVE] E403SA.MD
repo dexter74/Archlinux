@@ -106,8 +106,21 @@ pacstrap /mnt zip;
 du -h -d 0 /mnt;
 ```
 
+**Erreur**
 ```
-==> WARNING: Possibly missing firmware for module: Voir plus bas
+==> WARNING: Possibly missing firmware for module: qed
+==> WARNING: Possibly missing firmware for module: cxgb3
+==> WARNING: Possibly missing firmware for module: cxgb4
+==> WARNING: Possibly missing firmware for module: bfa
+==> WARNING: Possibly missing firmware for module: qla2xxx
+==> WARNING: Possibly missing firmware for module: aic94xx
+==> WARNING: Possibly missing firmware for module: wd719x
+==> WARNING: Possibly missing firmware for module: advansys
+==> WARNING: Possibly missing firmware for module: isci
+==> WARNING: Possibly missing firmware for module: csiostor
+==> WARNING: Possibly missing firmware for module: qla1280
+==> WARNING: Possibly missing firmware for module: xhci_pci
+==> WARNING: Possibly missing firmware for module: ums_eneub6250
 ```
 
 
@@ -137,10 +150,9 @@ bootctl --path=/boot install;
 ------------------------------------------------------------------
 #### 6. Bootloader (Intel)
 ```shell
+clear;
 UUID_SYSTEM=$(blkid | grep 'LABEL="SYSTEM" UUID=' | cut -d '"' -f 4);
-
 echo "default  arch.*" > /boot/loader/loader.conf;
-
 echo "title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
@@ -271,19 +283,6 @@ makepkg -si --noconfirm;
 ```shell
 clear;
 sudo mkinitcpio -p linux;
-==> WARNING: Possibly missing firmware for module: qed
-==> WARNING: Possibly missing firmware for module: cxgb3
-==> WARNING: Possibly missing firmware for module: cxgb4
-==> WARNING: Possibly missing firmware for module: bfa
-==> WARNING: Possibly missing firmware for module: qla2xxx
-==> WARNING: Possibly missing firmware for module: aic94xx
-==> WARNING: Possibly missing firmware for module: wd719x
-==> WARNING: Possibly missing firmware for module: advansys
-==> WARNING: Possibly missing firmware for module: isci
-==> WARNING: Possibly missing firmware for module: csiostor
-==> WARNING: Possibly missing firmware for module: qla1280
-==> WARNING: Possibly missing firmware for module: xhci_pci
-==> WARNING: Possibly missing firmware for module: ums_eneub6250
 ```
 ------------------------------------------------------------------
 #### Passage à Root
