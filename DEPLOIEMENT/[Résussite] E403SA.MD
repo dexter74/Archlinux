@@ -306,7 +306,7 @@ cd;
 ```shell
 #clear;
 #yay -Sy --noconfirm timeshift;
-```shell
+```
 
 
 
