@@ -219,7 +219,7 @@ bootctl --path=/boot install;
 ```shell
 clear;
 UUID_SYSTEM=$(blkid | grep 'LABEL="SYSTEM" UUID=' | cut -d '"' -f 4);
-echo "timeout 3
+echo "timeout 1
 default  arch01.conf
 editor no" > /boot/loader/loader.conf;
 
