@@ -73,11 +73,11 @@ cd /mnt;
 ```shell
 clear;
 pacstrap /mnt base;
-pacstrap /mnt dhclient;
-pacstrap /mnt dhcpcd;
 pacstrap /mnt base-devel;
 pacstrap /mnt bash-completion;
 pacstrap /mnt curl;
+pacstrap /mnt dhclient;
+pacstrap /mnt dhcpcd;
 pacstrap /mnt fakeroot;
 pacstrap /mnt git;
 pacstrap /mnt go;
