@@ -54,7 +54,14 @@ mount  /dev/mmcblk0p4 /mnt/home
 swapon /dev/mmcblk0p2
 df -h
 ```
-#### I. Purge du Stockage
+
+#### H. [FIX] Mise à jour des Clés PGP
+```shell
+pacman -Sy --noconfirm archlinux-keyring;
+```
+
+-----------------------------------------------------------------------------------
+#### 0. Purge du Stockage
 ```shell
 clear;
 rm -r -f /mnt/;
@@ -62,11 +69,6 @@ du -h -d 0 /mnt;
 cd /mnt;
 ```
 
-
-#### 0. [FIX] Mise à jour des Clés PGP
-```shell
-pacman -Sy --noconfirm archlinux-keyring;
-```
 #### 1. Installation des paquets
 ```shell
 clear;
@@ -103,30 +105,30 @@ pacstrap /mnt xorg-xinit;
 pacstrap /mnt zip;
 du -h -d 0 /mnt;
 ```
-#### 3. Configuration Réseau
+#### 2. Configuration Réseau
 ```shell
 clear;
 cp /etc/systemd/network/* /mnt/etc/systemd/network
 ```
-#### 4. FSTAB
+#### 3. FSTAB
 ```shell
 clear;
 genfstab -U /mnt >> /mnt/etc/fstab;
 ```
 ------------------------------------------------------------------
-#### 5. Passage en Chroot
+#### 4. Passage en Chroot
 ```shell
 clear;
 arch-chroot /mnt;
 ```
 ------------------------------------------------------------------
-#### 6. BootLoader (Install)
+#### 5. BootLoader (Install)
 ```shell
 clear;
 bootctl --path=/boot install;
 ```
 ------------------------------------------------------------------
-#### 7. Bootloader (Intel)
+#### 6. Bootloader (Intel)
 ```shell
 UUID_SYSTEM=$(blkid | grep 'LABEL="SYSTEM" UUID=' | cut -d '"' -f 4);
 
@@ -146,7 +148,7 @@ options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf;
 # bootctl;
 ```
 ------------------------------------------------------------------
-#### 8. Fuseau Horaire
+#### 7. Fuseau Horaire
 
 ```shell
 clear;
@@ -158,7 +160,7 @@ echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc;
 ```
 
 ------------------------------------------------------------------
-#### 9. Clavier et Langue
+#### 8. Clavier et Langue
 ```shell
 clear;
 loadkeys fr-pc;
@@ -184,7 +186,7 @@ echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen;
 locale-gen;
 ```
 ------------------------------------------------------------------
-#### 10. Configuration Host et Hostname
+#### 9. Configuration Host et Hostname
 ```shell
 clear;
 NAME=Arch
@@ -204,7 +206,7 @@ ff02::2 ip6-allrouters
 ```
 
 ------------------------------------------------------------------
-#### 11. Utilisateurs
+#### 10. Utilisateurs
 ```shell
 clear;
 /usr/sbin/useradd \
@@ -219,7 +221,7 @@ clear;
 ```
 
 ------------------------------------------------------------------
-#### 12. Changement Mot de passe
+#### 11. Changement Mot de passe
 ```shell
 clear;
 (echo "root:root")  | chpasswd;
@@ -227,7 +229,7 @@ clear;
 ```
 
 ------------------------------------------------------------------
-#### 13. Modification des fichiers de Configuration
+#### 12. Modification des fichiers de Configuration
 ```shell
 clear;
 
@@ -242,7 +244,7 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 ```
 
 ------------------------------------------------------------------
-#### 
+#### 13. Marc
 ```shell
 clear;
 su - marc;
@@ -257,34 +259,26 @@ cd yay ;
 makepkg -si --noconfirm;
 ```
 
-
 ------------------------------------------------------------------
 #### Pilotes
 ```shell
 clear;
-
+# mkinitcpio -p linux;
 # yay -S --noconfirm aic94xx-firmware;
 # yay -S --noconfirm upd72020x-fw;
 # yay -S --noconfirm wd719x-firmware;
 ```
-
-
 ------------------------------------------------------------------
 #### 
 ```shell
 clear;
 
 ```
-
-
 ------------------------------------------------------------------
 #### 
 ```shell
 clear;
-
 ```
-
-
 ------------------------------------------------------------------
 #### 
 ```shell
