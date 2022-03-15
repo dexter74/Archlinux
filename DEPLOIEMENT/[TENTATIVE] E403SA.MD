@@ -47,12 +47,12 @@ e2label /dev/mmcblk0p4 HOME;
 ```
 #### G. Monter les partitions
 ```shell
-mkdir  /mnt/home /mnt/boot
+mkdir -p /mnt/home /mnt/boot
 mount  /dev/mmcblk0p1 /mnt/boot
 mount  /dev/mmcblk0p3 /mnt
 mount  /dev/mmcblk0p4 /mnt/home
 swapon /dev/mmcblk0p2
-df -h
+df -h | grep /mnt
 ```
 
 #### H. [FIX] Mise à jour des Clés PGP
