@@ -244,7 +244,7 @@ sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ss
 ```
 
 ------------------------------------------------------------------
-#### 13. Marc
+#### 13. Pasage à Marc
 ```shell
 clear;
 su - marc;
@@ -269,20 +269,41 @@ clear;
 # yay -S --noconfirm wd719x-firmware;
 ```
 ------------------------------------------------------------------
-#### 
+#### Passage à Root
+```shell
+clear;
+exit;
+```
+
+
+
+
+
+------------------------------------------------------------------
+#### Script First-Boot:
 ```shell
 clear;
 
-```
-------------------------------------------------------------------
-#### 
-```shell
-clear;
-```
-------------------------------------------------------------------
-#### 
-```shell
-clear;
+echo "systemctl $1 {systemd-resolved,systemd-networkd,systemd-timesyncd,iwd};" > services.sh;
+echo "INTERFACE='wlan0'
+SSID='ASUS_A8_5G'
+KEY='Azerty74@123'
+iwctl station $INTERFACE connect $SSID --passphrase $KEY;" > wifi.sh;
 
+echo "journalctl -u systemd-resolved"  > systemd-resolved.sh;
+echo "journalctl -u systemd-networkd"  > systemd-networkd.sh;
+echo "journalctl -u systemd-timesyncd" > systemd-timesyncd.sh;
+echo "journalctl -u iwd"               > systemd-iwd.sh;
 ```
+
+
+
+------------------------------------------------------------------
+#### Post Démarrage
+```shell
+clear;
+sh services.sh enable;
+sh services.sh start;
+```
+
 
