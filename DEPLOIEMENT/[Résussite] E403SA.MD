@@ -23,13 +23,17 @@ Features: ✓ Boot counting
        valid_lft forever preferred_lft forever
 ```
 
-**Touchpad** (Semi fonctionnel)
+**Touchpad** (fonctionnel)
 ```
-pacman -Sy --noconfirm libinput
-pacman -Sy --noconfirm synaptics
-pacman -Sy --noconfirm xf86-input-libinput
+# pacman -Sy --noconfirm libinput
+# pacman -Sy --noconfirm synaptics
+# pacman -Sy --noconfirm xf86-input-libinput
 #KO: pacman -Sy --noconfirm xinput
 #KO: pacman -Sy --noconfirm libinput-gestures
+
+
+Aller dans Applications > Paramètres Sours et pavé tactile > Pavé tactile > Cocher les cas
+
 
 
 cat /proc/bus/input/devices;
