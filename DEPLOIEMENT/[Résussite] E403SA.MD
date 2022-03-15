@@ -125,6 +125,8 @@ genfstab -U /mnt >> /mnt/etc/fstab;
 
 #### 2. Configuration Réseau (Manuel)
 
+Pour la valeur Name on peut utiliser le joker. (wl*, et*, br*)
+
 **Loopback**
 ```
 echo "[Match]
