@@ -269,13 +269,11 @@ clear;
 su - marc;
 ```
 
-#### Yaourt
+#### Yaourt (V2)
 ```shell
 clear;
-cd /tmp;
-git clone https://aur.archlinux.org/yay.git;
-cd yay ;
-makepkg -si --noconfirm;
+git clone https://aur.archlinux.org/yay.git /tmp/yay;
+cd /tmp/yay && makepkg -si --noconfirm;
 ```
 
 ------------------------------------------------------------------
