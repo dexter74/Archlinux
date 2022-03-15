@@ -134,12 +134,100 @@ options root=UUID=$UUID_SYSTEM rw" > /boot/loader/entries/arch.conf;
 # bootctl update;
 # bootctl;
 ```
+------------------------------------------------------------------
+#### Fuseau Horaire
+
+```shell
+clear;
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime;
+sed -i -e "s/\#NTP\=/\NTP\=fr.pool.ntp.org/g" /etc/systemd/timesyncd.conf;
+timedatectl set-ntp true;
+hwclock --systohc;
+echo "export EDITOR='/usr/bin/nano'" > ~/.bashrc;
+```
 
 ------------------------------------------------------------------
-#### 
+#### Clavier et Langue
+```shell
+clear;
+loadkeys fr-pc;
+export LANG=fr_FR.UTF-8;
+echo 'LANG=fr_FR.UTF-8'                 > /etc/locale.conf;
+echo 'LC_CTYPE="fr_FR.UTF-8"'          >> /etc/locale.conf;
+echo 'LC_NUMERIC="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_TIME="fr_FR.UTF-8"'           >> /etc/locale.conf;
+echo 'LC_COLLATE="fr_FR.UTF-8"'        >> /etc/locale.conf;	
+echo 'LC_MONETARY="fr_FR.UTF-8"'       >> /etc/locale.conf;
+echo 'LC_MESSAGES='                    >> /etc/locale.conf;
+echo 'LC_PAPER="fr_FR.UTF-8"'          >> /etc/locale.conf;
+echo 'LC_NAME="fr_FR.UTF-8"'           >> /etc/locale.conf;
+echo 'LC_ADDRESS="fr_FR.UTF-8"'        >> /etc/locale.conf;
+echo 'LC_TELEPHONE="fr_FR.UTF-8"'      >> /etc/locale.conf;
+echo 'LC_MEASUREMENT="fr_FR.UTF-8"'    >> /etc/locale.conf;
+echo 'LC_IDENTIFICATION="fr_FR.UTF-8"' >> /etc/locale.conf;
+echo 'LC_ALL='                         >> /etc/locale.conf;
+echo 'LANGUAGE="fr_FR"'                >> /etc/locale.conf;
+echo 'KEYMAP=fr-latin9'                 > /etc/vconsole.conf;
+echo 'FONT=eurlatgr'                   >> /etc/vconsole.conf;
+echo 'fr_FR.UTF-8 UTF-8'                > /etc/locale.gen;
+locale-gen;
+```
+------------------------------------------------------------------
+#### Configuration Host et Hostname
+```shell
+clear;
+NAME=Arch
+DOM=LAN
+
+echo "$NAME" > /etc/hostname;
+echo "################################################
+#IPV4
+127.0.0.1       localhost
+127.0.1.1       $NAME        $NAME
+#127.0.1.1      $NAME.$DOM        $NAME
+#IPV6 (OFF)
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+################################################" > /etc/hosts;
+```
+
+------------------------------------------------------------------
+#### Utilisateurs
+```shell
+clear;
+/usr/sbin/useradd \
+  --home-dir /home/marc \
+  --base-dir /home/marc \
+  --uid 1005 \
+  --groups wheel,storage,power \
+  --no-user-group \
+  --shell /bin/bash \
+  --comment 'Compte Drthrax74' \
+  --create-home marc;
+```
+
+------------------------------------------------------------------
+#### Changement Mot de passe
+```shell
+clear;
+(echo "root:root")  | chpasswd;
+(echo "marc:admin") | chpasswd;
+```
+
+------------------------------------------------------------------
+#### Modification des fichiers de Configuration
 ```shell
 clear;
 
+# Groupe Wheel:
+sed -i -e "s/\# \%wheel ALL\=(ALL\:ALL) NOPASSWD\: ALL/\%wheel ALL\=(ALL\:ALL) NOPASSWD\: ALL/g" /etc/sudoers;
+
+# MultiLib:
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf;
+
+# Root en SSH:
+sed -i -e "s/\#PermitRootLogin prohibit\-password/PermitRootLogin Yes/g" /etc/ssh/sshd_config;
 ```
 
 ------------------------------------------------------------------
@@ -149,12 +237,6 @@ clear;
 
 ```
 
-------------------------------------------------------------------
-#### 
-```shell
-clear;
-
-```
 
 ------------------------------------------------------------------
 #### 
@@ -163,12 +245,6 @@ clear;
 
 ```
 
-------------------------------------------------------------------
-#### 
-```shell
-clear;
-
-```
 
 ------------------------------------------------------------------
 #### 
@@ -176,6 +252,23 @@ clear;
 clear;
 
 ```
+
+
+------------------------------------------------------------------
+#### 
+```shell
+clear;
+
+```
+
+
+------------------------------------------------------------------
+#### 
+```shell
+clear;
+
+```
+
 
 ------------------------------------------------------------------
 #### 
