@@ -6,8 +6,8 @@ Pour installer des thèmes, Icônes il suffit d'utiliser ocs-url et le site xfce
 
 **Package:**
 ```
-pacman -S --asexplicit qt5-base qt5-svg qt5-declarative qt5-quickcontrols ; # Pré-requis
-yay    -S --asexplicit ocs-url ;
+pacman -S --asexplicit --noconfirm qt5-base qt5-svg qt5-declarative qt5-quickcontrols; # Pré-requis
+yay    -S --asexplicit --noconfirm ocs-url;
 ```
 
 **Dossiers Communs**
