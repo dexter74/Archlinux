@@ -310,7 +310,7 @@ Exemple
 Observation:
 ```
 - L'audio de la VM peut être acheminé vers l'hôte. Vous avez besoin de Pulseaudio (ou Pipewire avec pipewire-pulse). 
-- Le code semnble être pour PulseAudio.
+- Le code semble être pour PulseAudio.
 ```
 
 **Code à ajouter dans la section <qemu:commandline> ....... </qemu:commandline>
