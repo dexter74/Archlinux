@@ -1,12 +1,14 @@
 [Guide](https://www.freedesktop.org/software/systemd/man/systemd.network.html)
 [Info](https://github.com/systemd/systemd/blob/a2088fd025deb90839c909829e27eece40f7fce4/NEWS)
 [topic](https://qastack.fr/server/753977/how-to-properly-permanent-enable-ip-forwarding-in-linux-with-systemd)
-[GestionInterface](https://man.archlinux.org/man/systemd.network.5) (ActivationPolicy=)
+[GestionI nterface](https://man.archlinux.org/man/systemd.network.5) (ActivationPolicy=)
 
 # Autoriser le Forward :
 ```
-/sbin/sysctl -w net.ipv4.ip_forward=1 ; # Temporaire 
-echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ; # Permanent
+clear;
+sudo /sbin/sysctl -w net.ipv4.ip_forward=1 ; # Temporaire
+
+sudo echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ; # Permanent
 cat /proc/sys/net/ipv4/ip_forward ; 
 ```
 
@@ -20,13 +22,13 @@ Description=Tunnel wg0 Wireguard
 [WireGuard]
 ListenPort = XXXX
 PrivateKey = XXXXXXXXXXXXXXXXX
-DNS = 192.168.2.1
+DNS = 192.168.1.31
 MTU = 1500
 
 [WireGuardPeer]
 PublicKey = XXXXXXXXXXXXXXXXX
 PresharedKey = XXXXXXXXXXXXXXXXX
-AllowedIPs = XXX.XXX.XXX.XXX/24, 0.0.0.0/0
+AllowedIPs = X192.168.1.0/24, 0.0.0.0/0
 Endpoint = <mon_DNS>:51820
 PersistentKeepalive = 25
 ```
