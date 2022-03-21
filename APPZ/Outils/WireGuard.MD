@@ -12,7 +12,12 @@ sudo echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ; # Permanent
 cat /proc/sys/net/ipv4/ip_forward ; 
 ```
 
-**Configuration du Client** (nano /etc/systemd/network/99-wg0.netdev )
+**Création de service**
+```
+nano /etc/systemd/network/99-wg0.netdev
+nano /etc/systemd/network/99-wg0.network
+```
+**Configuration du Client** (Netdev)
 ```
 [NetDev]
 Name=wg0
@@ -34,9 +39,8 @@ PersistentKeepalive = 25
 ```
 
 
-**Interface wg0** (Administré par Systemd-NetworkD )
+**Interface wg0** (Network)
 ```
-/etc/systemd/network/99-wg0.network
 [Match]
 Name=wg0
 
@@ -45,7 +49,9 @@ Name=wg0
 ActivationPolicy=manual
 
 [Network]
-Address = 192.168.2.2/24
+Address = 192.168.2.1/24
+
+# Administré par Systemd-NetworkD
 ```
 
 **Permission**
