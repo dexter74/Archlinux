@@ -10,7 +10,7 @@ echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/systcl.conf ; # Permanent
 cat /proc/sys/net/ipv4/ip_forward ; 
 ```
 
-**Configuration du Client** ( /etc/systemd/network/99-wg0.netdev )
+**Configuration du Client** (nano /etc/systemd/network/99-wg0.netdev )
 ```
 [NetDev]
 Name=wg0
@@ -32,7 +32,7 @@ PersistentKeepalive = 25
 ```
 
 
-**Interfacewg0** (Administré par Systemd-NetworkD )
+**Interface wg0** (Administré par Systemd-NetworkD )
 ```
 /etc/systemd/network/99-wg0.network
 [Match]
