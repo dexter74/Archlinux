@@ -33,7 +33,7 @@ MTU = 1500
 [WireGuardPeer]
 PublicKey = XXXXXXXXXXXXXXXXX
 PresharedKey = XXXXXXXXXXXXXXXXX
-AllowedIPs = X192.168.1.0/24, 0.0.0.0/0
+AllowedIPs = 192.168.1.0/24, 0.0.0.0/0
 Endpoint = <mon_DNS>:51820
 PersistentKeepalive = 25
 ```
