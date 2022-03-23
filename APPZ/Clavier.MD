@@ -6,4 +6,7 @@ echo "keycode 0x42 =  Shift_Lock   NoSymbol   Shift_Lock" > .xmodmap-shiftlock
 Ajouter le script au démarrage de la session.
 
 
-Source: https://forum.ubuntu-fr.org/viewtopic.php?id=1468491
+Source: 
+
+https://forum.ubuntu-fr.org/viewtopic.php?id=1468491
+https://doc.ubuntu-fr.org/utiliser_verr_maj_pour_ecrire_des_chiffres
