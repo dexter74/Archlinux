@@ -7,7 +7,7 @@ N'activez pas **iwd.service** ou ne configurez pas manuellement iwd. NetworkMana
 
 #### 1. Installation NetworkManager avec iwd. (WIFI)
 ``` 
-pacman -Sy --noconfirm networkmanager iwd;
+pacman -Sy --noconfirm gnome-keyring iwd networkmanager;
 ```
 
 ### 2. Définir NetworkManager comme gestionnaire réseau
