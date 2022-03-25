@@ -1,5 +1,4 @@
-Problème: Le Verrouillage numérique ne fonctionne que sur les caractères alphanumériques. (a-Z)
-Correctif:
+Sur les Laptops, le Verrouillage numérique ne fonctionne pas sur les touches supérieur du clavier ( & é " ' ( -è  _ ç à ) =  )
 ```
 #Chercher Ligne:
 grep -n 'include "latin"'  /usr/share/X11/xkb/symbols/fr;
