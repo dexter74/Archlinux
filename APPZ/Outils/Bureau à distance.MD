@@ -1,4 +1,4 @@
-**Remmina
+**Remmina**
 ```
 yay -S --noconfirm remmina ;
 yay -S --noconfirm remmina-plugin-anydesk remmina-plugin-folder remmina-plugin-kwallet remmina-plugin-open remmina-plugin-rdesktop ;
