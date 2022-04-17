@@ -1,2 +1,2 @@
-yaourt -S pamac
-yaourt -S pamac-aur
+su - marc -c 'yay -Sy pamac'
+su - marc -c 'yay -Sy pamac-aur'
