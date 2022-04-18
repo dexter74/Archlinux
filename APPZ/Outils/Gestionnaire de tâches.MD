@@ -13,3 +13,8 @@ gnome-system-monitor
 ```
 org.kde.plasma-systemmonitor
 ```
+
+**Plasma**
+```
+plasma-systemmonitor
+```
