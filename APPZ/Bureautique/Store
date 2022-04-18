@@ -1,3 +1,6 @@
 su - marc -c 'yay -Sy pamac'
 su - marc -c 'yay -Sy pamac-aur'
 pacman -Sy gnome-software
+
+
+KDE : discover
