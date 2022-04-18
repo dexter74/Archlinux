@@ -8,3 +8,8 @@
 ```
 gnome-system-monitor
 ```
+
+**KDE**
+```
+org.kde.plasma-systemmonitor
+```
