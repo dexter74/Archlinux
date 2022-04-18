@@ -7,7 +7,11 @@ pacman -S --noconfirm plank ;
 ```
 Démarrer > Paramètres > Peaufinage des fenêtres > Onglet compositeur >  - Décochez "affichez les ombres sous les fenêtres dock"
 xfwm4-tweaks-settings
-sed -i 's/<property name\="show_dock_shadow" type\="bool" value="true"\/>/<property name\="show_dock_shadow" type\="bool" value="false"\/>/' .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+```
+
+Commande:
+```
+sed -e 's/<property name="show_dock_shadow" type="bool" value="false"\/>/<property name="show_dock_shadow" type="bool" value="true"\/>/' xfwm4.xml
 ```
 
 
