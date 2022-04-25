@@ -4,7 +4,7 @@
 Pour les applications avec un rendu HTML, il vous faut installer en plus wine_gecko.
 
 
-**Installation de Wine ** (Pacman)
+**Installation de Wine** (Pacman)
 
 [Wine](https://archlinux.org/packages/multilib/x86_64/wine/)
 
@@ -44,3 +44,10 @@ WINEARCH=win64 winecfg
 WINEARCH=win32 WINEPREFIX=~/win32 winecfg 
 WINEARCH=win64 WINEPREFIX=~/win64 winecfg
 ```
+
+----------------------------------------------------------------------------------------------------
+
+**ProtonUp-qt**
+``` 
+Permet de configurer ProtonDB, Wine et Lutris.
+``` 
