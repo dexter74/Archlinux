@@ -1,4 +1,5 @@
 Gnome
 ```
 gnome-calculator
+gedit
 ```
