@@ -1,3 +1,8 @@
+**KRDC**
+```
+Equivalen à MremoteNG
+```
+
 **Remmina**
 ```
 yay -S --noconfirm remmina ;
