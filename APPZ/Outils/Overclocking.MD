@@ -1,0 +1,2 @@
+[AMD]    CoreCtrl
+[Nvidia] GreenWithEnvy
