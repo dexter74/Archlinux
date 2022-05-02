@@ -16,9 +16,6 @@ su - marc ;
 https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2
 tar xf xfce4-docklike-plugin-0.4.0.tar.bz2
 cd xfce4-docklike-plugin-0.4.0
-./autogen.sh
-make
-sudo make install
 ```
 
 **Pré-Requis:**
