@@ -31,7 +31,7 @@ Debian:
 - gtk2.0-examples
 - gtk-3.0-examples
 - libgtk-3-dev
-- libwnck-3-0
+- libwnck-3-0 / libwnck-3-dev
 ```
 
 **Relancer le gestionnaire de fenêtre**
