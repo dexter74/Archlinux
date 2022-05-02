@@ -32,6 +32,7 @@ Debian:
 - gtk-3.0-examples
 - libgtk-3-dev
 - libwnck-3-0 / libwnck-3-dev
+- libxfce4ui-2-dev
 ```
 
 **Relancer le gestionnaire de fenêtre**
