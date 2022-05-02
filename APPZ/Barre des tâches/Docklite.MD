@@ -21,6 +21,13 @@ cd xfce4-docklike-plugin-0.4.0
 **Pré-Requis:**
 ```
 sudo pacman -S --noconfirm xfce4-dev-tools ;
+
+Debian: (apt search -n XXX)
+- make
+- gcc
+- intltool
+- xorg-dev
+- gio-2.0 (	libglib2.0-dev)
 ```
 
 **Relancer le gestionnaire de fenêtre**
