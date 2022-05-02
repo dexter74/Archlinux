@@ -7,9 +7,12 @@
 su - marc ;
 ```
 
+[Release](https://docs.xfce.org/panel-plugins/xfce4-docklike-plugin/start#latest_release)
+
 **Installation**
 ```
-git clone https://github.com/nsz32/docklike-plugin &&  cd docklike-plugin
+https://archive.xfce.org/src/panel-plugins/xfce4-docklike-plugin/0.4/xfce4-docklike-plugin-0.4.0.tar.bz2
+
 ./autogen.sh
 make
 sudo make install
