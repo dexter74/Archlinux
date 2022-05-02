@@ -28,6 +28,10 @@ Debian:
 - intltool
 - xorg-dev
 - gio-2.0 (libglib2.0-dev)
+- gtk2.0-examples
+- gtk-3.0-examples
+- libgtk-3-dev
+- libwnck-3-0
 ```
 
 **Relancer le gestionnaire de fenêtre**
